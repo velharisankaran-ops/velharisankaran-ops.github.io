@@ -1327,3 +1327,6 @@ a:focus-visible {
   display: inline-block;
   margin-top: 4px !important;
 }
+.profile-details-list .status-row {
+  display: block;
+}
