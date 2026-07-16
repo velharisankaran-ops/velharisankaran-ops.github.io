@@ -163,7 +163,7 @@ function HomePage() {
                       </div>
                       <div className="progress-labels" style={{ flexDirection: 'column', gap: '4px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px' }}>
-                          <span><strong>{goal.progressAmount}</strong> {goal.progressLabel.toLowerCase()} of {goal.targetAmount} goal</span>
+                          <span><strong>{goal.progressAmount}</strong> {goal.progressLabel.toLowerCase()} of <strong>{goal.targetAmount}</strong> goal</span>
                         </div>
                       </div>
                     </div>
