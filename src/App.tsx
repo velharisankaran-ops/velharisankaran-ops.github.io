@@ -71,16 +71,18 @@ function HomePage() {
 
       <main className="main-content">
         <section className="profile-section section-anchor" id="profile" aria-labelledby="profile-title">
+          <p className="eyebrow eyebrow--top">DOCUMENTING MY JOURNEY</p>
+          <div className="intro-copy intro-copy--top">
+            <p>Inviting you to support my key milestones.</p>
+          </div>
           <div className="avatar-frame">
             <img src="/profile.jpg" alt="Velhari Sankaran, founder of Velnex" width="128" height="128" />
           </div>
           <div className="profile-copy">
             <h1 id="profile-title">Velhari Sankaran</h1>
-            <p className="eyebrow">Documenting my journy</p>
             <div className="intro-copy">
               <p>Building my</p>
-              <p><strong>education</strong>, <strong>financial stability</strong>, &amp; <strong>business</strong>.</p>
-              <p>Inviting you to support my key milestones.</p>
+              <p>&nbsp; <strong>Education</strong>, <strong>Financial stability</strong>, &amp; <strong>Business</strong>.</p>
             </div>
             <button className="button button--secondary profile-cta" type="button" onClick={() => scrollToSection("fundraising")}>
               <span>View Fundraising Goals</span>
@@ -90,8 +92,8 @@ function HomePage() {
         </section>
 
         <section className="section-block section-anchor" id="status" aria-labelledby="status-title">
-          <h2 id="status-title">Current Status</h2>
-          <div className="status-card">
+          <h2 id="status-title">Profile Details</h2>
+          <div className="profile-details-list">
             {statusItems.map((item, index) => (
               <div className={`status-row${index === statusItems.length - 1 ? " status-row--last" : ""}`} key={item.label}>
                 <span className="status-row__icon"><Icon name={item.icon} /></span>

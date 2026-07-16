@@ -1249,3 +1249,26 @@ a:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
+/* New Stitch Additions */
+.eyebrow--top {
+  margin-top: 0 !important;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.intro-copy--top {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.profile-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.profile-details-list .status-row__content {
+  border-bottom: 1px solid var(--outline-variant);
+}
+.profile-details-list .status-row--last .status-row__content {
+  border-bottom: none;
+}
