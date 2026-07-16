@@ -88,7 +88,7 @@ function HomePage() {
                 </button>
               </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', marginTop: '32px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', marginTop: '32px' }}>
               <div className="avatar-frame">
                 <img src="/profile.jpg" alt="Velhari Sankaran" width="128" height="128" />
               </div>
