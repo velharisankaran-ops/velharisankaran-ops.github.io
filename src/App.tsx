@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { categories, goals, navigation, statusItems, type SectionId } from "./content";
+import { categories, goals, navigation, plusTwoGoalRoute, statusItems, type SectionId } from "./content";
 import { GoalDetailsPage } from "./GoalDetails";
 
 const sectionLabels: Record<SectionId, string> = {
@@ -165,7 +165,7 @@ function HomePage() {
                     <button
                       className={`button ${goal.status ? "button--primary" : "button--secondary"}`}
                       type="button"
-                      onClick={() => goal.id === "bosse-plus-two" ? window.location.hash = "/goals/plus-two" : announceComingSoon(goal.title)}
+                      onClick={() => goal.id === "bosse-plus-two" ? window.location.hash = plusTwoGoalRoute : announceComingSoon(goal.title)}
                     >
                       {goal.actionLabel}
                     </button>
@@ -224,5 +224,5 @@ export function App() {
     return () => window.removeEventListener("hashchange", handleRoute);
   }, []);
 
-  return route.startsWith("#/goals/plus-two") ? <GoalDetailsPage /> : <HomePage />;
+  return route.startsWith(`#${plusTwoGoalRoute}`) ? <GoalDetailsPage /> : <HomePage />;
 }

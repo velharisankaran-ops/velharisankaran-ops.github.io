@@ -74,7 +74,7 @@ No actionable P0, P1, or P2 differences remain.
 
 ## Primary interactions tested
 
-- Home “View Goal” opens `#/goals/plus-two` and renders the goal screen.
+- Home “View Goal” opens `#/Fundraising-goals/Acadamics` and renders the goal screen.
 - Goal-page Home navigation returns to the dashboard.
 - “Support This Goal” produces an accessible status message.
 - “Pay Institution Directly” contains the exact secure institution payment URL from Stitch.

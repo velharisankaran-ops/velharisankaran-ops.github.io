@@ -178,3 +178,5 @@ export const plusTwoGoal: GoalDetails = {
   ],
   institutionPaymentUrl: "https://zohosecurepay.in/books/ametglobal/secure?CInvoiceID=2-f285617c4a13c5d33f34b9b617687bae8ae466897c6649607b021e56c356f1a0646a53dd8ed69f1b773aba0674c4215bdaee8aef44d1dd5a127687162be70f52bf747bf136c83d3b#/invoices/payment?invoice_ids=2-f285617c4a13c5d33f34b9b617687bae8ae466897c6649607b021e56c356f1a0646a53dd8ed69f1b773aba0674c4215bdaee8aef44d1dd5a127687162be70f52bf747bf136c83d3b",
 };
+
+export const plusTwoGoalRoute = "/Fundraising-goals/Acadamics";
