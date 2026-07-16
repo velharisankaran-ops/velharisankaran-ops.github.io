@@ -769,9 +769,9 @@ a:focus-visible {
 
 .goal-hero {
   position: relative;
-  height: 192px;
+  height: 176px;
   overflow: hidden;
-  background: var(--surface-low);
+  background: var(--surface-container-low);
 }
 
 .goal-hero > img {
@@ -781,41 +781,45 @@ a:focus-visible {
   object-fit: cover;
   object-position: center;
   opacity: 0.4;
+  filter: grayscale(100%);
 }
 
 .goal-hero__shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent);
+  z-index: 10;
 }
 
 .goal-hero__content {
   position: absolute;
-  z-index: 2;
+  z-index: 20;
   right: 0;
-  bottom: 24px;
+  bottom: 0;
   left: 0;
-  width: min(calc(100% - 32px), 896px);
+  width: min(calc(100% - 40px), 896px); /* 20px padding left/right */
   margin: 0 auto;
+  padding-bottom: 24px;
 }
 
 .goal-category {
   width: max-content;
-  padding: 7px 12px;
+  padding: 2px 8px;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  border-radius: 999px;
-  color: var(--on-secondary-container);
-  background: var(--secondary-container);
-  font-size: 12px;
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  gap: 4px;
+  border-radius: 4px;
+  color: #fff;
+  background: var(--secondary);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
 }
 
 .goal-category .material-symbols-outlined {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .goal-details-content {
