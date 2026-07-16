@@ -353,7 +353,7 @@ a:focus-visible {
   color: var(--on-surface);
   font-size: 14px;
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .field-detail {
