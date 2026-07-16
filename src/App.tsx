@@ -150,28 +150,27 @@ function HomePage() {
                 <div className="goal-card__body">
                   <div>
                     <div className="goal-card__heading">
-                      <div>
-                        <h3>{goal.title}</h3>
-                        <p className="goal-category-badge">{goal.subtitle}</p>
+                      <div style={{ width: '100%' }}>
+                        {goal.category && <p className="goal-category-badge" style={{ marginBottom: '6px' }}>{goal.category}</p>}
+                        <h3 style={{ margin: 0 }}>{goal.title}</h3>
+                        <p className="goal-subtitle" style={{ fontSize: '14px', color: 'var(--on-surface-variant)', margin: '4px 0 0 0' }}>{goal.subtitle}</p>
                       </div>
-                      {goal.status && <span className="status-badge">{goal.status}</span>}
                     </div>
 
-                    <div className="progress-area" aria-label={`${goal.progress}% complete`}>
-                      <div className="progress-labels" style={{ flexDirection: 'column', gap: '2px' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <span>{goal.progressLabel}: <strong>{goal.progressAmount}</strong></span>
-                          <span>Target: {goal.targetAmount}</span>
-                        </div>
-                        {goal.deadline && (
-                          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                            <span>Deadline: <strong>{goal.deadline}</strong></span>
-                          </div>
-                        )}
-                      </div>
-                      <div className="progress-track" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={goal.progress}>
+                    <div className="progress-area" aria-label={`${goal.progress}% complete`} style={{ marginTop: '20px' }}>
+                      <div className="progress-track" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={goal.progress} style={{ marginBottom: '12px' }}>
                         <span style={{ width: `${goal.progress}%` }} />
                       </div>
+                      <div className="progress-labels" style={{ flexDirection: 'column', gap: '4px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '15px' }}>
+                          <span><strong>{goal.progressAmount}</strong> {goal.progressLabel.toLowerCase()} of {goal.targetAmount} goal</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="goal-context" style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '16px', fontSize: '14px', color: 'var(--on-surface-variant)' }}>
+                       {goal.status && <span>Current Stage: <strong style={{ color: 'var(--on-surface)' }}>{goal.status}</strong></span>}
+                       {goal.deadline && <span>Target Date: <strong style={{ color: 'var(--on-surface)' }}>{goal.deadline}</strong></span>}
                     </div>
 
                     {goal.tags && (

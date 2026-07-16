@@ -18,6 +18,7 @@ export interface CategoryItem {
 export interface GoalItem {
   id: string;
   title: string;
+  category?: string;
   subtitle: string;
   image: string;
   imageAlt: string;
@@ -111,8 +112,9 @@ export const categories: CategoryItem[] = [
 export const goals: GoalItem[] = [
   {
     id: "bosse-plus-two",
-    title: "BOSSE Plus Two",
-    subtitle: "Education Sponsorship",
+    category: "Education Sponsorship",
+    title: "Plus Two - Commerce",
+    subtitle: "Open Schooling",
     image: "/bosse-education.jpg",
     imageAlt: "An open book, laptop and graduation cap representing education and progress",
     progressLabel: "Raised",
@@ -121,13 +123,14 @@ export const goals: GoalItem[] = [
     deadline: "15 Aug 2026",
     progress: 20,
     status: "Admission Stage",
-    updated: "Updated 14 July 2026",
+    updated: "Last updated 14 July 2026",
     actionLabel: "View",
   },
   {
     id: "debt-consolidation",
+    category: "Financial Stabilisation",
     title: "Debt Consolidation",
-    subtitle: "Financial Stabilisation",
+    subtitle: "Multiple Active Accounts",
     image: "/debt-consolidation.jpg",
     imageAlt: "Credit cards, a pen and wallet representing financial stability",
     progressLabel: "Cleared",
