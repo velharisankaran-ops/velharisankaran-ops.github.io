@@ -275,7 +275,7 @@ a:focus-visible {
 
 #categories {
   margin-top: 24px;
-  gap: 24px;
+  gap: 16px;
 }
 
 .section-block h2 {
