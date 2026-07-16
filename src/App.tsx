@@ -60,48 +60,52 @@ function HomePage() {
     <div className="app-shell">
       <a className="skip-link" href="#profile">Skip to content</a>
 
-      <header className="top-bar">
+      <header className="top-bar top-bar--stitch">
         <div className="top-bar__inner">
-          <span className="brand">Velhari Sankaran</span>
-          <button className="icon-button" type="button" aria-label="Open updates" onClick={() => scrollToSection("updates")}>
-            <Icon name="notifications" />
-          </button>
+          <div className="top-bar__identity">
+            <span className="brand-subtitle eyebrow--top" style={{ marginBottom: 0 }}>DOCUMENTING MY JOURNEY</span>
+          </div>
+          <div className="top-bar__actions">
+            <button className="icon-button" type="button" aria-label="Open updates" onClick={() => scrollToSection("updates")}>
+              <Icon name="notifications" />
+            </button>
+          </div>
         </div>
       </header>
 
       <main className="main-content">
-        <section className="profile-section section-anchor" id="profile" aria-labelledby="profile-title">
-          <p className="eyebrow eyebrow--top">DOCUMENTING MY JOURNEY</p>
-          <div className="intro-copy intro-copy--top">
-            <p>Inviting you to support my key milestones.</p>
-          </div>
-          <div className="avatar-frame">
-            <img src="/profile.jpg" alt="Velhari Sankaran, founder of Velnex" width="128" height="128" />
-          </div>
+        <section className="profile-section section-anchor" id="profile" aria-labelledby="profile-title" style={{ paddingBottom: '32px' }}>
           <div className="profile-copy">
-            <h1 id="profile-title">Velhari Sankaran</h1>
-            <div className="intro-copy">
-              <p>Building my</p>
-              <p>&nbsp; <strong>Education</strong>, <strong>Financial stability</strong>, &amp; <strong>Business</strong>.</p>
+            <h1 style={{ fontSize: '24px', fontWeight: 'bold' }}>Velhari Sankaran</h1>
+            <h2 id="profile-title" style={{ fontSize: '20px', fontWeight: 600, marginTop: '8px' }}>Building my Education, Financial stability, &amp; Business.</h2>
+            <div className="intro-copy intro-copy--top" style={{ marginTop: '16px', marginBottom: '8px' }}>
+              <p>Inviting you to support my key milestones.</p>
             </div>
             <button className="button button--secondary profile-cta" type="button" onClick={() => scrollToSection("fundraising")}>
               <span>View Fundraising Goals</span>
               <Icon name="arrow_forward" />
             </button>
           </div>
+          <div className="avatar-frame" style={{ marginTop: '24px' }}>
+            <img src="/profile.jpg" alt="Velhari Sankaran" width="128" height="128" />
+          </div>
+          <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginTop: '12px' }}>Velhari Sankaran</h1>
         </section>
 
         <section className="section-block section-anchor" id="status" aria-labelledby="status-title">
-          <h2 id="status-title">Profile Details</h2>
+          <h2 id="status-title" className="section-header-with-icon">
+            <Icon name="person" />
+            Profile Details
+          </h2>
           <div className="profile-details-list">
             {statusItems.map((item, index) => (
               <div className={`status-row${index === statusItems.length - 1 ? " status-row--last" : ""}`} key={item.label}>
-                <span className="status-row__icon"><Icon name={item.icon} /></span>
-                <div className="status-row__content">
+                <div className="status-row__content" style={{ paddingLeft: 0 }}>
                   <div>
                     <p className="field-label">{item.label}</p>
                     <p className="field-value">{item.value}</p>
                     {item.detail && <p className="field-detail">{item.detail}</p>}
+                    {item.subDetail && <p className="field-detail">{item.subDetail}</p>}
                   </div>
                   {item.actionLabel && (
                     <button className="button button--primary button--small" type="button" onClick={() => announceComingSoon("Financial Position & Net Worth")}>
@@ -116,10 +120,13 @@ function HomePage() {
         </section>
 
         <section className="section-block section-anchor" id="categories" aria-labelledby="categories-title">
-          <h2 id="categories-title">Key Categories</h2>
-          <div className="category-grid">
+          <h2 id="categories-title" className="section-header-with-icon">
+            <Icon name="grid_view" />
+            Key Categories
+          </h2>
+          <div className="category-list">
             {categories.map((category) => (
-              <button className="category-card" type="button" key={category.label} onClick={() => scrollToSection(category.target)}>
+              <button className="category-list-item" type="button" key={category.label} onClick={() => scrollToSection(category.target)}>
                 <Icon name={category.icon} />
                 <span>{category.label}</span>
               </button>
@@ -128,7 +135,10 @@ function HomePage() {
         </section>
 
         <section className="section-block section-anchor" id="fundraising" aria-labelledby="fundraising-title">
-          <h2 id="fundraising-title">Fundraising Goals</h2>
+          <h2 id="fundraising-title" className="section-header-with-icon">
+            <Icon name="payments" />
+            Fundraising Goals
+          </h2>
           <div className="goal-list">
             {goals.map((goal) => (
               <article className="goal-card" id={goal.id} key={goal.id}>
@@ -140,15 +150,22 @@ function HomePage() {
                     <div className="goal-card__heading">
                       <div>
                         <h3>{goal.title}</h3>
-                        <p>{goal.subtitle}</p>
+                        <p className="goal-category-badge">{goal.subtitle}</p>
                       </div>
                       {goal.status && <span className="status-badge">{goal.status}</span>}
                     </div>
 
                     <div className="progress-area" aria-label={`${goal.progress}% complete`}>
-                      <div className="progress-labels">
-                        <span>{goal.progressLabel}: <strong>{goal.progressAmount}</strong></span>
-                        <span>Target: {goal.targetAmount}</span>
+                      <div className="progress-labels" style={{ flexDirection: 'column', gap: '2px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                          <span>{goal.progressLabel}: <strong>{goal.progressAmount}</strong></span>
+                          <span>Target: {goal.targetAmount}</span>
+                        </div>
+                        {goal.deadline && (
+                          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <span>Deadline: <strong>{goal.deadline}</strong></span>
+                          </div>
+                        )}
                       </div>
                       <div className="progress-track" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={goal.progress}>
                         <span style={{ width: `${goal.progress}%` }} />
@@ -179,7 +196,10 @@ function HomePage() {
         </section>
 
         <section className="section-block section-anchor latest-section" id="updates" aria-labelledby="updates-title">
-          <h2 id="updates-title">Latest Updates</h2>
+          <h2 id="updates-title" className="section-header-with-icon">
+            <Icon name="campaign" />
+            Latest Updates
+          </h2>
           <article className="update-card">
             <div className="update-card__header">
               <span className="update-icon"><Icon name="campaign" /></span>

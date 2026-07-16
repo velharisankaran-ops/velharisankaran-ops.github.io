@@ -1272,3 +1272,58 @@ a:focus-visible {
 .profile-details-list .status-row--last .status-row__content {
   border-bottom: none;
 }
+/* Latest Stitch Updates */
+.section-header-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--on-surface-variant);
+  font-weight: 500 !important;
+}
+.section-header-with-icon .material-symbols-outlined {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.category-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--outline-variant);
+  background: transparent;
+  color: var(--on-surface);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+.category-list-item:hover {
+  background: var(--surface-container-low);
+}
+.category-list-item .material-symbols-outlined {
+  color: var(--on-surface-variant);
+  font-weight: 300;
+}
+.category-list-item:hover .material-symbols-outlined {
+  color: var(--primary);
+}
+
+.goal-category-badge {
+  color: #ffffff !important;
+  background-color: #059669;
+  font-size: 10px !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  padding: 2px 4px;
+  display: inline-block;
+  margin-top: 4px !important;
+}

@@ -5,6 +5,7 @@ export interface StatusItem {
   label: string;
   value: string;
   detail?: string;
+  subDetail?: string;
   actionLabel?: string;
 }
 
@@ -23,6 +24,7 @@ export interface GoalItem {
   progressLabel: string;
   progressAmount: string;
   targetAmount: string;
+  deadline?: string;
   progress: number;
   status?: string;
   updated?: string;
@@ -76,6 +78,7 @@ export const statusItems: StatusItem[] = [
     label: "Job",
     value: "Digital Marketer",
     detail: "IZIN Designs Interior Studio, Kerala, India",
+    subDetail: "Salary: ₹17K",
   },
   {
     icon: "business_center",
@@ -98,11 +101,10 @@ export const statusItems: StatusItem[] = [
 ];
 
 export const categories: CategoryItem[] = [
-  { icon: "monitoring", label: "Track Progress", target: "status" },
+  { icon: "school", label: "Education", target: "status" },
+  { icon: "work", label: "Job", target: "status" },
   { icon: "rocket_launch", label: "Velnex", target: "updates" },
-  { icon: "school", label: "Education", target: "fundraising" },
-  { icon: "credit_card", label: "Financial Reset", target: "fundraising" },
-  { icon: "handshake", label: "Partner With Me", target: "fundraising" },
+  { icon: "credit_card", label: "Financials", target: "fundraising" },
   { icon: "menu_book", label: "My Story", target: "profile" },
 ];
 
@@ -114,12 +116,13 @@ export const goals: GoalItem[] = [
     image: "/bosse-education.jpg",
     imageAlt: "An open book, laptop and graduation cap representing education and progress",
     progressLabel: "Raised",
-    progressAmount: "₹7,000",
-    targetAmount: "₹35,000",
+    progressAmount: "₹9,000",
+    targetAmount: "₹26,000",
+    deadline: "15 Aug 2026",
     progress: 20,
     status: "Admission Stage",
     updated: "Updated 14 July 2026",
-    actionLabel: "View Goal",
+    actionLabel: "View",
   },
   {
     id: "debt-consolidation",
@@ -130,6 +133,7 @@ export const goals: GoalItem[] = [
     progressLabel: "Cleared",
     progressAmount: "₹5,000",
     targetAmount: "₹43,000",
+    deadline: "31 Dec 2026",
     progress: 12,
     tags: ["Ashva", "Signet", "Slice"],
     actionLabel: "View Breakdown",
