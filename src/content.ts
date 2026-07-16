@@ -79,7 +79,6 @@ export const statusItems: StatusItem[] = [
     label: "Job",
     value: "Digital Marketer",
     detail: "IZIN Designs Interior Studio, Kerala, India",
-    subDetail: "Salary: ₹17K",
   },
   {
     icon: "business_center",
