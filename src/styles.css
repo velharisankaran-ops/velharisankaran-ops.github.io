@@ -681,6 +681,542 @@ a:focus-visible {
   transform: translate(-50%, 0);
 }
 
+/* Plus Two goal details */
+.goal-details-shell {
+  --header-height: 64px;
+  --nav-height: 64px;
+}
+
+.goal-top-bar {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  height: 64px;
+  border-bottom: 1px solid var(--outline-variant);
+  background: var(--background);
+  box-shadow: 0 1px 3px rgba(20, 27, 43, 0.08);
+}
+
+.goal-top-bar__inner {
+  width: min(100%, 1200px);
+  height: 100%;
+  margin: 0 auto;
+  padding: 4px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.goal-top-bar__identity {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.goal-top-bar__identity > .icon-button {
+  width: 28px;
+  height: 40px;
+  flex: 0 0 28px;
+}
+
+.goal-top-bar__identity img {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--primary);
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.goal-top-bar h1,
+.goal-top-bar p {
+  margin: 0;
+}
+
+.goal-top-bar h1 {
+  color: var(--primary);
+  font-size: 20px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.goal-top-bar p {
+  margin-top: 2px;
+  color: var(--on-surface-variant);
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.goal-top-bar__notification {
+  color: var(--on-surface-variant);
+}
+
+.goal-details-main {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+}
+
+.goal-hero {
+  position: relative;
+  height: 192px;
+  overflow: hidden;
+  background: var(--surface-low);
+}
+
+.goal-hero > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.4;
+}
+
+.goal-hero__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0));
+}
+
+.goal-hero__content {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 24px;
+  left: 0;
+  width: min(calc(100% - 32px), 896px);
+  margin: 0 auto;
+}
+
+.goal-category {
+  width: max-content;
+  padding: 7px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  color: var(--on-secondary-container);
+  background: var(--secondary-container);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.goal-category .material-symbols-outlined {
+  font-size: 14px;
+}
+
+.goal-details-content {
+  position: relative;
+  z-index: 3;
+  width: min(calc(100% - 32px), 896px);
+  margin: -32px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.goal-progress-card,
+.data-table-card,
+.milestone-card {
+  border: 1px solid var(--outline-variant);
+  background: var(--surface);
+}
+
+.goal-progress-card {
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(20, 27, 43, 0.12);
+}
+
+.goal-progress-card__heading {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.goal-school-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  flex: 0 0 64px;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--primary);
+  background: rgba(53, 37, 205, 0.1);
+}
+
+.goal-school-icon .material-symbols-outlined {
+  font-size: 32px;
+}
+
+.goal-progress-card h2,
+.goal-progress-card p,
+.goal-detail-section h2,
+.milestone-card h3,
+.milestone-card p {
+  margin: 0;
+}
+
+.goal-progress-card h2 {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.goal-progress-card__heading p {
+  margin-top: 4px;
+  color: var(--on-surface-variant);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.goal-progress-card__summary {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.goal-kicker {
+  color: var(--primary);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.goal-progress-card__summary p {
+  margin-top: 4px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.goal-progress-card__summary p strong {
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.goal-progress-card__summary p span {
+  color: var(--on-surface-variant);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.supporter-badge {
+  padding: 6px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  color: var(--secondary);
+  background: var(--secondary-container);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.supporter-badge .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.goal-detail-progress {
+  width: 100%;
+  height: 12px;
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-high);
+}
+
+.goal-detail-progress span {
+  height: 100%;
+  display: block;
+  background: var(--primary);
+}
+
+.goal-progress-card__labels {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--on-surface-variant);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.goal-progress-card__labels strong {
+  color: var(--primary);
+}
+
+.goal-detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.goal-detail-section--spaced {
+  margin-top: 16px;
+}
+
+.goal-detail-section__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.goal-detail-section h2 {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.goal-detail-section__heading > span {
+  color: var(--primary);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.data-table-card {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.data-table-card table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--on-surface-variant);
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.data-table-card th,
+.data-table-card td {
+  padding: 12px;
+}
+
+.data-table-card thead {
+  border-bottom: 1px solid var(--outline-variant);
+  background: var(--surface-low);
+}
+
+.data-table-card th {
+  color: var(--on-surface);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.data-table-card th:last-child,
+.data-table-card:not(.data-table-card--details) td:last-child {
+  text-align: right;
+}
+
+.data-table-card tbody tr + tr {
+  border-top: 1px solid var(--outline-variant);
+}
+
+.data-table-card td:first-child {
+  width: 68%;
+}
+
+.data-table-card td:last-child {
+  color: var(--on-surface);
+  font-weight: 500;
+}
+
+.data-table-card td strong {
+  display: block;
+  color: var(--on-surface);
+  font-weight: 700;
+}
+
+.data-table-card td small {
+  display: block;
+  color: var(--on-surface-variant);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.data-table-card .grand-total {
+  color: var(--primary);
+  background: rgba(53, 37, 205, 0.05);
+}
+
+.data-table-card .grand-total td,
+.data-table-card .grand-total td:last-child {
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.table-note {
+  margin: -8px 4px 0;
+  color: var(--on-surface-variant);
+  font-size: 11px;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.data-table-card--details td:first-child {
+  width: 34%;
+}
+
+.data-table-card--details td:last-child {
+  font-weight: 400;
+}
+
+.data-table-card--details td.website-value {
+  color: var(--primary);
+}
+
+.data-table-card .empty-row td {
+  color: var(--on-surface-variant);
+  font-style: italic;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.milestone-list {
+  display: grid;
+  gap: 12px;
+}
+
+.milestone-card {
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  border-radius: 8px;
+}
+
+.milestone-card > span {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  flex: 0 0 40px;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--on-secondary-container);
+  background: var(--secondary-container);
+}
+
+.milestone-card > span .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.milestone-card h3 {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.milestone-card p {
+  color: var(--on-surface-variant);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.milestone-card--pending {
+  opacity: 0.6;
+}
+
+.milestone-card--pending > span {
+  color: var(--on-surface-variant);
+  background: var(--surface-highest);
+}
+
+.support-section {
+  padding-bottom: 24px;
+}
+
+.goal-details-shell .nav-item--active {
+  color: #dad7ff;
+  background: var(--primary-container);
+}
+
+.support-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.support-button {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 120ms ease, background-color 160ms ease;
+}
+
+.support-button:active {
+  transform: scale(0.98);
+}
+
+.support-button--primary {
+  color: var(--on-primary);
+  background: var(--primary);
+  box-shadow: 0 4px 12px rgba(53, 37, 205, 0.2);
+}
+
+.support-button--outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.support-button--quiet {
+  border: 1px solid var(--outline-variant);
+  color: var(--on-surface-variant);
+  background: transparent;
+}
+
+@media (max-width: 420px) {
+  .goal-progress-card__summary {
+    align-items: flex-start;
+  }
+
+  .goal-progress-card__summary p {
+    gap: 5px;
+  }
+
+  .goal-progress-card__summary p strong {
+    font-size: 28px;
+  }
+
+  .supporter-badge {
+    margin-top: 20px;
+    font-size: 11px;
+  }
+}
+
 @media (min-width: 640px) {
   .main-content {
     padding-right: 24px;

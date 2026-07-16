@@ -2,6 +2,8 @@ node_modules/
 dist/
 .npm-cache/
 .vite/
+.playwright-cli/
+output/
 *.log
 .DS_Store
 Thumbs.db

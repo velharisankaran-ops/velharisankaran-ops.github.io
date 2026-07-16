@@ -37,6 +37,37 @@ export interface NavigationItem {
   hasUnread?: boolean;
 }
 
+export interface GoalDetailRow {
+  label: string;
+  detail?: string;
+  value: string;
+}
+
+export interface GoalMilestone {
+  title: string;
+  description: string;
+  state: "complete" | "pending";
+}
+
+export interface GoalDetails {
+  slug: string;
+  title: string;
+  subtitle: string;
+  category: string;
+  heroImage: string;
+  raisedAmount: string;
+  targetAmount: string;
+  supporters: number;
+  progress: number;
+  remainingAmount: string;
+  invoice: string;
+  feeBreakdown: GoalDetailRow[];
+  enrollmentDetails: GoalDetailRow[];
+  contributors: GoalDetailRow[];
+  milestones: GoalMilestone[];
+  institutionPaymentUrl: string;
+}
+
 export const statusItems: StatusItem[] = [
   { icon: "calendar_today", label: "Age", value: "23" },
   { icon: "location_on", label: "Current Address", value: "Anchalasseri House, Njarakkal" },
@@ -112,3 +143,38 @@ export const navigation: NavigationItem[] = [
   { icon: "notifications", label: "Updates", target: "updates", hasUnread: true },
   { icon: "person", label: "Profile", target: "profile" },
 ];
+
+export const plusTwoGoal: GoalDetails = {
+  slug: "plus-two",
+  title: "Plus Two - Commerce",
+  subtitle: "BOSSE Board Higher Secondary Certification",
+  category: "Education Sponsorship",
+  heroImage: "/plus-two-hero.jpg",
+  raisedAmount: "₹9,000",
+  targetAmount: "₹35,000",
+  supporters: 1,
+  progress: 25.7,
+  remainingAmount: "₹26,000",
+  invoice: "Inv #BOS-000218",
+  feeBreakdown: [
+    { label: "Registration Fee", detail: "BOSSE Official Fees: Mandatory 5-year enrollment", value: "₹1,000" },
+    { label: "Program Fee", detail: "BOSSE Official Fees: 5 Core Commerce subjects", value: "₹6,000" },
+    { label: "Examination Fee", detail: "BOSSE Official Fees: ₹500 per paper × 5 subjects", value: "₹2,500" },
+    { label: "AMET Class & Assistance", detail: "AMET Institute Fees: Tuition, study notes, and support", value: "₹25,500" },
+  ],
+  enrollmentDetails: [
+    { label: "Course Enrolled", value: "Plus Two (+2) / Senior Secondary (Commerce Stream)" },
+    { label: "Examining Board", value: "Board of Open Schooling and Skill Education (BOSSE)" },
+    { label: "Enrolling Institution", value: "AMET Global (Third Floor, Central Tower, Thiruvalla, Kerala)" },
+    { label: "Institution Type", value: "Private Training & Educational Consultancy Center" },
+    { label: "Official Website", value: "ametglobal.com" },
+  ],
+  contributors: [
+    { label: "Self-Funded (Salary)", value: "₹9,000" },
+  ],
+  milestones: [
+    { title: "Enrollment Secured", description: "Initial registration and core books purchased.", state: "complete" },
+    { title: "Exam Fee Deposit", description: "Target: ₹20,000 to clear board examination dues.", state: "pending" },
+  ],
+  institutionPaymentUrl: "https://zohosecurepay.in/books/ametglobal/secure?CInvoiceID=2-f285617c4a13c5d33f34b9b617687bae8ae466897c6649607b021e56c356f1a0646a53dd8ed69f1b773aba0674c4215bdaee8aef44d1dd5a127687162be70f52bf747bf136c83d3b#/invoices/payment?invoice_ids=2-f285617c4a13c5d33f34b9b617687bae8ae466897c6649607b021e56c356f1a0646a53dd8ed69f1b773aba0674c4215bdaee8aef44d1dd5a127687162be70f52bf747bf136c83d3b",
+};

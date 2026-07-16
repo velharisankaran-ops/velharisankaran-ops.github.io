@@ -1,0 +1,292 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Goal Details - Velhari</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#002113",
+                        "on-surface-variant": "#464555",
+                        "on-primary-container": "#dad7ff",
+                        "surface-dim": "#d3daef",
+                        "secondary-fixed-dim": "#4edea3",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#4f46e5",
+                        "secondary-container": "#6cf8bb",
+                        "secondary-fixed": "#6ffbbe",
+                        "outline-variant": "#c7c4d8",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#a44100",
+                        "surface-container-high": "#e1e8fd",
+                        "on-tertiary-container": "#ffd2be",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#293040",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-variant": "#dce2f7",
+                        "tertiary": "#7e3000",
+                        "primary": "#3525cd",
+                        "surface-bright": "#f9f9ff",
+                        "inverse-primary": "#c3c0ff",
+                        "on-surface": "#141b2b",
+                        "background": "#f9f9ff",
+                        "on-background": "#141b2b",
+                        "surface-container": "#e9edff",
+                        "secondary": "#006c49",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-highest": "#dce2f7",
+                        "on-primary-fixed": "#0f0069",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#351000",
+                        "primary-fixed": "#e2dfff",
+                        "surface": "#f9f9ff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-tint": "#4d44e3",
+                        "outline": "#777587",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "12px",
+                        "card-padding": "16px",
+                        "unit": "4px",
+                        "container-margin": "16px",
+                        "section-gap": "24px"
+                    },
+                    "fontFamily": {
+                        "display": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["11px", {"lineHeight": "1", "letterSpacing": "0", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopAppBar consistent with SCREEN_11 -->
+<header class="w-full sticky top-0 bg-surface border-b border-outline-variant shadow-sm z-50">
+<div class="flex items-center justify-between px-container-margin py-unit w-full max-w-[1200px] mx-auto h-16">
+<div class="flex items-center gap-4">
+<button aria-label="Go back" class="material-symbols-outlined text-primary cursor-pointer active:opacity-80">arrow_back</button>
+<div class="flex items-center gap-3">
+<img alt="Velhari Sankaran" class="w-10 h-10 rounded-full border-2 border-primary object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLuUO3HoORpCMi__Y88towoVRet64Sxp4CqZbvtFvDwULAq9_X8K8rgzNGa5iCrDX1yj-d1tGZ_Kfjr_jHpr-iWXUcVkSB_EFITdxdis2l099OhgqbDDIOqgXU1grBOayTDvidEIH5mFgDSALUPxqnQ2uZxvzFAJbyWK5WmaHa0__pG8lWo6d7XcAAkPNV3eWJPx_Vk8_UnVyh161u5eTi6b4jV8sVpW3d7NG7o_lQZ-c57kwSCCl6j79zE">
+<div>
+<h1 class="font-display text-headline-md font-bold text-primary leading-tight">Goal Details</h1>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider font-bold">FounderLed Finance</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="Notifications" class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-80">notifications</button>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-[1200px] mx-auto w-full">
+<!-- Hero Section from SCREEN_2/SCREEN_7 -->
+<section class="relative h-48 bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD98yGqBWGzQ7ZBEOpQSy-uRksvtt8zCN78yfhKM-ZM6_3J3tRV7F4OtR1Vmvq1QNl9HJS-4HFhul0wakXJYBqRrvMHYZxwAzJllWVSARYlsSHirpLtoEY31KtQXfoxxznMuGp4Gnt69F-a6_QFBu2waoQJzQc7KXecXiK0wehozmQgeSorT-iLLWzQN1JyV5Q7skC4HFuNxRkK-SVXnUxk6UzAIXpSiT1MCdOdMcqing24tOJlnFPb')"></div>
+<div class="relative h-full flex flex-col justify-end p-container-margin pb-6 max-w-4xl mx-auto z-20">
+<div class="mb-3 inline-flex items-center px-3 py-1 bg-secondary-container text-on-secondary-container text-label-md font-label-md rounded-full w-fit">
+<span class="material-symbols-outlined text-[14px] mr-1" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    Education Sponsorship
+                </div>
+</div>
+</section>
+<div class="px-container-margin -mt-8 relative z-10 max-w-4xl mx-auto space-y-gutter">
+<!-- Fundraising Progress Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-card-padding shadow-md">
+<div class="flex items-start gap-4 mb-6">
+<div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div>
+<h2 class="text-headline-lg font-bold text-on-surface leading-tight">Plus Two - Commerce</h2>
+<p class="text-on-surface-variant text-body-md mt-1">BOSSE Board Higher Secondary Certification</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="text-label-sm font-bold text-primary uppercase tracking-wider">Fundraising Progress</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-[32px] font-bold text-on-surface">₹9,000</span>
+<span class="text-body-md text-on-surface-variant">of ₹35,000</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-secondary font-medium bg-secondary-container px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px]">group</span>
+<span class="text-label-md">1 supporters</span>
+</div>
+</div>
+<div class="relative w-full h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-primary transition-all duration-1000 ease-out" style="width: 25.7%;"></div>
+</div>
+<div class="flex justify-between text-label-md">
+<span class="font-bold text-primary">25.7% reached</span>
+<span class="text-on-surface-variant font-medium">₹26,000 to go</span>
+</div>
+</div>
+</div>
+<!-- Goal Overview Section -->
+<!-- Key Milestones Section -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-headline-md font-bold text-on-surface">Fee Breakdown</h3>
+<span class="text-label-sm font-bold text-primary uppercase tracking-wider">Inv #BOS-000218</span>
+</div>
+<div class="overflow-hidden border border-outline-variant rounded-lg bg-surface-container-lowest">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="p-3 text-label-md font-bold text-on-surface uppercase tracking-wider">Component</th>
+<th class="p-3 text-label-md font-bold text-on-surface uppercase tracking-wider text-right">Amount</th>
+</tr>
+</thead>
+<tbody class="text-body-md text-on-surface-variant">
+<tr class="border-b border-outline-variant">
+<td class="p-3">
+<div class="font-bold text-on-surface">Registration Fee</div>
+<div class="text-[12px]">BOSSE Official Fees: Mandatory 5-year enrollment</div>
+</td>
+<td class="p-3 text-right font-medium text-on-surface">₹1,000</td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="p-3">
+<div class="font-bold text-on-surface">Program Fee</div>
+<div class="text-[12px]">BOSSE Official Fees: 5 Core Commerce subjects</div>
+</td>
+<td class="p-3 text-right font-medium text-on-surface">₹6,000</td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="p-3">
+<div class="font-bold text-on-surface">Examination Fee</div>
+<div class="text-[12px]">BOSSE Official Fees: ₹500 per paper × 5 subjects</div>
+</td>
+<td class="p-3 text-right font-medium text-on-surface">₹2,500</td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="p-3">
+<div class="font-bold text-on-surface">AMET Class &amp; Assistance</div>
+<div class="text-[12px]">AMET Institute Fees: Tuition, study notes, and support</div>
+</td>
+<td class="p-3 text-right font-medium text-on-surface">₹25,500</td>
+</tr>
+<tr class="bg-primary/5">
+<td class="p-3 font-bold text-primary">GRAND TOTAL</td>
+<td class="p-3 text-right font-bold text-primary text-[16px]">₹35,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-[11px] text-on-surface-variant italic px-1">* Amounts as per the official Bill of Supply provided by AMET Global.</p>
+</section><section class="space-y-4 pt-4"><h3 class="text-headline-md font-bold text-on-surface">Enrollment Details Summary</h3><div class="overflow-hidden border border-outline-variant rounded-lg bg-surface-container-lowest"><table class="w-full text-left border-collapse"><thead><tr class="bg-surface-container-low border-b border-outline-variant"><th class="p-3 text-label-md font-bold text-on-surface uppercase tracking-wider">Detail</th><th class="p-3 text-label-md font-bold text-on-surface uppercase tracking-wider">Information</th></tr></thead><tbody class="text-body-md text-on-surface-variant"><tr class="border-b border-outline-variant"><td class="p-3 font-bold text-on-surface">Course Enrolled</td><td class="p-3">Plus Two (+2) / Senior Secondary (Commerce Stream)</td></tr><tr class="border-b border-outline-variant"><td class="p-3 font-bold text-on-surface">Examining Board</td><td class="p-3">Board of Open Schooling and Skill Education (BOSSE)</td></tr><tr class="border-b border-outline-variant"><td class="p-3 font-bold text-on-surface">Enrolling Institution</td><td class="p-3">AMET Global (Third Floor, Central Tower, Thiruvalla, Kerala)</td></tr><tr class="border-b border-outline-variant"><td class="p-3 font-bold text-on-surface">Institution Type</td><td class="p-3">Private Training &amp; Educational Consultancy Center</td></tr><tr><td class="p-3 font-bold text-on-surface">Official Website</td><td class="p-3 text-primary">ametglobal.com</td></tr></tbody></table></div></section><section class="space-y-4 pt-4"><h3 class="text-headline-md font-bold text-on-surface">Contributor Ledger</h3><div class="overflow-hidden border border-outline-variant rounded-lg bg-surface-container-lowest"><table class="w-full text-left border-collapse"><thead><tr class="bg-surface-container-low border-b border-outline-variant"><th class="p-3 text-label-md font-bold text-on-surface uppercase tracking-wider">Contributor</th><th class="p-3 text-label-md font-bold text-on-surface uppercase tracking-wider text-right">Amount</th></tr></thead><tbody class="text-body-md text-on-surface-variant"><tr class="border-b border-outline-variant"><td class="p-3 font-bold text-on-surface">Self-Funded (Salary)</td><td class="p-3 text-right font-medium text-on-surface">₹9,000</td></tr><tr><td class="p-3 text-center italic opacity-60" colspan="2">Waiting for more backers...</td></tr></tbody></table></div></section><section class="space-y-4">
+<h3 class="text-headline-md font-bold text-on-surface">Key Milestones</h3>
+<div class="grid grid-cols-1 gap-3">
+<div class="flex gap-4 p-card-padding bg-surface-container-lowest border border-outline-variant rounded-lg">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[20px]">check</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Enrollment Secured</p>
+<p class="text-body-md text-on-surface-variant">Initial registration and core books purchased.</p>
+</div>
+</div>
+<div class="flex gap-4 p-card-padding bg-surface-container-lowest border border-outline-variant rounded-lg opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">pending</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Exam Fee Deposit</p>
+<p class="text-body-md text-on-surface-variant">Target: ₹20,000 to clear board examination dues.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Support Options Section -->
+<section class="space-y-4 pb-24">
+<h3 class="text-headline-md font-bold text-on-surface">Support Options</h3>
+<div class="flex flex-col gap-3">
+<button class="w-full h-14 bg-primary text-on-primary font-bold rounded-xl shadow-md hover:opacity-90 transition-all flex items-center justify-center gap-2 active:scale-[0.98]">
+<span class="material-symbols-outlined">favorite</span>
+                        Support This Goal
+                    </button>
+<a href="https://zohosecurepay.in/books/ametglobal/secure?CInvoiceID=2-f285617c4a13c5d33f34b9b617687bae8ae466897c6649607b021e56c356f1a0646a53dd8ed69f1b773aba0674c4215bdaee8aef44d1dd5a127687162be70f52bf747bf136c83d3b#/invoices/payment?invoice_ids=2-f285617c4a13c5d33f34b9b617687bae8ae466897c6649607b021e56c356f1a0646a53dd8ed69f1b773aba0674c4215bdaee8aef44d1dd5a127687162be70f52bf747bf136c83d3b" target="_blank" class="w-full h-14 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary/5 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"><span class="material-symbols-outlined">account_balance</span>Pay Institution Directly</a>
+<button class="w-full h-14 border border-outline-variant text-on-surface-variant font-bold rounded-xl hover:bg-surface-container-low transition-all flex items-center justify-center gap-2 active:scale-[0.98]">
+<span class="material-symbols-outlined">share</span>
+                        Share</button>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar consistent with SCREEN_11 -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant shadow-lg flex justify-around items-center h-16 px-gutter pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-3 py-1 scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">timeline</span>
+<span class="font-label-sm text-label-sm">Journey</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors relative" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-sm text-label-sm">Updates</span>
+<span class="absolute top-0 right-1 w-2 h-2 bg-error rounded-full"></span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+
+
+
+
+
+
+</body></html>

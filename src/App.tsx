@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { categories, goals, navigation, statusItems, type SectionId } from "./content";
+import { GoalDetailsPage } from "./GoalDetails";
 
 const sectionLabels: Record<SectionId, string> = {
   profile: "Home",
@@ -17,7 +18,7 @@ function Icon({ name, filled = false }: { name: string; filled?: boolean }) {
   );
 }
 
-export function App() {
+function HomePage() {
   const [activeSection, setActiveSection] = useState<SectionId>("profile");
   const [notice, setNotice] = useState("");
   const noticeTimer = useRef<number | undefined>(undefined);
@@ -164,7 +165,7 @@ export function App() {
                     <button
                       className={`button ${goal.status ? "button--primary" : "button--secondary"}`}
                       type="button"
-                      onClick={() => announceComingSoon(goal.title)}
+                      onClick={() => goal.id === "bosse-plus-two" ? window.location.hash = "/goals/plus-two" : announceComingSoon(goal.title)}
                     >
                       {goal.actionLabel}
                     </button>
@@ -212,4 +213,16 @@ export function App() {
       </div>
     </div>
   );
+}
+
+export function App() {
+  const [route, setRoute] = useState(window.location.hash);
+
+  useEffect(() => {
+    const handleRoute = () => setRoute(window.location.hash);
+    window.addEventListener("hashchange", handleRoute);
+    return () => window.removeEventListener("hashchange", handleRoute);
+  }, []);
+
+  return route.startsWith("#/goals/plus-two") ? <GoalDetailsPage /> : <HomePage />;
 }
