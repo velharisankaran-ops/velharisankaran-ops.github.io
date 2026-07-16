@@ -74,49 +74,51 @@ function HomePage() {
       </header>
 
       <main className="main-content">
-        <section className="profile-section section-anchor" id="profile" aria-labelledby="profile-title" style={{ paddingBottom: '32px' }}>
-          <div className="profile-copy">
-            <h2 id="profile-title" style={{ fontSize: '20px', fontWeight: 600, marginTop: '8px' }}>Building my Education, Financial stability, &amp; Business.</h2>
-            <div className="intro-copy intro-copy--top" style={{ marginTop: '16px', marginBottom: '8px' }}>
-              <p>Inviting you to support my key milestones.</p>
-            </div>
-            <button className="button button--secondary profile-cta" type="button" onClick={() => scrollToSection("fundraising")}>
-              <span>View Fundraising Goals</span>
-              <Icon name="arrow_forward" />
-            </button>
-          </div>
-          <div className="avatar-frame" style={{ marginTop: '24px' }}>
-            <img src="/profile.jpg" alt="Velhari Sankaran" width="128" height="128" />
-          </div>
-          <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginTop: '12px' }}>Velhari Sankaran</h1>
-        </section>
-
-        <section className="section-block section-anchor" id="status" aria-labelledby="status-title">
-          <h2 id="status-title" className="section-header-with-icon">
-            <Icon name="person" />
-            Profile Details
-          </h2>
-          <div className="profile-details-list">
-            {statusItems.map((item, index) => (
-              <div className={`status-row${index === statusItems.length - 1 ? " status-row--last" : ""}`} key={item.label}>
-                <div className="status-row__content" style={{ paddingLeft: 0 }}>
-                  <div>
-                    <p className="field-label">{item.label}</p>
-                    <p className="field-value">{item.value}</p>
-                    {item.detail && <p className="field-detail">{item.detail}</p>}
-                    {item.subDetail && <p className="field-detail">{item.subDetail}</p>}
-                  </div>
-                  {item.actionLabel && (
-                    <button className="button button--primary button--small" type="button" onClick={() => announceComingSoon("Financial Position & Net Worth")}>
-                      <span>{item.actionLabel}</span>
-                      <Icon name="open_in_new" />
-                    </button>
-                  )}
-                </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <section className="profile-section section-anchor" id="profile" aria-labelledby="profile-title">
+            <div className="profile-copy">
+              <h2 id="profile-title" style={{ fontSize: '20px', fontWeight: 600, marginTop: '8px' }}>Building my Education, Financial stability, &amp; Business.</h2>
+              <div className="intro-copy intro-copy--top" style={{ marginTop: '16px', marginBottom: '8px' }}>
+                <p>Inviting you to support my key milestones.</p>
               </div>
-            ))}
-          </div>
-        </section>
+              <button className="button button--secondary profile-cta" type="button" onClick={() => scrollToSection("fundraising")}>
+                <span>View Fundraising Goals</span>
+                <Icon name="arrow_forward" />
+              </button>
+            </div>
+            <div className="avatar-frame" style={{ marginTop: '24px' }}>
+              <img src="/profile.jpg" alt="Velhari Sankaran" width="128" height="128" />
+            </div>
+            <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginTop: '12px' }}>Velhari Sankaran</h1>
+          </section>
+
+          <section className="section-block section-anchor" id="status" aria-labelledby="status-title">
+            <h2 id="status-title" className="section-header-with-icon">
+              <Icon name="person" />
+              Profile Details
+            </h2>
+            <div className="profile-details-list">
+              {statusItems.map((item, index) => (
+                <div className={`status-row${index === statusItems.length - 1 ? " status-row--last" : ""}`} key={item.label}>
+                  <div className="status-row__content" style={{ paddingLeft: 0 }}>
+                    <div>
+                      <p className="field-label">{item.label}</p>
+                      <p className="field-value">{item.value}</p>
+                      {item.detail && <p className="field-detail">{item.detail}</p>}
+                      {item.subDetail && <p className="field-detail">{item.subDetail}</p>}
+                    </div>
+                    {item.actionLabel && (
+                      <button className="button button--primary button--small" type="button" onClick={() => announceComingSoon("Financial Position & Net Worth")}>
+                        <span>{item.actionLabel}</span>
+                        <Icon name="open_in_new" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
 
         <section className="section-block section-anchor" id="categories" aria-labelledby="categories-title">
           <h2 id="categories-title" className="section-header-with-icon">
