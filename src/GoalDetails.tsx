@@ -138,7 +138,10 @@ export function GoalDetailsPage() {
           </section>
 
           <section className="goal-detail-section goal-detail-section--spaced" aria-labelledby="ledger-title">
-            <h2 id="ledger-title">Contributor Ledger</h2>
+            <div className="goal-detail-section__heading">
+              <Icon name="group" />
+              <h2 id="ledger-title">Contributor Ledger</h2>
+            </div>
             <div className="data-table-card">
               <table>
                 <thead><tr><th>Contributor</th><th>Amount</th></tr></thead>
@@ -150,12 +153,17 @@ export function GoalDetailsPage() {
             </div>
           </section>
 
-          <section className="goal-detail-section" aria-labelledby="milestones-title">
-            <h2 id="milestones-title">Key Milestones</h2>
+          <section className="goal-detail-section goal-detail-section--spaced" aria-labelledby="milestones-title">
+            <div className="goal-detail-section__heading">
+              <Icon name="flag" />
+              <h2 id="milestones-title">Key Milestones</h2>
+            </div>
             <div className="milestone-list">
               {goal.milestones.map((milestone) => (
                 <article className={`milestone-card${milestone.state === "pending" ? " milestone-card--pending" : ""}`} key={milestone.title}>
-                  <span><Icon name={milestone.state === "complete" ? "check" : "pending"} /></span>
+                  <div className="milestone-card__icon">
+                    <Icon name={milestone.state === "complete" ? "check" : "pending"} />
+                  </div>
                   <div><h3>{milestone.title}</h3><p>{milestone.description}</p></div>
                 </article>
               ))}
@@ -163,7 +171,10 @@ export function GoalDetailsPage() {
           </section>
 
           <section className="goal-detail-section support-section" aria-labelledby="support-title">
-            <h2 id="support-title">Support Options</h2>
+            <div className="goal-detail-section__heading">
+              <Icon name="favorite" />
+              <h2 id="support-title">Support Options</h2>
+            </div>
             <div className="support-actions">
               <button className="support-button support-button--primary" type="button" onClick={() => announce("Direct supporter checkout is coming next. You can pay the institution directly below.")}><Icon name="favorite" />Support This Goal</button>
               <a className="support-button support-button--outline" href={goal.institutionPaymentUrl} target="_blank" rel="noreferrer"><Icon name="account_balance" />Pay Institution Directly</a>

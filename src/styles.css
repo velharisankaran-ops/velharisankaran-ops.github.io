@@ -1150,7 +1150,8 @@ a:focus-visible {
 }
 
 .milestone-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
@@ -1159,50 +1160,58 @@ a:focus-visible {
   display: flex;
   gap: 16px;
   border-radius: 8px;
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-.milestone-card > span {
+.milestone-card__icon {
   width: 40px;
   height: 40px;
-  display: grid;
-  flex: 0 0 40px;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   border-radius: 999px;
   color: var(--on-secondary-container);
   background: var(--secondary-container);
+  border: 1px solid rgba(5, 150, 105, 0.2);
 }
 
-.milestone-card > span .material-symbols-outlined {
-  font-size: 20px;
+.milestone-card__icon .material-symbols-outlined {
+  font-size: 18px;
 }
 
 .milestone-card h3 {
   font-size: 14px;
-  line-height: 1.5;
   font-weight: 700;
+  color: var(--primary);
+  margin: 0;
 }
 
 .milestone-card p {
+  font-size: 12px;
   color: var(--on-surface-variant);
-  font-size: 14px;
-  line-height: 1.5;
+  margin: 2px 0 0 0;
 }
 
 .milestone-card--pending {
   opacity: 0.6;
 }
 
-.milestone-card--pending > span {
+.milestone-card--pending .milestone-card__icon {
   color: var(--on-surface-variant);
-  background: var(--surface-highest);
+  background: var(--surface-container-high);
+  border-color: transparent;
 }
 
 .support-section {
-  padding-bottom: 24px;
+  padding-top: 16px;
+  padding-bottom: 112px;
 }
 
 .goal-details-shell .nav-item--active {
-  color: #dad7ff;
+  color: var(--on-primary-container);
   background: var(--primary-container);
 }
 
@@ -1214,18 +1223,23 @@ a:focus-visible {
 
 .support-button {
   width: 100%;
-  height: 56px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border-radius: 12px;
+  border-radius: 8px;
   font-size: 14px;
   line-height: 1;
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 120ms ease, background-color 160ms ease;
+  transition: transform 120ms ease, background-color 160ms ease, opacity 160ms ease;
+  border: none;
+}
+
+.support-button .material-symbols-outlined {
+  font-size: 20px;
 }
 
 .support-button:active {
@@ -1233,21 +1247,33 @@ a:focus-visible {
 }
 
 .support-button--primary {
-  color: var(--on-primary);
-  background: var(--primary);
-  box-shadow: 0 4px 12px rgba(53, 37, 205, 0.2);
+  color: #fff;
+  background: var(--secondary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.support-button--primary:hover {
+  opacity: 0.9;
 }
 
 .support-button--outline {
-  border: 2px solid var(--primary);
-  color: var(--primary);
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
   background: transparent;
 }
 
+.support-button--outline:hover {
+  background: rgba(5, 150, 105, 0.05);
+}
+
 .support-button--quiet {
-  border: 1px solid var(--outline-variant);
+  border: 1px solid var(--outline);
   color: var(--on-surface-variant);
   background: transparent;
+}
+
+.support-button--quiet:hover {
+  background: var(--surface-container-low);
 }
 
 @media (max-width: 420px) {
