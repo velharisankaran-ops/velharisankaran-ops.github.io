@@ -107,7 +107,11 @@ export function GoalDetailsPage() {
           </section>
 
           <section className="goal-detail-section" aria-labelledby="fee-title">
-            <div className="goal-detail-section__heading"><h2 id="fee-title">Fee Breakdown</h2><span>{goal.invoice}</span></div>
+            <div className="goal-detail-section__heading">
+              <Icon name="receipt_long" />
+              <h2 id="fee-title">Fee Breakdown</h2>
+              <span>{goal.invoice}</span>
+            </div>
             <div className="data-table-card">
               <table>
                 <thead><tr><th>Component</th><th>Amount</th></tr></thead>
@@ -121,7 +125,10 @@ export function GoalDetailsPage() {
           </section>
 
           <section className="goal-detail-section goal-detail-section--spaced" aria-labelledby="enrollment-title">
-            <h2 id="enrollment-title">Enrollment Details Summary</h2>
+            <div className="goal-detail-section__heading">
+              <Icon name="assignment" />
+              <h2 id="enrollment-title">Enrollment Details Summary</h2>
+            </div>
             <div className="data-table-card data-table-card--details">
               <table>
                 <thead><tr><th>Detail</th><th>Information</th></tr></thead>
