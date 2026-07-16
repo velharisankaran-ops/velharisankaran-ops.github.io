@@ -57,19 +57,21 @@ export function GoalDetailsPage() {
 
       <header className="goal-top-bar">
         <div className="goal-top-bar__inner">
-          <div className="goal-top-bar__identity">
+          <div className="goal-top-bar__left">
             <button className="icon-button" type="button" aria-label="Go back" onClick={() => history.length > 1 ? history.back() : goHome()}>
               <Icon name="arrow_back" />
             </button>
-            <img src="/goal-profile.jpg" alt="Velhari Sankaran" width="40" height="40" />
-            <div>
-              <h1>Goal Details</h1>
-              <p>FounderLed Finance</p>
+            <div className="goal-top-bar__title">
+              <Icon name="account_balance_wallet" />
+              <h1>Fundraising</h1>
             </div>
           </div>
-          <button className="icon-button goal-top-bar__notification" type="button" aria-label="Notifications" onClick={() => announce("Updates are available from the Home dashboard.")}>
-            <Icon name="notifications" />
-          </button>
+          <div className="goal-top-bar__right">
+            <img src="/profile.jpg" alt="Velhari Sankaran" className="header-profile-img" />
+            <button className="icon-button goal-top-bar__notification" type="button" aria-label="Notifications" onClick={() => announce("Updates are available from the Home dashboard.")}>
+              <Icon name="notifications" />
+            </button>
+          </div>
         </div>
       </header>
 

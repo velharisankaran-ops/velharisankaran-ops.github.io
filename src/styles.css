@@ -707,25 +707,28 @@ a:focus-visible {
   justify-content: space-between;
 }
 
-.goal-top-bar__identity {
+.goal-top-bar__left {
   min-width: 0;
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.goal-top-bar__identity > .icon-button {
+.goal-top-bar__left > .icon-button {
   width: 28px;
   height: 40px;
   flex: 0 0 28px;
 }
 
-.goal-top-bar__identity img {
-  width: 40px;
-  height: 40px;
-  border: 2px solid var(--primary);
-  border-radius: 999px;
-  object-fit: cover;
+.goal-top-bar__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.goal-top-bar__title .material-symbols-outlined {
+  font-size: 24px;
+  color: var(--primary);
 }
 
 .goal-top-bar h1,
@@ -741,18 +744,22 @@ a:focus-visible {
   letter-spacing: -0.01em;
 }
 
-.goal-top-bar p {
-  margin-top: 2px;
-  color: var(--on-surface-variant);
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.goal-top-bar__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.goal-top-bar__right img {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--outline-variant);
+  border-radius: 999px;
+  object-fit: cover;
 }
 
 .goal-top-bar__notification {
-  color: var(--on-surface-variant);
+  color: var(--primary);
 }
 
 .goal-details-main {
