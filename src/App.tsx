@@ -80,14 +80,14 @@ function HomePage() {
               <div className="avatar-frame" style={{ margin: 0 }}>
                 <img src="/profile.jpg" alt="Velhari Sankaran" width="128" height="128" />
               </div>
-              <h1 style={{ margin: 0, fontSize: '24px', fontWeight: 'bold' }}>Velhari Sankaran</h1>
+              <h1 className="profile-name">Velhari Sankaran</h1>
             </div>
             
             <div className="profile-copy" style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center', marginTop: '24px' }}>
               <h2 id="profile-title" className="hero-title">Building my Education, Financial stability, &amp; Business.</h2>
-              <p style={{ margin: 0, color: 'var(--on-surface-variant)' }}>Inviting you to support my key milestones.</p>
+              <p className="hero-subtitle">Inviting you to support my key milestones.</p>
               <button className="button button--secondary profile-cta" style={{ marginTop: '8px' }} type="button" onClick={() => scrollToSection("fundraising")}>
-                <span>View Fundraising Goals</span>
+                <span>View Fundraising</span>
                 <Icon name="arrow_forward" />
               </button>
             </div>
