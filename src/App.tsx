@@ -77,7 +77,7 @@ function HomePage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           <section className="profile-section section-anchor" id="profile" aria-labelledby="profile-title">
             <div className="profile-copy" style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-              <h2 id="profile-title" style={{ margin: 0, fontSize: '20px', fontWeight: 600 }}>Building my Education, Financial stability, &amp; Business.</h2>
+              <h2 id="profile-title" className="hero-title">Building my Education, Financial stability, &amp; Business.</h2>
               <p style={{ margin: 0, color: 'var(--on-surface-variant)' }}>Inviting you to support my key milestones.</p>
               <button className="button button--secondary profile-cta" style={{ marginTop: '8px' }} type="button" onClick={() => scrollToSection("fundraising")}>
                 <span>View Fundraising Goals</span>
