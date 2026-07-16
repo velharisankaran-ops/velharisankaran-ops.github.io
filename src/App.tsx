@@ -76,7 +76,6 @@ function HomePage() {
       <main className="main-content">
         <section className="profile-section section-anchor" id="profile" aria-labelledby="profile-title" style={{ paddingBottom: '32px' }}>
           <div className="profile-copy">
-            <h1 style={{ fontSize: '24px', fontWeight: 'bold' }}>Velhari Sankaran</h1>
             <h2 id="profile-title" style={{ fontSize: '20px', fontWeight: 600, marginTop: '8px' }}>Building my Education, Financial stability, &amp; Business.</h2>
             <div className="intro-copy intro-copy--top" style={{ marginTop: '16px', marginBottom: '8px' }}>
               <p>Inviting you to support my key milestones.</p>
