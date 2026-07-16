@@ -76,23 +76,19 @@ function HomePage() {
       <main className="main-content">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           <section className="profile-section section-anchor" id="profile" aria-labelledby="profile-title">
-            <div className="profile-copy" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <h2 id="profile-title" style={{ fontSize: '20px', fontWeight: 600 }}>Building my Education, Financial stability, &amp; Business.</h2>
-              <div className="intro-copy intro-copy--top">
-                <p style={{ color: 'var(--on-surface-variant)' }}>Inviting you to support my key milestones.</p>
-              </div>
-              <div style={{ paddingTop: '8px' }}>
-                <button className="button button--secondary profile-cta" type="button" onClick={() => scrollToSection("fundraising")}>
-                  <span>View Fundraising Goals</span>
-                  <Icon name="arrow_forward" />
-                </button>
-              </div>
+            <div className="profile-copy" style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
+              <h2 id="profile-title" style={{ margin: 0, fontSize: '20px', fontWeight: 600 }}>Building my Education, Financial stability, &amp; Business.</h2>
+              <p style={{ margin: 0, color: 'var(--on-surface-variant)' }}>Inviting you to support my key milestones.</p>
+              <button className="button button--secondary profile-cta" style={{ marginTop: '8px' }} type="button" onClick={() => scrollToSection("fundraising")}>
+                <span>View Fundraising Goals</span>
+                <Icon name="arrow_forward" />
+              </button>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', marginTop: '32px' }}>
-              <div className="avatar-frame">
+              <div className="avatar-frame" style={{ margin: 0 }}>
                 <img src="/profile.jpg" alt="Velhari Sankaran" width="128" height="128" />
               </div>
-              <h1 style={{ fontSize: '24px', fontWeight: 'bold' }}>Velhari Sankaran</h1>
+              <h1 style={{ margin: 0, fontSize: '24px', fontWeight: 'bold' }}>Velhari Sankaran</h1>
             </div>
           </section>
 
