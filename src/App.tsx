@@ -162,13 +162,13 @@ function HomePage() {
                         <span style={{ width: `${goal.progress}%` }} />
                       </div>
                       <div className="progress-labels" style={{ flexDirection: 'column', gap: '4px' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '15px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px' }}>
                           <span><strong>{goal.progressAmount}</strong> {goal.progressLabel.toLowerCase()} of {goal.targetAmount} goal</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="goal-context" style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '16px', fontSize: '14px', color: 'var(--on-surface-variant)' }}>
+                    <div className="goal-context" style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginTop: '12px', fontSize: '11px', color: 'var(--on-surface-variant)', fontWeight: 500 }}>
                        {goal.status && <span>Current Stage: <strong style={{ color: 'var(--on-surface)' }}>{goal.status}</strong></span>}
                        {goal.deadline && <span>Target Date: <strong style={{ color: 'var(--on-surface)' }}>{goal.deadline}</strong></span>}
                     </div>
