@@ -76,20 +76,24 @@ function HomePage() {
       <main className="main-content">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           <section className="profile-section section-anchor" id="profile" aria-labelledby="profile-title">
-            <div className="profile-copy">
-              <h2 id="profile-title" style={{ fontSize: '20px', fontWeight: 600, marginTop: '8px' }}>Building my Education, Financial stability, &amp; Business.</h2>
-              <div className="intro-copy intro-copy--top" style={{ marginTop: '16px', marginBottom: '8px' }}>
-                <p>Inviting you to support my key milestones.</p>
+            <div className="profile-copy" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <h2 id="profile-title" style={{ fontSize: '20px', fontWeight: 600 }}>Building my Education, Financial stability, &amp; Business.</h2>
+              <div className="intro-copy intro-copy--top">
+                <p style={{ color: 'var(--on-surface-variant)' }}>Inviting you to support my key milestones.</p>
               </div>
-              <button className="button button--secondary profile-cta" type="button" onClick={() => scrollToSection("fundraising")}>
-                <span>View Fundraising Goals</span>
-                <Icon name="arrow_forward" />
-              </button>
+              <div style={{ paddingTop: '8px' }}>
+                <button className="button button--secondary profile-cta" type="button" onClick={() => scrollToSection("fundraising")}>
+                  <span>View Fundraising Goals</span>
+                  <Icon name="arrow_forward" />
+                </button>
+              </div>
             </div>
-            <div className="avatar-frame" style={{ marginTop: '24px' }}>
-              <img src="/profile.jpg" alt="Velhari Sankaran" width="128" height="128" />
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', marginTop: '32px' }}>
+              <div className="avatar-frame">
+                <img src="/profile.jpg" alt="Velhari Sankaran" width="128" height="128" />
+              </div>
+              <h1 style={{ fontSize: '24px', fontWeight: 'bold' }}>Velhari Sankaran</h1>
             </div>
-            <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginTop: '12px' }}>Velhari Sankaran</h1>
           </section>
 
           <section className="section-block section-anchor" id="status" aria-labelledby="status-title">
