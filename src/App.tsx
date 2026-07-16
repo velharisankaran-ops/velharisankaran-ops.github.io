@@ -86,7 +86,7 @@ function HomePage() {
             <div className="profile-copy" style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center', marginTop: '24px' }}>
               <h2 id="profile-title" className="hero-title">Building my Education, Financial stability, &amp; Business.</h2>
               <p className="hero-subtitle">Inviting you to support my key milestones.</p>
-              <button className="button button--secondary profile-cta" style={{ marginTop: '8px' }} type="button" onClick={() => scrollToSection("fundraising")}>
+              <button className="button button--secondary profile-cta" type="button" onClick={() => scrollToSection("fundraising")}>
                 <span>View Fundraising</span>
                 <Icon name="arrow_forward" />
               </button>
