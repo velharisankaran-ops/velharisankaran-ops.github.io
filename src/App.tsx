@@ -247,5 +247,10 @@ export function App() {
     return () => window.removeEventListener("hashchange", handleRoute);
   }, []);
 
-  return route.startsWith(`#${plusTwoGoalRoute}`) ? <GoalDetailsPage /> : <HomePage />;
+  if (route.startsWith(`#${plusTwoGoalRoute}`)) {
+    window.location.replace("/goal-details.html");
+    return null;
+  }
+
+  return <HomePage />;
 }
