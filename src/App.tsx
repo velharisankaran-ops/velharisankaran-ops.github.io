@@ -185,7 +185,7 @@ function HomePage() {
                     <button
                       className={`button ${goal.status ? "button--primary" : "button--secondary"}`}
                       type="button"
-                      onClick={() => goal.id === "bosse-plus-two" ? window.location.hash = plusTwoGoalRoute : announceComingSoon(goal.title)}
+                      onClick={() => goal.id === "bosse-plus-two" ? window.location.href = "/goal-details.html" : announceComingSoon(goal.title)}
                     >
                       {goal.actionLabel}
                     </button>

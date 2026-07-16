@@ -1,0 +1,303 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#0f172a",
+                        "primary-container": "#1e293b",
+                        "on-primary-container": "#cbd5e1",
+                        "secondary": "#059669",
+                        "secondary-container": "#ecfdf5",
+                        "on-secondary-container": "#065f46",
+                        "surface": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container": "#eeeeed",
+                        "surface-container-high": "#e9e8e7",
+                        "on-surface": "#1a1c1c",
+                        "on-surface-variant": "#45474c",
+                        "outline": "#75777d",
+                        "outline-variant": "#c5c6cd",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "4px",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "unit": "8px",
+                    },
+                    "fontFamily": {
+                        "body": ["Hanken Grotesk", "sans-serif"],
+                        "display": ["Hanken Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script></head><body class="bg-surface text-on-surface min-h-screen flex flex-col overflow-x-hidden font-body">
+
+<!-- TopAppBar consistent with SCREEN_13 -->
+<header class="w-full sticky top-0 bg-surface border-b border-outline-variant shadow-sm z-50">
+    <div class="flex items-center justify-between px-margin-mobile py-unit w-full max-w-[1200px] mx-auto h-16">
+        <div class="flex items-center gap-3">
+            <button aria-label="Go back" class="material-symbols-outlined text-primary cursor-pointer active:opacity-80" onclick="window.location.href='/'">arrow_back</button>
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-2xl">account_balance_wallet</span>
+                <span class="font-display text-[20px] font-bold text-primary"><h2 class="text-label-sm font-label-sm text-on-surface-variant px-1 uppercase tracking-wider flex items-center" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-size: 11px; font-weight: 500; font-family: Inter; line-height: 1; --tw-text-opacity: 1; color: rgb(70, 69, 85); background-color: rgb(249, 249, 255); cursor: text !important; outline: none !important; box-shadow: none !important;">Fundraising&nbsp;</h2></span>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+                <img src="https://media.licdn.com/dms/image/v2/D5603AQFQBRHkraXJdg/profile-displayphoto-scale_400_400/B56Z7YN0OtHUAg-/0/1781743962431?e=1785974400&amp;v=beta&amp;t=Au0XIGtZP2i7IJ9jMXDsbq3tXkDmj5Y73DV1h2JWjCs" alt="Velhari" class="w-full h-full object-cover">
+            </div>
+            <span class="material-symbols-outlined text-primary cursor-pointer active:opacity-80">notifications</span>
+        </div>
+    </div>
+</header>
+
+<main class="flex-1 max-w-[1200px] mx-auto w-full">
+    <!-- Hero Section -->
+    <section class="relative h-44 bg-surface-container-low overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-40 grayscale" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuD98yGqBWGzQ7ZBEOpQSy-uRksvtt8zCN78yfhKM-ZM6_3J3tRV7F4OtR1Vmvq1QNl9HJS-4HFhul0wakXJYBqRrvMHYZxwAzJllWVSARYlsSHirpLtoEY31KtQXfoxxznMuGp4Gnt69F-a6_QFBu2waoQJzQc7KXecXiK0wehozmQgeSorT-iLLWzQN1JyV5Q7skC4HFuNxRkK-SVXnUxk6UzAIXpSiT1MCdOdMcqing24tOJlnFPb&quot;);"></div>
+        <div class="relative h-full flex flex-col justify-end p-margin-mobile pb-6 z-20">
+            <div class="mb-3 inline-flex items-center px-2 py-0.5 bg-secondary text-white text-[10px] font-bold uppercase tracking-wider rounded-sm w-fit">
+                <span class="material-symbols-outlined text-[12px] mr-1" style="font-variation-settings: &quot;FILL&quot; 1;">verified</span>
+                Education Sponsorship
+            </div>
+        </div>
+    </section>
+
+    <div class="px-margin-mobile -mt-10 relative z-10 max-w-4xl mx-auto space-y-6">
+        <!-- Fundraising Progress Card -->
+        <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-5 shadow-sm">
+            <div class="flex items-start gap-4 mb-5">
+                <div class="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center flex-shrink-0 border border-outline-variant">
+                    <span class="material-symbols-outlined text-[28px] text-primary">school</span>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-primary leading-tight">Plus Two - Commerce</h2>
+                    <p class="text-on-surface-variant text-sm mt-0.5">BOSSE Board Higher Secondary Certification</p>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="flex justify-between items-end">
+                    <div class="flex flex-col">
+                        <span class="label-caps-xs text-secondary mb-1">Fundraising Progress</span>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-3xl font-bold text-primary">₹9,000</span>
+                            <span class="text-sm text-on-surface-variant">of ₹35,000</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-secondary font-semibold bg-secondary-container px-2 py-1 rounded">
+                        <span class="material-symbols-outlined text-[16px]">group</span>
+                        <span class="text-xs">1 supporter</span>
+                    </div>
+                </div>
+                
+                <div class="relative w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+                    <div class="absolute top-0 left-0 h-full bg-secondary transition-all duration-1000 ease-out" style="width: 25.7%;"></div>
+                </div>
+                
+                <div class="flex justify-between text-xs font-semibold">
+                    <span class="text-secondary">25.7% REACHED</span>
+                    <span class="text-on-surface-variant">₹26,000 TO GO</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fee Breakdown Section -->
+        <section class="space-y-3">
+            <div class="flex items-center gap-2 border-b border-outline-variant pb-2">
+                <span class="material-symbols-outlined text-on-surface-variant text-[20px]">receipt_long</span>
+                <h3 class="label-caps-xs text-on-surface-variant flex-1">Fee Breakdown</h3>
+                <span class="label-caps-xs text-primary font-bold">INV #BOS-000218</span>
+            </div>
+            <div class="overflow-hidden border border-outline-variant rounded-lg bg-surface-container-lowest">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-surface-container-low border-b border-outline-variant">
+                            <th class="p-3 label-caps-xs text-on-surface">Component</th>
+                            <th class="p-3 label-caps-xs text-on-surface text-right">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm text-on-surface-variant">
+                        <tr class="border-b border-outline-variant">
+                            <td class="p-3">
+                                <div class="font-bold text-primary">Registration Fee</div>
+                                <div class="text-[11px] leading-relaxed">BOSSE Official Fees: Mandatory 5-year enrollment</div>
+                            </td>
+                            <td class="p-3 text-right font-semibold text-primary">₹1,000</td>
+                        </tr>
+                        <tr class="border-b border-outline-variant">
+                            <td class="p-3">
+                                <div class="font-bold text-primary">Program Fee</div>
+                                <div class="text-[11px] leading-relaxed">BOSSE Official Fees: 5 Core Commerce subjects</div>
+                            </td>
+                            <td class="p-3 text-right font-semibold text-primary">₹6,000</td>
+                        </tr>
+                        <tr class="border-b border-outline-variant">
+                            <td class="p-3">
+                                <div class="font-bold text-primary">Examination Fee</div>
+                                <div class="text-[11px] leading-relaxed">BOSSE Official Fees: ₹500 per paper × 5 subjects</div>
+                            </td>
+                            <td class="p-3 text-right font-semibold text-primary">₹2,500</td>
+                        </tr>
+                        <tr class="border-b border-outline-variant">
+                            <td class="p-3">
+                                <div class="font-bold text-primary">AMET Class &amp; Assistance</div>
+                                <div class="text-[11px] leading-relaxed">AMET Institute Fees: Tuition and support</div>
+                            </td>
+                            <td class="p-3 text-right font-semibold text-primary">₹25,500</td>
+                        </tr>
+                        <tr class="bg-primary text-white">
+                            <td class="p-3 label-caps-xs">Grand Total</td>
+                            <td class="p-3 text-right font-bold text-base">₹35,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-[10px] text-on-surface-variant italic px-1">* Amounts as per the official Bill of Supply provided by AMET Global.</p>
+        </section>
+
+        <!-- Enrollment Details Section -->
+        <section class="space-y-3 pt-2">
+            <div class="flex items-center gap-2 border-b border-outline-variant pb-2">
+                <span class="material-symbols-outlined text-on-surface-variant text-[20px]">assignment</span>
+                <h3 class="label-caps-xs text-on-surface-variant">Enrollment Details Summary</h3>
+            </div>
+            <div class="overflow-hidden border border-outline-variant rounded-lg bg-surface-container-lowest">
+                <table class="w-full text-left border-collapse">
+                    <tbody class="text-sm">
+                        <tr class="border-b border-outline-variant">
+                            <td class="p-3 label-caps-xs text-on-surface-variant bg-surface-container-low w-1/3">Course</td>
+                            <td class="p-3 text-primary font-medium">Plus Two (+2) Commerce Stream</td>
+                        </tr>
+                        <tr class="border-b border-outline-variant">
+                            <td class="p-3 label-caps-xs text-on-surface-variant bg-surface-container-low">Exam Board</td>
+                            <td class="p-3 text-primary font-medium">BOSSE (Open Schooling)</td>
+                        </tr>
+                        <tr class="border-b border-outline-variant">
+                            <td class="p-3 label-caps-xs text-on-surface-variant bg-surface-container-low">Institution</td>
+                            <td class="p-3 text-primary font-medium">AMET Global, Thiruvalla, Kerala</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 label-caps-xs text-on-surface-variant bg-surface-container-low">Official Site</td>
+                            <td class="p-3 text-secondary font-bold underline">ametglobal.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Contributor Ledger Section -->
+        <section class="space-y-3 pt-2">
+            <div class="flex items-center gap-2 border-b border-outline-variant pb-2">
+                <span class="material-symbols-outlined text-on-surface-variant text-[20px]">group</span>
+                <h3 class="label-caps-xs text-on-surface-variant">Contributor Ledger</h3>
+            </div>
+            <div class="overflow-hidden border border-outline-variant rounded-lg bg-surface-container-lowest">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-surface-container-low border-b border-outline-variant">
+                            <th class="p-3 label-caps-xs text-on-surface">Contributor</th>
+                            <th class="p-3 label-caps-xs text-on-surface text-right">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-outline-variant">
+                            <td class="p-3 font-semibold text-primary">Self-Funded (Salary)</td>
+                            <td class="p-3 text-right font-bold text-primary">₹9,000</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 text-center italic text-on-surface-variant/60 text-xs" colspan="2">Waiting for more backers...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Key Milestones Section -->
+        <section class="space-y-3 pt-2">
+            <div class="flex items-center gap-2 border-b border-outline-variant pb-2">
+                <span class="material-symbols-outlined text-on-surface-variant text-[20px]">flag</span>
+                <h3 class="label-caps-xs text-on-surface-variant">Key Milestones</h3>
+            </div>
+            <div class="space-y-3">
+                <div class="flex gap-4 p-4 bg-surface-container-lowest border border-outline-variant rounded-lg shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 border border-secondary/20">
+                        <span class="material-symbols-outlined text-on-secondary-container text-[18px]">check</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-primary text-sm">Enrollment Secured</p>
+                        <p class="text-xs text-on-surface-variant mt-0.5">Initial registration and core books purchased.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-4 bg-surface-container-lowest border border-outline-variant rounded-lg opacity-60">
+                    <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[18px]">pending</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-primary text-sm">Exam Fee Deposit</p>
+                        <p class="text-xs text-on-surface-variant mt-0.5">Target: ₹20,000 to clear board dues.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Options Section -->
+        <section class="space-y-4 pb-28 pt-4">
+            <div class="flex items-center gap-2 border-b border-outline-variant pb-2">
+                <span class="material-symbols-outlined text-on-surface-variant text-[20px]">favorite</span>
+                <h3 class="label-caps-xs text-on-surface-variant">Support Options</h3>
+            </div>
+            <div class="flex flex-col gap-3">
+                <button class="w-full h-12 bg-secondary text-white font-bold rounded-lg shadow-sm hover:opacity-90 transition-all flex items-center justify-center gap-2 active:scale-[0.98] text-sm">
+                    <span class="material-symbols-outlined text-[20px]">favorite</span>
+                    Support This Goal
+                </button>
+                <a href="https://zohosecurepay.in/books/ametglobal/secure?CInvoiceID=2-f285617c4a13c5d33f34b9b617687bae8ae466897c6649607b021e56c356f1a0646a53dd8ed69f1b773aba0674c4215bdaee8aef44d1dd5a127687162be70f52bf747bf136c83d3b" target="_blank" class="w-full h-12 border border-secondary text-secondary font-bold rounded-lg hover:bg-secondary/5 transition-all flex items-center justify-center gap-2 active:scale-[0.98] text-sm">
+                    <span class="material-symbols-outlined text-[20px]">account_balance</span>
+                    Pay Institution Directly
+                </a>
+                <button class="w-full h-12 border border-outline text-on-surface-variant font-bold rounded-lg hover:bg-surface-container-low transition-all flex items-center justify-center gap-2 active:scale-[0.98] text-sm">
+                    <span class="material-symbols-outlined text-[20px]">share</span>
+                    Share
+                </button>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- BottomNavBar consistent with SCREEN_13 -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant shadow-lg flex justify-around items-center h-16 px-gutter pb-safe">
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="/">
+        <span class="material-symbols-outlined">home</span>
+        <span class="label-caps-xs mt-1">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="/#categories">
+        <span class="material-symbols-outlined">search</span>
+        <span class="label-caps-xs mt-1">Explore</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="/#status">
+        <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">timeline</span>
+        <span class="label-caps-xs mt-0.5">Journey</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors relative" href="/#updates">
+        <span class="material-symbols-outlined">mail</span>
+        <span class="label-caps-xs mt-1">Updates</span>
+        <span class="absolute top-0 right-1 w-2 h-2 bg-error rounded-full"></span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="/#profile">
+        <span class="material-symbols-outlined">person</span>
+        <span class="label-caps-xs mt-1">Profile</span>
+    </a>
+</nav></body></html>
