@@ -117,7 +117,7 @@
                     <span class="material-symbols-outlined text-[20px]">account_balance</span>
                     Pay Institution Directly
                 </a>
-            <button class="w-full h-12 border border-outline text-on-surface-variant font-bold rounded-lg hover:bg-surface-container-low transition-all flex items-center justify-center gap-2 active:scale-[0.98] text-sm">
+            <button onclick="if(navigator.share){navigator.share({title:document.title, url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied!')}" class="w-full h-12 border border-outline text-on-surface-variant font-bold rounded-lg hover:bg-surface-container-low transition-all flex items-center justify-center gap-2 active:scale-[0.98] text-sm">
                     <span class="material-symbols-outlined text-[20px]">share</span>
                     Share
                 </button>
