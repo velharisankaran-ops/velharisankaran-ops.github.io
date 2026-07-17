@@ -1398,7 +1398,7 @@ a:focus-visible {
   border-bottom: 1px solid var(--outline-variant);
   background: transparent;
   color: var(--on-surface);
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: -0.01em;
   text-align: left;
@@ -1414,6 +1414,7 @@ a:focus-visible {
   transform: scale(0.98);
 }
 .category-list-item .material-symbols-outlined {
+  font-size: 16px;
   color: var(--on-surface-variant);
   font-weight: 300;
   transition: color 0.2s ease;
