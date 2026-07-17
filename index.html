@@ -85,14 +85,16 @@
     </script>
 </head>
 <body class="bg-background text-on-surface min-h-screen pb-24">
-    <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin h-14 bg-surface border-b border-outline-variant">
-        <div class="flex items-center">
-            <span class="text-label-sm font-semibold tracking-widest text-primary uppercase">Documenting my journey</span>
-        </div>
-        <div class="flex items-center">
-            <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
-                <span class="material-symbols-outlined text-primary" data-original-icon="notifications">circle</span>
-            </button>
+    <header class="w-full sticky top-0 bg-surface/95 backdrop-blur-md border-b border-outline-variant shadow-sm z-50">
+        <div class="flex items-center justify-between px-4 w-full mx-auto h-14">
+            <div class="flex items-center gap-2">
+                <span class="text-[11px] font-bold text-primary tracking-widest uppercase">Documenting my journey</span>
+            </div>
+            <div class="flex items-center">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant hover:text-primary">
+                    <span class="material-symbols-outlined text-[22px]">notifications</span>
+                </button>
+            </div>
         </div>
     </header>
     
@@ -287,29 +289,22 @@
         </section>
     </main>
     
-    <!-- BottomNavBar -->
-    <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-2 pb-safe bg-surface border-t border-outline-variant shadow-sm">
-        <a class="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-4 py-1 transition-all" href="#">
-            <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1, 'wght' 300;">home</span>
-            <span class="text-[10px] font-bold mt-1">Home</span>
-        </a>
-        <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="goal-details.html">
-            <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'wght' 300;">ads_click</span>
-            <span class="text-[10px] font-semibold mt-1">Goals</span>
-        </a>
-        <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="#">
-            <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'wght' 300;">auto_stories</span>
-            <span class="text-[10px] font-semibold mt-1">My Story</span>
-        </a>
-        <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="#">
-            <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'wght' 300;">business_center</span>
-            <span class="text-[10px] font-semibold mt-1">Velnex</span>
-        </a>
-        <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 relative" href="#">
-            <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'wght' 300;">notifications</span>
-            <span class="text-[10px] font-semibold mt-1">Updates</span>
-            <span class="absolute top-1 right-5 w-1.5 h-1.5 bg-error rounded-full"></span>
-        </a>
+    <!-- BottomNavBar consistent with Fundraiser Page -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-md border-t border-outline-variant shadow-[0_-1px_4px_rgba(20,27,43,0.06)]" style="padding-bottom: env(safe-area-inset-bottom);">
+        <div class="w-full max-w-[768px] mx-auto h-[60px] grid grid-cols-3 px-1.5 py-1.5">
+            <a class="flex flex-col items-center justify-center gap-1 rounded-xl text-primary bg-primary/10 transition-colors" href="#">
+                <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home</span>
+                <span class="text-[11px] font-medium leading-none">Home</span>
+            </a>
+            <a class="flex flex-col items-center justify-center gap-1 rounded-xl text-on-surface-variant hover:text-primary transition-colors" href="goal-details.html">
+                <span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+                <span class="text-[11px] font-medium leading-none">Fundrais</span>
+            </a>
+            <a class="flex flex-col items-center justify-center gap-1 rounded-xl text-on-surface-variant hover:text-primary transition-colors" href="#updates">
+                <span class="material-symbols-outlined text-[24px]">rocket_launch</span>
+                <span class="text-[11px] font-medium leading-none">Velnex</span>
+            </a>
+        </div>
     </nav>
     
     <script>
