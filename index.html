@@ -14,9 +14,11 @@
                     extend: {
                         "colors": {
                             "primary": "#0f172a",
+                            "on-primary": "#ffffff",
                             "primary-container": "#1e293b",
                             "on-primary-container": "#cbd5e1",
                             "secondary": "#059669",
+                            "on-secondary": "#ffffff",
                             "secondary-container": "#ecfdf5",
                             "on-secondary-container": "#065f46",
                             "surface": "#f7f9fb",
@@ -30,7 +32,8 @@
                             "on-surface-variant": "#45474c",
                             "outline": "#75777d",
                             "outline-variant": "#c5c6cd",
-                            "error": "#ba1a1a"
+                            "error": "#ba1a1a",
+                            "on-error": "#ffffff"
                         },
                         "borderRadius": {
                             "DEFAULT": "0.25rem",
@@ -55,7 +58,7 @@
         } catch (_e) {}
     </script>
 </head>
-<body class="bg-background text-on-surface min-h-screen pb-24">
+<body class="bg-surface text-on-surface min-h-screen pb-24">
     <header class="w-full sticky top-0 bg-surface/95 backdrop-blur-md border-b border-outline-variant shadow-sm z-50">
         <div class="flex items-center justify-between px-4 w-full mx-auto h-14">
             <div class="flex items-center gap-2">
@@ -69,7 +72,7 @@
         </div>
     </header>
     
-    <main class="mt-14 p-container-margin max-w-screen-md mx-auto space-y-6">
+    <main class="p-container-margin max-w-screen-md mx-auto space-y-6">
         <!-- Compact Hero -->
         <section class="flex flex-col items-center text-center py-4 space-y-4">
             <div class="w-[92px] h-[92px] rounded-full overflow-hidden border-2 border-primary/10 shadow-sm">
