@@ -105,7 +105,6 @@ export const categories: CategoryItem[] = [
   { icon: "school", label: "Education", target: "status" },
   { icon: "work", label: "Job", target: "status" },
   { icon: "rocket_launch", label: "Velnex", target: "updates" },
-  { icon: "credit_card", label: "Financials", target: "fundraising" },
   { icon: "menu_book", label: "My Story", target: "profile" },
 ];
 
