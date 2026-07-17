@@ -263,6 +263,16 @@ a:focus-visible {
   flex-shrink: 0;
 }
 
+.button--green {
+  color: #ffffff;
+  background: var(--secondary);
+  border: none;
+}
+
+.button--green:hover {
+  opacity: 0.9;
+}
+
 .section-block {
   display: flex;
   flex-direction: column;

@@ -86,7 +86,7 @@ function HomePage() {
             <div className="profile-copy" style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center', marginTop: '24px' }}>
               <h2 id="profile-title" className="hero-title">Building my Education, Financial stability, &amp; Business.</h2>
               <p className="hero-subtitle">Inviting you to support my key milestones.</p>
-              <button className="button button--secondary profile-cta" type="button" onClick={() => scrollToSection("fundraising")}>
+              <button className="button button--green profile-cta" type="button" onClick={() => scrollToSection("fundraising")}>
                 <span>View Fundraising</span>
                 <Icon name="arrow_forward" />
               </button>
@@ -109,7 +109,7 @@ function HomePage() {
                       {item.subDetail && <p className="field-detail">{item.subDetail}</p>}
                     </div>
                     {item.actionLabel && (
-                      <button className="button button--primary button--small" type="button" onClick={() => announceComingSoon("Financial Position & Net Worth")}>
+                      <button className="button button--green button--small" type="button" onClick={() => announceComingSoon("Financial Position & Net Worth")}>
                         <span>{item.actionLabel}</span>
                         <Icon name="open_in_new" />
                       </button>
