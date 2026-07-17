@@ -1,78 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary": "#0f172a",
-                        "primary-container": "#1e293b",
-                        "on-primary-container": "#cbd5e1",
-                        "secondary": "#059669",
-                        "secondary-container": "#ecfdf5",
-                        "on-secondary-container": "#065f46",
-                        "surface": "#f7f9fb",
-                        "surface-dim": "#d8dadc",
-                        "surface-bright": "#f7f9fb",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-container-low": "#f2f4f6",
-                        "surface-container": "#eeeeed",
-                        "surface-container-high": "#e9e8e7",
-                        "on-surface": "#1a1c1c",
-                        "on-surface-variant": "#45474c",
-                        "outline": "#75777d",
-                        "outline-variant": "#c5c6cd",
-                        "error": "#ba1a1a"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "4px",
-                        "lg": "8px",
-                        "xl": "12px",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "margin-mobile": "20px",
-                        "gutter": "16px",
-                        "unit": "8px",
-                    },
-                    "fontFamily": {
-                        "body": ["Inter", "sans-serif"],
-                        "display": ["Inter", "sans-serif"]
-                    }
-                }
-            }
-        }
-    }catch(_e){}</script></head>
+const fs = require('fs');
+const filepath = 'public/professional-experience.html';
+let content = fs.readFileSync(filepath, 'utf-8');
 
-<body class="bg-surface text-on-surface font-sans antialiased pb-24">
-    <!-- Top Header Image -->
-    <section class="relative h-[180px] w-full max-w-[768px] mx-auto overflow-hidden">
-        <img src="/velhari.png" alt="Velhari Sankaran" class="absolute inset-0 w-full h-full object-cover object-top opacity-30" onerror="this.src='https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&amp;fit=crop&amp;q=80&amp;w=1200';"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
-        
-        <div class="absolute top-4 left-4 z-20">
-            <a href="/" class="w-8 h-8 flex items-center justify-center rounded-full bg-surface/50 backdrop-blur-sm text-on-surface hover:bg-surface/80 transition-colors shadow-sm">
-                <span class="material-symbols-outlined text-[20px]">arrow_back</span>
-            </a>
-        </div>
-        
-        <div class="relative h-full flex flex-col justify-end p-margin-mobile pb-6 z-20">
-            <div class="mb-3 inline-flex items-center px-2 py-0.5 bg-secondary text-white text-[10px] font-bold uppercase tracking-wider rounded-sm w-fit">
-                <span class="material-symbols-outlined text-[12px] mr-1" style="font-variation-settings: 'FILL' 1;">work</span>
-                Career
-            </div>
-        </div>
-    </section>
-
-    <main class="w-full max-w-[768px] mx-auto px-margin-mobile -mt-3 relative z-30">
-        <div class="bg-surface rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.03)] p-5">
-            <div class="flex flex-col gap-3 mb-6">
-                <h2 class="text-2xl sm:text-3xl font-bold text-primary leading-tight">Professional Experience</h2>
-                <p class="text-on-surface-variant text-sm">A timeline of my professional journey, sourced from my LinkedIn profile.</p>
-            </div>
-            
-            <div class="relative pl-8 sm:pl-10 border-l-[3px] border-outline-variant/30 space-y-12 ml-6 sm:ml-8 mt-8">
+const newHTML = `            <div class="relative pl-8 sm:pl-10 border-l-[3px] border-outline-variant/30 space-y-12 ml-6 sm:ml-8 mt-8">
                 <!-- Velnex -->
                 <div class="relative">
                     <div class="absolute -left-[57px] sm:-left-[65px] -top-1 w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center flex-shrink-0 border-[4px] border-surface shadow-sm overflow-hidden z-10">
@@ -168,26 +98,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </main>
+            </div>`;
 
-<!-- BottomNavBar consistent with SCREEN_13 -->
-<nav class="fixed bottom-0 w-full z-50 bg-surface/95 backdrop-blur-md border-t border-outline-variant shadow-[0_-1px_4px_rgba(20,27,43,0.06)]" style="padding-bottom: env(safe-area-inset-bottom);">
-    <div class="w-full max-w-[768px] mx-auto h-[60px] grid grid-cols-3 px-1.5 py-1.5">
-        <a class="flex flex-col items-center justify-center gap-1 rounded-xl text-on-surface-variant hover:text-primary transition-colors" href="/">
-            <span class="material-symbols-outlined text-[24px]">home</span>
-            <span class="text-[11px] font-medium leading-none">Home</span>
-        </a>
-        <a class="flex flex-col items-center justify-center gap-1 rounded-xl text-primary bg-primary/10 transition-colors" href="/goal-details.html">
-            <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
-            <span class="text-[11px] font-medium leading-none">Fundrais</span>
-        </a>
-        <a class="flex flex-col items-center justify-center gap-1 rounded-xl text-on-surface-variant hover:text-primary transition-colors" href="/#updates">
-            <span class="material-symbols-outlined text-[24px]">rocket_launch</span>
-            <span class="text-[11px] font-medium leading-none">Velnex</span>
-        </a>
-    </div>
-</nav>
-</body>
-</html>
+// Replace from `<div class="space-y-4">` to the end of the greenix block
+const startIdx = content.indexOf('<div class="space-y-4">');
+const endMarker = '<!-- GNS LEISURE TRAVELS -->';
+// actually it's easier to regex the whole block
+const newContent = content.substring(0, startIdx) + newHTML + '\n        </div>\n    </main>';
+fs.writeFileSync(filepath, newContent, 'utf-8');
+console.log('updated');
