@@ -97,7 +97,7 @@ export const statusItems: StatusItem[] = [
     icon: "account_balance_wallet",
     label: "Financial Status",
     value: "Private Portfolio",
-    actionLabel: "View Net Worth",
+    actionLabel: "View Financials",
   },
 ];
 
