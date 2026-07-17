@@ -77,7 +77,7 @@ export const statusItems: StatusItem[] = [
   { icon: "location_on", label: "Current Address", value: "Anchalasseri House, Njarakkal, Vypin, Kochi, Kerala, India, PIN 682505" },
   {
     icon: "work",
-    label: "Job",
+    label: "Professional Experience",
     value: "Digital Marketer",
     detail: "IZIN Designs Interior Studio, Kerala, India",
   },
@@ -89,7 +89,7 @@ export const statusItems: StatusItem[] = [
   },
   {
     icon: "school",
-    label: "Academics",
+    label: "Academic & Education",
     value: "Enrolled in Plus Two - Commerce",
     detail: "Board of Open Schooling and Skill Education (Government of Sikkim, India)",
   },
@@ -102,8 +102,8 @@ export const statusItems: StatusItem[] = [
 ];
 
 export const categories: CategoryItem[] = [
-  { icon: "school", label: "Education", target: "status" },
-  { icon: "work", label: "Job", target: "status" },
+  { icon: "school", label: "Academic & Education", target: "status" },
+  { icon: "work", label: "Professional Experience", target: "status" },
   { icon: "rocket_launch", label: "Velnex", target: "updates" },
   { icon: "menu_book", label: "My Story", target: "profile" },
 ];

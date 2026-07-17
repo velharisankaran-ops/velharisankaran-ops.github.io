@@ -96,7 +96,7 @@ function HomePage() {
           <section className="section-block section-anchor" id="status" aria-labelledby="status-title">
             <h2 id="status-title" className="section-header-with-icon">
               <Icon name="person" />
-              Profile Details
+              Professional & Academic Profile
             </h2>
             <div className="profile-details-list">
               {statusItems.map((item, index) => (
@@ -129,8 +129,11 @@ function HomePage() {
           <div className="category-list">
             {categories.map((category) => (
               <button className="category-list-item" type="button" key={category.label} onClick={() => scrollToSection(category.target)}>
-                <Icon name={category.icon} />
-                <span>{category.label}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <Icon name={category.icon} />
+                  <span>{category.label}</span>
+                </div>
+                <Icon name="chevron_right" />
               </button>
             ))}
           </div>

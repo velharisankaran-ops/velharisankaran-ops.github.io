@@ -1393,8 +1393,8 @@ a:focus-visible {
 .category-list-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 8px 4px;
+  justify-content: space-between;
+  padding: 12px 8px;
   border-bottom: 1px solid var(--outline-variant);
   background: transparent;
   color: var(--on-surface);
@@ -1402,13 +1402,20 @@ a:focus-visible {
   font-weight: 500;
   text-align: left;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  border-radius: 8px;
+  margin-bottom: 4px;
 }
 .category-list-item:hover {
   background: var(--surface-container-low);
 }
+.category-list-item:active {
+  transform: scale(0.98);
+}
 .category-list-item .material-symbols-outlined {
   color: var(--on-surface-variant);
   font-weight: 300;
+  transition: color 0.2s ease;
 }
 .category-list-item:hover .material-symbols-outlined {
   color: var(--primary);
