@@ -1,4 +1,4 @@
-export type SectionId = "profile" | "status" | "categories" | "fundraising" | "updates";
+export type SectionId = "profile" | "status" | "categories" | "fundraising" | "updates" | string;
 
 export interface StatusItem {
   icon: string;
@@ -103,7 +103,7 @@ export const statusItems: StatusItem[] = [
 
 export const categories: CategoryItem[] = [
   { icon: "school", label: "Academic & Education", target: "status" },
-  { icon: "work", label: "Professional Experience", target: "status" },
+  { icon: "work", label: "Professional Experience", target: "/professional-experience.html" },
   { icon: "rocket_launch", label: "Velnex", target: "updates" },
   { icon: "menu_book", label: "My Story", target: "profile" },
 ];

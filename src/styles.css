@@ -1394,12 +1394,13 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 8px;
+  padding: 10px 8px;
   border-bottom: 1px solid var(--outline-variant);
   background: transparent;
   color: var(--on-surface);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   text-align: left;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
