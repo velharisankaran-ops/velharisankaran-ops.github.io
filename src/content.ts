@@ -38,6 +38,7 @@ export interface NavigationItem {
   label: string;
   target: SectionId;
   hasUnread?: boolean;
+  url?: string;
 }
 
 export interface GoalDetailRow {
@@ -143,11 +144,9 @@ export const goals: GoalItem[] = [
 ];
 
 export const navigation: NavigationItem[] = [
-  { icon: "dashboard", label: "Home", target: "profile" },
-  { icon: "explore", label: "Explore", target: "categories" },
-  { icon: "timeline", label: "Journey", target: "status" },
-  { icon: "notifications", label: "Updates", target: "updates", hasUnread: true },
-  { icon: "person", label: "Profile", target: "profile" },
+  { icon: "home", label: "Home", target: "profile", url: "/" },
+  { icon: "account_balance_wallet", label: "Fundrais", target: "fundraising", url: "/goal-details.html" },
+  { icon: "rocket_launch", label: "Velnex", target: "updates", url: "/#updates" },
 ];
 
 export const plusTwoGoal: GoalDetails = {

@@ -278,26 +278,19 @@
 </main>
 
 <!-- BottomNavBar consistent with SCREEN_13 -->
-<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant shadow-lg flex justify-around items-center h-16 px-gutter pb-safe">
-    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="/">
-        <span class="material-symbols-outlined">home</span>
-        <span class="text-[11px] font-medium mt-1">Home</span>
-    </a>
-    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="/#categories">
-        <span class="material-symbols-outlined">search</span>
-        <span class="text-[11px] font-medium mt-1">Explore</span>
-    </a>
-    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="/#status">
-        <span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">timeline</span>
-        <span class="text-[11px] font-medium mt-0.5">Journey</span>
-    </a>
-    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors relative" href="/#updates">
-        <span class="material-symbols-outlined">mail</span>
-        <span class="text-[11px] font-medium mt-1">Updates</span>
-        <span class="absolute top-0 right-1 w-2 h-2 bg-error rounded-full"></span>
-    </a>
-    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="/#profile">
-        <span class="material-symbols-outlined">person</span>
-        <span class="text-[11px] font-medium mt-1">Profile</span>
-    </a>
+<nav class="fixed bottom-0 w-full z-50 bg-surface/95 backdrop-blur-md border-t border-outline-variant shadow-[0_-1px_4px_rgba(20,27,43,0.06)]" style="padding-bottom: env(safe-area-inset-bottom);">
+    <div class="w-full max-w-[768px] mx-auto h-[60px] grid grid-cols-3 px-1.5 py-1.5">
+        <a class="flex flex-col items-center justify-center gap-1 rounded-xl text-on-surface-variant hover:text-primary transition-colors" href="/">
+            <span class="material-symbols-outlined text-[24px]">home</span>
+            <span class="text-[11px] font-medium leading-none">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center gap-1 rounded-xl text-primary bg-primary/10 transition-colors" href="/goal-details.html">
+            <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+            <span class="text-[11px] font-medium leading-none">Fundrais</span>
+        </a>
+        <a class="flex flex-col items-center justify-center gap-1 rounded-xl text-on-surface-variant hover:text-primary transition-colors" href="/#updates">
+            <span class="material-symbols-outlined text-[24px]">rocket_launch</span>
+            <span class="text-[11px] font-medium leading-none">Velnex</span>
+        </a>
+    </div>
 </nav></body></html>

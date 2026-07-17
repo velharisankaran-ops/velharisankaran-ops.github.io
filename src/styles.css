@@ -609,7 +609,7 @@ a:focus-visible {
   margin: 0 auto;
   padding: 7px 6px 9px;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .nav-item {

@@ -219,7 +219,23 @@ function HomePage() {
           {navigation.map((item) => {
             const isActive = sectionLabels[activeSection] === item.label;
             return (
-              <button className={`nav-item${isActive ? " nav-item--active" : ""}`} type="button" key={item.label} onClick={() => scrollToSection(item.target)} aria-current={isActive ? "page" : undefined}>
+              <button
+                className={`nav-item${isActive ? " nav-item--active" : ""}`}
+                type="button"
+                key={item.label}
+                onClick={() => {
+                  if (item.url) {
+                    if (item.url.startsWith("/")) {
+                      window.location.href = item.url;
+                    } else {
+                      scrollToSection(item.target);
+                    }
+                  } else {
+                    scrollToSection(item.target);
+                  }
+                }}
+                aria-current={isActive ? "page" : undefined}
+              >
                 <span className="nav-item__icon">
                   <Icon name={item.icon} filled={isActive} />
                   {item.hasUnread && <span className="unread-dot" aria-hidden="true" />}
