@@ -74,7 +74,7 @@ export interface GoalDetails {
 
 export const statusItems: StatusItem[] = [
   { icon: "calendar_today", label: "Age", value: "23" },
-  { icon: "location_on", label: "Current Address", value: "Anchalasseri House, Njarakkal, Vypin, Kochi, Kerala, India, PIN 682505" },
+  { icon: "location_on", label: "Current Address", value: "Kochi, Kerala, India", detail: "Anchalasseri House, Njarakkal, Vypin, PIN 682505" },
   {
     icon: "work",
     label: "Professional Experience",
