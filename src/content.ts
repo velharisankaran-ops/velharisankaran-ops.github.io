@@ -77,7 +77,7 @@ export const statusItems: StatusItem[] = [
   { icon: "location_on", label: "Current Address", value: "Kochi, Kerala, India", detail: "Anchalasseri House, Njarakkal, Vypin, PIN 682505" },
   {
     icon: "work",
-    label: "Professional Experience",
+    label: "Current Job",
     value: "Digital Marketer",
     detail: "IZIN Designs Interior Studio, Kerala, India",
   },
@@ -103,7 +103,7 @@ export const statusItems: StatusItem[] = [
 
 export const categories: CategoryItem[] = [
   { icon: "school", label: "Academic & Education", target: "status" },
-  { icon: "work", label: "Professional Experience", target: "/professional-experience.html" },
+  { icon: "work", label: "Current Job", target: "/professional-experience.html" },
   { icon: "rocket_launch", label: "Velnex", target: "updates" },
   { icon: "menu_book", label: "My Story", target: "profile" },
 ];
