@@ -44,7 +44,7 @@
                 }
             }
         }
-    }catch(_e){}</script></head><body class="bg-surface text-on-surface min-h-screen flex flex-col overflow-x-hidden font-body pb-24 md:pb-0">
+    }catch(_e){}</script></head><body class="bg-surface text-on-surface min-h-screen flex flex-col overflow-x-hidden font-body pb-24">
 
 <!-- TopAppBar -->
 <header class="w-full sticky top-0 bg-surface border-b border-outline-variant shadow-sm z-50">
@@ -67,85 +67,6 @@
 
 <main class="flex-1 max-w-[1200px] mx-auto w-full pt-6">
     <div class="px-margin-mobile relative z-10 max-w-xl mx-auto space-y-6">
-
-        <!-- Warning Section -->
-        <div class="bg-error/10 border border-error/20 border-l-4 border-l-error rounded-xl p-4 shadow-sm">
-            <div class="flex items-center gap-2 mb-4">
-                <span class="material-symbols-outlined text-error">warning</span>
-                <h3 class="text-[11px] font-bold text-error uppercase tracking-widest">Critical Obligations Breakdown</h3>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                <div class="space-y-5">
-                    <!-- Living Group -->
-                    <div>
-                        <p class="text-[10px] font-bold text-on-surface uppercase mb-2 border-b border-error/20 pb-1">Living</p>
-                        <div class="space-y-1.5">
-                            <div class="flex justify-between text-[12px]">
-                                <span class="text-on-surface-variant">Transport (Home-Office)</span>
-                                <span class="font-mono font-bold">₹4,200.00</span>
-                            </div>
-                            <div class="flex justify-between text-[12px]">
-                                <span class="text-on-surface-variant">SIM &amp; Data</span>
-                                <span class="font-mono font-bold">₹800.00</span>
-                            </div>
-                            <div class="flex justify-between text-[12px]">
-                                <span class="text-on-surface-variant">Professional Tools</span>
-                                <span class="font-mono font-bold">₹1,999.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Credit Cards Group -->
-                    <div>
-                        <p class="text-[10px] font-bold text-on-surface uppercase mb-2 border-b border-error/20 pb-1">Credit Cards</p>
-                        <div class="space-y-1.5">
-                            <div class="flex justify-between text-[12px]">
-                                <span class="text-on-surface-variant">IDFC Ashva Card</span>
-                                <span class="font-mono font-bold">₹25,000.00</span>
-                            </div>
-                            <div class="flex justify-between text-[12px]">
-                                <span class="text-on-surface-variant">Slice Credit Line</span>
-                                <span class="font-mono font-bold">₹7,195.06</span>
-                            </div>
-                            <div class="flex justify-between text-[12px]">
-                                <span class="text-on-surface-variant">Federal Signet Card</span>
-                                <span class="font-mono font-bold">₹10,000.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Loan EMI & Education Group -->
-                    <div>
-                        <p class="text-[10px] font-bold text-on-surface uppercase mb-2 border-b border-error/20 pb-1">Loan EMI &amp; Education</p>
-                        <div class="space-y-1.5">
-                            <div class="flex justify-between text-[12px]">
-                                <span class="text-on-surface-variant">Bajaj Finserv EMI</span>
-                                <span class="font-mono font-bold">₹8,251.00</span>
-                            </div>
-                            <div class="flex justify-between text-[12px]">
-                                <span class="text-on-surface-variant">Plus Two Fee</span>
-                                <span class="font-mono font-bold">₹26,000.00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-4 justify-center bg-error/5 rounded-lg p-4 border border-error/10">
-                    <div class="flex justify-between items-center text-[12px]">
-                        <span class="text-on-surface-variant uppercase font-bold text-[10px]">Total Obligations</span>
-                        <span class="font-mono font-bold text-on-surface">₹83,445.06</span>
-                    </div>
-                    <div class="flex justify-between items-center text-[12px]">
-                        <span class="text-on-surface-variant uppercase font-bold text-[10px]">Monthly Income</span>
-                        <span class="font-mono font-bold text-on-surface">₹17,000.00</span>
-                    </div>
-                    <div class="pt-3 mt-1 border-t border-error/20 flex flex-col items-center">
-                        <span class="text-[10px] font-bold text-error uppercase mb-1">Monthly Shortfall</span>
-                        <span class="font-mono font-bold text-error text-base">-₹66,445.06</span>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-error text-on-error rounded-lg p-2.5 text-center shadow-sm">
-                <p class="text-[11px] font-medium leading-relaxed">Immediate obligations due in the first week significantly exceed current salary. Gap: <span class="font-mono font-bold">₹66,445.06</span></p>
-            </div>
-        </div>
 
         <!-- Header Title Section -->
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 py-2">
@@ -279,7 +200,7 @@
         </div>
 
         <!-- MONTHLY COMMITMENTS & ONE-TIME BALANCES -->
-        <div class="grid grid-cols-1 gap-6 pb-20">
+        <div class="grid grid-cols-1 gap-6">
             <!-- Monthly Commitments -->
             <div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
                 <div class="bg-surface-container px-4 py-2.5 border-b border-outline-variant">
@@ -364,6 +285,85 @@
                     <p class="text-[10px] font-bold text-error uppercase mb-1">Financial Note</p>
                     <p class="text-[11px] text-error leading-relaxed">Liquidity is currently 0.00%. Immediate cash reserves required for emergency mitigation.</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Warning Section -->
+        <div class="bg-error/10 border border-error/20 border-l-4 border-l-error rounded-xl p-4 shadow-sm mb-12">
+            <div class="flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-error">warning</span>
+                <h3 class="text-[11px] font-bold text-error uppercase tracking-widest">Critical Obligations Breakdown</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div class="space-y-5">
+                    <!-- Living Group -->
+                    <div>
+                        <p class="text-[10px] font-bold text-on-surface uppercase mb-2 border-b border-error/20 pb-1">Living</p>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-[12px]">
+                                <span class="text-on-surface-variant">Transport (Home-Office)</span>
+                                <span class="font-mono font-bold">₹4,200.00</span>
+                            </div>
+                            <div class="flex justify-between text-[12px]">
+                                <span class="text-on-surface-variant">SIM &amp; Data</span>
+                                <span class="font-mono font-bold">₹800.00</span>
+                            </div>
+                            <div class="flex justify-between text-[12px]">
+                                <span class="text-on-surface-variant">Professional Tools</span>
+                                <span class="font-mono font-bold">₹1,999.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Credit Cards Group -->
+                    <div>
+                        <p class="text-[10px] font-bold text-on-surface uppercase mb-2 border-b border-error/20 pb-1">Credit Cards</p>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-[12px]">
+                                <span class="text-on-surface-variant">IDFC Ashva Card</span>
+                                <span class="font-mono font-bold">₹25,000.00</span>
+                            </div>
+                            <div class="flex justify-between text-[12px]">
+                                <span class="text-on-surface-variant">Slice Credit Line</span>
+                                <span class="font-mono font-bold">₹7,195.06</span>
+                            </div>
+                            <div class="flex justify-between text-[12px]">
+                                <span class="text-on-surface-variant">Federal Signet Card</span>
+                                <span class="font-mono font-bold">₹10,000.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Loan EMI & Education Group -->
+                    <div>
+                        <p class="text-[10px] font-bold text-on-surface uppercase mb-2 border-b border-error/20 pb-1">Loan EMI &amp; Education</p>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-[12px]">
+                                <span class="text-on-surface-variant">Bajaj Finserv EMI</span>
+                                <span class="font-mono font-bold">₹8,251.00</span>
+                            </div>
+                            <div class="flex justify-between text-[12px]">
+                                <span class="text-on-surface-variant">Plus Two Fee</span>
+                                <span class="font-mono font-bold">₹26,000.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4 justify-center bg-error/5 rounded-lg p-4 border border-error/10">
+                    <div class="flex justify-between items-center text-[12px]">
+                        <span class="text-on-surface-variant uppercase font-bold text-[10px]">Total Obligations</span>
+                        <span class="font-mono font-bold text-on-surface">₹83,445.06</span>
+                    </div>
+                    <div class="flex justify-between items-center text-[12px]">
+                        <span class="text-on-surface-variant uppercase font-bold text-[10px]">Monthly Income</span>
+                        <span class="font-mono font-bold text-on-surface">₹17,000.00</span>
+                    </div>
+                    <div class="pt-3 mt-1 border-t border-error/20 flex flex-col items-center">
+                        <span class="text-[10px] font-bold text-error uppercase mb-1">Monthly Shortfall</span>
+                        <span class="font-mono font-bold text-error text-base">-₹66,445.06</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-error text-on-error rounded-lg p-2.5 text-center shadow-sm">
+                <p class="text-[11px] font-medium leading-relaxed">Immediate obligations due in the first week significantly exceed current salary. Gap: <span class="font-mono font-bold">₹66,445.06</span></p>
             </div>
         </div>
     </div>
