@@ -1,0 +1,430 @@
+<!DOCTYPE html><html class="light" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#005226",
+                        "on-tertiary-fixed-variant": "#12512c",
+                        "error": "#ba1a1a",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed": "#00210b",
+                        "inverse-surface": "#213145",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#d3e8da",
+                        "surface-tint": "#1f6c3a",
+                        "tertiary-container": "#27633b",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-primary": "#8bd79b",
+                        "on-secondary-fixed": "#0d1f17",
+                        "on-tertiary-container": "#9dddab",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-fixed": "#b1f2be",
+                        "surface-variant": "#d3e4fe",
+                        "outline": "#707a6f",
+                        "primary-fixed-dim": "#8bd79b",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-container": "#56695e",
+                        "on-primary-container": "#93e0a2",
+                        "secondary-fixed-dim": "#b7cbbe",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary": "#074b26",
+                        "primary": "#004c22",
+                        "on-secondary-fixed-variant": "#394b41",
+                        "secondary": "#506358",
+                        "tertiary-fixed-dim": "#96d5a3",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "primary-container": "#166534",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#00210d",
+                        "on-background": "#0b1c30",
+                        "outline-variant": "#bfc9bd",
+                        "surface-container-high": "#dce9ff",
+                        "surface": "#f8f9ff",
+                        "primary-fixed": "#a6f4b5",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface-variant": "#404940",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#d3e8da"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "max-width": "1440px",
+                        "gutter": "16px",
+                        "margin-desktop": "32px",
+                        "section-gap": "24px",
+                        "card-padding": "16px",
+                        "container-margin": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "mono-technical": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        };
+    }catch(_e){}</script></head><body class="bg-background text-on-surface font-body-md min-h-screen pb-24 md:pb-0">
+    <!-- Top App Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin h-14 bg-surface-container-lowest border-b border-outline-variant shadow-sm">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center overflow-hidden">
+                <img class="w-full h-full object-cover" data-alt="Professional headshot" src="assets/images/profile.jpg">
+            </div>
+            <h1 class="text-headline-md font-bold text-primary tracking-tight">PORTFOLIO</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+        </div>
+    </header>
+
+    <main class="max-w-[1200px] mx-auto pt-20 px-container-margin pb-12">
+        <!-- Warning Section -->
+        <div class="mb-section-gap bg-error-container/20 border border-error/20 border-l-4 border-l-error rounded-xl p-card-padding shadow-sm">
+            <div class="flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-error">warning</span>
+                <h3 class="text-label-sm font-bold text-error uppercase tracking-widest">Critical Obligations Breakdown</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                <div class="space-y-6">
+                    <!-- Living Group -->
+                    <div>
+                        <p class="text-label-sm font-bold text-on-surface uppercase mb-2 border-b border-error/10 pb-1">Living</p>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Transport (Home-Office)</span>
+                                <span class="font-mono-technical font-bold">₹4,200.00</span>
+                            </div>
+                            <div class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">SIM &amp; Data</span>
+                                <span class="font-mono-technical font-bold">₹800.00</span>
+                            </div>
+                            <div class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Professional Tools</span>
+                                <span class="font-mono-technical font-bold">₹1,999.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Credit Cards Group -->
+                    <div>
+                        <p class="text-label-sm font-bold text-on-surface uppercase mb-2 border-b border-error/10 pb-1">Credit Cards</p>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">IDFC Ashva Card</span>
+                                <span class="font-mono-technical font-bold">₹25,000.00</span>
+                            </div>
+                            <div class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Slice Credit Line</span>
+                                <span class="font-mono-technical font-bold">₹7,195.06</span>
+                            </div>
+                            <div class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Federal Signet Card</span>
+                                <span class="font-mono-technical font-bold">₹10,000.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Loan EMI & Education Group -->
+                    <div>
+                        <p class="text-label-sm font-bold text-on-surface uppercase mb-2 border-b border-error/10 pb-1">Loan EMI &amp; Education</p>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Bajaj Finserv EMI</span>
+                                <span class="font-mono-technical font-bold">₹8,251.00</span>
+                            </div>
+                            <div class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Plus Two – BOSSE Fee</span>
+                                <span class="font-mono-technical font-bold">₹26,000.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4 justify-center bg-error-container/10 rounded-lg p-4 border border-error/10">
+                    <div class="flex justify-between items-center">
+                        <span class="text-label-sm text-on-surface-variant uppercase">Total Obligations</span>
+                        <span class="font-mono-technical font-bold text-on-surface">₹83,445.06</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-label-sm text-on-surface-variant uppercase">Monthly Income</span>
+                        <span class="font-mono-technical font-bold text-on-surface">₹17,000.00</span>
+                    </div>
+                    <div class="pt-4 mt-2 border-t border-error/20 flex flex-col items-center">
+                        <span class="text-label-sm font-bold text-error uppercase mb-1">Monthly Shortfall</span>
+                        <span class="font-mono-technical font-bold text-error text-headline-md">-₹66,445.06</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-error text-on-error rounded-lg p-3 text-center">
+                <p class="text-body-md font-medium">Immediate obligations due in the first week significantly exceed current salary. Total gap: <span class="font-mono-technical">₹66,445.06</span></p>
+            </div>
+        </div>
+
+        <!-- Header Title Section -->
+        <div class="mb-section-gap flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+                <p class="text-label-sm font-bold text-primary uppercase tracking-widest mb-1">Financial Statements</p>
+                <h2 class="text-headline-lg font-bold text-on-surface">FINANCIAL POSITION &amp; NET WORTH</h2>
+                <p class="text-body-md text-on-surface-variant">Summary as of 10 July 2026</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="bg-primary-container text-on-primary px-4 py-2 rounded-lg text-label-md font-bold flex items-center gap-2 hover:opacity-90 transition-opacity">
+                    <span class="material-symbols-outlined text-[18px]">download</span>
+                    Export PDF
+                </button>
+            </div>
+        </div>
+
+        <!-- EXECUTIVE SUMMARY SECTION -->
+        <div class="grid grid-cols-2 md:grid-cols-2 gap-gutter mb-section-gap">
+            <div class="bg-surface-container-lowest border border-outline-variant p-card-padding rounded-xl shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+                <p class="text-label-sm font-bold text-on-surface-variant uppercase mb-2">Total Assets</p>
+                <h3 class="font-mono-technical font-bold text-on-surface text-headline-md">₹273,874.49</h3>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant p-card-padding rounded-xl shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+                <p class="text-label-sm font-bold text-on-surface-variant uppercase mb-2">Total Liabilities</p>
+                <h3 class="font-mono-technical font-bold text-on-surface text-headline-md">₹237,804.94</h3>
+            </div>
+            <div class="col-span-2 bg-primary-container text-on-primary border border-primary/20 p-card-padding rounded-xl shadow-sm relative overflow-hidden">
+                <p class="text-label-sm font-bold uppercase mb-2 relative z-10">Net Worth</p>
+                <h3 class="font-mono-technical font-bold relative z-10 text-headline-md">₹36,069.55</h3>
+            </div>
+        </div>
+
+        <div class="bg-secondary-fixed/30 border border-outline-variant rounded-xl p-card-padding mb-section-gap grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-8">
+                <p class="text-label-md font-bold text-on-surface mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-[18px]">analytics</span>
+                    Financial position: <span class="font-bold">Positive net worth.</span>
+                </p>
+                <p class="text-body-md text-on-surface-variant">Liabilities represent 86.8% of total assets. Position is stable but carries significant debt obligations relative to equity.</p>
+            </div>
+            <div class="md:col-span-4 border-l border-outline-variant pl-6">
+                <div class="flex justify-between items-center mb-1.5">
+                    <span class="text-label-sm font-bold text-on-surface-variant uppercase">Liability / Assets</span>
+                    <span class="text-label-md font-mono-technical font-bold text-on-surface">86.8%</span>
+                </div>
+                <div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+                    <div class="h-full bg-primary" style="width: 86.8%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ASSETS & LIABILITIES TABLES -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-section-gap mb-section-gap">
+            <!-- Assets Table -->
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+                <div class="bg-secondary-fixed/50 px-card-padding py-3 border-b border-outline-variant flex justify-between items-center">
+                    <h4 class="text-label-md font-bold text-on-surface uppercase tracking-wider">ASSETS</h4>
+                    <span class="text-label-sm font-bold text-on-surface-variant px-2 py-0.5 bg-surface-container rounded">CURRENCY: INR</span>
+                </div>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="bg-surface-container-low/50 border-b border-outline-variant">
+                            <th class="px-card-padding py-3 text-label-sm font-bold text-on-surface-variant uppercase">Particular</th>
+                            <th class="px-card-padding py-3 text-label-sm font-bold text-on-surface-variant uppercase text-right">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-body-md text-on-surface">
+                        <tr class="border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+                            <td class="px-card-padding py-3">Cash</td>
+                            <td class="px-card-padding py-3 font-mono-technical text-right">0.59</td>
+                        </tr>
+                        <tr class="border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+                            <td class="px-card-padding py-3">Tata AIA</td>
+                            <td class="px-card-padding py-3 font-mono-technical text-right">100,000.00</td>
+                        </tr>
+                        <tr class="border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+                            <td class="px-card-padding py-3">Velnex Investment</td>
+                            <td class="px-card-padding py-3 font-mono-technical text-right">150,999.00</td>
+                        </tr>
+                        <tr class="border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+                            <td class="px-card-padding py-3">Receivables</td>
+                            <td class="px-card-padding py-3 font-mono-technical text-right">22,874.90</td>
+                        </tr>
+                        <tr class="bg-secondary-fixed/10 font-bold">
+                            <td class="px-card-padding py-4 text-label-md uppercase">Total Assets</td>
+                            <td class="px-card-padding py-4 font-mono-technical text-right text-primary">273,874.49</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Liabilities Table -->
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+                <div class="bg-secondary-fixed/50 px-card-padding py-3 border-b border-outline-variant flex justify-between items-center">
+                    <h4 class="text-label-md font-bold text-on-surface uppercase tracking-wider">LIABILITIES</h4>
+                    <span class="text-label-sm font-bold text-on-surface-variant px-2 py-0.5 bg-surface-container rounded">CURRENCY: INR</span>
+                </div>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="bg-surface-container-low/50 border-b border-outline-variant">
+                            <th class="px-card-padding py-3 text-label-sm font-bold text-on-surface-variant uppercase">Particular</th>
+                            <th class="px-card-padding py-3 text-label-sm font-bold text-on-surface-variant uppercase text-right">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-body-md text-on-surface">
+                        <tr class="border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+                            <td class="px-card-padding py-3">Bajaj Finserv Loan</td>
+                            <td class="px-card-padding py-3 font-mono-technical text-right text-error">210,000.00</td>
+                        </tr>
+                        <tr class="border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+                            <td class="px-card-padding py-3">IDFC Ashva Card</td>
+                            <td class="px-card-padding py-3 font-mono-technical text-right text-error">27,000.00</td>
+                        </tr>
+                        <tr class="border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+                            <td class="px-card-padding py-3">Slice Credit Line</td>
+                            <td class="px-card-padding py-3 font-mono-technical text-right text-error">-7,195.06</td>
+                        </tr>
+                        <tr class="border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+                            <td class="px-card-padding py-3">Federal Signet Card</td>
+                            <td class="px-card-padding py-3 font-mono-technical text-right text-error">10,000.00</td>
+                        </tr>
+                        <tr class="bg-error/5 font-bold">
+                            <td class="px-card-padding py-4 text-label-md uppercase">Total Liabilities</td>
+                            <td class="px-card-padding py-4 font-mono-technical text-right text-error">237,804.94</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- MONTHLY COMMITMENTS & ONE-TIME BALANCES -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-section-gap">
+            <!-- Monthly Commitments -->
+            <div class="lg:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+                <div class="bg-secondary-fixed/30 px-card-padding py-3 border-b border-outline-variant">
+                    <h4 class="text-label-md font-bold text-on-surface uppercase tracking-wider">MONTHLY COMMITMENTS</h4>
+                </div>
+                <div class="p-card-padding grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-label-sm font-bold text-primary uppercase mb-3 border-b border-outline-variant pb-1">Fixed Expenses</p>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Essential Living</span>
+                                <span class="font-mono-technical">8,000</span>
+                            </li>
+                            <li class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Transport</span>
+                                <span class="font-mono-technical">4,200</span>
+                            </li>
+                            <li class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">SIM &amp; Data</span>
+                                <span class="font-mono-technical">800</span>
+                            </li>
+                            <li class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Tools / SaaS</span>
+                                <span class="font-mono-technical">1,999</span>
+                            </li>
+                            <li class="flex justify-between font-bold border-t border-dashed border-outline-variant pt-2 mt-2">
+                                <span class="">Sub-Total</span>
+                                <span class="font-mono-technical text-primary">14,999</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-label-sm font-bold text-error uppercase mb-3 border-b border-outline-variant pb-1">Loan Payments</p>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between text-body-md">
+                                <span class="text-on-surface-variant">Bajaj Finserv EMI</span>
+                                <span class="font-mono-technical">8,251</span>
+                            </li>
+                            <li class="h-10"></li> <!-- Spacing -->
+                            <li class="flex justify-between font-bold border-t border-dashed border-outline-variant pt-2 mt-2">
+                                <span class="">Sub-Total</span>
+                                <span class="font-mono-technical text-error">8,251</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-secondary-fixed/10 p-card-padding flex justify-between items-center border-t border-outline-variant">
+                    <span class="text-label-md font-bold uppercase">Total Monthly Cash Outflow</span>
+                    <span class="text-headline-md font-mono-technical font-bold text-primary">₹23,250.00</span>
+                </div>
+            </div>
+
+            <!-- One-Time Balances -->
+            <div class="lg:col-span-4 flex flex-col gap-gutter">
+                <div class="bg-surface-container-lowest border border-outline-variant p-card-padding rounded-xl shadow-sm flex-1">
+                    <p class="text-label-sm font-bold text-on-surface-variant uppercase mb-4">One-Time Balances</p>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[18px] text-tertiary">school</span>
+                                <span class="text-body-md">Plus Two Fee</span>
+                            </div>
+                            <span class="text-label-md font-mono-technical font-bold">26,000</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[18px] text-tertiary">language</span>
+                                <span class="text-body-md">Domain &amp; Hosting</span>
+                            </div>
+                            <span class="text-label-md font-mono-technical font-bold">15,000</span>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-outline-variant flex justify-between items-center">
+                            <span class="text-label-md font-bold uppercase">Grand Total</span>
+                            <span class="text-headline-md font-mono-technical font-bold text-tertiary">₹41,000</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quick Insight Component -->
+                <div class="bg-tertiary-container/10 border border-tertiary/20 p-card-padding rounded-xl relative overflow-hidden">
+                    <span class="material-symbols-outlined absolute -right-4 -bottom-4 text-[80px] opacity-10 text-tertiary">priority_high</span>
+                    <p class="text-label-sm font-bold text-tertiary uppercase mb-1">Financial Note</p>
+                    <p class="text-body-md text-tertiary leading-tight">Liquidity is currently 0.00%. Immediate cash reserves required for emergency mitigation.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation Bar (Mobile only) -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface-container-lowest border-t border-outline-variant shadow-sm">
+        <div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="text-label-sm font-bold">Home</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
+            <span class="material-symbols-outlined">explore</span>
+            <span class="text-label-sm font-bold">Explore</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl px-3 py-1 scale-95">
+            <span class="material-symbols-outlined">timeline</span>
+            <span class="text-label-sm font-bold">Journey</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="text-label-sm font-bold">Updates</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-label-sm font-bold">Profile</span>
+        </div>
+    </nav>
+</body></html>
