@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -19,7 +20,11 @@
                         primary: '#0F172A',
                         secondary: '#334155',
                         accent: '#3B82F6',
-                        subtle: '#64748b'
+                        subtle: '#64748b',
+                        dark: {
+                            bg: '#0F172A',
+                            surface: '#1E293B'
+                        }
                     }
                 }
             }
@@ -32,16 +37,20 @@
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
         }
+        .dark body {
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        
         .a4-page {
             width: 210mm;
             min-height: 297mm;
             margin: 10mm auto;
-            background: white;
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             display: flex;
         }
         @media print {
-            body { background: white; margin: 0; padding: 0; }
+            body, .dark body { margin: 0; padding: 0; background: transparent; }
             .a4-page {
                 margin: 0;
                 box-shadow: none;
@@ -57,84 +66,71 @@
         .heading { font-family: 'Poppins', sans-serif; letter-spacing: -0.01em; }
         .body-text { font-family: 'Merriweather', serif; }
         
-        .section-title {
-            font-family: 'Poppins', sans-serif;
-            border-bottom: 2px solid #0F172A;
-            padding-bottom: 0.15rem;
-            margin-bottom: 0.75rem;
-            color: #0F172A;
-            font-size: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .sidebar-title {
-            font-family: 'Poppins', sans-serif;
-            color: #0F172A;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-            border-bottom: 1px solid #cbd5e1;
-            padding-bottom: 0.25rem;
-        }
-        
         /* Timeline Styles */
         .timeline-dot::after {
             content: '';
             position: absolute;
-            left: 5px; /* Center of w-3 (12px) is 6px, left 5px is approximate visual center due to border */
+            left: 5px;
             top: 14px;
             bottom: -16px;
             width: 1.5px;
             background-color: #cbd5e1;
+        }
+        .dark .timeline-dot::after {
+            background-color: #334155;
         }
         .timeline-item:last-child .timeline-dot::after {
             display: none;
         }
     </style>
 </head>
-<body class="antialiased body-text text-[13px]">
+<body class="antialiased body-text text-[13px] transition-colors duration-300 dark:bg-slate-950">
 
     <!-- Floating UI Buttons -->
-    <button onclick="window.print()" class="no-print fixed bottom-8 right-8 bg-primary text-white px-6 py-3 rounded-full shadow-xl hover:bg-slate-800 transition-colors flex items-center gap-2 font-semibold z-50 heading text-sm">
-        <span class="material-symbols-outlined">print</span>
-        Download PDF
-    </button>
+    <div class="no-print fixed bottom-8 right-8 flex flex-col gap-4 z-50">
+        <button onclick="toggleTheme()" class="bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-900 px-6 py-3 rounded-full shadow-xl hover:scale-105 transition-all flex items-center gap-2 font-semibold heading text-sm">
+            <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+            <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+            <span class="dark:hidden">Dark Theme</span>
+            <span class="hidden dark:block">Light Theme</span>
+        </button>
+        <button onclick="window.print()" class="bg-accent dark:bg-blue-500 text-white px-6 py-3 rounded-full shadow-xl hover:scale-105 transition-all flex items-center gap-2 font-semibold heading text-sm">
+            <span class="material-symbols-outlined">print</span>
+            Download PDF
+        </button>
+    </div>
     
-    <button onclick="window.location.href='index.html'" class="no-print fixed bottom-8 left-8 bg-white border border-slate-300 text-slate-700 px-6 py-3 rounded-full shadow-lg hover:bg-slate-50 transition-colors flex items-center gap-2 font-semibold z-50 heading text-sm">
+    <button onclick="window.location.href='index.html'" class="no-print fixed bottom-8 left-8 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 px-6 py-3 rounded-full shadow-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors flex items-center gap-2 font-semibold z-50 heading text-sm">
         <span class="material-symbols-outlined">arrow_back</span>
         Back to Site
     </button>
 
-    <div class="a4-page">
+    <div class="a4-page bg-white dark:bg-[#0F172A] transition-colors duration-300">
         
         <!-- Left Sidebar (33%) -->
-        <aside class="w-1/3 bg-slate-50 px-5 py-8 flex flex-col gap-6 border-r border-slate-200">
+        <aside class="w-1/3 bg-slate-50 dark:bg-[#0B1221] px-5 py-8 flex flex-col gap-6 border-r border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
             
             <!-- Profile Picture -->
             <div class="flex justify-center avoid-break">
-                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md">
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-[#0F172A] shadow-md dark:shadow-black/50 transition-colors duration-300">
                     <img src="assets/images/profile.jpg" alt="Velhari Sankaran" class="w-full h-full object-cover grayscale">
                 </div>
             </div>
             
             <!-- Contact Info -->
             <div class="avoid-break">
-                <h3 class="sidebar-title">Contact</h3>
-                <div class="space-y-2 text-[12px] text-secondary">
+                <h3 class="font-bold heading text-[0.8rem] uppercase tracking-wider mb-2 border-b border-slate-300 dark:border-slate-700/80 pb-1 text-primary dark:text-white">Contact</h3>
+                <div class="space-y-2 text-[12px] text-secondary dark:text-slate-300">
                     <div class="flex items-start gap-2">
-                        <span class="material-symbols-outlined text-[14px] text-primary mt-0.5">mail</span> 
+                        <span class="material-symbols-outlined text-[14px] text-primary dark:text-blue-400 mt-0.5">mail</span> 
                         <span class="leading-tight">velharisankaran@gmail.com</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[14px] text-primary">call</span> 
+                        <span class="material-symbols-outlined text-[14px] text-primary dark:text-blue-400">call</span> 
                         <span>+91 9567092833</span>
                     </div>
                     <div class="flex items-start gap-2">
-                        <span class="material-symbols-outlined text-[14px] text-primary mt-0.5">location_on</span> 
+                        <span class="material-symbols-outlined text-[14px] text-primary dark:text-blue-400 mt-0.5">location_on</span> 
                         <span class="leading-tight">Kochi, Kerala, India - 682505</span>
                     </div>
                 </div>
@@ -142,38 +138,38 @@
 
             <!-- Bio Data -->
             <div class="avoid-break">
-                <h3 class="sidebar-title">Personal Details</h3>
-                <div class="space-y-1 text-[12px] text-secondary">
-                    <div class="flex justify-between border-b border-slate-200/50 pb-0.5">
+                <h3 class="font-bold heading text-[0.8rem] uppercase tracking-wider mb-2 border-b border-slate-300 dark:border-slate-700/80 pb-1 text-primary dark:text-white">Personal Details</h3>
+                <div class="space-y-1 text-[12px] text-secondary dark:text-slate-300">
+                    <div class="flex justify-between border-b border-slate-200/50 dark:border-slate-800 pb-0.5">
                         <span class="font-bold heading text-[10px]">Age</span>
                         <span>23</span>
                     </div>
-                    <div class="flex justify-between border-b border-slate-200/50 pb-0.5">
+                    <div class="flex justify-between border-b border-slate-200/50 dark:border-slate-800 pb-0.5">
                         <span class="font-bold heading text-[10px]">Nationality</span>
                         <span>Indian</span>
                     </div>
                     <div class="flex justify-between pb-0.5">
                         <span class="font-bold heading text-[10px]">Blood Group</span>
-                        <span class="text-error font-semibold">B+</span>
+                        <span class="text-error font-semibold dark:text-red-400">B+</span>
                     </div>
                 </div>
             </div>
             
             <!-- Financial Overview (Document Style) -->
-            <div class="avoid-break bg-white border border-slate-200 p-4 shadow-sm">
-                <h3 class="sidebar-title !border-0 text-primary">Financial Overview</h3>
+            <div class="avoid-break bg-white dark:bg-[#151E32] border border-slate-200 dark:border-slate-700/50 p-4 shadow-sm dark:shadow-black/20 transition-colors duration-300">
+                <h3 class="font-bold heading text-[0.8rem] uppercase tracking-wider mb-2 text-primary dark:text-white">Financial Overview</h3>
                 <table class="w-full text-[11px] font-sans">
-                    <tr class="border-b border-slate-200">
-                        <td class="py-1.5 text-subtle font-bold uppercase tracking-wide">Assets</td>
-                        <td class="py-1.5 text-right font-bold text-primary">₹272,874</td>
+                    <tr class="border-b border-slate-200 dark:border-slate-700/50">
+                        <td class="py-1.5 text-subtle dark:text-slate-400 font-bold uppercase tracking-wide">Assets</td>
+                        <td class="py-1.5 text-right font-bold text-primary dark:text-white">₹272,874</td>
                     </tr>
-                    <tr class="border-b border-slate-200">
-                        <td class="py-1.5 text-subtle font-bold uppercase tracking-wide">Liabilities</td>
-                        <td class="py-1.5 text-right font-bold text-primary">₹255,000</td>
+                    <tr class="border-b border-slate-200 dark:border-slate-700/50">
+                        <td class="py-1.5 text-subtle dark:text-slate-400 font-bold uppercase tracking-wide">Liabilities</td>
+                        <td class="py-1.5 text-right font-bold text-primary dark:text-white">₹255,000</td>
                     </tr>
                     <tr>
-                        <td class="py-2 text-primary font-bold uppercase tracking-wide">Net Worth</td>
-                        <td class="py-2 text-right font-bold text-primary text-[13px]">₹17,874</td>
+                        <td class="py-2 text-primary dark:text-blue-400 font-bold uppercase tracking-wide">Net Worth</td>
+                        <td class="py-2 text-right font-bold text-primary dark:text-white text-[13px]">₹17,874</td>
                     </tr>
                 </table>
             </div>
@@ -185,97 +181,97 @@
             
             <!-- Name & Title -->
             <header class="avoid-break mb-1">
-                <h1 class="text-[2.25rem] font-bold heading text-primary uppercase leading-tight mb-1">Velhari<br>Sankaran</h1>
-                <p class="text-[14px] heading text-accent font-semibold tracking-wide uppercase">Commerce Student | Working Professional</p>
+                <h1 class="text-[2.25rem] font-bold heading text-primary dark:text-white uppercase leading-tight mb-1">Velhari<br>Sankaran</h1>
+                <p class="text-[14px] heading text-accent dark:text-blue-400 font-semibold tracking-wide uppercase">Commerce Student | Working Professional</p>
             </header>
 
             <!-- Business & Ventures -->
             <section class="avoid-break">
-                <h2 class="section-title">Business & Ventures</h2>
+                <h2 class="font-bold heading text-[1rem] uppercase tracking-wider mb-3 border-b-2 border-slate-800 dark:border-slate-200 pb-0.5 text-primary dark:text-white">Business & Ventures</h2>
                 <div class="space-y-3.5">
                     <div>
                         <div class="flex justify-between items-baseline mb-0.5">
-                            <h3 class="text-[14px] font-bold heading text-primary">Velnex Business Management & Operations FZE LLC</h3>
-                            <span class="text-[10px] font-bold heading text-accent uppercase tracking-wider whitespace-nowrap ml-2">Current</span>
+                            <h3 class="text-[14px] font-bold heading text-primary dark:text-slate-100">Velnex Business Management & Operations FZE LLC</h3>
+                            <span class="text-[10px] font-bold heading text-accent dark:text-blue-400 uppercase tracking-wider whitespace-nowrap ml-2">Current</span>
                         </div>
-                        <p class="text-[12px] font-bold text-secondary mb-0.5">Founder, Manager <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Ajman Emirate, UAE</span></p>
-                        <p class="text-[12px] text-subtle leading-snug">Business Consulting and Management Firm.</p>
+                        <p class="text-[12px] font-bold text-secondary dark:text-slate-300 mb-0.5">Founder, Manager <span class="mx-1 text-slate-300 dark:text-slate-600">|</span> <span class="italic font-normal">Ajman Emirate, UAE</span></p>
+                        <p class="text-[12px] text-subtle dark:text-slate-400 leading-snug">Business Consulting and Management Firm.</p>
                     </div>
                     <div>
                         <div class="flex justify-between items-baseline mb-0.5">
-                            <h3 class="text-[14px] font-bold heading text-primary">Green Summer Ventures LLP</h3>
-                            <span class="text-[10px] font-bold heading text-accent uppercase tracking-wider whitespace-nowrap ml-2">Current</span>
+                            <h3 class="text-[14px] font-bold heading text-primary dark:text-slate-100">Green Summer Ventures LLP</h3>
+                            <span class="text-[10px] font-bold heading text-accent dark:text-blue-400 uppercase tracking-wider whitespace-nowrap ml-2">Current</span>
                         </div>
-                        <p class="text-[12px] font-bold text-secondary mb-0.5">Designated Partner, Strategy & Business Dev. <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
-                        <p class="text-[12px] text-subtle leading-snug">Wholesale Procurement, Distribution & Supply of Fresh Agricultural Produce.</p>
+                        <p class="text-[12px] font-bold text-secondary dark:text-slate-300 mb-0.5">Designated Partner, Strategy & Business Dev. <span class="mx-1 text-slate-300 dark:text-slate-600">|</span> <span class="italic font-normal">Kerala, India</span></p>
+                        <p class="text-[12px] text-subtle dark:text-slate-400 leading-snug">Wholesale Procurement, Distribution & Supply of Fresh Agricultural Produce.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Professional Experience (Timeline Style) -->
             <section class="avoid-break">
-                <h2 class="section-title">Professional Experience</h2>
+                <h2 class="font-bold heading text-[1rem] uppercase tracking-wider mb-3 border-b-2 border-slate-800 dark:border-slate-200 pb-0.5 text-primary dark:text-white">Professional Experience</h2>
                 <div class="flex flex-col gap-0 pt-1">
                     
                     <div class="timeline-item flex gap-3 relative pb-4 avoid-break">
                         <div class="timeline-dot relative z-10 shrink-0 mt-1">
-                            <div class="w-3 h-3 rounded-full border-[1.5px] border-primary bg-white flex items-center justify-center">
-                                <div class="w-1 h-1 rounded-full bg-primary"></div>
+                            <div class="w-3 h-3 rounded-full border-[1.5px] border-primary dark:border-blue-400 bg-white dark:bg-[#0F172A] flex items-center justify-center">
+                                <div class="w-1 h-1 rounded-full bg-primary dark:bg-blue-400"></div>
                             </div>
                         </div>
                         <div class="flex flex-col w-full -mt-0.5">
                             <div class="flex justify-between items-baseline">
-                                <h3 class="text-[13px] font-bold heading text-primary">Digital Marketer</h3>
-                                <span class="text-[10px] font-bold heading text-accent whitespace-nowrap ml-2">May 2026 - Present</span>
+                                <h3 class="text-[13px] font-bold heading text-primary dark:text-slate-100">Digital Marketer</h3>
+                                <span class="text-[10px] font-bold heading text-accent dark:text-blue-400 whitespace-nowrap ml-2">May 2026 - Present</span>
                             </div>
-                            <p class="text-[12px] font-bold text-secondary">IZIN Designs Interior Studio <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Muttom, Kerala</span></p>
+                            <p class="text-[12px] font-bold text-secondary dark:text-slate-300">IZIN Designs Interior Studio <span class="mx-1 text-slate-300 dark:text-slate-600">|</span> <span class="italic font-normal">Muttom, Kerala</span></p>
                         </div>
                     </div>
                     
                     <div class="timeline-item flex gap-3 relative pb-4 avoid-break">
                         <div class="timeline-dot relative z-10 shrink-0 mt-1">
-                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 bg-white flex items-center justify-center">
-                                <div class="w-1 h-1 rounded-full bg-slate-300"></div>
+                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 dark:border-slate-600 bg-white dark:bg-[#0F172A] flex items-center justify-center">
+                                <div class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></div>
                             </div>
                         </div>
                         <div class="flex flex-col w-full -mt-0.5">
                             <div class="flex justify-between items-baseline">
-                                <h3 class="text-[13px] font-bold heading text-primary">Back Office Exec | IT | Digital Marketer</h3>
-                                <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-2">Sep 2025 - Mar 2026</span>
+                                <h3 class="text-[13px] font-bold heading text-primary dark:text-slate-100">Back Office Exec | IT | Digital Marketer</h3>
+                                <span class="text-[10px] font-bold heading text-subtle dark:text-slate-400 whitespace-nowrap ml-2">Sep 2025 - Mar 2026</span>
                             </div>
-                            <p class="text-[12px] font-bold text-secondary">Tormac | Westzone | Sea Focus <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Sharjah, UAE</span></p>
-                            <p class="text-[12px] text-subtle leading-snug mt-0.5">Ship Management And Operations</p>
+                            <p class="text-[12px] font-bold text-secondary dark:text-slate-300">Tormac | Westzone | Sea Focus <span class="mx-1 text-slate-300 dark:text-slate-600">|</span> <span class="italic font-normal">Sharjah, UAE</span></p>
+                            <p class="text-[12px] text-subtle dark:text-slate-400 leading-snug mt-0.5">Ship Management And Operations</p>
                         </div>
                     </div>
                     
                     <div class="timeline-item flex gap-3 relative pb-4 avoid-break">
                         <div class="timeline-dot relative z-10 shrink-0 mt-1">
-                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 bg-white flex items-center justify-center">
-                                <div class="w-1 h-1 rounded-full bg-slate-300"></div>
+                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 dark:border-slate-600 bg-white dark:bg-[#0F172A] flex items-center justify-center">
+                                <div class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></div>
                             </div>
                         </div>
                         <div class="flex flex-col w-full -mt-0.5">
                             <div class="flex justify-between items-baseline">
-                                <h3 class="text-[13px] font-bold heading text-primary">Back Office Exec | IT | Digital Mkt. Strategist</h3>
-                                <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-2">Jun 2025 - Sep 2025</span>
+                                <h3 class="text-[13px] font-bold heading text-primary dark:text-slate-100">Back Office Exec | IT | Digital Mkt. Strategist</h3>
+                                <span class="text-[10px] font-bold heading text-subtle dark:text-slate-400 whitespace-nowrap ml-2">Jun 2025 - Sep 2025</span>
                             </div>
-                            <p class="text-[12px] font-bold text-secondary">GNS Leisure Travels Pvt Ltd <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
+                            <p class="text-[12px] font-bold text-secondary dark:text-slate-300">GNS Leisure Travels Pvt Ltd <span class="mx-1 text-slate-300 dark:text-slate-600">|</span> <span class="italic font-normal">Kerala, India</span></p>
                         </div>
                     </div>
                     
                     <div class="timeline-item flex gap-3 relative pb-4 avoid-break">
                         <div class="timeline-dot relative z-10 shrink-0 mt-1">
-                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 bg-white flex items-center justify-center">
-                                <div class="w-1 h-1 rounded-full bg-slate-300"></div>
+                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 dark:border-slate-600 bg-white dark:bg-[#0F172A] flex items-center justify-center">
+                                <div class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></div>
                             </div>
                         </div>
                         <div class="flex flex-col w-full -mt-0.5">
                             <div class="flex justify-between items-baseline">
-                                <h3 class="text-[13px] font-bold heading text-primary">Back Office Exec | IT | Pitch Deck Designer</h3>
-                                <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-2">Jan 2023 - May 2025</span>
+                                <h3 class="text-[13px] font-bold heading text-primary dark:text-slate-100">Back Office Exec | IT | Pitch Deck Designer</h3>
+                                <span class="text-[10px] font-bold heading text-subtle dark:text-slate-400 whitespace-nowrap ml-2">Jan 2023 - May 2025</span>
                             </div>
-                            <p class="text-[12px] font-bold text-secondary mb-0.5">Greenix Experiences Pvt Ltd <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
-                            <p class="text-[12px] text-subtle leading-snug">Event Management, Boating, Tourism.</p>
+                            <p class="text-[12px] font-bold text-secondary dark:text-slate-300 mb-0.5">Greenix Experiences Pvt Ltd <span class="mx-1 text-slate-300 dark:text-slate-600">|</span> <span class="italic font-normal">Kerala, India</span></p>
+                            <p class="text-[12px] text-subtle dark:text-slate-400 leading-snug">Event Management, Boating, Tourism.</p>
                         </div>
                     </div>
                     
@@ -284,65 +280,65 @@
             
             <!-- Academic Background (Timeline Style) -->
             <section class="avoid-break">
-                <h2 class="section-title">Academic Background</h2>
+                <h2 class="font-bold heading text-[1rem] uppercase tracking-wider mb-3 border-b-2 border-slate-800 dark:border-slate-200 pb-0.5 text-primary dark:text-white">Academic Background</h2>
                 <div class="flex flex-col gap-0 pt-1">
                     <div class="timeline-item flex gap-3 relative pb-4 avoid-break">
                         <div class="timeline-dot relative z-10 shrink-0 mt-1">
-                            <div class="w-3 h-3 rounded-full border-[1.5px] border-primary bg-white flex items-center justify-center">
-                                <div class="w-1 h-1 rounded-full bg-primary"></div>
+                            <div class="w-3 h-3 rounded-full border-[1.5px] border-primary dark:border-blue-400 bg-white dark:bg-[#0F172A] flex items-center justify-center">
+                                <div class="w-1 h-1 rounded-full bg-primary dark:bg-blue-400"></div>
                             </div>
                         </div>
                         <div class="flex flex-col w-full -mt-0.5">
                             <div class="flex justify-between items-baseline">
-                                <h3 class="text-[13px] font-bold heading text-primary">Plus Two - Commerce</h3>
-                                <span class="text-[10px] font-bold heading text-accent whitespace-nowrap ml-2">2026 - Present</span>
+                                <h3 class="text-[13px] font-bold heading text-primary dark:text-slate-100">Plus Two - Commerce</h3>
+                                <span class="text-[10px] font-bold heading text-accent dark:text-blue-400 whitespace-nowrap ml-2">2026 - Present</span>
                             </div>
-                            <p class="text-[12px] font-bold text-secondary">BOSSE</p>
+                            <p class="text-[12px] font-bold text-secondary dark:text-slate-300">BOSSE</p>
                         </div>
                     </div>
                     
                     <div class="timeline-item flex gap-3 relative pb-4 avoid-break">
                         <div class="timeline-dot relative z-10 shrink-0 mt-1">
-                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 bg-white flex items-center justify-center">
-                                <div class="w-1 h-1 rounded-full bg-slate-300"></div>
+                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 dark:border-slate-600 bg-white dark:bg-[#0F172A] flex items-center justify-center">
+                                <div class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></div>
                             </div>
                         </div>
                         <div class="flex flex-col w-full -mt-0.5">
                             <div class="flex justify-between items-baseline">
-                                <h3 class="text-[13px] font-bold heading text-primary">Diploma in Multimedia</h3>
-                                <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-2">2023</span>
+                                <h3 class="text-[13px] font-bold heading text-primary dark:text-slate-100">Diploma in Multimedia</h3>
+                                <span class="text-[10px] font-bold heading text-subtle dark:text-slate-400 whitespace-nowrap ml-2">2023</span>
                             </div>
-                            <p class="text-[12px] font-bold text-secondary">Vocational</p>
+                            <p class="text-[12px] font-bold text-secondary dark:text-slate-300">Vocational</p>
                         </div>
                     </div>
                     
                     <div class="timeline-item flex gap-3 relative pb-4 avoid-break">
                         <div class="timeline-dot relative z-10 shrink-0 mt-1">
-                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 bg-white flex items-center justify-center">
-                                <div class="w-1 h-1 rounded-full bg-slate-300"></div>
+                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 dark:border-slate-600 bg-white dark:bg-[#0F172A] flex items-center justify-center">
+                                <div class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></div>
                             </div>
                         </div>
                         <div class="flex flex-col w-full -mt-0.5">
                             <div class="flex justify-between items-baseline">
-                                <h3 class="text-[13px] font-bold heading text-primary">Plus One - Comp. Science</h3>
-                                <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-2">2020 - 2021</span>
+                                <h3 class="text-[13px] font-bold heading text-primary dark:text-slate-100">Plus One - Comp. Science</h3>
+                                <span class="text-[10px] font-bold heading text-subtle dark:text-slate-400 whitespace-nowrap ml-2">2020 - 2021</span>
                             </div>
-                            <p class="text-[12px] font-bold text-secondary">SCERT</p>
+                            <p class="text-[12px] font-bold text-secondary dark:text-slate-300">SCERT</p>
                         </div>
                     </div>
                     
                     <div class="timeline-item flex gap-3 relative pb-1 avoid-break">
                         <div class="timeline-dot relative z-10 shrink-0 mt-1">
-                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 bg-white flex items-center justify-center">
-                                <div class="w-1 h-1 rounded-full bg-slate-300"></div>
+                            <div class="w-3 h-3 rounded-full border-[1px] border-slate-300 dark:border-slate-600 bg-white dark:bg-[#0F172A] flex items-center justify-center">
+                                <div class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600"></div>
                             </div>
                         </div>
                         <div class="flex flex-col w-full -mt-0.5">
                             <div class="flex justify-between items-baseline">
-                                <h3 class="text-[13px] font-bold heading text-primary">10th SSLC</h3>
-                                <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-2">2019</span>
+                                <h3 class="text-[13px] font-bold heading text-primary dark:text-slate-100">10th SSLC</h3>
+                                <span class="text-[10px] font-bold heading text-subtle dark:text-slate-400 whitespace-nowrap ml-2">2019</span>
                             </div>
-                            <p class="text-[12px] font-bold text-secondary">SCERT</p>
+                            <p class="text-[12px] font-bold text-secondary dark:text-slate-300">SCERT</p>
                         </div>
                     </div>
                 </div>
@@ -351,5 +347,19 @@
         </main>
         
     </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            // Save preference to localStorage if desired, but for this print page, a simple toggle is enough.
+        }
+        
+        // Optional: Auto-detect system preference on load
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // document.documentElement.classList.add('dark');
+            // We'll leave it light by default for printing, user can toggle it manually.
+        }
+    </script>
 </body>
 </html>
