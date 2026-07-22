@@ -57,6 +57,20 @@
             }
         } catch (_e) {}
     </script>
+    <style>
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 24px;
+            bottom: -24px;
+            width: 1px;
+            background-color: #c5c6cd;
+        }
+        .timeline-item:last-child .timeline-dot::after {
+            display: none;
+        }
+    </style>
 </head>
 <body class="bg-surface text-on-surface min-h-screen pb-24">
     <header class="w-full sticky top-0 bg-surface/95 backdrop-blur-md border-b border-outline-variant shadow-sm z-50">
@@ -223,55 +237,68 @@
                     </div>
                 </div>
             </a>
-        </section>
-
-        <!-- Academic Background -->
+          <!-- Academic Background -->
         <section class="space-y-3">
             <h2 class="section-title px-1 text-[16px] font-bold flex items-center gap-2">
                 <span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'wght' 300;">school</span>
                 Academic Background
             </h2>
-            <div class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden">
-                <!-- Education Sub-section -->
-                <div class="px-4 pt-4 pb-2 flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-primary text-[18px]">school</span>
-                    <h3 class="text-[12px] font-bold text-primary uppercase tracking-wider">Education</h3>
-                </div>
-                <div class="divide-y divide-outline-variant/30">
-                    <div class="px-4 py-3 flex justify-between items-start">
-                        <div>
-                            <p class="text-[13px] font-bold text-on-surface leading-tight">Plus Two - Commerce</p>
-                            <p class="text-[11px] font-medium text-primary mt-0.5">BOSSE</p>
-                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-1.5">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> 2026 - Present</span>
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 shadow-sm">
+                <div class="flex flex-col gap-0">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item flex gap-4 relative pb-6">
+                        <div class="timeline-dot relative z-10 shrink-0">
+                            <div class="w-5 h-5 rounded-full border-2 border-primary bg-surface-container-lowest flex items-center justify-center">
+                                <div class="w-2 h-2 rounded-full bg-primary"></div>
                             </div>
                         </div>
-                        <span class="text-[8px] font-bold text-on-primary bg-primary px-1.5 py-0.5 rounded-full uppercase tracking-wider shrink-0 mt-0.5">Ongoing</span>
-                    </div>
-                    <div class="px-4 py-3">
-                        <p class="text-[13px] font-bold text-on-surface leading-tight">Diploma in Multimedia Design</p>
-                        <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-1.5">
-                            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> 2023</span>
+                        <div class="flex flex-col gap-1 -mt-0.5 w-full">
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-[13px] font-bold text-on-surface uppercase">Plus Two - Commerce</h4>
+                                <span class="bg-secondary-container/20 text-on-secondary-container text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wider shrink-0 ml-2">Ongoing</span>
+                            </div>
+                            <p class="text-[11px] font-medium text-on-surface-variant uppercase">BOSSE • 2026 - Present</p>
                         </div>
                     </div>
-                    <div class="px-4 py-3">
-                        <p class="text-[13px] font-bold text-on-surface leading-tight">Plus One - Computer Science</p>
-                        <p class="text-[11px] font-medium text-primary mt-0.5">SCERT</p>
-                        <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-1.5">
-                            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> 2020 - 2021</span>
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item flex gap-4 relative pb-6">
+                        <div class="timeline-dot relative z-10 shrink-0">
+                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 -mt-0.5">
+                            <h4 class="text-[13px] font-bold text-on-surface uppercase">Diploma in Multimedia Design</h4>
+                            <p class="text-[11px] font-medium text-on-surface-variant uppercase">Vocational • 2023</p>
                         </div>
                     </div>
-                    <div class="px-4 py-3">
-                        <p class="text-[13px] font-bold text-on-surface leading-tight">10th SSLC</p>
-                        <p class="text-[11px] font-medium text-primary mt-0.5">SCERT</p>
-                        <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-1.5">
-                            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> 2019</span>
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item flex gap-4 relative pb-6">
+                        <div class="timeline-dot relative z-10 shrink-0">
+                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 -mt-0.5">
+                            <h4 class="text-[13px] font-bold text-on-surface uppercase">Plus One - Computer Science</h4>
+                            <p class="text-[11px] font-medium text-on-surface-variant uppercase">SCERT • 2020 - 2021</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item flex gap-4 relative">
+                        <div class="timeline-dot relative z-10 shrink-0">
+                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 -mt-0.5">
+                            <h4 class="text-[13px] font-bold text-on-surface uppercase">10th SSLC</h4>
+                            <p class="text-[11px] font-medium text-on-surface-variant uppercase">SCERT • 2019</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-        </section>
+        </section>        </section>
 
         <!-- Professional Experience Section -->
         <section class="space-y-3">
@@ -279,71 +306,78 @@
                 <span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'wght' 300;">work</span>
                 Professional Experience
             </h2>
-
-            <!-- IZIN Card -->
-            <div class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden">
-                <div class="px-4 pt-4 pb-1 flex items-center justify-between">
-                    <div class="flex items-center gap-1.5">
-                        <span class="material-symbols-outlined text-primary text-[18px]">work</span>
-                        <h3 class="text-[12px] font-bold text-primary uppercase tracking-wider">IZIN Designs Interior Studio</h3>
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 shadow-sm">
+                <div class="flex flex-col gap-0">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item flex gap-4 relative pb-6">
+                        <div class="timeline-dot relative z-10 shrink-0">
+                            <div class="w-5 h-5 rounded-full border-2 border-primary bg-surface-container-lowest flex items-center justify-center">
+                                <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 -mt-0.5 w-full">
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-[13px] font-bold text-on-surface leading-tight">Digital Marketer</h4>
+                                <span class="bg-primary/10 text-primary text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wider shrink-0 ml-2">Current</span>
+                            </div>
+                            <p class="text-[11px] font-medium text-primary">IZIN Designs Interior Studio</p>
+                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> May 2026 - Present</span>
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Kerala, Muttom</span>
+                            </div>
+                        </div>
                     </div>
-                    <span class="text-[8px] font-bold text-on-primary bg-primary px-1.5 py-0.5 rounded-full uppercase tracking-wider shrink-0">Current</span>
-                </div>
-                <div class="px-4 pb-4 pt-1">
-                    <p class="text-[13px] font-bold text-on-surface leading-tight">Digital Marketer</p>
-                    <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-1.5">
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> May 2026 - Present</span>
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Kerala, Muttom</span>
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item flex gap-4 relative pb-6">
+                        <div class="timeline-dot relative z-10 shrink-0">
+                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 -mt-0.5">
+                            <h4 class="text-[13px] font-bold text-on-surface leading-tight">Back Office Executive | IT | Digital Marketer</h4>
+                            <p class="text-[11px] font-medium text-primary">Tormac Ship Mgmt | Westzone | Sea Focus</p>
+                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Sep 2025 - Mar 2026 <span class="opacity-70">(7 mos)</span></span>
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Sharjah, UAE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item flex gap-4 relative pb-6">
+                        <div class="timeline-dot relative z-10 shrink-0">
+                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 -mt-0.5">
+                            <h4 class="text-[13px] font-bold text-on-surface leading-tight">Back Office Exec | IT | Digital Marketing Strategist</h4>
+                            <p class="text-[11px] font-medium text-primary">GNS Leisure Travels Private Limited</p>
+                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Jun 2025 - Sep 2025 <span class="opacity-70">(4 mos)</span></span>
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Kerala, India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item flex gap-4 relative">
+                        <div class="timeline-dot relative z-10 shrink-0">
+                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 -mt-0.5">
+                            <h4 class="text-[13px] font-bold text-on-surface leading-tight">Back Office Executive | IT | Pitch Deck Designer</h4>
+                            <p class="text-[11px] font-medium text-primary">Greenix Experiences Pvt Ltd</p>
+                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Jan 2023 - May 2025 <span class="opacity-70">(2 yrs 5 mos)</span></span>
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Kerala, India</span>
+                            </div>
+                            <p class="text-[11px] text-on-surface mt-1.5 leading-relaxed opacity-90">Event Management, Boating, Tourism</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Tormac Card -->
-            <div class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden">
-                <div class="px-4 pt-4 pb-1 flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-primary text-[18px]">work</span>
-                    <h3 class="text-[12px] font-bold text-primary uppercase tracking-wider">Tormac Ship Mgmt | Westzone | Sea Focus</h3>
-                </div>
-                <div class="px-4 pb-4 pt-1">
-                    <p class="text-[13px] font-bold text-on-surface leading-tight">Back Office Executive | IT | Digital Marketer</p>
-                    <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-1.5">
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Sep 2025 - Mar 2026 <span class="opacity-70">(7 mos)</span></span>
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Sharjah, UAE</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- GNS Card -->
-            <div class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden">
-                <div class="px-4 pt-4 pb-1 flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-primary text-[18px]">work</span>
-                    <h3 class="text-[12px] font-bold text-primary uppercase tracking-wider">GNS Leisure Travels Private Limited</h3>
-                </div>
-                <div class="px-4 pb-4 pt-1">
-                    <p class="text-[13px] font-bold text-on-surface leading-tight">Back Office Exec | IT | Digital Marketing Strategist</p>
-                    <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-1.5">
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Jun 2025 - Sep 2025 <span class="opacity-70">(4 mos)</span></span>
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Kerala, India</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Greenix Card -->
-            <div class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden">
-                <div class="px-4 pt-4 pb-1 flex items-center gap-1.5">
-                    <span class="material-symbols-outlined text-primary text-[18px]">work</span>
-                    <h3 class="text-[12px] font-bold text-primary uppercase tracking-wider">Greenix Experiences Pvt Ltd</h3>
-                </div>
-                <div class="px-4 pb-4 pt-1">
-                    <p class="text-[13px] font-bold text-on-surface leading-tight">Back Office Executive | IT | Pitch Deck Designer</p>
-                    <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-1.5">
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Jan 2023 - May 2025 <span class="opacity-70">(2 yrs 5 mos)</span></span>
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Kerala, India</span>
-                    </div>
-                    <p class="text-[11px] text-on-surface-variant mt-1.5 leading-relaxed">Event Management, Boating, Tourism</p>
-                </div>
-            </div>
-
         </section>
 
         <!-- Business & Ventures Section -->
