@@ -59,8 +59,8 @@
         
         .section-title {
             font-family: 'Poppins', sans-serif;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.25rem;
+            border-bottom: 2px solid #0F172A;
+            padding-bottom: 0.15rem;
             margin-bottom: 0.75rem;
             color: #0F172A;
             font-size: 1rem;
@@ -98,11 +98,11 @@
     <div class="a4-page">
         
         <!-- Left Sidebar (33%) -->
-        <aside class="w-1/3 bg-slate-50 px-5 py-8 flex flex-col gap-5 border-r border-slate-200">
+        <aside class="w-1/3 bg-slate-50 px-5 py-8 flex flex-col gap-6 border-r border-slate-200">
             
             <!-- Profile Picture -->
             <div class="flex justify-center avoid-break">
-                <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md">
                     <img src="assets/images/profile.jpg" alt="Velhari Sankaran" class="w-full h-full object-cover grayscale">
                 </div>
             </div>
@@ -128,7 +128,7 @@
 
             <!-- Bio Data -->
             <div class="avoid-break">
-                <h3 class="sidebar-title">Details</h3>
+                <h3 class="sidebar-title">Personal Details</h3>
                 <div class="space-y-1 text-[12px] text-secondary">
                     <div class="flex justify-between border-b border-slate-200/50 pb-0.5">
                         <span class="font-bold heading text-[10px]">Age</span>
@@ -141,54 +141,29 @@
                 </div>
             </div>
             
-            <!-- Academic Background (Moved to Sidebar) -->
-            <div class="avoid-break">
-                <h3 class="sidebar-title">Education</h3>
-                <div class="space-y-2.5 text-secondary">
-                    <div>
-                        <p class="font-bold heading text-[11px] text-primary leading-tight">Plus Two - Commerce</p>
-                        <p class="text-[10px] italic text-subtle">BOSSE (2026 - Present)</p>
-                    </div>
-                    <div>
-                        <p class="font-bold heading text-[11px] text-primary leading-tight">Diploma in Multimedia</p>
-                        <p class="text-[10px] italic text-subtle">Vocational (2023)</p>
-                    </div>
-                    <div>
-                        <p class="font-bold heading text-[11px] text-primary leading-tight">Plus One - Comp. Science</p>
-                        <p class="text-[10px] italic text-subtle">SCERT (2020 - 2021)</p>
-                    </div>
-                    <div>
-                        <p class="font-bold heading text-[11px] text-primary leading-tight">10th SSLC</p>
-                        <p class="text-[10px] italic text-subtle">SCERT (2019)</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Financial Overview -->
-            <div class="avoid-break bg-white p-3 rounded border border-slate-200 shadow-sm mt-auto">
-                <h3 class="sidebar-title !border-0 !mb-1 text-center text-accent">Financial Snapshot</h3>
-                <div class="space-y-1.5 text-center">
-                    <div>
-                        <p class="text-[9px] font-bold text-subtle heading uppercase tracking-widest">Assets</p>
-                        <p class="text-[12px] font-bold text-primary heading">₹272,874</p>
-                    </div>
-                    <div class="w-10 h-px bg-slate-200 mx-auto"></div>
-                    <div>
-                        <p class="text-[9px] font-bold text-subtle heading uppercase tracking-widest">Liabilities</p>
-                        <p class="text-[12px] font-bold text-primary heading">₹255,000</p>
-                    </div>
-                    <div class="w-10 h-px bg-slate-200 mx-auto"></div>
-                    <div class="bg-primary text-white py-1.5 px-2 rounded mt-1">
-                        <p class="text-[9px] font-bold heading uppercase tracking-widest text-slate-300">Net Worth</p>
-                        <p class="text-[13px] font-bold heading">₹17,874</p>
-                    </div>
-                </div>
+            <!-- Financial Overview (Document Style) -->
+            <div class="avoid-break mt-auto bg-white border border-slate-200 p-4 shadow-sm">
+                <h3 class="sidebar-title !border-0 text-primary">Financial Overview</h3>
+                <table class="w-full text-[11px] font-sans">
+                    <tr class="border-b border-slate-200">
+                        <td class="py-1.5 text-subtle font-bold uppercase tracking-wide">Assets</td>
+                        <td class="py-1.5 text-right font-bold text-primary">₹272,874</td>
+                    </tr>
+                    <tr class="border-b border-slate-200">
+                        <td class="py-1.5 text-subtle font-bold uppercase tracking-wide">Liabilities</td>
+                        <td class="py-1.5 text-right font-bold text-primary">₹255,000</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 text-primary font-bold uppercase tracking-wide">Net Worth</td>
+                        <td class="py-2 text-right font-bold text-primary text-[13px]">₹17,874</td>
+                    </tr>
+                </table>
             </div>
 
         </aside>
 
         <!-- Right Main Content (67%) -->
-        <main class="w-2/3 px-8 py-8 flex flex-col gap-6">
+        <main class="w-2/3 px-8 py-8 flex flex-col gap-5">
             
             <!-- Name & Title -->
             <header class="avoid-break mb-1">
@@ -199,11 +174,11 @@
             <!-- Business & Ventures -->
             <section class="avoid-break">
                 <h2 class="section-title">Business & Ventures</h2>
-                <div class="space-y-4">
+                <div class="space-y-3.5">
                     <div>
                         <div class="flex justify-between items-baseline mb-0.5">
                             <h3 class="text-[14px] font-bold heading text-primary">Velnex Business Management & Operations FZE LLC</h3>
-                            <span class="text-[10px] font-bold heading text-accent uppercase tracking-wider whitespace-nowrap ml-4">Current</span>
+                            <span class="text-[10px] font-bold heading text-accent uppercase tracking-wider whitespace-nowrap ml-2">Current</span>
                         </div>
                         <p class="text-[12px] font-bold text-secondary mb-0.5">Founder, Manager <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Ajman Emirate, UAE</span></p>
                         <p class="text-[12px] text-subtle leading-snug">Business Consulting and Management Firm.</p>
@@ -211,47 +186,74 @@
                     <div>
                         <div class="flex justify-between items-baseline mb-0.5">
                             <h3 class="text-[14px] font-bold heading text-primary">Green Summer Ventures LLP</h3>
-                            <span class="text-[10px] font-bold heading text-accent uppercase tracking-wider whitespace-nowrap ml-4">Current</span>
+                            <span class="text-[10px] font-bold heading text-accent uppercase tracking-wider whitespace-nowrap ml-2">Current</span>
                         </div>
-                        <p class="text-[12px] font-bold text-secondary mb-0.5">Designated Partner, Strategy & Business Development <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
+                        <p class="text-[12px] font-bold text-secondary mb-0.5">Designated Partner, Strategy & Business Dev. <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
                         <p class="text-[12px] text-subtle leading-snug">Wholesale Procurement, Distribution & Supply of Fresh Agricultural Produce.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Professional Experience -->
-            <section>
+            <section class="avoid-break">
                 <h2 class="section-title">Professional Experience</h2>
-                <div class="space-y-4">
+                <div class="space-y-3">
                     <div class="avoid-break">
                         <div class="flex justify-between items-baseline mb-0.5">
                             <h3 class="text-[13px] font-bold heading text-primary">Digital Marketer</h3>
-                            <span class="text-[10px] font-bold heading text-accent whitespace-nowrap ml-4">May 2026 - Present</span>
+                            <span class="text-[10px] font-bold heading text-accent whitespace-nowrap ml-2">May 2026 - Present</span>
                         </div>
                         <p class="text-[12px] font-bold text-secondary">IZIN Designs Interior Studio <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Muttom, Kerala</span></p>
                     </div>
                     <div class="avoid-break">
                         <div class="flex justify-between items-baseline mb-0.5">
-                            <h3 class="text-[13px] font-bold heading text-primary">Back Office Executive | IT | Digital Marketer</h3>
-                            <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-4">Sep 2025 - Mar 2026</span>
+                            <h3 class="text-[13px] font-bold heading text-primary">Back Office Exec | IT | Digital Marketer</h3>
+                            <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-2">Sep 2025 - Mar 2026</span>
                         </div>
                         <p class="text-[12px] font-bold text-secondary">Tormac | Westzone | Sea Focus <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Sharjah, UAE</span></p>
                         <p class="text-[12px] text-subtle leading-snug mt-0.5">Ship Management And Operations</p>
                     </div>
                     <div class="avoid-break">
                         <div class="flex justify-between items-baseline mb-0.5">
-                            <h3 class="text-[13px] font-bold heading text-primary">Back Office Exec | IT | Digital Marketing Strategist</h3>
-                            <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-4">Jun 2025 - Sep 2025</span>
+                            <h3 class="text-[13px] font-bold heading text-primary">Back Office Exec | IT | Digital Mkt. Strategist</h3>
+                            <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-2">Jun 2025 - Sep 2025</span>
                         </div>
-                        <p class="text-[12px] font-bold text-secondary">GNS Leisure Travels Private Limited <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
+                        <p class="text-[12px] font-bold text-secondary">GNS Leisure Travels Pvt Ltd <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
                     </div>
                     <div class="avoid-break">
                         <div class="flex justify-between items-baseline mb-0.5">
                             <h3 class="text-[13px] font-bold heading text-primary">Back Office Exec | IT | Pitch Deck Designer</h3>
-                            <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-4">Jan 2023 - May 2025</span>
+                            <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-2">Jan 2023 - May 2025</span>
                         </div>
                         <p class="text-[12px] font-bold text-secondary mb-0.5">Greenix Experiences Pvt Ltd <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
                         <p class="text-[12px] text-subtle leading-snug">Event Management, Boating, Tourism.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Academic Background (Grid Layout to save vertical space) -->
+            <section class="avoid-break mt-auto">
+                <h2 class="section-title">Academic Background</h2>
+                <div class="grid grid-cols-2 gap-x-6 gap-y-3">
+                    <div>
+                        <h3 class="text-[13px] font-bold heading text-primary mb-0.5">Plus Two - Commerce</h3>
+                        <p class="text-[12px] italic text-secondary mb-0.5">BOSSE</p>
+                        <span class="text-[10px] font-bold heading text-accent">2026 - Present (Ongoing)</span>
+                    </div>
+                    <div>
+                        <h3 class="text-[13px] font-bold heading text-primary mb-0.5">Diploma in Multimedia</h3>
+                        <p class="text-[12px] italic text-secondary mb-0.5">Vocational</p>
+                        <span class="text-[10px] font-bold heading text-subtle">2023</span>
+                    </div>
+                    <div>
+                        <h3 class="text-[13px] font-bold heading text-primary mb-0.5">Plus One - Comp. Science</h3>
+                        <p class="text-[12px] italic text-secondary mb-0.5">SCERT</p>
+                        <span class="text-[10px] font-bold heading text-subtle">2020 - 2021</span>
+                    </div>
+                    <div>
+                        <h3 class="text-[13px] font-bold heading text-primary mb-0.5">10th SSLC</h3>
+                        <p class="text-[12px] italic text-secondary mb-0.5">SCERT</p>
+                        <span class="text-[10px] font-bold heading text-subtle">2019</span>
                     </div>
                 </div>
             </section>
