@@ -90,30 +90,31 @@
         <!-- Credit Card Hero -->
         <section class="flex flex-col items-center pt-2 pb-2 space-y-6">
             <!-- The Card -->
-            <div class="relative w-full max-w-[340px] aspect-[1.58/1] rounded-2xl p-5 overflow-hidden shadow-xl bg-gradient-to-br from-primary via-[#1e293b] to-primary text-on-primary border border-outline-variant/20 flex flex-col justify-between">
+            <div class="relative w-full max-w-[340px] aspect-[1.58/1] rounded-2xl p-5 overflow-hidden shadow-xl bg-gradient-to-br from-gray-200 via-gray-50 to-gray-300 text-gray-800 border border-white/80 flex flex-col justify-between">
                 
-                <!-- Noise/Texture Overlay -->
-                <div class="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+                <!-- Noise/Texture Overlay for Metallic Feel -->
+                <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+                <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-50 transform -skew-x-12"></div>
 
                 <!-- Top: Branding -->
                 <div class="text-center relative z-10 w-full flex flex-col items-center">
                     <span class="text-[12px] font-bold tracking-[0.25em] uppercase opacity-90">Velhari Sankaran</span>
-                    <span class="text-[7px] font-medium tracking-[0.3em] uppercase opacity-60 mt-0.5">Founder &amp; Manager</span>
+                    <span class="text-[7px] font-bold tracking-[0.3em] uppercase opacity-70 mt-0.5">Founder &amp; Manager</span>
                 </div>
                 
                 <!-- Middle: Chip, Profile Picture, Contactless -->
                 <div class="flex justify-between items-center relative z-10 px-1 my-auto">
-                    <!-- Chip -->
-                    <div class="w-10 h-7 rounded bg-gradient-to-br from-amber-200/80 to-yellow-600/80 flex flex-col justify-evenly p-0.5 opacity-90 overflow-hidden relative shadow-sm">
-                        <div class="absolute inset-0 border border-black/20 rounded"></div>
-                        <div class="w-full h-[1px] bg-black/20"></div>
-                        <div class="w-full h-[1px] bg-black/20"></div>
-                        <div class="w-full h-[1px] bg-black/20"></div>
+                    <!-- Silver Chip -->
+                    <div class="w-10 h-7 rounded bg-gradient-to-br from-gray-200 to-gray-400 flex flex-col justify-evenly p-0.5 opacity-90 overflow-hidden relative shadow-sm border border-gray-400">
+                        <div class="absolute inset-0 border border-black/10 rounded"></div>
+                        <div class="w-full h-[1px] bg-black/10"></div>
+                        <div class="w-full h-[1px] bg-black/10"></div>
+                        <div class="w-full h-[1px] bg-black/10"></div>
                     </div>
                     
                     <!-- Profile Picture (Centurion replacement) -->
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-[2px] border-white/20 shadow-lg shrink-0 relative z-10 bg-primary-container">
-                        <img alt="Velhari Sankaran" class="w-full h-full object-cover grayscale-[10%]" src="assets/images/profile.jpg">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-[2px] border-gray-400/50 shadow-md shrink-0 relative z-10 bg-gray-200">
+                        <img alt="Velhari Sankaran" class="w-full h-full object-cover grayscale contrast-125" src="assets/images/profile.jpg">
                     </div>
                     
                     <!-- Contactless Icon -->
@@ -125,11 +126,11 @@
                 <!-- Bottom: Name and details -->
                 <div class="relative z-10 flex justify-between items-end">
                     <div class="flex flex-col">
-                        <span class="text-[14px] sm:text-[15px] font-semibold tracking-[0.15em] uppercase" style="font-family: 'JetBrains Mono', monospace;">Velhari Sankaran</span>
+                        <span class="text-[14px] sm:text-[15px] font-bold tracking-[0.15em] uppercase opacity-90" style="font-family: 'JetBrains Mono', monospace;">Velhari Sankaran</span>
                     </div>
                     <div class="flex flex-col items-end">
-                        <span class="text-[7px] font-medium tracking-[0.2em] uppercase opacity-60 mb-0.5">Est.</span>
-                        <span class="text-[11px] font-bold tracking-widest font-mono">2024</span>
+                        <span class="text-[7px] font-bold tracking-[0.2em] uppercase opacity-70 mb-0.5">Est.</span>
+                        <span class="text-[11px] font-bold tracking-widest font-mono opacity-90">2024</span>
                     </div>
                 </div>
             </div>
