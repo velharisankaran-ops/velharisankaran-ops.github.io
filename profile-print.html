@@ -61,9 +61,9 @@
             font-family: 'Poppins', sans-serif;
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.25rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             color: #0F172A;
-            font-size: 1.125rem;
+            font-size: 1rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -72,25 +72,25 @@
         .sidebar-title {
             font-family: 'Poppins', sans-serif;
             color: #0F172A;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             border-bottom: 1px solid #cbd5e1;
             padding-bottom: 0.25rem;
         }
     </style>
 </head>
-<body class="antialiased body-text text-sm">
+<body class="antialiased body-text text-[13px]">
 
     <!-- Floating UI Buttons -->
-    <button onclick="window.print()" class="no-print fixed bottom-8 right-8 bg-primary text-white px-6 py-3 rounded-full shadow-xl hover:bg-slate-800 transition-colors flex items-center gap-2 font-semibold z-50 heading">
+    <button onclick="window.print()" class="no-print fixed bottom-8 right-8 bg-primary text-white px-6 py-3 rounded-full shadow-xl hover:bg-slate-800 transition-colors flex items-center gap-2 font-semibold z-50 heading text-sm">
         <span class="material-symbols-outlined">print</span>
         Download PDF
     </button>
     
-    <button onclick="window.location.href='index.html'" class="no-print fixed bottom-8 left-8 bg-white border border-slate-300 text-slate-700 px-6 py-3 rounded-full shadow-lg hover:bg-slate-50 transition-colors flex items-center gap-2 font-semibold z-50 heading">
+    <button onclick="window.location.href='index.html'" class="no-print fixed bottom-8 left-8 bg-white border border-slate-300 text-slate-700 px-6 py-3 rounded-full shadow-lg hover:bg-slate-50 transition-colors flex items-center gap-2 font-semibold z-50 heading text-sm">
         <span class="material-symbols-outlined">arrow_back</span>
         Back to Site
     </button>
@@ -98,11 +98,11 @@
     <div class="a4-page">
         
         <!-- Left Sidebar (33%) -->
-        <aside class="w-1/3 bg-slate-50 px-6 py-10 flex flex-col gap-8 border-r border-slate-200">
+        <aside class="w-1/3 bg-slate-50 px-5 py-8 flex flex-col gap-6 border-r border-slate-200">
             
             <!-- Profile Picture -->
             <div class="flex justify-center avoid-break">
-                <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md">
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md">
                     <img src="assets/images/profile.jpg" alt="Velhari Sankaran" class="w-full h-full object-cover grayscale">
                 </div>
             </div>
@@ -110,17 +110,17 @@
             <!-- Contact Info -->
             <div class="avoid-break">
                 <h3 class="sidebar-title">Contact</h3>
-                <div class="space-y-3 text-[13px] text-secondary">
+                <div class="space-y-2 text-[12px] text-secondary">
                     <div class="flex items-start gap-2">
-                        <span class="material-symbols-outlined text-[16px] text-primary mt-0.5">mail</span> 
+                        <span class="material-symbols-outlined text-[14px] text-primary mt-0.5">mail</span> 
                         <span class="leading-tight">velharisankaran@gmail.com</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[16px] text-primary">call</span> 
+                        <span class="material-symbols-outlined text-[14px] text-primary">call</span> 
                         <span>+91 9567092833</span>
                     </div>
                     <div class="flex items-start gap-2">
-                        <span class="material-symbols-outlined text-[16px] text-primary mt-0.5">location_on</span> 
+                        <span class="material-symbols-outlined text-[14px] text-primary mt-0.5">location_on</span> 
                         <span class="leading-tight">Anchalasseri House, Njarakkal, Vypin, Kochi, Kerala, India - 682505</span>
                     </div>
                 </div>
@@ -129,35 +129,35 @@
             <!-- Bio Data -->
             <div class="avoid-break">
                 <h3 class="sidebar-title">Personal Details</h3>
-                <div class="space-y-2 text-[13px] text-secondary">
+                <div class="space-y-1.5 text-[12px] text-secondary">
                     <div class="flex justify-between border-b border-slate-200/50 pb-1">
-                        <span class="font-bold heading text-xs">Age</span>
+                        <span class="font-bold heading text-[10px]">Age</span>
                         <span>23</span>
                     </div>
                     <div class="flex justify-between border-b border-slate-200/50 pb-1">
-                        <span class="font-bold heading text-xs">Nationality</span>
+                        <span class="font-bold heading text-[10px]">Nationality</span>
                         <span>Indian</span>
                     </div>
                 </div>
             </div>
             
             <!-- Financial Overview -->
-            <div class="avoid-break bg-white p-4 rounded border border-slate-200 shadow-sm mt-4">
-                <h3 class="sidebar-title !border-0 !mb-2 text-center text-accent">Financial Snapshot</h3>
-                <div class="space-y-2 text-center">
+            <div class="avoid-break bg-white p-3 rounded border border-slate-200 shadow-sm mt-2">
+                <h3 class="sidebar-title !border-0 !mb-1 text-center text-accent">Financial Snapshot</h3>
+                <div class="space-y-1.5 text-center">
                     <div>
-                        <p class="text-[10px] font-bold text-subtle heading uppercase tracking-widest">Total Assets</p>
-                        <p class="text-sm font-bold text-primary heading">₹272,874</p>
+                        <p class="text-[9px] font-bold text-subtle heading uppercase tracking-widest">Total Assets</p>
+                        <p class="text-[13px] font-bold text-primary heading">₹272,874</p>
                     </div>
-                    <div class="w-12 h-px bg-slate-200 mx-auto"></div>
+                    <div class="w-10 h-px bg-slate-200 mx-auto"></div>
                     <div>
-                        <p class="text-[10px] font-bold text-subtle heading uppercase tracking-widest">Total Liabilities</p>
-                        <p class="text-sm font-bold text-primary heading">₹255,000</p>
+                        <p class="text-[9px] font-bold text-subtle heading uppercase tracking-widest">Total Liabilities</p>
+                        <p class="text-[13px] font-bold text-primary heading">₹255,000</p>
                     </div>
-                    <div class="w-12 h-px bg-slate-200 mx-auto"></div>
-                    <div class="bg-primary text-white py-2 px-3 rounded mt-2">
-                        <p class="text-[10px] font-bold heading uppercase tracking-widest text-slate-300">Net Worth</p>
-                        <p class="text-base font-bold heading">₹17,874</p>
+                    <div class="w-10 h-px bg-slate-200 mx-auto"></div>
+                    <div class="bg-primary text-white py-1.5 px-2 rounded mt-1">
+                        <p class="text-[9px] font-bold heading uppercase tracking-widest text-slate-300">Net Worth</p>
+                        <p class="text-[14px] font-bold heading">₹17,874</p>
                     </div>
                 </div>
             </div>
@@ -165,33 +165,33 @@
         </aside>
 
         <!-- Right Main Content (67%) -->
-        <main class="w-2/3 px-10 py-12 flex flex-col gap-8">
+        <main class="w-2/3 px-8 py-8 flex flex-col gap-6">
             
             <!-- Name & Title -->
-            <header class="avoid-break mb-2">
-                <h1 class="text-[2.75rem] font-bold heading text-primary uppercase leading-none mb-2">Velhari<br>Sankaran</h1>
-                <p class="text-lg heading text-accent font-semibold tracking-wide uppercase">Commerce Student | Working Professional</p>
+            <header class="avoid-break mb-1">
+                <h1 class="text-[2.25rem] font-bold heading text-primary uppercase leading-none mb-1">Velhari<br>Sankaran</h1>
+                <p class="text-[15px] heading text-accent font-semibold tracking-wide uppercase">Commerce Student | Working Professional</p>
             </header>
 
             <!-- Business & Ventures -->
             <section class="avoid-break">
                 <h2 class="section-title">Business & Ventures</h2>
-                <div class="space-y-5">
+                <div class="space-y-3.5">
                     <div>
                         <div class="flex justify-between items-baseline mb-0.5">
-                            <h3 class="text-[15px] font-bold heading text-primary">Velnex Business Management & Operations FZE LLC</h3>
-                            <span class="text-[11px] font-bold heading text-accent uppercase tracking-wider whitespace-nowrap ml-4">Current</span>
+                            <h3 class="text-[14px] font-bold heading text-primary">Velnex Business Management & Operations FZE LLC</h3>
+                            <span class="text-[10px] font-bold heading text-accent uppercase tracking-wider whitespace-nowrap ml-4">Current</span>
                         </div>
-                        <p class="text-[13px] font-bold text-secondary mb-1">Founder, Manager <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Ajman Emirate, UAE</span></p>
-                        <p class="text-[13px] text-subtle leading-relaxed">Business Consulting and Management Firm.</p>
+                        <p class="text-[12px] font-bold text-secondary mb-0.5">Founder, Manager <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Ajman Emirate, UAE</span></p>
+                        <p class="text-[12px] text-subtle leading-snug">Business Consulting and Management Firm.</p>
                     </div>
                     <div>
                         <div class="flex justify-between items-baseline mb-0.5">
-                            <h3 class="text-[15px] font-bold heading text-primary">Green Summer Ventures LLP</h3>
-                            <span class="text-[11px] font-bold heading text-accent uppercase tracking-wider whitespace-nowrap ml-4">Current</span>
+                            <h3 class="text-[14px] font-bold heading text-primary">Green Summer Ventures LLP</h3>
+                            <span class="text-[10px] font-bold heading text-accent uppercase tracking-wider whitespace-nowrap ml-4">Current</span>
                         </div>
-                        <p class="text-[13px] font-bold text-secondary mb-1">Designated Partner, Strategy & Business Development <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
-                        <p class="text-[13px] text-subtle leading-relaxed">Wholesale Procurement, Distribution & Supply of Fresh Agricultural Produce.</p>
+                        <p class="text-[12px] font-bold text-secondary mb-0.5">Designated Partner, Strategy & Business Development <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
+                        <p class="text-[12px] text-subtle leading-snug">Wholesale Procurement, Distribution & Supply of Fresh Agricultural Produce.</p>
                     </div>
                 </div>
             </section>
@@ -199,71 +199,71 @@
             <!-- Professional Experience -->
             <section>
                 <h2 class="section-title">Professional Experience</h2>
-                <div class="space-y-5">
+                <div class="space-y-3.5">
                     <div class="avoid-break">
                         <div class="flex justify-between items-baseline mb-0.5">
-                            <h3 class="text-[14px] font-bold heading text-primary">Digital Marketer</h3>
-                            <span class="text-[11px] font-bold heading text-accent whitespace-nowrap ml-4">May 2026 - Present</span>
+                            <h3 class="text-[13px] font-bold heading text-primary">Digital Marketer</h3>
+                            <span class="text-[10px] font-bold heading text-accent whitespace-nowrap ml-4">May 2026 - Present</span>
                         </div>
-                        <p class="text-[13px] font-bold text-secondary">IZIN Designs Interior Studio <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Muttom, Kerala</span></p>
+                        <p class="text-[12px] font-bold text-secondary">IZIN Designs Interior Studio <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Muttom, Kerala</span></p>
                     </div>
                     <div class="avoid-break">
                         <div class="flex justify-between items-baseline mb-0.5">
-                            <h3 class="text-[14px] font-bold heading text-primary">Back Office Executive | IT | Digital Marketer</h3>
-                            <span class="text-[11px] font-bold heading text-subtle whitespace-nowrap ml-4">Sep 2025 - Mar 2026</span>
+                            <h3 class="text-[13px] font-bold heading text-primary">Back Office Executive | IT | Digital Marketer</h3>
+                            <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-4">Sep 2025 - Mar 2026</span>
                         </div>
-                        <p class="text-[13px] font-bold text-secondary">Tormac | Westzone | Sea Focus <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Sharjah, UAE</span></p>
-                        <p class="text-[13px] text-subtle leading-relaxed mt-0.5">Ship Management And Operations</p>
+                        <p class="text-[12px] font-bold text-secondary">Tormac | Westzone | Sea Focus <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Sharjah, UAE</span></p>
+                        <p class="text-[12px] text-subtle leading-snug mt-0.5">Ship Management And Operations</p>
                     </div>
                     <div class="avoid-break">
                         <div class="flex justify-between items-baseline mb-0.5">
-                            <h3 class="text-[14px] font-bold heading text-primary">Back Office Exec | IT | Digital Marketing Strategist</h3>
-                            <span class="text-[11px] font-bold heading text-subtle whitespace-nowrap ml-4">Jun 2025 - Sep 2025</span>
+                            <h3 class="text-[13px] font-bold heading text-primary">Back Office Exec | IT | Digital Marketing Strategist</h3>
+                            <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-4">Jun 2025 - Sep 2025</span>
                         </div>
-                        <p class="text-[13px] font-bold text-secondary">GNS Leisure Travels Private Limited <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
+                        <p class="text-[12px] font-bold text-secondary">GNS Leisure Travels Private Limited <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
                     </div>
                     <div class="avoid-break">
                         <div class="flex justify-between items-baseline mb-0.5">
-                            <h3 class="text-[14px] font-bold heading text-primary">Back Office Exec | IT | Pitch Deck Designer</h3>
-                            <span class="text-[11px] font-bold heading text-subtle whitespace-nowrap ml-4">Jan 2023 - May 2025</span>
+                            <h3 class="text-[13px] font-bold heading text-primary">Back Office Exec | IT | Pitch Deck Designer</h3>
+                            <span class="text-[10px] font-bold heading text-subtle whitespace-nowrap ml-4">Jan 2023 - May 2025</span>
                         </div>
-                        <p class="text-[13px] font-bold text-secondary mb-1">Greenix Experiences Pvt Ltd <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
-                        <p class="text-[13px] text-subtle leading-relaxed">Event Management, Boating, Tourism.</p>
+                        <p class="text-[12px] font-bold text-secondary mb-0.5">Greenix Experiences Pvt Ltd <span class="mx-1 text-slate-300">|</span> <span class="italic font-normal">Kerala, India</span></p>
+                        <p class="text-[12px] text-subtle leading-snug">Event Management, Boating, Tourism.</p>
                     </div>
                 </div>
             </section>
             
             <!-- Academic Background -->
-            <section class="avoid-break mt-auto pt-4">
+            <section class="avoid-break">
                 <h2 class="section-title">Academic Background</h2>
-                <div class="space-y-4">
+                <div class="space-y-2.5">
                     <div class="flex justify-between items-baseline">
                         <div>
-                            <h3 class="text-[14px] font-bold heading text-primary">Plus Two - Commerce</h3>
-                            <p class="text-[13px] italic text-secondary">BOSSE</p>
+                            <h3 class="text-[13px] font-bold heading text-primary">Plus Two - Commerce</h3>
+                            <p class="text-[12px] italic text-secondary">BOSSE</p>
                         </div>
-                        <span class="text-[11px] font-bold heading text-accent">2026 - Present (Ongoing)</span>
+                        <span class="text-[10px] font-bold heading text-accent">2026 - Present (Ongoing)</span>
                     </div>
                     <div class="flex justify-between items-baseline">
                         <div>
-                            <h3 class="text-[14px] font-bold heading text-primary">Diploma in Multimedia Design</h3>
-                            <p class="text-[13px] italic text-secondary">Vocational</p>
+                            <h3 class="text-[13px] font-bold heading text-primary">Diploma in Multimedia Design</h3>
+                            <p class="text-[12px] italic text-secondary">Vocational</p>
                         </div>
-                        <span class="text-[11px] font-bold heading text-subtle">2023</span>
+                        <span class="text-[10px] font-bold heading text-subtle">2023</span>
                     </div>
                     <div class="flex justify-between items-baseline">
                         <div>
-                            <h3 class="text-[14px] font-bold heading text-primary">Plus One - Computer Science</h3>
-                            <p class="text-[13px] italic text-secondary">SCERT</p>
+                            <h3 class="text-[13px] font-bold heading text-primary">Plus One - Computer Science</h3>
+                            <p class="text-[12px] italic text-secondary">SCERT</p>
                         </div>
-                        <span class="text-[11px] font-bold heading text-subtle">2020 - 2021</span>
+                        <span class="text-[10px] font-bold heading text-subtle">2020 - 2021</span>
                     </div>
                     <div class="flex justify-between items-baseline">
                         <div>
-                            <h3 class="text-[14px] font-bold heading text-primary">10th SSLC</h3>
-                            <p class="text-[13px] italic text-secondary">SCERT</p>
+                            <h3 class="text-[13px] font-bold heading text-primary">10th SSLC</h3>
+                            <p class="text-[12px] italic text-secondary">SCERT</p>
                         </div>
-                        <span class="text-[11px] font-bold heading text-subtle">2019</span>
+                        <span class="text-[10px] font-bold heading text-subtle">2019</span>
                     </div>
                 </div>
             </section>
