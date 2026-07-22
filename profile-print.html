@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velhari Sankaran - Founder Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#0F172A',
+                        secondary: '#334155',
+                        accent: '#3B82F6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f1f5f9;
+            color: #0F172A;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm 20mm;
+            margin: 10mm auto;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        @media print {
+            body { background: white; }
+            .a4-page {
+                margin: 0;
+                padding: 15mm;
+                box-shadow: none;
+                width: 100%;
+                min-height: auto;
+            }
+            .no-print { display: none !important; }
+            .page-break { page-break-before: always; }
+        }
+        
+        /* Modern CV Styling */
+        h1, h2, h3, h4 { letter-spacing: -0.02em; }
+        .section-title {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            color: #0F172A;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .mono-num { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Floating Print Button -->
+    <button onclick="window.print()" class="no-print fixed bottom-8 right-8 bg-primary text-white px-6 py-3 rounded-full shadow-xl hover:bg-slate-800 transition-colors flex items-center gap-2 font-semibold z-50">
+        <span class="material-symbols-outlined">print</span>
+        Download PDF
+    </button>
+    
+    <button onclick="window.location.href='index.html'" class="no-print fixed bottom-8 left-8 bg-white border border-slate-300 text-slate-700 px-6 py-3 rounded-full shadow-lg hover:bg-slate-50 transition-colors flex items-center gap-2 font-semibold z-50">
+        <span class="material-symbols-outlined">arrow_back</span>
+        Back to Site
+    </button>
+
+    <div class="a4-page">
+        
+        <!-- Header Section -->
+        <header class="flex items-center gap-8 mb-6">
+            <div class="w-32 h-32 rounded-full overflow-hidden border-[3px] border-slate-200 shrink-0">
+                <img src="assets/images/profile.jpg" alt="Velhari Sankaran" class="w-full h-full object-cover grayscale">
+            </div>
+            <div class="flex-1">
+                <h1 class="text-4xl font-bold mb-2 tracking-tight uppercase" style="font-family: 'JetBrains Mono', monospace;">Velhari Sankaran</h1>
+                <p class="text-lg text-accent font-semibold mb-3">Founder & Manager | Digital Marketer</p>
+                <div class="grid grid-cols-2 gap-y-1 text-sm text-secondary font-medium">
+                    <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">mail</span> velharisankaran@gmail.com</div>
+                    <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">call</span> +91 9567092833</div>
+                    <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">location_on</span> Kerala, India - 682505</div>
+                    <div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">badge</span> 23 Years Old | Indian</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Business & Ventures -->
+        <section>
+            <h2 class="section-title">Business & Ventures</h2>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h3 class="text-lg font-bold text-primary">Velnex Business Management & Operations FZE LLC</h3>
+                        <span class="text-sm font-semibold text-accent uppercase tracking-wider">Current</span>
+                    </div>
+                    <p class="text-sm font-medium text-secondary mb-1">Founder, Manager <span class="mx-2 text-slate-300">•</span> Ajman Emirate, UAE</p>
+                    <p class="text-sm text-slate-600">Business Consulting and Management Firm.</p>
+                </div>
+                <div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h3 class="text-lg font-bold text-primary">Green Summer Ventures LLP</h3>
+                        <span class="text-sm font-semibold text-accent uppercase tracking-wider">Current</span>
+                    </div>
+                    <p class="text-sm font-medium text-secondary mb-1">Designated Partner, Strategy & Business Development <span class="mx-2 text-slate-300">•</span> Kerala, India</p>
+                    <p class="text-sm text-slate-600">Wholesale Procurement, Distribution & Supply of Fresh Agricultural Produce.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section>
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h3 class="text-base font-bold text-primary">Digital Marketer</h3>
+                        <span class="text-sm font-semibold text-accent">May 2026 - Present</span>
+                    </div>
+                    <p class="text-sm font-medium text-secondary">IZIN Designs Interior Studio <span class="mx-2 text-slate-300">•</span> Muttom, Kerala</p>
+                </div>
+                <div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h3 class="text-base font-bold text-primary">Back Office Executive | IT | Digital Marketer</h3>
+                        <span class="text-sm font-semibold text-slate-500">Sep 2025 - Mar 2026</span>
+                    </div>
+                    <p class="text-sm font-medium text-secondary">Tormac | Westzone | Sea Focus - Ship Management And Operations <span class="mx-2 text-slate-300">•</span> Sharjah, UAE</p>
+                </div>
+                <div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h3 class="text-base font-bold text-primary">Back Office Exec | IT | Digital Marketing Strategist</h3>
+                        <span class="text-sm font-semibold text-slate-500">Jun 2025 - Sep 2025</span>
+                    </div>
+                    <p class="text-sm font-medium text-secondary">GNS Leisure Travels Private Limited <span class="mx-2 text-slate-300">•</span> Kerala, India</p>
+                </div>
+                <div>
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h3 class="text-base font-bold text-primary">Back Office Executive | IT | Pitch Deck Designer</h3>
+                        <span class="text-sm font-semibold text-slate-500">Jan 2023 - May 2025</span>
+                    </div>
+                    <p class="text-sm font-medium text-secondary">Greenix Experiences Pvt Ltd <span class="mx-2 text-slate-300">•</span> Kerala, India</p>
+                    <p class="text-sm text-slate-600 mt-0.5">Event Management, Boating, Tourism.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Academic Background -->
+        <section>
+            <h2 class="section-title">Academic Background</h2>
+            <div class="space-y-3">
+                <div class="flex justify-between items-baseline">
+                    <div>
+                        <h3 class="text-base font-bold text-primary">Plus Two - Commerce</h3>
+                        <p class="text-sm font-medium text-secondary">BOSSE</p>
+                    </div>
+                    <span class="text-sm font-semibold text-accent">2026 - Present (Ongoing)</span>
+                </div>
+                <div class="flex justify-between items-baseline">
+                    <div>
+                        <h3 class="text-base font-bold text-primary">Diploma in Multimedia Design</h3>
+                        <p class="text-sm font-medium text-secondary">Vocational</p>
+                    </div>
+                    <span class="text-sm font-semibold text-slate-500">2023</span>
+                </div>
+                <div class="flex justify-between items-baseline">
+                    <div>
+                        <h3 class="text-base font-bold text-primary">Plus One - Computer Science</h3>
+                        <p class="text-sm font-medium text-secondary">SCERT</p>
+                    </div>
+                    <span class="text-sm font-semibold text-slate-500">2020 - 2021</span>
+                </div>
+                <div class="flex justify-between items-baseline">
+                    <div>
+                        <h3 class="text-base font-bold text-primary">10th SSLC</h3>
+                        <p class="text-sm font-medium text-secondary">SCERT</p>
+                    </div>
+                    <span class="text-sm font-semibold text-slate-500">2019</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financial Overview -->
+        <section>
+            <h2 class="section-title">Financial Overview</h2>
+            <div class="grid grid-cols-3 gap-4 mb-2">
+                <div class="bg-slate-50 border border-slate-200 p-3 rounded-lg text-center">
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Total Assets</p>
+                    <p class="text-lg font-bold text-primary mono-num">₹272,874</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-3 rounded-lg text-center">
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Total Liabilities</p>
+                    <p class="text-lg font-bold text-primary mono-num">₹255,000</p>
+                </div>
+                <div class="bg-slate-800 border border-slate-900 p-3 rounded-lg text-center shadow-md">
+                    <p class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Net Worth</p>
+                    <p class="text-lg font-bold text-white mono-num">₹17,874</p>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+</body>
+</html>
