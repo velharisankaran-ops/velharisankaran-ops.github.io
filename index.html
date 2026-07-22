@@ -87,29 +87,70 @@
     </header>
     
     <main class="p-container-margin max-w-xl mx-auto space-y-8">
-        <!-- Compact Hero -->
-        <section class="flex flex-col items-center text-center py-4 space-y-4">
-            <div class="w-[92px] h-[92px] rounded-full overflow-hidden border-2 border-primary/10 shadow-sm">
-                <img alt="Velhari Sankaran" class="w-full h-full object-cover" src="assets/images/profile.jpg">
+        <!-- Credit Card Hero -->
+        <section class="flex flex-col items-center pt-2 pb-2 space-y-6">
+            <!-- The Card -->
+            <div class="relative w-full max-w-[340px] aspect-[1.58/1] rounded-2xl p-5 overflow-hidden shadow-xl bg-gradient-to-br from-primary via-[#1e293b] to-primary text-on-primary border border-outline-variant/20 flex flex-col justify-between">
+                
+                <!-- Noise/Texture Overlay -->
+                <div class="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+
+                <!-- Top: Branding -->
+                <div class="text-center relative z-10 w-full flex flex-col items-center">
+                    <span class="text-[12px] font-bold tracking-[0.25em] uppercase opacity-90">Velhari Sankaran</span>
+                    <span class="text-[7px] font-medium tracking-[0.3em] uppercase opacity-60 mt-0.5">Founder &amp; Manager</span>
+                </div>
+                
+                <!-- Middle: Chip, Profile Picture, Contactless -->
+                <div class="flex justify-between items-center relative z-10 px-1 my-auto">
+                    <!-- Chip -->
+                    <div class="w-10 h-7 rounded bg-gradient-to-br from-amber-200/80 to-yellow-600/80 flex flex-col justify-evenly p-0.5 opacity-90 overflow-hidden relative shadow-sm">
+                        <div class="absolute inset-0 border border-black/20 rounded"></div>
+                        <div class="w-full h-[1px] bg-black/20"></div>
+                        <div class="w-full h-[1px] bg-black/20"></div>
+                        <div class="w-full h-[1px] bg-black/20"></div>
+                    </div>
+                    
+                    <!-- Profile Picture (Centurion replacement) -->
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-[2px] border-white/20 shadow-lg shrink-0 relative z-10 bg-primary-container">
+                        <img alt="Velhari Sankaran" class="w-full h-full object-cover grayscale-[10%]" src="assets/images/profile.jpg">
+                    </div>
+                    
+                    <!-- Contactless Icon -->
+                    <div class="w-10 flex justify-end">
+                        <span class="material-symbols-outlined text-[20px] opacity-70">contactless</span>
+                    </div>
+                </div>
+
+                <!-- Bottom: Name and details -->
+                <div class="relative z-10 flex justify-between items-end">
+                    <div class="flex flex-col">
+                        <span class="text-[14px] sm:text-[15px] font-semibold tracking-[0.15em] uppercase" style="font-family: 'JetBrains Mono', monospace;">Velhari Sankaran</span>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <span class="text-[7px] font-medium tracking-[0.2em] uppercase opacity-60 mb-0.5">Est.</span>
+                        <span class="text-[11px] font-bold tracking-widest font-mono">2024</span>
+                    </div>
+                </div>
             </div>
-            <div class="space-y-1">
-                <h1 class="text-[24px] font-bold text-on-surface tracking-tight">Velhari Sankaran</h1>
-                <h2 class="text-[16px] font-medium text-on-surface-variant">Founder, Manager of Velnex</h2>
-                <p class="text-[12px] text-on-surface-variant max-w-[320px] mx-auto leading-tight">Building my education, financial stability &amp; Velnex.</p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-4 pt-1.5 text-[11px] text-on-surface-variant font-medium">
-                    <a href="mailto:velharisankaran@gmail.com" class="flex items-center gap-1 hover:text-primary transition-colors">
+
+            <!-- Below Card Details -->
+            <div class="text-center space-y-3 px-4 w-full">
+                <p class="text-[12px] text-on-surface-variant max-w-[320px] mx-auto leading-relaxed">Building my education, financial stability &amp; Velnex.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-[11px] text-on-surface-variant font-medium">
+                    <a href="mailto:velharisankaran@gmail.com" class="flex items-center gap-1.5 hover:text-primary transition-colors bg-surface-container-lowest border border-outline-variant/50 px-3.5 py-1.5 rounded-full shadow-sm">
                         <span class="material-symbols-outlined text-[14px]">mail</span>
                         velharisankaran@gmail.com
                     </a>
-                    <a href="tel:+919567092833" class="flex items-center gap-1 hover:text-primary transition-colors">
+                    <a href="tel:+919567092833" class="flex items-center gap-1.5 hover:text-primary transition-colors bg-surface-container-lowest border border-outline-variant/50 px-3.5 py-1.5 rounded-full shadow-sm">
                         <span class="material-symbols-outlined text-[14px]">call</span>
                         +91 9567092833
                     </a>
                 </div>
-            </div>
-            <div class="flex gap-3 pt-1">
-                <a href="goal-details.html" class="inline-block px-5 py-2 bg-primary text-on-primary rounded-lg text-[12px] font-semibold hover:bg-primary/90 transition-colors">Donate</a>
-                <a href="#" class="inline-block px-5 py-2 border border-outline-variant text-primary rounded-lg text-[12px] font-semibold hover:bg-surface-container transition-colors">My Story</a>
+                <div class="flex justify-center gap-3 pt-2">
+                    <a href="goal-details.html" class="inline-block px-6 py-2 bg-primary text-on-primary rounded-lg text-[12px] font-semibold hover:bg-primary/90 transition-colors shadow-sm">Donate</a>
+                    <a href="#" class="inline-block px-6 py-2 border border-outline-variant text-primary rounded-lg text-[12px] font-semibold hover:bg-surface-container transition-colors bg-surface-container-lowest">My Story</a>
+                </div>
             </div>
         </section>
         
