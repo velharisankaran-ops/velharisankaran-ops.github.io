@@ -89,61 +89,66 @@
     <main class="p-container-margin max-w-xl mx-auto space-y-8">
         <!-- Credit Card Hero -->
         <!-- Consolidated Credit Card Hero -->
-        <section class="py-2 flex justify-center">
-            <div class="relative w-full rounded-2xl p-6 overflow-hidden shadow-2xl bg-gradient-to-br from-gray-200 via-gray-50 to-gray-300 text-gray-800 border border-white/80 flex flex-col gap-6">
+        <section class="py-2 flex justify-center w-full px-2">
+            <div class="relative w-full max-w-[420px] aspect-[1.58/1] rounded-2xl p-4 sm:p-5 overflow-hidden shadow-2xl bg-gradient-to-br from-gray-200 via-gray-50 to-gray-300 text-gray-800 border border-white/80 flex flex-col justify-between">
                 
                 <!-- Noise/Texture Overlay -->
                 <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
                 <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-50 transform -skew-x-12 pointer-events-none"></div>
 
-                <!-- Top Row: Chip & Contactless -->
-                <div class="flex justify-between items-start relative z-10">
-                    <!-- Silver Chip -->
-                    <div class="w-10 h-7 rounded bg-gradient-to-br from-gray-200 to-gray-400 flex flex-col justify-evenly p-0.5 opacity-90 overflow-hidden relative shadow-sm border border-gray-400">
+                <!-- Top Row: Name/Title & Contactless -->
+                <div class="flex justify-between items-start relative z-10 w-full">
+                    <div class="flex flex-col">
+                        <h1 class="text-[14px] sm:text-[16px] font-bold tracking-[0.1em] uppercase opacity-90" style="font-family: 'JetBrains Mono', monospace;">Velhari Sankaran</h1>
+                        <h2 class="text-[8px] sm:text-[9px] font-bold tracking-[0.2em] uppercase opacity-70">Founder &amp; Manager</h2>
+                    </div>
+                    <span class="material-symbols-outlined text-[18px] opacity-70">contactless</span>
+                </div>
+
+                <!-- Middle Row: Chip, Profile, Bio -->
+                <div class="flex gap-3 items-center relative z-10 w-full mt-1">
+                    <!-- Chip -->
+                    <div class="w-8 h-6 sm:w-9 sm:h-7 rounded bg-gradient-to-br from-gray-200 to-gray-400 flex flex-col justify-evenly p-0.5 opacity-90 overflow-hidden relative shadow-sm border border-gray-400 shrink-0">
                         <div class="absolute inset-0 border border-black/10 rounded"></div>
                         <div class="w-full h-[1px] bg-black/10"></div>
                         <div class="w-full h-[1px] bg-black/10"></div>
                         <div class="w-full h-[1px] bg-black/10"></div>
                     </div>
-                    <span class="material-symbols-outlined text-[20px] opacity-70">contactless</span>
-                </div>
-
-                <!-- Middle: Profile, Name, Bio -->
-                <div class="relative z-10 flex flex-col items-center text-center gap-3">
-                    <div class="w-20 h-20 rounded-full overflow-hidden border-[2px] border-gray-400/50 shadow-md bg-gray-200">
+                    
+                    <!-- Profile Picture -->
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-[2px] border-gray-400/50 shadow-md bg-gray-200 shrink-0">
                         <img alt="Velhari Sankaran" class="w-full h-full object-cover grayscale contrast-125" src="assets/images/profile.jpg">
                     </div>
-                    <div class="space-y-1">
-                        <h1 class="text-[20px] font-bold tracking-[0.15em] uppercase opacity-90" style="font-family: 'JetBrains Mono', monospace;">Velhari Sankaran</h1>
-                        <h2 class="text-[12px] font-bold tracking-[0.2em] uppercase opacity-70">Founder &amp; Manager of Velnex</h2>
-                        <p class="text-[11px] font-medium opacity-80 max-w-[280px] mx-auto pt-1 leading-relaxed">Building my education, financial stability &amp; Velnex.</p>
-                    </div>
+
+                    <!-- Bio -->
+                    <p class="text-[9px] sm:text-[10px] font-medium opacity-80 leading-tight line-clamp-3">
+                        Building my education, financial stability &amp; Velnex.
+                    </p>
                 </div>
 
-                <!-- Contact & Buttons -->
-                <div class="relative z-10 flex flex-col items-center gap-4 pt-2">
+                <!-- Bottom Area: Contacts & Buttons -->
+                <div class="relative z-10 flex flex-col gap-2 mt-auto">
                     <!-- Contacts -->
-                    <div class="flex flex-col w-full sm:flex-row items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-wider opacity-80">
-                        <a href="mailto:velharisankaran@gmail.com" class="flex items-center gap-1.5 hover:opacity-70 transition-opacity">
-                            <span class="material-symbols-outlined text-[14px]">mail</span> velharisankaran@gmail.com
+                    <div class="flex items-center gap-3 text-[8px] sm:text-[9px] font-bold uppercase tracking-wider opacity-80">
+                        <a href="mailto:velharisankaran@gmail.com" class="flex items-center gap-1 hover:opacity-70 transition-opacity">
+                            <span class="material-symbols-outlined text-[12px]">mail</span> Email
                         </a>
-                        <span class="hidden sm:inline opacity-50">•</span>
-                        <a href="tel:+919567092833" class="flex items-center gap-1.5 hover:opacity-70 transition-opacity">
-                            <span class="material-symbols-outlined text-[14px]">call</span> +91 9567092833
+                        <a href="tel:+919567092833" class="flex items-center gap-1 hover:opacity-70 transition-opacity">
+                            <span class="material-symbols-outlined text-[12px]">call</span> +91 9567092833
                         </a>
                     </div>
                     
-                    <!-- Buttons -->
-                    <div class="flex gap-3 w-full sm:w-auto">
-                        <a href="goal-details.html" class="flex-1 sm:flex-none text-center px-6 py-2.5 bg-gray-800 text-white rounded-lg text-[11px] font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors shadow-md">Donate</a>
-                        <a href="#" class="flex-1 sm:flex-none text-center px-6 py-2.5 border border-gray-400 text-gray-800 rounded-lg text-[11px] font-bold uppercase tracking-wider hover:bg-white/30 transition-colors bg-white/10 backdrop-blur-sm">My Story</a>
+                    <!-- Buttons & Member Since -->
+                    <div class="flex justify-between items-end w-full">
+                        <div class="flex gap-2">
+                            <a href="goal-details.html" class="px-4 py-1.5 bg-gray-800 text-white rounded-md text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors shadow-sm">Donate</a>
+                            <a href="#" class="px-4 py-1.5 border border-gray-400 text-gray-800 rounded-md text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hover:bg-white/30 transition-colors bg-white/10">My Story</a>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <span class="text-[6px] sm:text-[7px] font-bold tracking-[0.2em] uppercase opacity-50">Member Since</span>
+                            <span class="text-[9px] sm:text-[10px] font-bold tracking-widest font-mono opacity-80">2024</span>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Bottom: Valid Thru / EST -->
-                <div class="relative z-10 flex justify-between items-end pt-2">
-                    <span class="text-[8px] font-bold tracking-[0.2em] uppercase opacity-50">Member Since</span>
-                    <span class="text-[10px] font-bold tracking-widest font-mono opacity-80">2024</span>
                 </div>
             </div>
         </section>
