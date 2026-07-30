@@ -200,7 +200,7 @@
             <div class="px-2 pt-2">
                 <div class="flex flex-col gap-0">
                     <!-- Timeline Item 1 -->
-                    <div class="timeline-item flex gap-4 relative pb-6">
+                    <div class="timeline-item academic-timeline-item flex gap-4 relative pb-6" style="opacity: 0;">
                         <div class="timeline-dot relative z-10 shrink-0">
                             <div class="w-5 h-5 rounded-full border-2 border-primary bg-surface-container-lowest flex items-center justify-center">
                                 <div class="w-2 h-2 rounded-full bg-primary"></div>
@@ -218,7 +218,7 @@
                         </div>
                     </div>
                     <!-- Timeline Item 2 -->
-                    <div class="timeline-item flex gap-4 relative pb-6">
+                    <div class="timeline-item academic-timeline-item flex gap-4 relative pb-6" style="opacity: 0;">
                         <div class="timeline-dot relative z-10 shrink-0">
                             <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
                                 <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
@@ -233,7 +233,7 @@
                         </div>
                     </div>
                     <!-- Timeline Item 3 -->
-                    <div class="timeline-item flex gap-4 relative pb-6">
+                    <div class="timeline-item academic-timeline-item flex gap-4 relative pb-6" style="opacity: 0;">
                         <div class="timeline-dot relative z-10 shrink-0">
                             <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
                                 <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
@@ -248,7 +248,7 @@
                         </div>
                     </div>
                     <!-- Timeline Item 4 -->
-                    <div class="timeline-item flex gap-4 relative">
+                    <div class="timeline-item academic-timeline-item flex gap-4 relative" style="opacity: 0;">
                         <div class="timeline-dot relative z-10 shrink-0">
                             <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
                                 <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
@@ -612,6 +612,36 @@
             });
             el.addEventListener('mouseleave', () => {
                 el.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+
+    <style>
+        @keyframes slideUpFade {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-up-fade {
+            animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries, obs) => {
+                let delay = 0;
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('animate-slide-up-fade');
+                        }, delay);
+                        delay += 150; // stagger effect
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.academic-timeline-item').forEach(el => {
+                observer.observe(el);
             });
         });
     </script>
