@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Velhari Sankaran - Tactical DOSSIER</title>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
@@ -13,14 +13,14 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        mono: ['"Share Tech Mono"', 'monospace'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
                         mil: {
                             bg: '#050505',
                             card: '#0a0a0a',
                             border: '#1a1a1a',
-                            green: '#00ff41',
+                            green: '#4ade80',
                             amber: '#ffb000',
                             red: '#ff003c',
                             muted: '#404040'
@@ -47,16 +47,16 @@
     <style>
         body {
             background-color: #050505;
-            color: #00ff41;
-            font-family: 'Share Tech Mono', monospace;
+            color: #e2e8f0;
+            font-family: 'JetBrains Mono', monospace;
             text-transform: uppercase;
         }
         
         /* CRT Grid Background */
         .crt-bg {
             background-image: 
-                linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(74, 222, 128, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 222, 128, 0.02) 1px, transparent 1px);
             background-size: 20px 20px;
         }
 
@@ -68,8 +68,8 @@
                 to bottom,
                 rgba(255,255,255,0),
                 rgba(255,255,255,0) 50%,
-                rgba(0,0,0,0.1) 50%,
-                rgba(0,0,0,0.1)
+                rgba(0,0,0,0.03) 50%,
+                rgba(0,0,0,0.03)
             );
             background-size: 100% 4px;
             pointer-events: none;
@@ -90,7 +90,7 @@
             position: relative;
         }
         .hud-bracket::before, .hud-bracket::after {
-            content: ''; position: absolute; width: 10px; height: 10px; border-color: #00ff41; border-style: solid;
+            content: ''; position: absolute; width: 10px; height: 10px; border-color: #4ade80; border-style: solid;
         }
         .hud-bracket::before { top: 0; left: 0; border-width: 2px 0 0 2px; }
         .hud-bracket::after { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
@@ -101,7 +101,7 @@
         /* Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #050505; }
-        ::-webkit-scrollbar-thumb { background: #00ff41; }
+        ::-webkit-scrollbar-thumb { background: #4ade80; }
     </style>
 </head>
 <body class="crt-bg min-h-screen relative overflow-x-hidden">
