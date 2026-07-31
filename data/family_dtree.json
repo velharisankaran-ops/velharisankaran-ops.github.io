@@ -1,0 +1,418 @@
+[
+  {
+    "name": "Kunjunni Anchalasseri",
+    "class": "male",
+    "extra": {
+      "surname": "Anchalasseri"
+    },
+    "marriages": [
+      {
+        "spouse": {
+          "name": "Valli Kaithavalappil",
+          "class": "female",
+          "extra": {
+            "surname": "Kaithavalappil"
+          }
+        },
+        "children": [
+          {
+            "name": "Bahuleyan Anchalasseri",
+            "class": "male",
+            "extra": {
+              "surname": "Anchalasseri"
+            },
+            "marriages": [
+              {
+                "spouse": {
+                  "name": "Bhavani Bahuleyan Pandikashalakkal",
+                  "class": "female",
+                  "extra": {
+                    "surname": "Pandikashalakkal"
+                  }
+                },
+                "children": [
+                  {
+                    "name": "Chandra Jith Anchalasseri",
+                    "class": "male",
+                    "extra": {
+                      "surname": "Anchalasseri"
+                    },
+                    "marriages": [
+                      {
+                        "spouse": {
+                          "name": "Bindhu Kaithvalapill",
+                          "class": "female",
+                          "extra": {
+                            "surname": "Kaithvalapill"
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Velhari Sankaran Kaithavalappil | Anchalasseri",
+                            "class": "male",
+                            "extra": {
+                              "surname": "Kaithavalappil | Anchalasseri"
+                            },
+                            "marriages": []
+                          },
+                          {
+                            "name": "Adithya Karthik Kaithavalappil | Anchalasseri",
+                            "class": "male",
+                            "extra": {
+                              "surname": "Kaithavalappil | Anchalasseri"
+                            },
+                            "marriages": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Chandra Ghosh Anchalasseri",
+                    "class": "male",
+                    "extra": {
+                      "surname": "Anchalasseri"
+                    },
+                    "marriages": [
+                      {
+                        "spouse": {
+                          "name": "Renu Pulikkal",
+                          "class": "female",
+                          "extra": {
+                            "surname": "Pulikkal"
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Chandra Ghosh",
+                    "class": "male",
+                    "extra": {
+                      "surname": "Ghosh"
+                    },
+                    "marriages": [
+                      {
+                        "spouse": {
+                          "name": "Jhancy Ghosh",
+                          "class": "female",
+                          "extra": {
+                            "surname": "Ghosh"
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Aswathy Ghosh Ghosh",
+                            "class": "female",
+                            "extra": {
+                              "surname": "Ghosh"
+                            },
+                            "marriages": []
+                          },
+                          {
+                            "name": "Adrija Ghosh Ghosh",
+                            "class": "female",
+                            "extra": {
+                              "surname": "Ghosh"
+                            },
+                            "marriages": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Krishnan Kutty",
+            "class": "male",
+            "extra": {
+              "surname": ""
+            },
+            "marriages": [
+              {
+                "spouse": {
+                  "name": "Unknown",
+                  "class": "female",
+                  "extra": {
+                    "surname": ""
+                  }
+                },
+                "children": [
+                  {
+                    "name": "Jithanan Anchalassri",
+                    "class": "male",
+                    "extra": {
+                      "surname": "Anchalassri"
+                    },
+                    "marriages": [
+                      {
+                        "spouse": {
+                          "name": "Sarojini Ullattu",
+                          "class": "female",
+                          "extra": {
+                            "surname": "Ullattu"
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Sini (Geetha) Anchalasseri",
+                            "class": "female",
+                            "extra": {
+                              "surname": "Anchalasseri"
+                            },
+                            "marriages": [
+                              {
+                                "spouse": {
+                                  "name": "Aneesh",
+                                  "class": "male",
+                                  "extra": {
+                                    "surname": ""
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "Anchalasseri",
+                                    "class": "male",
+                                    "extra": {
+                                      "surname": "Anchalasseri"
+                                    },
+                                    "marriages": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "name": "Sidhu Anchalasseri",
+                            "class": "female",
+                            "extra": {
+                              "surname": "Anchalasseri"
+                            },
+                            "marriages": [
+                              {
+                                "spouse": {
+                                  "name": "Satheesh Raamath",
+                                  "class": "male",
+                                  "extra": {
+                                    "surname": "Raamath"
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "Rari Anchalasseri",
+                                    "class": "female",
+                                    "extra": {
+                                      "surname": "Anchalasseri"
+                                    },
+                                    "marriages": []
+                                  },
+                                  {
+                                    "name": "Unknown",
+                                    "class": "female",
+                                    "extra": {
+                                      "surname": ""
+                                    },
+                                    "marriages": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Thanka Anchalasseri",
+                    "class": "female",
+                    "extra": {
+                      "surname": "Anchalasseri"
+                    },
+                    "marriages": [
+                      {
+                        "spouse": {
+                          "name": "Sathyan",
+                          "class": "male",
+                          "extra": {
+                            "surname": ""
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Kannan",
+                            "class": "male",
+                            "extra": {
+                              "surname": ""
+                            },
+                            "marriages": []
+                          },
+                          {
+                            "name": "Vava",
+                            "class": "male",
+                            "extra": {
+                              "surname": ""
+                            },
+                            "marriages": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "spouse": {
+                  "name": "Unknown",
+                  "class": "female",
+                  "extra": {
+                    "surname": ""
+                  }
+                },
+                "children": [
+                  {
+                    "name": "Chinnan",
+                    "class": "male",
+                    "extra": {
+                      "surname": ""
+                    },
+                    "marriages": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Krishnan Kavungal",
+    "class": "male",
+    "extra": {
+      "surname": "Kavungal"
+    },
+    "marriages": [
+      {
+        "spouse": {
+          "name": "Kunji Pennu",
+          "class": "female",
+          "extra": {
+            "surname": ""
+          }
+        },
+        "children": [
+          {
+            "name": "Subhadra Kavungal",
+            "class": "female",
+            "extra": {
+              "surname": "Kavungal"
+            },
+            "marriages": [
+              {
+                "spouse": {
+                  "name": "Balakrishnan Kaithvalapill",
+                  "class": "male",
+                  "extra": {
+                    "surname": "Kaithvalapill"
+                  }
+                },
+                "children": [
+                  {
+                    "name": "Kaithvalapill",
+                    "class": "female",
+                    "extra": {
+                      "surname": "Kaithvalapill"
+                    },
+                    "marriages": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kittan",
+    "class": "male",
+    "extra": {
+      "surname": ""
+    },
+    "marriages": [
+      {
+        "spouse": {
+          "name": "Unknown",
+          "class": "female",
+          "extra": {
+            "surname": ""
+          }
+        },
+        "children": [
+          {
+            "name": "Raman Kunju Kaithvalappu",
+            "class": "male",
+            "extra": {
+              "surname": "Kaithvalappu"
+            },
+            "marriages": [
+              {
+                "spouse": {
+                  "name": "Kochu Pennu Kaduvangasheri",
+                  "class": "female",
+                  "extra": {
+                    "surname": "Kaduvangasheri"
+                  }
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Unknown",
+    "class": "male",
+    "extra": {
+      "surname": ""
+    },
+    "marriages": [
+      {
+        "spouse": {
+          "name": "Unknown",
+          "class": "female",
+          "extra": {
+            "surname": ""
+          }
+        },
+        "children": [
+          {
+            "name": "Appu Pandikashala",
+            "class": "male",
+            "extra": {
+              "surname": "Pandikashala"
+            },
+            "marriages": [
+              {
+                "spouse": {
+                  "name": "Thanka",
+                  "class": "female",
+                  "extra": {
+                    "surname": ""
+                  }
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

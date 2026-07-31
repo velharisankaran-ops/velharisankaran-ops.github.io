@@ -6,7 +6,10 @@
     <title>Velhari Sankaran - Ancestry</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dtree@3.1.1/dtree.min.js"></script>
+    
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -23,10 +26,18 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8f0; margin: 0; overflow: hidden; }
-        .node circle { fill: #1e293b; stroke: #3b82f6; stroke-width: 2px; }
-        .node text { font-family: 'Inter', sans-serif; fill: #e2e8f0; font-size: 14px; pointer-events: none; }
-        .node .surname { fill: #94a3b8; font-size: 11px; }
-        .link { fill: none; stroke: #334155; stroke-width: 1.5px; }
+        
+        /* dTree styling */
+        .linage { fill: none; stroke: #3b82f6; stroke-width: 2px; }
+        .marriage { fill: none; stroke: #94a3b8; stroke-width: 2px; stroke-dasharray: 4; }
+        
+        .node { background-color: #1e293b; border: 1px solid #3b82f6; border-radius: 8px; }
+        .nodeText { font-family: 'Inter', sans-serif; fill: #f8fafc; font-size: 14px; font-weight: 600; pointer-events: none; }
+        .surnameText { font-family: 'Inter', sans-serif; fill: #94a3b8; font-size: 10px; pointer-events: none; }
+        
+        .node.female { border-color: #ec4899; } /* Pink for female */
+        .node.male { border-color: #3b82f6; }   /* Blue for male */
+
         svg { width: 100vw; height: 100vh; cursor: grab; }
         svg:active { cursor: grabbing; }
     </style>
@@ -40,80 +51,50 @@
         <a href="index.html" class="pointer-events-auto px-4 py-2 bg-surface-container border border-outline rounded-lg text-sm hover:bg-slate-700 transition-colors shadow-lg">Return to Main</a>
     </div>
 
-    <div id="tree-container"></div>
+    <div id="tree-container" class="w-full h-screen"></div>
 
     <script>
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        
-        const svg = d3.select("#tree-container").append("svg")
-            .attr("viewBox", [0, 0, width, height]);
-            
-        const g = svg.append("g");
-        
-        const zoom = d3.zoom().on("zoom", (e) => {
-            g.attr("transform", e.transform);
-        });
-        
-        svg.call(zoom);
-        
-        d3.json("data/family.json").then(data => {
-            const root = d3.hierarchy(data);
-            
-            // Adjust tree size based on depth
-            const dx = 50;
-            const dy = 300; 
-            const tree = d3.tree().nodeSize([dx, dy]);
-            
-            tree(root);
-            
-            // Center the tree horizontally and vertically
-            let x0 = Infinity, x1 = -x0;
-            root.each(d => {
-                if (d.x > x1) x1 = d.x;
-                if (d.x < x0) x0 = d.x;
+        d3.json("data/family_dtree.json").then(function(data) {
+            dTree.init(data, {
+                target: "#tree-container",
+                debug: false,
+                height: window.innerHeight,
+                width: window.innerWidth,
+                callbacks: {
+                    nodeRenderer: function(name, x, y, height, width, extra, id, nodeClass, textClass, textRenderer) {
+                        const surname = extra && extra.surname ? extra.surname : '';
+                        let nodeHtml = `<div class="node ${nodeClass}" style="width:${width}px; height:${height}px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding: 4px; box-sizing: border-box; background-color: #1e293b;">`;
+                        nodeHtml += `<div style="color: #f8fafc; font-size: 13px; font-weight: 600; word-wrap: break-word;">${name}</div>`;
+                        if (surname) {
+                            nodeHtml += `<div style="color: #94a3b8; font-size: 10px; word-wrap: break-word;">${surname}</div>`;
+                        }
+                        nodeHtml += `</div>`;
+                        return nodeHtml;
+                    }
+                },
+                margin: { top: 80, right: 0, bottom: 0, left: 0 },
+                nodeWidth: 140,
+                nodeHeight: 60,
+                styles: {
+                    node: 'node',
+                    linage: 'linage',
+                    marriage: 'marriage',
+                    text: 'nodeText'
+                }
             });
             
-            svg.call(zoom.transform, d3.zoomIdentity.translate(width / 4, height / 2).scale(0.8));
-
-            const link = g.append("g")
-                .attr("class", "links")
-                .selectAll("path")
-                .data(root.links())
-                .join("path")
-                .attr("class", "link")
-                .attr("d", d3.linkHorizontal()
-                    .x(d => d.y)
-                    .y(d => d.x));
-                    
-            const node = g.append("g")
-                .attr("class", "nodes")
-                .selectAll("g")
-                .data(root.descendants())
-                .join("g")
-                .attr("class", "node")
-                .attr("transform", d => `translate(${d.y},${d.x})`);
-
-            node.append("circle")
-                .attr("r", 6);
-
-            node.append("text")
-                .attr("dy", "-0.5em")
-                .attr("x", d => d.children ? -12 : 12)
-                .style("text-anchor", d => d.children ? "end" : "start")
-                .text(d => d.data.name)
-                .attr("font-weight", "600");
+            // Adjust SVG to allow zooming/panning correctly
+            setTimeout(() => {
+                const svg = d3.select("#tree-container svg");
+                const g = svg.select("g");
+                const zoom = d3.zoom().on("zoom", () => {
+                    g.attr("transform", d3.event.transform);
+                });
+                svg.call(zoom);
                 
-            node.append("text")
-                .attr("dy", "0.8em")
-                .attr("x", d => d.children ? -12 : 12)
-                .attr("class", "surname")
-                .style("text-anchor", d => d.children ? "end" : "start")
-                .text(d => d.data.surname || '');
-                
-        }).catch(err => {
-            console.error("Error loading family data:", err);
-            d3.select("#tree-container").html("<div class='p-8 text-red-400'>Error loading family data. Ensure data/family.json exists.</div>");
+                // Initial translation to center it roughly
+                svg.call(zoom.transform, d3.zoomIdentity.translate(window.innerWidth / 3, 50).scale(0.8));
+            }, 100);
         });
     </script>
 </body>
