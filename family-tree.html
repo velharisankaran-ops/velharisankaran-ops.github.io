@@ -6,9 +6,7 @@
     <title>Velhari Sankaran - Ancestry</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dtree@3.1.1/dtree.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     
     <script>
         tailwind.config = {
@@ -27,17 +25,19 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8f0; margin: 0; overflow: hidden; }
         
-        /* dTree styling */
-        .linage { fill: none; stroke: #3b82f6; stroke-width: 2px; }
-        .marriage { fill: none; stroke: #94a3b8; stroke-width: 2px; stroke-dasharray: 4; }
+        .link { fill: none; stroke: #475569; stroke-width: 2px; }
+        .link.spouse { stroke-dasharray: 4; stroke: #94a3b8; }
         
-        .node { background-color: #1e293b; border: 1px solid #3b82f6; border-radius: 8px; }
-        .nodeText { font-family: 'Inter', sans-serif; fill: #f8fafc; font-size: 14px; font-weight: 600; pointer-events: none; }
-        .surnameText { font-family: 'Inter', sans-serif; fill: #94a3b8; font-size: 10px; pointer-events: none; }
+        .node.person rect { fill: #1e293b; stroke-width: 2px; rx: 6px; }
+        .node.person.male rect { stroke: #3b82f6; }
+        .node.person.female rect { stroke: #ec4899; }
+        .node.person.unknown rect { stroke: #94a3b8; }
         
-        .node.female { border-color: #ec4899; } /* Pink for female */
-        .node.male { border-color: #3b82f6; }   /* Blue for male */
-
+        .node.family circle { fill: #94a3b8; r: 4px; }
+        
+        .nodeText { font-family: 'Inter', sans-serif; fill: #f8fafc; font-size: 13px; font-weight: 600; pointer-events: none; text-anchor: middle; }
+        .surnameText { font-family: 'Inter', sans-serif; fill: #94a3b8; font-size: 10px; pointer-events: none; text-anchor: middle; }
+        
         svg { width: 100vw; height: 100vh; cursor: grab; }
         svg:active { cursor: grabbing; }
     </style>
@@ -45,8 +45,8 @@
 <body>
     <div class="fixed top-0 left-0 w-full p-4 flex justify-between items-center z-10 pointer-events-none">
         <div>
-            <h1 class="text-2xl font-bold text-white tracking-wide">ANCESTRY</h1>
-            <p class="text-sm text-slate-400">Interactive Family Tree</p>
+            <h1 class="text-2xl font-bold text-white tracking-wide">ANCESTRY NETWORK</h1>
+            <p class="text-sm text-slate-400">Interactive Family DAG (Includes Siblings & Spouses)</p>
         </div>
         <a href="index.html" class="pointer-events-auto px-4 py-2 bg-surface-container border border-outline rounded-lg text-sm hover:bg-slate-700 transition-colors shadow-lg">Return to Main</a>
     </div>
@@ -54,47 +54,116 @@
     <div id="tree-container" class="w-full h-screen"></div>
 
     <script>
-        d3.json("data/family_dtree.json").then(function(data) {
-            dTree.init(data, {
-                target: "#tree-container",
-                debug: false,
-                height: window.innerHeight,
-                width: window.innerWidth,
-                callbacks: {
-                    nodeRenderer: function(name, x, y, height, width, extra, id, nodeClass, textClass, textRenderer) {
-                        const surname = extra && extra.surname ? extra.surname : '';
-                        let nodeHtml = `<div class="node ${nodeClass}" style="width:${width}px; height:${height}px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding: 4px; box-sizing: border-box; background-color: #1e293b;">`;
-                        nodeHtml += `<div style="color: #f8fafc; font-size: 13px; font-weight: 600; word-wrap: break-word;">${name}</div>`;
-                        if (surname) {
-                            nodeHtml += `<div style="color: #94a3b8; font-size: 10px; word-wrap: break-word;">${surname}</div>`;
-                        }
-                        nodeHtml += `</div>`;
-                        return nodeHtml;
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        
+        const svg = d3.select("#tree-container").append("svg")
+            .attr("viewBox", [0, 0, width, height]);
+            
+        const g = svg.append("g");
+        
+        const zoom = d3.zoom().scaleExtent([0.1, 4]).on("zoom", (e) => {
+            g.attr("transform", e.transform);
+        });
+        svg.call(zoom);
+        
+        d3.json("data/family_dag.json").then(data => {
+            
+            const nodeWidth = 140;
+            const nodeHeight = 50;
+            
+            const simulation = d3.forceSimulation(data.nodes)
+                .force("link", d3.forceLink(data.links).id(d => d.id).distance(d => d.type === 'spouse' ? 160 : 60))
+                .force("charge", d3.forceManyBody().strength(-800))
+                .force("x", d3.forceX(width / 2).strength(0.05))
+                .force("y", d3.forceY(d => d.gen * 140).strength(1))
+                .force("collide", d3.forceCollide(80));
+
+            // Orthogonal path generator
+            const line = d3.line()
+                .x(d => d.x)
+                .y(d => d.y)
+                .curve(d3.curveStepBefore);
+
+            const link = g.append("g")
+                .selectAll("path")
+                .data(data.links)
+                .join("path")
+                .attr("class", d => `link ${d.type}`);
+
+            const node = g.append("g")
+                .selectAll("g")
+                .data(data.nodes)
+                .join("g")
+                .attr("class", d => `node ${d.type} ${d.sex === 'M' ? 'male' : (d.sex === 'F' ? 'female' : 'unknown')}`)
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended));
+
+            // Render virtual family nodes as tiny dots
+            node.filter(d => d.type === 'family')
+                .append("circle")
+                .attr("r", 4);
+
+            // Render person nodes as cards
+            const personNodes = node.filter(d => d.type === 'person');
+            
+            personNodes.append("rect")
+                .attr("width", nodeWidth)
+                .attr("height", nodeHeight)
+                .attr("x", -nodeWidth / 2)
+                .attr("y", -nodeHeight / 2);
+
+            personNodes.append("text")
+                .attr("class", "nodeText")
+                .attr("dy", "-0.2em")
+                .text(d => d.name);
+                
+            personNodes.append("text")
+                .attr("class", "surnameText")
+                .attr("dy", "1.2em")
+                .text(d => d.surname);
+
+            simulation.on("tick", () => {
+                link.attr("d", d => {
+                    if (d.type === 'spouse') {
+                        return `M${d.source.x},${d.source.y} L${d.target.x},${d.target.y}`;
+                    } else {
+                        // Orthogonal child link: FamilyNode -> Child
+                        return `M${d.source.x},${d.source.y} V${(d.source.y + d.target.y)/2} H${d.target.x} V${d.target.y - nodeHeight/2}`;
                     }
-                },
-                margin: { top: 80, right: 0, bottom: 0, left: 0 },
-                nodeWidth: 140,
-                nodeHeight: 60,
-                styles: {
-                    node: 'node',
-                    linage: 'linage',
-                    marriage: 'marriage',
-                    text: 'nodeText'
-                }
+                });
+
+                node.attr("transform", d => `translate(${d.x},${d.y})`);
             });
             
-            // Adjust SVG to allow zooming/panning correctly
+            // Initial zoom positioning
             setTimeout(() => {
-                const svg = d3.select("#tree-container svg");
-                const g = svg.select("g");
-                const zoom = d3.zoom().on("zoom", () => {
-                    g.attr("transform", d3.event.transform);
+                let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+                data.nodes.forEach(n => {
+                    if(n.x < minX) minX = n.x; if(n.x > maxX) maxX = n.x;
+                    if(n.y < minY) minY = n.y; if(n.y > maxY) maxY = n.y;
                 });
-                svg.call(zoom);
-                
-                // Initial translation to center it roughly
-                svg.call(zoom.transform, d3.zoomIdentity.translate(window.innerWidth / 3, 50).scale(0.8));
-            }, 100);
+                const cx = (minX + maxX) / 2;
+                const cy = (minY + maxY) / 2;
+                svg.call(zoom.transform, d3.zoomIdentity.translate(width/2 - cx, height/2 - cy).scale(0.8));
+            }, 1500); // Wait for physics to settle
+
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
         });
     </script>
 </body>
