@@ -3,7 +3,28 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <title>Velhari Sankaran | Founder Portfolio &amp; Strategic Operations</title>
+    <meta name="description" content="Official portfolio of Velhari Sankaran - Early-stage founder, manager at Velnex Business Management &amp; Operations FZE LLC (UAE &amp; India), and commerce student.">
+
+    <!-- Synchronous Zero-FOUC Theme Pre-paint Script -->
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('velnex_theme') || localStorage.getItem('theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (saved === 'dark' || (!saved && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            } catch(e) {}
+        })();
+    </script>
+
+    <!-- Google Fonts & Material Symbols Outlined -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -12,48 +33,51 @@
                 darkMode: "class",
                 theme: {
                     extend: {
-                        "colors": {
-                            "primary": "#0f172a",
-                            "on-primary": "#ffffff",
-                            "primary-container": "#1e293b",
-                            "on-primary-container": "#cbd5e1",
-                            "secondary": "#059669",
-                            "on-secondary": "#ffffff",
-                            "secondary-container": "#ecfdf5",
-                            "on-secondary-container": "#065f46",
-                            "surface": "#f7f9fb",
-                            "surface-dim": "#d8dadc",
-                            "surface-bright": "#f7f9fb",
-                            "surface-container-lowest": "#ffffff",
-                            "surface-container-low": "#f2f4f6",
-                            "surface-container": "#eeeeed",
-                            "surface-container-high": "#e9e8e7",
+                        colors: {
+                            primary: {
+                                DEFAULT: "#0f172a",
+                                light: "#1e293b",
+                                dark: "#020617"
+                            },
+                            secondary: "#059669",
+                            accent: {
+                                DEFAULT: "#3b82f6",
+                                warm: "#c87941"
+                            },
+                            surface: {
+                                DEFAULT: "#f8fafc",
+                                card: "#ffffff",
+                                "card-dark": "#0c1424",
+                                dark: "#070d18"
+                            },
                             "on-surface": "#1a1c1c",
                             "on-surface-variant": "#45474c",
-                            "outline": "#75777d",
                             "outline-variant": "#c5c6cd",
-                            "error": "#ba1a1a",
-                            "on-error": "#ffffff"
+                            error: "#ba1a1a"
                         },
-                        "borderRadius": {
-                            "DEFAULT": "0.25rem",
-                            "lg": "0.5rem",
-                            "xl": "0.75rem",
-                            "full": "9999px"
+                        borderRadius: {
+                            DEFAULT: "0.25rem",
+                            lg: "0.5rem",
+                            xl: "0.75rem",
+                            full: "9999px"
                         },
-                        "spacing": {
-                            "unit": "4px",
+                        spacing: {
+                            unit: "4px",
                             "section-gap": "24px",
                             "container-margin": "16px",
-                            "gutter": "12px",
+                            gutter: "12px",
                             "card-padding": "16px"
                         },
-                        "fontFamily": {
-                            "sans": ["Inter", "sans-serif"],
-                            "mono": ["JetBrains Mono", "monospace"]
+                        fontFamily: {
+                            sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+                            mono: ["JetBrains Mono", "monospace"]
+                        },
+                        boxShadow: {
+                            soft: "0 2px 15px -3px rgba(15, 23, 42, 0.04), 0 1px 6px -2px rgba(15, 23, 42, 0.02)",
+                            premium: "0 8px 30px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03)"
                         }
-                    },
-                },
+                    }
+                }
             }
         } catch (_e) {}
     </script>
@@ -67,529 +91,564 @@
             width: 1px;
             background-color: #c5c6cd;
         }
+        .dark .timeline-dot::after {
+            background-color: #334155;
+        }
         .timeline-item:last-child .timeline-dot::after {
             display: none;
         }
+        .section-anchor {
+            scroll-margin-top: 5rem;
+        }
     </style>
 </head>
-<body class="bg-surface text-on-surface min-h-screen pb-24">
-    <header class="w-full sticky top-0 bg-surface/95 backdrop-blur-md border-b border-outline-variant shadow-sm z-50">
-        <div class="flex items-center justify-between px-4 w-full mx-auto h-14">
-            <div class="flex items-center gap-2">
-                <span class="text-[11px] font-bold text-primary tracking-widest uppercase">Personal Profile</span>
-            </div>
-            <div class="flex items-center">
-                <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant hover:text-primary">
-                    <span class="material-symbols-outlined text-[22px]">notifications</span>
+<body class="bg-[#f8fafc] dark:bg-[#070d18] text-[#1a1c1c] dark:text-[#f1f5f9] min-h-screen pb-24 transition-colors duration-200">
+
+    <!-- ========================================== -->
+    <!-- MINIMAL EXECUTIVE HEADER NAVIGATION        -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-[#070d18]/90 backdrop-blur-md border-b border-outline-variant/30 dark:border-slate-800 transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Left: Velhari Sankaran Brand -->
+            <a href="index.html" class="flex items-center gap-3 group focus:outline-none" aria-label="Velhari Sankaran Portfolio Home">
+                <div class="w-9 h-9 rounded-lg bg-primary dark:bg-blue-600 text-white flex items-center justify-center font-bold font-mono text-sm tracking-wider shadow-sm group-hover:scale-105 transition-transform">
+                    VS
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-[14px] sm:text-[15px] font-bold text-primary dark:text-white tracking-tight leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        Velhari Sankaran
+                    </span>
+                    <span class="text-[10px] font-mono text-on-surface-variant dark:text-slate-400 leading-none">
+                        Founder Portfolio
+                    </span>
+                </div>
+            </a>
+
+            <!-- Right: Minimal Controls (Theme Toggle + Profile Command Center Icon) -->
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <!-- Theme Toggle Button -->
+                <button type="button" id="themeToggleBtn" onclick="toggleTheme()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl border border-outline-variant/40 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/90 flex items-center justify-center text-on-surface dark:text-amber-400 hover:border-primary dark:hover:border-blue-400 hover:text-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary/40" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+                    <span class="material-symbols-outlined text-[20px] dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined text-[20px] hidden dark:block">light_mode</span>
                 </button>
+
+                <!-- Profile / Command Center Access Icon -->
+                <a href="dashboard.html" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-white flex items-center justify-center shadow-sm hover:scale-105 transition-all focus:outline-none focus:ring-2 focus:ring-primary/50" title="Executive Command Center" aria-label="Executive Command Center">
+                    <span class="material-symbols-outlined text-[20px]">account_circle</span>
+                </a>
             </div>
         </div>
     </header>
-    
-    <main class="p-container-margin max-w-xl mx-auto space-y-12">
-        <!-- Credit Card Hero -->
-        <!-- Portrait Hero Card -->
-        <section class="py-2 flex flex-col items-center w-full px-2 space-y-5">
-            <div class="relative w-full max-w-[420px] aspect-[4/5] rounded-lg overflow-hidden shadow-2xl group flex flex-col justify-end bg-gray-100 dark:bg-slate-900 border border-outline-variant/30">
-                
-                <!-- Background Image -->
-                <div class="absolute inset-0 bg-[url('assets/images/profile.jpg')] bg-cover bg-top group-hover:scale-[1.03] transition-transform duration-700"></div>
-                
-                <!-- Gradient Overlay -->
-                <!-- Uses a dark green/black gradient to match reference image aesthetic -->
-                <div class="absolute inset-0 bg-gradient-to-t from-[#081812] via-[#081812]/50 to-transparent opacity-95"></div>
 
-                <!-- Content Overlay -->
-                <div class="relative z-10 p-5 sm:p-8 w-full flex flex-col text-white">
-                    <h1 class="text-[32px] sm:text-[36px] font-bold leading-[1.1] mb-3 text-white tracking-tight font-sans">
-                        Velhari<br>Sankaran.
+    <main id="overview" class="section-anchor p-container-margin mx-auto max-w-xl lg:max-w-6xl lg:grid lg:grid-cols-12 lg:gap-10 lg:items-start pt-6 lg:pt-8 pb-16 space-y-10 lg:space-y-0">
+        
+        <!-- ==================================================== -->
+        <!-- LEFT COLUMN: Sticky Founder Snapshot & Direct Action -->
+        <!-- ==================================================== -->
+        <div class="lg:col-span-5 lg:sticky lg:top-24 flex flex-col items-center w-full px-2 lg:px-0 space-y-4">
+            
+            <!-- Main Founder Portrait Card -->
+            <div class="relative w-full max-w-[440px] aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl group flex flex-col justify-end bg-slate-900 border border-outline-variant/30 dark:border-slate-800 transition-all duration-300">
+                
+                <!-- Background Image (Natural Color with Crisp Contrast & Tone) -->
+                <div class="absolute inset-0 bg-[url('https://velnex.in/wp-content/uploads/2026/06/velhari-sankaran-black-and-white-photograph.webp')] bg-cover bg-top group-hover:scale-[1.03] transition-all duration-700 brightness-[1.02] contrast-[1.08]"></div>
+                
+                <!-- Polished Vignette & Gradient Overlays -->
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                
+                <!-- Top Status Badge -->
+                <div class="absolute top-4 left-4 z-10">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/80 dark:bg-black/70 backdrop-blur-md border border-white/15 text-emerald-400 text-[10px] font-mono font-semibold tracking-wide shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Founder Mode • Active Ops
+                    </span>
+                </div>
+
+                <!-- Card Content Overlay -->
+                <div class="relative z-10 p-5 sm:p-7 w-full flex flex-col text-white">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-semibold">Managing Director &amp; Strategist</span>
+                    </div>
+                    
+                    <h1 class="text-[30px] sm:text-[34px] font-extrabold leading-[1.08] mb-2 text-white tracking-tight font-sans">
+                        Velhari Sankaran
                     </h1>
                     
-                    <p class="text-[11px] sm:text-[12px] font-medium text-white/90 leading-relaxed mb-5 border-l-2 border-white/30 pl-3">
-                        (12th) Commerce Student <span class="mx-1 text-white/50">|</span> Working Professional
+                    <p class="text-[11px] sm:text-[12px] font-medium text-slate-200 leading-relaxed mb-4 border-l-2 border-emerald-400 pl-3">
+                        Founder @ <strong>Velnex UAE</strong> <span class="mx-1 text-slate-400">•</span> Partner @ <strong>Green Summer LLP</strong> <span class="mx-1 text-slate-400">•</span> Commerce Scholar
                     </p>
 
-                    <!-- Contact Details -->
-                    <div class="flex items-center gap-4 text-[10px] sm:text-[11px] font-medium text-white/70 pt-2">
-                        <a href="mailto:velharisankaran@gmail.com" class="flex items-center gap-1.5 hover:text-white transition-colors">
-                            <span class="material-symbols-outlined text-[14px]">mail</span> Email
+                    <!-- Direct Connect Matrix -->
+                    <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-white/10 text-[10px] sm:text-[11px] font-mono text-slate-300">
+                        <a href="mailto:velharisankaran@gmail.com" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors">
+                            <span class="material-symbols-outlined text-[13px]">mail</span> velharisankaran@gmail.com
                         </a>
-                        <span class="w-1 h-1 rounded-full bg-white/30"></span>
-                        <a href="tel:+919567092833" class="flex items-center gap-1.5 hover:text-white transition-colors">
-                            <span class="material-symbols-outlined text-[14px]">call</span> +91 9567092833
+                        <a href="tel:+919567092833" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors">
+                            <span class="material-symbols-outlined text-[13px]">call</span> +91 9567092833
                         </a>
                     </div>
                 </div>
             </div>
             
-            <!-- Action Buttons (Outside Card) -->
-            <div class="flex flex-row justify-center gap-2 sm:gap-3 w-full max-w-[420px]">
-                <a href="goal-details.html" class="flex-1 flex justify-center items-center py-2.5 bg-primary text-on-primary rounded-lg text-[12px] font-semibold hover:bg-primary/90 transition-colors shadow-sm whitespace-nowrap">Donate</a>
-                <a href="profile-print.html" class="flex-1 flex justify-center items-center py-2.5 border border-outline-variant text-primary rounded-lg text-[11px] sm:text-[12px] font-semibold hover:bg-surface-container transition-colors bg-surface-container-lowest shadow-sm whitespace-nowrap gap-1 sm:gap-1.5"><span class="material-symbols-outlined text-[15px] sm:text-[16px]">download</span> Download Profile</a>
-            </div>
-        </section>
-        
-        <!-- Business & Ventures Section -->
-        <section class="space-y-3">
-            <h2 class="section-title px-1 text-[16px] font-semibold flex items-center gap-2">
-                <span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'wght' 300;">domain</span>
-                Business &amp; Ventures
-            </h2>
-
-            <!-- Velnex Card -->
-            <div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden shadow-sm">
-                <!-- Blue Theme Header -->
-                <div class="bg-blue-50 border-b border-blue-100 px-4 py-2.5 flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <h3 class="text-[11px] font-bold text-blue-900 uppercase tracking-wider">Velnex Business Management &amp; Operations FZE LLC</h3>
-                    </div>
-                    <span class="text-[8px] font-bold text-white bg-blue-600 px-1.5 py-0.5 rounded-full uppercase tracking-wider shrink-0 ml-2">Early Stage</span>
-                </div>
-                <div class="px-4 py-3">
-                    <p class="text-[13px] font-semibold text-on-surface leading-tight">Founder, Manager</p>
-                    <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-1.5">
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Ajman Emirate, UAE</span>
-                    </div>
-                    <p class="text-[11px] text-on-surface-variant mt-1.5 leading-relaxed">Business Consulting and Management Firm</p>
-                </div>
+            <!-- Quick Founder Action Hub -->
+            <div class="w-full max-w-[440px] grid grid-cols-3 gap-2">
+                <a href="connect.php?purpose=partner" class="flex flex-col items-center justify-center py-2.5 px-2 rounded-xl bg-white dark:bg-[#0c1424] border border-outline-variant/30 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 hover:shadow-soft transition-all group text-center">
+                    <span class="material-symbols-outlined text-[18px] text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform">handshake</span>
+                    <span class="text-[10px] font-bold text-slate-800 dark:text-slate-200 mt-0.5">Partner</span>
+                </a>
+                <a href="connect.php?purpose=meet" class="flex flex-col items-center justify-center py-2.5 px-2 rounded-xl bg-white dark:bg-[#0c1424] border border-outline-variant/30 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 hover:shadow-soft transition-all group text-center">
+                    <span class="material-symbols-outlined text-[18px] text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">coffee</span>
+                    <span class="text-[10px] font-bold text-slate-800 dark:text-slate-200 mt-0.5">Consult / Meet</span>
+                </a>
+                <a href="profile-print.html" class="flex flex-col items-center justify-center py-2.5 px-2 rounded-xl bg-white dark:bg-[#0c1424] border border-outline-variant/30 dark:border-slate-800 hover:border-purple-500/50 dark:hover:border-purple-500/50 hover:shadow-soft transition-all group text-center">
+                    <span class="material-symbols-outlined text-[18px] text-purple-600 dark:text-purple-400 group-hover:-translate-y-0.5 transition-transform">description</span>
+                    <span class="text-[10px] font-bold text-slate-800 dark:text-slate-200 mt-0.5">Dossier PDF</span>
+                </a>
             </div>
 
-            <!-- Green Summer Card -->
-            <div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden shadow-sm">
-                <!-- Green Theme Header -->
-                <div class="bg-green-50 border-b border-green-100 px-4 py-2.5 flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <h3 class="text-[11px] font-bold text-green-900 uppercase tracking-wider">Green Summer Ventures LLP</h3>
-                    </div>
-                    <span class="text-[8px] font-bold text-white bg-green-600 px-1.5 py-0.5 rounded-full uppercase tracking-wider shrink-0 ml-2">Restructuring</span>
-                </div>
-                <div class="px-4 py-3">
-                    <p class="text-[13px] font-semibold text-on-surface leading-tight">Designated Partner, Strategy &amp; Business Development</p>
-                    <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-1.5">
-                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Kerala, India</span>
-                    </div>
-                    <p class="text-[11px] text-on-surface-variant mt-1.5 leading-relaxed">Wholesale Procurement, Distribution &amp; Supply of Fresh Agricultural Produce (Family Business)</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Professional Experience Section -->
-        <section class="space-y-3">
-            <h2 class="section-title px-1 text-[16px] font-semibold flex items-center gap-2">
-                <span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'wght' 300;">work</span>
-                Professional Experience
-            </h2>
-            <div class="px-2 pt-2">
-                <div class="flex flex-col gap-0">
-                    <!-- Timeline Item 1 -->
-                    <div class="timeline-item flex gap-4 relative pb-6">
-                        <div class="timeline-dot relative z-10 shrink-0">
-                            <div class="w-5 h-5 rounded-full border-2 border-primary bg-surface-container-lowest flex items-center justify-center">
-                                <div class="w-2 h-2 rounded-full bg-primary"></div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 -mt-0.5 w-full">
-                            <div class="flex items-center justify-between">
-                                <h4 class="text-[13px] font-semibold text-on-surface leading-tight">Digital Marketer</h4>
-                                <span class="bg-primary/10 text-primary text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wider shrink-0 ml-2">Current</span>
-                            </div>
-                            <p class="text-[11px] font-medium text-primary">IZIN Designs Interior Studio</p>
-                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> May 2026 - Present</span>
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Kerala, Muttom</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Timeline Item 2 -->
-                    <div class="timeline-item flex gap-4 relative pb-6">
-                        <div class="timeline-dot relative z-10 shrink-0">
-                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
-                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 -mt-0.5">
-                            <h4 class="text-[13px] font-semibold text-on-surface leading-tight">Back Office Executive | IT | Digital Marketer Executive</h4>
-                            <p class="text-[11px] font-medium text-primary">Tormac | Westzone | Sea Focus - Ship Management And Operations</p>
-                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Sep 2025 - Mar 2026</span>
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Sharjah, UAE</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Timeline Item 3 -->
-                    <div class="timeline-item flex gap-4 relative pb-6">
-                        <div class="timeline-dot relative z-10 shrink-0">
-                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
-                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 -mt-0.5">
-                            <h4 class="text-[13px] font-semibold text-on-surface leading-tight">Back Office Executive | IT | Digital Marketing Executive</h4>
-                            <p class="text-[11px] font-medium text-primary">GNS Leisure Travels Private Limited</p>
-                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Jun 2025 - Sep 2025</span>
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Kerala, India</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Timeline Item 4 -->
-                    <div class="timeline-item flex gap-4 relative">
-                        <div class="timeline-dot relative z-10 shrink-0">
-                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
-                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 -mt-0.5">
-                            <h4 class="text-[13px] font-semibold text-on-surface leading-tight">Back Office Executive | IT | Pitch Deck Designer</h4>
-                            <p class="text-[11px] font-medium text-primary">Greenix Experiences Pvt Ltd</p>
-                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Jan 2023 - May 2025</span>
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Kerala, India</span>
-                            </div>
-                            <p class="text-[11px] text-on-surface mt-1.5 leading-relaxed opacity-90">Event Management, Boating, Tourism</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Academic Background -->
-        <section class="space-y-3">
-            <h2 class="section-title px-1 text-[16px] font-semibold flex items-center gap-2">
-                <span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'wght' 300;">school</span>
-                Academic Background
-            </h2>
-            <div class="px-2 pt-2">
-                <div class="flex flex-col gap-0">
-                    <!-- Timeline Item 1 -->
-                    <div class="timeline-item academic-timeline-item flex gap-4 relative pb-6" style="opacity: 0;">
-                        <div class="timeline-dot relative z-10 shrink-0">
-                            <div class="w-5 h-5 rounded-full border-2 border-primary bg-surface-container-lowest flex items-center justify-center">
-                                <div class="w-2 h-2 rounded-full bg-primary"></div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 -mt-0.5 w-full">
-                            <div class="flex items-center justify-between">
-                                <h4 class="text-[13px] font-semibold text-on-surface leading-tight">Plus Two - Commerce</h4>
-                                <span class="bg-secondary-container/20 text-on-secondary-container text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wider shrink-0 ml-2">Ongoing</span>
-                            </div>
-                            <p class="text-[11px] font-medium text-primary">Board of Open Schooling and Skill Education (Sikkim, India)</p>
-                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> 2026 - Present</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Timeline Item 2 -->
-                    <div class="timeline-item academic-timeline-item flex gap-4 relative pb-6" style="opacity: 0;">
-                        <div class="timeline-dot relative z-10 shrink-0">
-                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
-                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 -mt-0.5">
-                            <h4 class="text-[13px] font-semibold text-on-surface leading-tight">Diploma in Multimedia Design</h4>
-                            <p class="text-[11px] font-medium text-primary">Academy of Media and Design LLP (Kerala, India)</p>
-                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> 2023</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Timeline Item 3 -->
-                    <div class="timeline-item academic-timeline-item flex gap-4 relative pb-6" style="opacity: 0;">
-                        <div class="timeline-dot relative z-10 shrink-0">
-                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
-                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 -mt-0.5">
-                            <h4 class="text-[13px] font-semibold text-on-surface leading-tight">Plus One - Computer Science</h4>
-                            <p class="text-[11px] font-medium text-primary">Santa Cruz Higher Secondary School (Kerala, India)</p>
-                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> 2020 - 2021</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Timeline Item 4 -->
-                    <div class="timeline-item academic-timeline-item flex gap-4 relative" style="opacity: 0;">
-                        <div class="timeline-dot relative z-10 shrink-0">
-                            <div class="w-5 h-5 rounded-full border border-outline-variant bg-surface-container-lowest flex items-center justify-center">
-                                <div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 -mt-0.5">
-                            <h4 class="text-[13px] font-semibold text-on-surface leading-tight">10th SSLC</h4>
-                            <p class="text-[11px] font-medium text-primary">Hidayathul Islam Higher Secondary School (Kerala, India)</p>
-                            <div class="flex items-center gap-3 text-[10px] text-on-surface-variant mt-0.5">
-                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> 2019</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Financial Overview -->
-        <section class="space-y-3">
-            <h2 class="section-title px-1 text-[16px] font-semibold flex items-center gap-2">
-                <span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'wght' 300;">account_balance</span>
-                Financial Overview
-            </h2>
-
-            <!-- Summary Cards -->
-            <div class="grid grid-cols-3 gap-2">
-                <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 shadow-sm flex flex-col justify-between">
-                    <span class="text-[9px] font-semibold text-on-surface-variant uppercase tracking-wider">Total Assets</span>
-                    <span class="text-[13px] font-bold text-primary mt-1">₹####</span>
-                </div>
-                <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 shadow-sm flex flex-col justify-between">
-                    <span class="text-[9px] font-semibold text-on-surface-variant uppercase tracking-wider">Total Liabilities</span>
-                    <span class="text-[13px] font-bold text-error mt-1">₹####</span>
-                </div>
-                <div class="bg-primary border border-primary-container rounded-lg p-3 shadow-sm flex flex-col justify-between">
-                    <span class="text-[9px] font-bold text-on-primary/80 uppercase tracking-wider">Net Worth</span>
-                    <span class="text-[13px] font-bold text-on-primary mt-1">₹####</span>
-                </div>
-            </div>
-
-            <!-- Detailed Tables -->
-            <div class="space-y-3">
-                <!-- Assets Table -->
-                <div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden shadow-sm">
-                    <div class="bg-surface-container-low border-b border-outline-variant px-4 py-2.5 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-secondary text-[16px]">trending_up</span>
-                        <h3 class="text-[11px] font-semibold text-on-surface uppercase tracking-wider">Assets</h3>
-                    </div>
-                    <div class="divide-y divide-outline-variant/50">
-                        <div class="flex justify-between items-center px-4 py-2.5">
-                            <span class="text-[11px] text-on-surface-variant">Cash, bank and wallet balances</span>
-                            <span class="text-[11px] font-medium text-on-surface">₹####</span>
-                        </div>
-                        <div class="flex justify-between items-center px-4 py-2.5">
-                            <span class="text-[11px] text-on-surface-variant">Tata AIA investment</span>
-                            <span class="text-[11px] font-medium text-on-surface">₹####</span>
-                        </div>
-                        <div class="flex justify-between items-center px-4 py-2.5">
-                            <span class="text-[11px] text-on-surface-variant">Money lent receivable</span>
-                            <span class="text-[11px] font-medium text-on-surface">₹####</span>
-                        </div>
-                        <div class="flex justify-between items-center px-4 py-3 bg-surface-container-lowest">
-                            <span class="text-[11px] font-bold text-primary uppercase">Total Assets</span>
-                            <span class="text-[12px] font-bold text-primary">₹####</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Liabilities Table -->
-                <div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden shadow-sm">
-                    <div class="bg-surface-container-low border-b border-outline-variant px-4 py-2.5 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-error text-[16px]">trending_down</span>
-                        <h3 class="text-[11px] font-semibold text-on-surface uppercase tracking-wider">Liabilities</h3>
-                    </div>
-                    <div class="divide-y divide-outline-variant/50">
-                        <div class="flex flex-col gap-1 px-4 py-2.5">
-                            <div class="flex justify-between items-start gap-2">
-                                <span class="text-[11px] text-on-surface-variant leading-tight">Bajaj Finserv loan — pivot outstanding</span>
-                                <span class="text-[11px] font-medium text-on-surface shrink-0">₹####</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 px-4 py-2.5">
-                            <div class="flex justify-between items-start gap-2">
-                                <span class="text-[11px] text-on-surface-variant leading-tight">IDFC Bank Ashva card — pivot outstanding</span>
-                                <span class="text-[11px] font-medium text-on-surface shrink-0">₹####</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 px-4 py-2.5">
-                            <div class="flex justify-between items-start gap-2">
-                                <span class="text-[11px] text-on-surface-variant leading-tight">Slice credit line — outstanding balance</span>
-                                <span class="text-[11px] font-medium text-on-surface shrink-0">₹####</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-1 px-4 py-2.5">
-                            <div class="flex justify-between items-start gap-2">
-                                <span class="text-[11px] text-on-surface-variant leading-tight">Federal Bank Signet card — outstanding</span>
-                                <span class="text-[11px] font-medium text-on-surface shrink-0">₹####</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center px-4 py-3 bg-surface-container-lowest">
-                            <span class="text-[11px] font-bold text-error uppercase">Total Liabilities</span>
-                            <span class="text-[12px] font-bold text-error">₹####</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Bio Data -->
-        <section class="space-y-3">
-            <h2 class="section-title px-1 text-[16px] font-semibold flex items-center gap-2">
-                <span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'wght' 300;">badge</span>
-                Bio Data
-            </h2>
-            <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4">
-                <div class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider mb-1">Age</p>
-                            <p class="text-[12px] font-medium text-on-surface mono-num">23</p>
-                        </div>
-                        <div>
-                            <p class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider mb-1">Nationality</p>
-                            <p class="text-[12px] font-medium text-on-surface">Indian</p>
-                        </div>
-                        <div>
-                            <p class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider mb-1">Blood</p>
-                            <p class="text-[12px] font-bold text-error">B+</p>
-                        </div>
-                        <div>
-                            <p class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider mb-1">Marital Status</p>
-                            <p class="text-[12px] font-medium text-on-surface">Single</p>
-                        </div>
-                    </div>
-                    <div class="border-t border-outline-variant/30 pt-3">
-                        <p class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider mb-1">Languages</p>
-                        <p class="text-[12px] font-medium text-on-surface leading-relaxed">Malayalam (Native), English (Fluent)</p>
-                    </div>
-                    <div class="border-t border-outline-variant/30 pt-3">
-                        <p class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider mb-1">Address</p>
-                        <p class="text-[12px] font-medium text-on-surface leading-relaxed">Anchalasseri House, Njarakkal, Vypin, Kerala, India - <span class="mono-num">682505</span></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Priority Fundraising Goal -->
-        <section class="space-y-3">
-            <h2 class="section-title px-1 text-[16px] font-semibold">
-                <span class="material-symbols-outlined text-[20px] align-middle mr-2" style="font-variation-settings: 'wght' 300;">volunteer_activism</span>
-                Fundraising for Education
-            </h2>
-            <a href="goal-details.html" class="block bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden p-3 shadow-sm hover:bg-surface-container-low transition-colors">
-                <div class="flex gap-3">
-                    <div class="w-20 h-20 bg-surface-container rounded-lg overflow-hidden flex-shrink-0">
-                        <img alt="Education" class="w-full h-full object-cover" src="assets/images/bosse-education.jpg">
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <div class="flex justify-between items-start mb-1">
-                            <div class="truncate pr-2">
-                                <h3 class="text-[14px] font-semibold text-on-surface truncate">Fees: Plus Two Education</h3>
-                                <p class="text-[10px] text-on-surface-variant font-normal truncate">Commerce Stream</p>
-                            </div>
-                            <span class="flex-shrink-0 text-[9px] font-bold text-secondary-container bg-secondary px-1.5 py-0.5 rounded uppercase tracking-wider">Active</span>
-                        </div>
-                        
-                        <div class="mt-2 space-y-1.5">
-                            <div class="flex justify-between items-end">
-                                <div class="space-y-0.5">
-                                    <p class="text-[9px] uppercase tracking-widest text-on-surface-variant font-semibold">Raised</p>
-                                    <p class="text-[12px] font-bold text-secondary mono-num">₹####</p>
-                                </div>
-                                <div class="text-right space-y-0.5">
-                                    <p class="text-[9px] uppercase tracking-widest text-on-surface-variant font-semibold">Target</p>
-                                    <p class="text-[12px] font-semibold text-on-surface mono-num">₹####</p>
-                                </div>
-                            </div>
-                            
-                            <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden mt-1">
-                                <div class="h-full bg-secondary rounded-full" style="width: 25.7%;"></div>
-                            </div>
-                            
-                            <div class="flex justify-between items-center pt-0.5">
-                                <p class="text-[9px] font-bold text-primary uppercase tracking-widest">₹#### Left</p>
-                                <p class="text-[9px] font-medium text-error flex items-center gap-1">
-                                    <span class="material-symbols-outlined text-[10px]">calendar_today</span>
-                                    15 Aug '26
-                                </p>
-                            </div>
-                            
-                            <div class="pt-2">
-                                <div class="w-full py-1.5 flex justify-center items-center gap-1 bg-primary text-on-primary rounded text-[10px] font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors shadow-sm">
-                                    View Details
-                                    <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Quick Pin-Lock Command Center Access Link -->
+            <a href="dashboard.html" class="w-full max-w-[440px] flex items-center justify-between px-3.5 py-2 rounded-xl bg-slate-900 dark:bg-slate-800/80 text-white hover:bg-slate-800 dark:hover:bg-slate-700/80 transition-all text-[11px] shadow-sm">
+                <span class="flex items-center gap-2 font-semibold">
+                    <span class="material-symbols-outlined text-[16px] text-emerald-400">lock</span>
+                    Private Executive Command Center
+                </span>
+                <span class="text-[10px] font-mono text-slate-400 flex items-center gap-0.5">
+                    PIN Locked <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                </span>
             </a>
+        </div>
         
-        <!-- Latest Update -->
-        <section class="space-y-3">
-            <h2 class="section-title px-1 text-[16px] font-semibold">Latest Update</h2>
-            <div class="bg-surface-container-low border border-outline-variant rounded-lg p-4">
-                <div class="flex items-center gap-3 mb-2">
-                    <div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
-                        <span class="material-symbols-outlined text-[18px]" data-original-icon="campaign">campaign</span>
+        <!-- ==================================================== -->
+        <!-- RIGHT COLUMN: Modular Operating Canvas               -->
+        <!-- ==================================================== -->
+        <div class="lg:col-span-7 flex flex-col space-y-10 w-full pt-4 lg:pt-0">
+            
+            <!-- SECTION 1: DYNAMIC STAGE VENTURES MATRIX -->
+            <section id="ventures" class="section-anchor space-y-4">
+                <div class="flex items-center justify-between px-1">
+                    <h2 class="text-[17px] font-bold tracking-tight text-primary dark:text-white flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[20px] text-blue-600 dark:text-blue-400">corporate_fare</span>
+                        Active Ventures &amp; Strategic Mandates
+                    </h2>
+                    <span class="text-[10px] font-mono font-semibold text-slate-500 dark:text-slate-400 uppercase">3 Active Tracks</span>
+                </div>
+
+                <div class="space-y-3.5">
+                    <!-- Venture 1: Velnex UAE -->
+                    <a href="velnex.html" class="block bg-white dark:bg-[#0c1424] border border-outline-variant/30 dark:border-slate-800/90 rounded-2xl overflow-hidden shadow-soft hover:-translate-y-1 hover:shadow-premium hover:border-blue-500/40 transition-all duration-300 group">
+                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50/50 dark:from-blue-950/40 dark:to-slate-900 border-b border-blue-100/70 dark:border-blue-900/50 px-4 py-2.5 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400"></span>
+                                <h3 class="text-[11.5px] font-bold text-blue-950 dark:text-blue-300 uppercase tracking-wider">Velnex Business Management &amp; Operations</h3>
+                            </div>
+                            <span class="text-[8.5px] font-bold text-white bg-blue-600 px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0 flex items-center gap-1">
+                                AFZA LLC • Active <span class="material-symbols-outlined text-[11px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                            </span>
+                        </div>
+                        <div class="p-4 sm:p-5">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-[13.5px] font-bold text-slate-900 dark:text-slate-100">Founder &amp; Managing Director</p>
+                                    <p class="text-[11px] text-blue-600 dark:text-blue-400 font-medium flex items-center gap-1 mt-0.5">
+                                        <span class="material-symbols-outlined text-[13px]">location_on</span> Ajman Free Zone (AFZA), UAE <span class="text-slate-400">•</span> Cross-Border Advisory
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="text-[11.5px] text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+                                Boutique strategic consultancy facilitating UAE business setup, free zone licensing, corporate operations, and structured market entry for entrepreneurs across UAE &amp; India.
+                            </p>
+                            
+                            <div class="mt-3.5 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center gap-2 text-[10px]">
+                                <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium">AFZA License #36294</span>
+                                <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium">Banking Onboarding Active</span>
+                                <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-semibold ml-auto">Explore Portal →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Venture 2: Green Summer Ventures LLP -->
+                    <div class="bg-white dark:bg-[#0c1424] border border-outline-variant/30 dark:border-slate-800/90 rounded-2xl overflow-hidden shadow-soft hover:-translate-y-1 hover:shadow-premium hover:border-emerald-500/40 transition-all duration-300">
+                        <div class="bg-gradient-to-r from-emerald-50 to-teal-50/50 dark:from-emerald-950/40 dark:to-slate-900 border-b border-emerald-100/70 dark:border-emerald-900/50 px-4 py-2.5 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-600 dark:bg-emerald-400"></span>
+                                <h3 class="text-[11.5px] font-bold text-emerald-950 dark:text-emerald-300 uppercase tracking-wider">Green Summer Ventures LLP</h3>
+                            </div>
+                            <span class="text-[8.5px] font-bold text-white bg-emerald-600 px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0">
+                                Restructuring &amp; Governance
+                            </span>
+                        </div>
+                        <div class="p-4 sm:p-5">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-[13.5px] font-bold text-slate-900 dark:text-slate-100">Designated Partner • Strategy &amp; Growth</p>
+                                    <p class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1 mt-0.5">
+                                        <span class="material-symbols-outlined text-[13px]">location_on</span> Kerala, India <span class="text-slate-400">•</span> Family Enterprise
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="text-[11.5px] text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+                                Wholesale procurement, distribution, and cold-chain supply of fresh agricultural produce, steering statutory restructuring, capital allocation, and compliance overhaul.
+                            </p>
+                            <div class="mt-3.5 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center gap-2 text-[10px]">
+                                <a href="consultancy-agreement.html" class="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-300 hover:underline font-semibold">
+                                    <span class="material-symbols-outlined text-[13px]">policy</span> View Restructuring Agreement
+                                </a>
+                                <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium ml-auto">Agri-Distribution Mandate</span>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <p class="text-[12px] font-semibold text-on-surface">Milestone Reached!</p>
-                        <p class="text-[10px] text-on-surface-variant mono-num">2 hours ago</p>
+
+                    <!-- Venture 3: Balanced Bites (Product Concept) -->
+                    <div class="bg-white dark:bg-[#0c1424] border border-outline-variant/30 dark:border-slate-800/90 rounded-2xl overflow-hidden shadow-soft hover:-translate-y-1 hover:shadow-premium hover:border-amber-500/40 transition-all duration-300">
+                        <div class="bg-gradient-to-r from-amber-50 to-orange-50/50 dark:from-amber-950/40 dark:to-slate-900 border-b border-amber-100/70 dark:border-amber-900/50 px-4 py-2.5 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                                <h3 class="text-[11.5px] font-bold text-amber-950 dark:text-amber-300 uppercase tracking-wider">Balanced Bites</h3>
+                            </div>
+                            <span class="text-[8.5px] font-bold text-amber-900 dark:text-amber-200 bg-amber-200/80 dark:bg-amber-900/60 px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0">
+                                Product Concept &amp; Strategy
+                            </span>
+                        </div>
+                        <div class="p-4 sm:p-5">
+                            <p class="text-[13.5px] font-bold text-slate-900 dark:text-slate-100">Nutrition &amp; Functional Food Brand</p>
+                            <p class="text-[11.5px] text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                                Incubating consumer-focused healthy snacks and macro-balanced nutritional products engineered for working professionals and fitness enthusiasts.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <p class="text-[12px] text-on-surface-variant leading-relaxed">Successfully completed the first phase of the Velnex registration process in the UAE. Moving towards the operational setup next week.</p>
-            </div>
-        </section>
+            </section>
+            
+            <!-- SECTION 2: PROFESSIONAL EXPERIENCE TIMELINE -->
+            <section id="experience" class="section-anchor space-y-4">
+                <div class="flex items-center justify-between px-1">
+                    <h2 class="text-[17px] font-bold tracking-tight text-primary dark:text-white flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[20px] text-primary dark:text-blue-400">work_history</span>
+                        Operational &amp; Executive Experience
+                    </h2>
+                </div>
+                
+                <div class="bg-white dark:bg-[#0c1424] border border-outline-variant/30 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-soft">
+                    <div class="flex flex-col gap-0">
+                        
+                        <!-- Timeline Item 1 -->
+                        <div class="timeline-item flex gap-4 relative pb-7">
+                            <div class="timeline-dot relative z-10 shrink-0 mt-0.5">
+                                <div class="w-5 h-5 rounded-full border-2 border-emerald-500 bg-emerald-50 dark:bg-slate-900 flex items-center justify-center">
+                                    <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-[13.5px] font-bold text-slate-900 dark:text-white">IZIN Designs Interior Studio</h4>
+                                    <span class="bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0">Current Role</span>
+                                </div>
+                                <p class="text-[11.5px] font-semibold text-blue-600 dark:text-blue-400">Digital Marketing &amp; Client Acquisition Strategist</p>
+                                <div class="flex items-center gap-3 text-[10px] font-mono text-slate-500 dark:text-slate-400 mt-0.5">
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> May 2026 – Present</span>
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Kerala, India</span>
+                                </div>
+                                <p class="text-[11px] text-slate-600 dark:text-slate-300 mt-1">Driving architectural design lead generation, branding campaigns, and studio portfolio positioning.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="timeline-item flex gap-4 relative pb-7">
+                            <div class="timeline-dot relative z-10 shrink-0 mt-0.5">
+                                <div class="w-5 h-5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 flex items-center justify-center">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-[13.5px] font-bold text-slate-900 dark:text-white">Tormac | Westzone | Sea Focus</h4>
+                                    <span class="text-[9.5px] font-mono text-slate-400">Sharjah, UAE</span>
+                                </div>
+                                <p class="text-[11.5px] font-semibold text-slate-700 dark:text-slate-300">Back Office Executive • IT &amp; Commercial Operations</p>
+                                <div class="flex items-center gap-3 text-[10px] font-mono text-slate-500 dark:text-slate-400 mt-0.5">
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Sep 2025 – Mar 2026</span>
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">directions_boat</span> Maritime &amp; Ship Management</span>
+                                </div>
+                                <p class="text-[11px] text-slate-600 dark:text-slate-300 mt-1">Managed cross-border administrative workflows, crew documentation, and technical back-office IT infrastructure.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="timeline-item flex gap-4 relative pb-7">
+                            <div class="timeline-dot relative z-10 shrink-0 mt-0.5">
+                                <div class="w-5 h-5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 flex items-center justify-center">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-[13.5px] font-bold text-slate-900 dark:text-white">GNS Leisure Travels Pvt Ltd</h4>
+                                    <span class="text-[9.5px] font-mono text-slate-400">Kerala, India</span>
+                                </div>
+                                <p class="text-[11.5px] font-semibold text-slate-700 dark:text-slate-300">Operations &amp; Digital Marketing Strategist</p>
+                                <div class="flex items-center gap-3 text-[10px] font-mono text-slate-500 dark:text-slate-400 mt-0.5">
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Jun 2025 – Sep 2025</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4 -->
+                        <div class="timeline-item flex gap-4 relative">
+                            <div class="timeline-dot relative z-10 shrink-0 mt-0.5">
+                                <div class="w-5 h-5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 flex items-center justify-center">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-1 w-full">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-[13.5px] font-bold text-slate-900 dark:text-white">Greenix Experiences Pvt Ltd</h4>
+                                    <span class="text-[9.5px] font-mono text-slate-400">Kerala, India</span>
+                                </div>
+                                <p class="text-[11.5px] font-semibold text-slate-700 dark:text-slate-300">Executive IT Support &amp; Pitch Deck Designer</p>
+                                <div class="flex items-center gap-3 text-[10px] font-mono text-slate-500 dark:text-slate-400 mt-0.5">
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">calendar_today</span> Jan 2023 – May 2025</span>
+                                    <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">festival</span> Tourism &amp; Cultural Experiences</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: FOUNDER DISCIPLINE & BODY COMPOSITION WIDGET -->
+            <section id="discipline" class="section-anchor space-y-4">
+                <div class="flex items-center justify-between px-1">
+                    <h2 class="text-[17px] font-bold tracking-tight text-primary dark:text-white flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[20px] text-emerald-600 dark:text-emerald-400">monitoring</span>
+                        Founder Physical Rigor &amp; Metrics
+                    </h2>
+                    <span class="text-[10px] font-mono font-semibold text-slate-500 dark:text-slate-400 uppercase">Operational Discipline</span>
+                </div>
+
+                <div class="bg-white dark:bg-[#0c1424] border border-outline-variant/30 dark:border-slate-800 rounded-2xl overflow-hidden shadow-soft">
+                    <div class="p-5 sm:p-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 gap-2">
+                            <div>
+                                <h3 class="text-[13px] font-bold text-slate-900 dark:text-white">Athletic Baseline &amp; Body Composition</h3>
+                                <p class="text-[11px] text-slate-500 dark:text-slate-400">Guided nutritional discipline with Royal Way Coaching &amp; Herbalife Nutrition</p>
+                            </div>
+                            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-[10px] font-mono font-bold self-start sm:self-auto">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 12.5% Body Fat
+                            </span>
+                        </div>
+
+                        <!-- Metric Grid -->
+                        <div class="grid grid-cols-3 sm:grid-cols-6 gap-3 py-4 text-center">
+                            <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800">
+                                <span class="text-[9px] font-mono uppercase text-slate-500 dark:text-slate-400 block">Weight</span>
+                                <span class="text-[13px] font-bold font-mono text-slate-900 dark:text-white mt-0.5 block">48.3 kg</span>
+                            </div>
+                            <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800">
+                                <span class="text-[9px] font-mono uppercase text-slate-500 dark:text-slate-400 block">Body Fat</span>
+                                <span class="text-[13px] font-bold font-mono text-emerald-600 dark:text-emerald-400 mt-0.5 block">12.5%</span>
+                            </div>
+                            <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800">
+                                <span class="text-[9px] font-mono uppercase text-slate-500 dark:text-slate-400 block">Body Age</span>
+                                <span class="text-[13px] font-bold font-mono text-blue-600 dark:text-blue-400 mt-0.5 block">18 Y</span>
+                            </div>
+                            <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800">
+                                <span class="text-[9px] font-mono uppercase text-slate-500 dark:text-slate-400 block">BMI</span>
+                                <span class="text-[13px] font-bold font-mono text-slate-900 dark:text-white mt-0.5 block">18.1</span>
+                            </div>
+                            <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800">
+                                <span class="text-[9px] font-mono uppercase text-slate-500 dark:text-slate-400 block">BMR</span>
+                                <span class="text-[13px] font-bold font-mono text-slate-900 dark:text-white mt-0.5 block">1288 kcal</span>
+                            </div>
+                            <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800">
+                                <span class="text-[9px] font-mono uppercase text-slate-500 dark:text-slate-400 block">V. Fat</span>
+                                <span class="text-[13px] font-bold font-mono text-slate-900 dark:text-white mt-0.5 block">2.0</span>
+                            </div>
+                        </div>
+
+                        <!-- Daily Operating Rhythm -->
+                        <div class="mt-2 pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <p class="text-[11px] text-slate-600 dark:text-slate-300">
+                                <strong class="text-slate-900 dark:text-white">Daily Operating Rhythm:</strong> 5:00 AM Physical Rigor &amp; Nutrition → 9:30 AM IZIN Marketing → 7:30 PM +2 BOSSE Commerce Study → Sunday UAE Strategy Execution.
+                            </p>
+                            <a href="fitness-journey.html" class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400 hover:underline shrink-0">
+                                Full Protocol <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: ACADEMIC & EDUCATION -->
+            <section id="academics" class="section-anchor space-y-4">
+                <div class="flex items-center justify-between px-1">
+                    <h2 class="text-[17px] font-bold tracking-tight text-primary dark:text-white flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[20px] text-primary dark:text-blue-400">school</span>
+                        Academic Background &amp; Certifications
+                    </h2>
+                </div>
+
+                <div class="bg-white dark:bg-[#0c1424] border border-outline-variant/30 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-soft space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-3.5 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40">
+                            <span class="text-[9px] font-mono font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full uppercase">Currently Pursuing</span>
+                            <h4 class="text-[13px] font-bold text-slate-900 dark:text-white mt-2">Plus Two (12th) — Commerce</h4>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-300 mt-0.5">Board of Open Schooling &amp; Skill Education (BOSSE), Sikkim</p>
+                            <p class="text-[10px] font-mono text-slate-400 mt-1">2026 – Present</p>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40">
+                            <span class="text-[9px] font-mono font-bold text-slate-600 dark:text-slate-400 bg-slate-200 dark:bg-slate-800 px-2 py-0.5 rounded-full uppercase">Certified</span>
+                            <h4 class="text-[13px] font-bold text-slate-900 dark:text-white mt-2">Diploma in Multimedia &amp; Design</h4>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-300 mt-0.5">Academy of Media and Design LLP, Kerala</p>
+                            <p class="text-[10px] font-mono text-slate-400 mt-1">2023</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: LIVE FINANCIAL BALANCE OVERVIEW -->
+            <section id="finances" class="section-anchor space-y-4">
+                <div class="flex items-center justify-between px-1">
+                    <h2 class="text-[17px] font-bold tracking-tight text-primary dark:text-white flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[20px] text-primary dark:text-blue-400">account_balance</span>
+                        Statement of Financial Position
+                    </h2>
+                    <a href="profile-print.html" class="text-[10px] font-mono font-semibold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-0.5">
+                        Formal Dossier <span class="material-symbols-outlined text-[12px]">open_in_new</span>
+                    </a>
+                </div>
+
+                <!-- 3 Top Balance Pillars -->
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="bg-white dark:bg-[#0c1424] border border-emerald-200/60 dark:border-emerald-950/60 rounded-2xl p-4 shadow-soft">
+                        <span class="text-[9px] font-bold text-emerald-800 dark:text-emerald-400 uppercase tracking-wider block">Total Assets</span>
+                        <span class="text-[14px] sm:text-[16px] font-extrabold font-mono text-emerald-700 dark:text-emerald-300 mt-1 block">₹282,074.85</span>
+                        <span class="text-[9px] text-slate-500 dark:text-slate-400 mt-1 block truncate">Liquid + Assets + Receivables</span>
+                    </div>
+
+                    <div class="bg-white dark:bg-[#0c1424] border border-rose-200/60 dark:border-rose-950/60 rounded-2xl p-4 shadow-soft">
+                        <span class="text-[9px] font-bold text-rose-800 dark:text-rose-400 uppercase tracking-wider block">Total Liabilities</span>
+                        <span class="text-[14px] sm:text-[16px] font-extrabold font-mono text-rose-700 dark:text-rose-400 mt-1 block">₹380,030.91</span>
+                        <span class="text-[9px] text-slate-500 dark:text-slate-400 mt-1 block truncate">Term Loans &amp; CC Lines</span>
+                    </div>
+
+                    <div class="bg-slate-900 text-white rounded-2xl p-4 shadow-soft">
+                        <span class="text-[9px] font-bold text-slate-300 uppercase tracking-wider block">Net Position</span>
+                        <span class="text-[14px] sm:text-[16px] font-extrabold font-mono text-rose-400 mt-1 block">(₹97,956.06)</span>
+                        <span class="text-[9px] text-slate-400 mt-1 block truncate">Structured Amortization</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </main>
     
-    <!-- BottomNavBar consistent with Fundraiser Page -->
-    <nav class="fixed bottom-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-md border-t border-outline-variant shadow-[0_-1px_4px_rgba(20,27,43,0.06)]" style="padding-bottom: env(safe-area-inset-bottom);">
-        <div class="w-full max-w-[768px] mx-auto h-[60px] grid grid-cols-3 px-1.5 py-1.5">
-            <a class="flex flex-col items-center justify-center gap-1 rounded-lg text-primary bg-primary/10 transition-colors" href="#">
-                <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home</span>
-                <span class="text-[11px] font-medium leading-none">Home</span>
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav aria-label="Mobile Navigation" class="lg:hidden fixed bottom-0 left-0 w-full z-40 bg-white/95 dark:bg-[#070d18]/95 backdrop-blur-md border-t border-outline-variant/30 dark:border-slate-800 shadow-[0_-1px_4px_rgba(0,0,0,0.06)]" style="padding-bottom: env(safe-area-inset-bottom);">
+        <div class="w-full max-w-[768px] mx-auto h-[50px] grid grid-cols-3 px-1 py-1">
+            <a class="flex flex-col items-center justify-center gap-0.5 rounded-lg text-primary dark:text-white bg-primary/10 dark:bg-blue-950/50 font-semibold transition-colors" href="#overview">
+                <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">home</span>
+                <span class="text-[9.5px] leading-none">Home</span>
             </a>
-            <a class="flex flex-col items-center justify-center gap-1 rounded-lg text-on-surface-variant hover:text-primary transition-colors" href="goal-details.html">
-                <span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
-                <span class="text-[11px] font-medium leading-none">Fundrais</span>
+            <a class="flex flex-col items-center justify-center gap-0.5 rounded-lg text-on-surface-variant dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors" href="goal-details.html">
+                <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+                <span class="text-[9.5px] leading-none">Fundraiser</span>
             </a>
-            <a class="flex flex-col items-center justify-center gap-1 rounded-lg text-on-surface-variant hover:text-primary transition-colors" href="#" onclick="alert('No new updates'); return false;">
-                <span class="material-symbols-outlined text-[24px]">campaign</span>
-                <span class="text-[11px] font-medium leading-none">Updates</span>
+            <a class="flex flex-col items-center justify-center gap-0.5 rounded-lg text-on-surface-variant dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors" href="#updates">
+                <span class="material-symbols-outlined text-[20px]">campaign</span>
+                <span class="text-[9.5px] leading-none">Updates</span>
             </a>
         </div>
     </nav>
     
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT CONTROLLERS                     -->
+    <!-- ========================================== -->
     <script>
-        document.querySelectorAll('button, a').forEach(el => {
-            el.addEventListener('mousedown', () => {
-                el.style.transform = 'scale(0.97)';
+        // 1. THEME TOGGLE CONTROLLER
+        function toggleTheme() {
+            var html = document.documentElement;
+            var isDark = html.classList.toggle('dark');
+            try {
+                localStorage.setItem('velnex_theme', isDark ? 'dark' : 'light');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            } catch(e) {}
+        }
+
+        // 2. MOBILE DRAWER MENU CONTROLLER
+        function toggleMobileMenu() {
+            var drawer = document.getElementById('mobileMenuDrawer');
+            var btn = document.getElementById('mobileMenuBtn');
+            var hamburgerIcon = document.getElementById('hamburgerIcon');
+            var closeIcon = document.getElementById('closeIcon');
+            if (!drawer) return;
+
+            if (drawer.classList.contains('hidden')) {
+                drawer.classList.remove('hidden');
+                if (btn) btn.setAttribute('aria-expanded', 'true');
+                if (hamburgerIcon) hamburgerIcon.classList.add('hidden');
+                if (closeIcon) closeIcon.classList.remove('hidden');
+            } else {
+                drawer.classList.add('hidden');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+                if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+                if (closeIcon) closeIcon.classList.add('hidden');
+            }
+        }
+
+        // Close mobile menu on clicking outside
+        document.addEventListener('click', function(e) {
+            var drawer = document.getElementById('mobileMenuDrawer');
+            var btn = document.getElementById('mobileMenuBtn');
+            if (!drawer || drawer.classList.contains('hidden')) return;
+            if (!drawer.contains(e.target) && !btn.contains(e.target)) {
+                toggleMobileMenu();
+            }
+        });
+
+        // 3. INTERACTIVE MICRO-ANIMATIONS
+        document.querySelectorAll('button, a').forEach(function(el) {
+            el.addEventListener('mousedown', function() {
+                el.style.transform = 'scale(0.98)';
             });
-            el.addEventListener('mouseup', () => {
+            el.addEventListener('mouseup', function() {
                 el.style.transform = 'scale(1)';
             });
-            el.addEventListener('mouseleave', () => {
+            el.addEventListener('mouseleave', function() {
                 el.style.transform = 'scale(1)';
+            });
+        });
+
+        // 4. TIMELINE SCROLL ANIMATIONS
+        document.addEventListener('DOMContentLoaded', function() {
+            var observer = new IntersectionObserver(function(entries, obs) {
+                var delay = 0;
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        setTimeout(function() {
+                            entry.target.classList.add('animate-slide-up-fade');
+                        }, delay);
+                        delay += 120;
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.academic-timeline-item').forEach(function(el) {
+                observer.observe(el);
             });
         });
     </script>
 
     <style>
         @keyframes slideUpFade {
-            0% { opacity: 0; transform: translateY(20px); }
+            0% { opacity: 0; transform: translateY(16px); }
             100% { opacity: 1; transform: translateY(0); }
         }
         .animate-slide-up-fade {
-            animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries, obs) => {
-                let delay = 0;
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('animate-slide-up-fade');
-                        }, delay);
-                        delay += 150; // stagger effect
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.academic-timeline-item').forEach(el => {
-                observer.observe(el);
-            });
-        });
-    </script>
 </body>
 </html>
