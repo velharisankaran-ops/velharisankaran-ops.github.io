@@ -66,6 +66,20 @@
             margin: 10mm auto;
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             display: flex;
+            background-image: url('assets/images/izin-letterhead.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+        }
+        
+        /* Adjust padding to respect letterhead header and footer safe zones */
+        .a4-letterhead-content {
+            padding-top: 32mm;
+            padding-bottom: 25mm;
+            padding-left: 16mm;
+            padding-right: 16mm;
+            width: 100%;
         }
 
         /* Responsive Mobile Adaptation */
@@ -112,7 +126,7 @@
     <!-- ==================================================== -->
     <!-- PAGE 1: HANDOVER OVERVIEW & FUNCTIONAL PILLARS       -->
     <!-- ==================================================== -->
-    <div class="a4-page bg-white dark:bg-[#0F172A] p-10 flex flex-col justify-between transition-colors duration-300">
+    <div class="a4-page bg-white dark:bg-[#0F172A] a4-letterhead-content flex flex-col justify-between transition-colors duration-300">
         
         <div class="space-y-5">
             <!-- Header -->
@@ -273,7 +287,7 @@
     <!-- ==================================================== -->
     <!-- PAGE 2: CREDENTIALS & ACCESS TOKENS                  -->
     <!-- ==================================================== -->
-    <div class="a4-page bg-white dark:bg-[#0F172A] p-10 flex flex-col justify-between transition-colors duration-300">
+    <div class="a4-page bg-white dark:bg-[#0F172A] a4-letterhead-content flex flex-col justify-between transition-colors duration-300">
         
         <div class="space-y-6">
             <!-- Header -->
