@@ -65,20 +65,31 @@
             min-height: 297mm;
             margin: 10mm auto;
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            display: flex;
-            background-image: url('assets/images/izin-letterhead.png');
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            background-position: center;
             position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
         }
-        
-        /* Adjust padding to respect letterhead header and footer safe zones */
-        .a4-letterhead-content {
-            padding-top: 32mm;
-            padding-bottom: 25mm;
-            padding-left: 16mm;
-            padding-right: 16mm;
+
+        .letterhead-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .a4-content {
+            position: relative;
+            z-index: 10;
+            padding: 30mm 16mm 22mm 16mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 297mm;
+            box-sizing: border-box;
             width: 100%;
         }
 
@@ -126,9 +137,11 @@
     <!-- ==================================================== -->
     <!-- PAGE 1: HANDOVER OVERVIEW & FUNCTIONAL PILLARS       -->
     <!-- ==================================================== -->
-    <div class="a4-page bg-white dark:bg-[#0F172A] a4-letterhead-content flex flex-col justify-between transition-colors duration-300">
-        
-        <div class="space-y-5">
+    <div class="a4-page shadow-2xl">
+        <!-- Letterhead Background Image behind all text -->
+        <img src="assets/images/izin-letterhead.png" class="letterhead-bg" alt="Letterhead">
+        <div class="a4-content">
+            <div class="space-y-5">
             <!-- Header -->
             <header class="border-b-2 border-slate-900 dark:border-slate-400 pb-3 mb-4 avoid-break">
                 <div class="flex justify-between items-end">
@@ -272,6 +285,7 @@
 
         </div>
 
+        </div>
         <!-- Page 1 Print Footer -->
         <div class="border-t border-slate-900 dark:border-slate-600 pt-3 flex justify-between items-center text-[9px] text-slate-500 font-medium tracking-widest avoid-break">
             <p class="uppercase">IZIN DESIGNS INTERIOR STUDIO &bull; HANDOVER DOCUMENT</p>
@@ -287,9 +301,11 @@
     <!-- ==================================================== -->
     <!-- PAGE 2: CREDENTIALS & ACCESS TOKENS                  -->
     <!-- ==================================================== -->
-    <div class="a4-page bg-white dark:bg-[#0F172A] a4-letterhead-content flex flex-col justify-between transition-colors duration-300">
-        
-        <div class="space-y-6">
+    <div class="a4-page shadow-2xl">
+        <!-- Letterhead Background Image behind all text -->
+        <img src="assets/images/izin-letterhead.png" class="letterhead-bg" alt="Letterhead">
+        <div class="a4-content">
+            <div class="space-y-6">
             <!-- Header -->
             <header class="border-b-2 border-slate-900 dark:border-slate-400 pb-4 mb-6 avoid-break">
                 <div class="flex justify-between items-end">
@@ -463,6 +479,7 @@
 
         </div>
 
+        </div>
         <!-- Page 2 Print Footer -->
         <div class="border-t border-slate-900 dark:border-slate-600 pt-3 flex justify-between items-center text-[9px] text-slate-500 font-medium tracking-widest avoid-break">
             <p class="uppercase">IZIN DESIGNS INTERIOR STUDIO &bull; HANDOVER DOCUMENT</p>
