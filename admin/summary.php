@@ -128,10 +128,61 @@ foreach($credit_cards as $c) $total_liabilities_val += ($c['total_debit'] - $c['
 $net_worth = $total_assets_val - $total_liabilities_val;
 ?>
 
+<style>
+@media print {
+    /* Hide the sidebar and mobile header */
+    .md\\:hidden, nav, aside, #sidebar, [class*="sidebar"], .print-hidden, header {
+        display: none !important;
+    }
+    
+    /* Make the page fit A4 cleanly */
+    body {
+        background-color: white !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Remove padding and scrolling from main containers */
+    .flex, .flex-1, .h-screen, .overflow-hidden, .overflow-y-auto {
+        display: block !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    
+    main {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    
+    /* Force page breaks to avoid splitting cards */
+    .bg-white {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        box-shadow: none !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+    
+    @page {
+        size: A4;
+        margin: 1cm;
+    }
+}
+</style>
+
+
 <div class="mb-5 flex justify-between items-end">
     <div>
         <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Financial Summary</h1>
         <p class="text-xs text-slate-500 mt-1">Real-time pivot views mapped directly to your transactions.</p>
+    </div>
+    <div class="print-hidden">
+        <button onclick="window.print()" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 transition-colors shadow-sm">
+            <span class="material-symbols-outlined text-[18px]">print</span>
+            Save as A4 PDF
+        </button>
     </div>
 </div>
 
