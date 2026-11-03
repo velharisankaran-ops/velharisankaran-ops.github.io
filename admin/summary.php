@@ -88,7 +88,7 @@ $total_income = 0;
 $stmtExpense = $pdo->query("
     SELECT subcategory, SUM(amount) AS total 
     FROM transactions 
-    WHERE category = 'Expense' AND type = 'Debit' 
+    WHERE category = 'Expenses' AND type = 'Debit' 
     GROUP BY subcategory 
     ORDER BY subcategory
 ");
@@ -102,7 +102,7 @@ $stmtLended = $pdo->query("
         SUM(CASE WHEN type = 'Debit' THEN amount ELSE 0 END) AS total_debit,
         SUM(CASE WHEN type = 'Credit' THEN amount ELSE 0 END) AS total_credit
     FROM transactions 
-    WHERE category = 'Lent' AND sub_subcategory != '' 
+    WHERE category = 'Assets' AND subcategory = 'Lent to Others' AND sub_subcategory != '' 
     GROUP BY sub_subcategory 
     ORDER BY sub_subcategory
 ");
@@ -110,6 +110,28 @@ $lended = $stmtLended->fetchAll();
 $total_lended_debit = 0;
 $total_lended_credit = 0;
 $total_lended_balance = 0;
+
+// 6. Borrowed Money (Payables / Individual Borrowings)
+$stmtBorrowed = $pdo->query("
+    SELECT 
+        sub_subcategory AS lender_name, 
+        SUM(CASE WHEN type = 'Credit' THEN amount ELSE 0 END) AS total_borrowed,
+        SUM(CASE WHEN type = 'Debit' THEN amount ELSE 0 END) AS total_repaid
+    FROM transactions 
+    WHERE category = 'Liabilities' AND subcategory LIKE 'Personal Borrowing%' AND sub_subcategory != '' 
+    GROUP BY sub_subcategory 
+    ORDER BY sub_subcategory
+");
+$borrowed = $stmtBorrowed->fetchAll();
+$total_borrowed_credit = 0;
+$total_borrowed_debit = 0;
+$total_borrowed_balance = 0;
+foreach($borrowed as $b) {
+    $bal = $b['total_borrowed'] - $b['total_repaid'];
+    $total_borrowed_credit += $b['total_borrowed'];
+    $total_borrowed_debit += $b['total_repaid'];
+    $total_borrowed_balance += $bal;
+}
 
 // Calculate Totals for Top Cards
 $total_assets_val = 0;
@@ -124,6 +146,7 @@ $total_assets_val += $total_lended_val;
 $total_liabilities_val = 0;
 foreach($loans as $l) $total_liabilities_val += ($l['total_debit'] - $l['total_credit']);
 foreach($credit_cards as $c) $total_liabilities_val += ($c['total_debit'] - $c['total_credit']);
+$total_liabilities_val += $total_borrowed_balance;
 
 $net_worth = $total_assets_val - $total_liabilities_val;
 ?>
@@ -475,7 +498,7 @@ $net_worth = $total_assets_val - $total_liabilities_val;
                             <?php foreach($expenses as $exp): 
                                 $total_expense += $exp['total'];
                             ?>
-                            <tr class="hover:bg-slate-50 cursor-pointer transition-colors" onclick="fetchDetails('Expense', '<?= htmlspecialchars(addslashes($exp['subcategory'] ?: 'Uncategorized')) ?>')">
+                            <tr class="hover:bg-slate-50 cursor-pointer transition-colors" onclick="fetchDetails('Expenses', '<?= htmlspecialchars(addslashes($exp['subcategory'] ?: 'Uncategorized')) ?>')">
                                 <td class="px-4 py-1.5 font-medium"><?= htmlspecialchars($exp['subcategory'] ?: 'Uncategorized') ?></td>
                                 <td class="px-4 py-1.5 text-right font-mono text-[11px] font-medium">₹<?= number_format($exp['total'], 2) ?></td>
                             </tr>
@@ -532,6 +555,55 @@ $net_worth = $total_assets_val - $total_liabilities_val;
                             <td class="px-4 py-2 font-mono text-[11px] font-semibold text-blue-700 text-right">₹<?= number_format($total_lended_debit, 2) ?></td>
                             <td class="px-4 py-2 font-mono text-[11px] font-semibold text-blue-700 text-right">₹<?= number_format($total_lended_credit, 2) ?></td>
                             <td class="px-4 py-2 font-mono text-[11px] font-bold text-blue-800 text-right">₹<?= number_format($total_lended_balance, 2) ?></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <!-- Borrowed Money (Personal Payables) -->
+        <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+            <div class="px-4 py-2 border-b border-slate-200 bg-rose-50/40 flex justify-between items-center">
+                <h2 class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                    Borrowed Money <span class="text-[10px] font-medium text-slate-500 ml-1">(Personal Payables)</span>
+                </h2>
+                <span class="text-xs font-mono font-bold text-rose-700">₹<?= number_format($total_borrowed_balance, 2) ?></span>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-2 text-[10px] font-bold text-slate-500 uppercase tracking-wider border-b border-slate-200">Lender</th>
+                            <th class="px-4 py-2 text-[10px] font-bold text-slate-500 uppercase tracking-wider text-right border-b border-slate-200">Borrowed</th>
+                            <th class="px-4 py-2 text-[10px] font-bold text-slate-500 uppercase tracking-wider text-right border-b border-slate-200">Repaid</th>
+                            <th class="px-4 py-2 text-[10px] font-bold text-slate-500 uppercase tracking-wider text-right border-b border-slate-200">Balance Owed</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-slate-700">
+                        <?php foreach($borrowed as $b): 
+                            $b_bal = $b['total_borrowed'] - $b['total_repaid'];
+                            if ($b_bal == 0 && $b['total_borrowed'] == 0) continue;
+                        ?>
+                        <tr class="hover:bg-slate-50 cursor-pointer transition-colors" onclick="fetchDetails('Borrow', '<?= htmlspecialchars(addslashes($b['lender_name'])) ?>')">
+                            <td class="px-4 py-1.5 font-medium"><?= htmlspecialchars($b['lender_name']) ?></td>
+                            <td class="px-4 py-1.5 text-right font-mono text-[11px] text-slate-600">₹<?= number_format($b['total_borrowed'], 2) ?></td>
+                            <td class="px-4 py-1.5 text-right font-mono text-[11px] text-slate-600">₹<?= number_format($b['total_repaid'], 2) ?></td>
+                            <td class="px-4 py-1.5 text-right font-mono font-bold text-rose-600 text-[11px]">
+                                <?= $b_bal == 0 ? '-' : '₹' . number_format($b_bal, 2) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php if(empty($borrowed)): ?>
+                        <tr><td colspan="4" class="px-4 py-3 text-center text-slate-400 italic">No personal borrowings recorded.</td></tr>
+                        <?php endif; ?>
+                    </tbody>
+                    <tfoot class="bg-rose-50/50 border-t border-slate-200">
+                        <tr>
+                            <td class="px-4 py-2 font-bold text-rose-900 text-right">Grand Total</td>
+                            <td class="px-4 py-2 font-mono text-[11px] font-semibold text-rose-700 text-right">₹<?= number_format($total_borrowed_credit, 2) ?></td>
+                            <td class="px-4 py-2 font-mono text-[11px] font-semibold text-rose-700 text-right">₹<?= number_format($total_borrowed_debit, 2) ?></td>
+                            <td class="px-4 py-2 font-mono text-[11px] font-bold text-rose-800 text-right">₹<?= number_format($total_borrowed_balance, 2) ?></td>
                         </tr>
                     </tfoot>
                 </table>

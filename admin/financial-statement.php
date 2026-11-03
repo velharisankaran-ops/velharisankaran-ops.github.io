@@ -90,7 +90,7 @@ $total_income = 0;
 $stmtExpense = $pdo->query("
     SELECT subcategory, SUM(amount) AS total 
     FROM transactions 
-    WHERE category = 'Expense' AND type = 'Debit' 
+    WHERE category = 'Expenses' AND type = 'Debit' 
     GROUP BY subcategory 
     ORDER BY subcategory
 ");
@@ -104,7 +104,7 @@ $stmtLended = $pdo->query("
         SUM(CASE WHEN type = 'Debit' THEN amount ELSE 0 END) AS total_debit,
         SUM(CASE WHEN type = 'Credit' THEN amount ELSE 0 END) AS total_credit
     FROM transactions 
-    WHERE category = 'Lent' AND sub_subcategory != '' 
+    WHERE category = 'Assets' AND subcategory = 'Lent to Others' AND sub_subcategory != '' 
     GROUP BY sub_subcategory 
     ORDER BY sub_subcategory
 ");
