@@ -11,8 +11,7 @@
         (function() {
             try {
                 var saved = localStorage.getItem('velnex_theme') || localStorage.getItem('theme');
-                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                if (saved === 'dark' || (!saved && prefersDark)) {
+                if (saved === 'dark') {
                     document.documentElement.classList.add('dark');
                 } else {
                     document.documentElement.classList.remove('dark');
@@ -119,9 +118,15 @@
 <span class="text-[9.5px] sm:text-[10.5px] font-medium tracking-wider uppercase text-slate-500 dark:text-slate-400">
 Kerala, IN • Dubai, UAE
 </span>
+<div class="flex items-center gap-1.5">
 <span class="px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 text-[9.5px] sm:text-[10px] font-medium">
 Personal Portfolio
 </span>
+<button onclick="toggleTheme()" aria-label="Toggle theme" class="w-6 h-6 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-amber-400 hover:scale-110 active:scale-95 transition-all shadow-xs" title="Toggle Light/Dark Theme">
+<span class="material-symbols-outlined text-[13px] dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined text-[13px] hidden dark:block">light_mode</span>
+</button>
+</div>
 </div>
 <div>
 <h1 class="text-[18px] sm:text-[24px] lg:text-[26px] font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight font-sans">
