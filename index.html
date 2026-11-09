@@ -78,6 +78,48 @@
         } catch (_e) {}
     </script>
 <style>
+        :root {
+            --text-h1: clamp(1.05rem, 4vw, 1.25rem);
+            --text-h2: clamp(0.875rem, 3vw, 0.975rem);
+            --text-h3: clamp(0.78rem, 2.5vw, 0.85rem);
+            --text-base: 0.70rem;
+            --text-sm: 0.625rem;
+            --text-xs: 0.58rem;
+        }
+        .dossier-h1 {
+            font-size: var(--text-h1);
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+            font-weight: 700;
+        }
+        .dossier-h2 {
+            font-size: var(--text-h2);
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+        }
+        .dossier-h3 {
+            font-size: var(--text-h3);
+            line-height: 1.35;
+            letter-spacing: -0.01em;
+            font-weight: 600;
+        }
+        .dossier-base {
+            font-size: var(--text-base);
+            line-height: 1.45;
+            font-weight: 500;
+        }
+        .dossier-sm {
+            font-size: var(--text-sm);
+            line-height: 1.4;
+            font-weight: 500;
+        }
+        .dossier-xs {
+            font-size: var(--text-xs);
+            line-height: 1.3;
+            letter-spacing: 0.04em;
+            font-weight: 600;
+        }
         .timeline-dot::after {
             content: '';
             position: absolute;
@@ -117,7 +159,7 @@
 <!-- Identity & Grounded Positioning -->
 <div class="flex-1 min-w-0 flex flex-col justify-center space-y-1.5 sm:space-y-2">
 <div class="flex items-center justify-between gap-1.5">
-<span class="inline-flex items-center gap-1 text-[9.5px] sm:text-[10.5px] font-medium tracking-wider uppercase text-slate-500">
+<span class="inline-flex items-center gap-1 dossier-xs uppercase text-slate-500">
 <span class="material-symbols-outlined text-[12px] text-slate-400">location_on</span>
 Kerala, IN • Dubai, UAE
 </span>
@@ -126,21 +168,21 @@ Personal Portfolio
 </span>
 </div>
 <div>
-<h1 class="text-[18px] sm:text-[22px] lg:text-[26px] font-extrabold tracking-tight text-slate-900 leading-tight font-sans">
+<h1 class="dossier-h1 text-slate-900 font-sans">
 Velhari Sankaran
 </h1>
 </div>
-<div class="space-y-0.5 text-[11px] sm:text-[12px] font-medium leading-tight">
+<div class="space-y-0.5 dossier-base leading-tight">
 <div class="text-slate-900 font-semibold flex items-center gap-1.5">
 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
 Aspiring Entrepreneur
 </div>
-<div class="text-slate-500 text-[10px] sm:text-[11px] pl-3">
+<div class="text-slate-500 dossier-sm pl-3">
 Commerce Student • Working Professional
 </div>
 </div>
 <!-- Borderless Direct Links (Icon + Label Only) -->
-<div class="flex items-center gap-3 pt-1 text-[11px] sm:text-[11.5px] font-semibold">
+<div class="flex items-center gap-3 pt-1 dossier-base font-semibold">
 <a class="inline-flex items-center gap-1 text-slate-700 hover:text-slate-950 transition-colors" href="mailto:velharisankaran@gmail.com">
 <span class="material-symbols-outlined text-[14px] text-slate-500">mail</span> Email
 </a>
@@ -160,8 +202,8 @@ Commerce Student • Working Professional
 <!-- SECTION 1: BUSINESS & VENTURE MATRIX -->
 <section class="section-anchor space-y-3" id="ventures">
 <div class="flex items-center justify-between px-0.5 sm:px-1">
-<h2 class="text-[15px] sm:text-[17px] font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
-<span class="material-symbols-outlined text-[19px] sm:text-[20px] text-blue-600 dark:text-blue-400">corporate_fare</span>
+<h2 class="dossier-h2 text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-[17px] sm:text-[18px] text-blue-600 dark:text-blue-400">corporate_fare</span>
 Business &amp; Venture
 </h2>
 </div>
@@ -169,10 +211,10 @@ Business &amp; Venture
 <!-- Venture 1: Velnex UAE -->
 <div class="relative block bg-white dark:bg-[#0c1424] border border-slate-200/80 dark:border-slate-800/90 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-soft">
 <div class="flex flex-col gap-1.5">
-<h3 class="text-[13px] sm:text-sm font-semibold text-slate-900 dark:text-white leading-snug">
+<h3 class="dossier-h3 text-slate-900 dark:text-white leading-snug">
 Velnex Business Management &amp; Operations FZE LLC
 </h3>
-<div class="flex flex-wrap items-center gap-1.5 text-[10px] sm:text-[11px]">
+<div class="flex flex-wrap items-center gap-1.5 dossier-xs">
 <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-medium border border-blue-100/80 dark:border-blue-900/50">Corporate Management &amp; Advisory</span>
 <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">UAE</span>
 </div>
@@ -181,10 +223,10 @@ Velnex Business Management &amp; Operations FZE LLC
 <!-- Venture 2: Green Summer Ventures LLP -->
 <div class="relative block bg-white dark:bg-[#0c1424] border border-slate-200/80 dark:border-slate-800/90 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-soft">
 <div class="flex flex-col gap-1.5">
-<h3 class="text-[13px] sm:text-sm font-semibold text-slate-900 dark:text-white leading-snug">
+<h3 class="dossier-h3 text-slate-900 dark:text-white leading-snug">
 Green Summer Ventures LLP
 </h3>
-<div class="flex flex-wrap items-center gap-1.5 text-[10px] sm:text-[11px]">
+<div class="flex flex-wrap items-center gap-1.5 dossier-xs">
 <span class="px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-medium border border-emerald-100/80 dark:border-emerald-900/50">Wholesale Agri &amp; Cold-Chain</span>
 <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">India</span>
 </div>
@@ -194,8 +236,8 @@ Green Summer Ventures LLP
 <!-- SECTION 2: PROFESSIONAL EXPERIENCE TIMELINE -->
 <section class="section-anchor space-y-3 sm:space-y-3.5" id="experience">
 <div class="flex items-center justify-between px-0.5 sm:px-1">
-<h2 class="text-[15px] sm:text-[17px] font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
-<span class="material-symbols-outlined text-[19px] sm:text-[20px] text-blue-600 dark:text-blue-400">work_history</span>
+<h2 class="dossier-h2 text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-[17px] sm:text-[18px] text-blue-600 dark:text-blue-400">work_history</span>
 Professional Experience
 </h2>
 </div>
@@ -212,21 +254,21 @@ Professional Experience
 <details class="group w-full min-w-0">
 <summary class="list-none cursor-pointer flex flex-col gap-0.5 w-full select-none">
 <div class="flex items-start justify-between gap-2">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
+<h4 class="dossier-h3 text-slate-900 leading-snug">
 Dessert &amp; Beverage Trainee
 </h4>
 <div class="flex items-center gap-1.5 shrink-0">
-<span class="text-[8.5px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-1.5 py-0.5 rounded uppercase tracking-wider">
+<span class="dossier-xs text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-1.5 py-0.5 rounded uppercase">
 Active
 </span>
 <span class="material-symbols-outlined text-[16px] text-slate-400 group-open:rotate-180 transition-transform duration-200">expand_more</span>
 </div>
 </div>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
-Churritos <span class="text-slate-300">•</span> Specialty Dessert &amp; QSR Brand <span class="text-slate-300">•</span> Kerala, India <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(Oct 2026 – Present)</span>
+<p class="dossier-base text-slate-600 font-medium">
+Churritos <span class="text-slate-300">•</span> Specialty Dessert &amp; QSR Brand <span class="text-slate-300">•</span> Kerala, India <span class="text-slate-400 font-mono dossier-sm ml-1">(Oct 2026 – Present)</span>
 </p>
 </summary>
-<div class="mt-2 pt-1 space-y-1 text-[10.5px] sm:text-[11px] text-slate-600">
+<div class="mt-2 pt-1 space-y-1 dossier-base text-slate-600">
 <div class="flex items-center gap-1.5">
 <span class="w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>
 <span>Specialty Dessert Preparation &amp; Beverage Crafting</span>
@@ -253,21 +295,21 @@ Churritos <span class="text-slate-300">•</span> Specialty Dessert &amp; QSR Br
 <details class="group w-full min-w-0">
 <summary class="list-none cursor-pointer flex flex-col gap-0.5 w-full select-none">
 <div class="flex items-start justify-between gap-2">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
+<h4 class="dossier-h3 text-slate-900 leading-snug">
 Performance Marketing
 </h4>
 <div class="flex items-center gap-1.5 shrink-0">
-<span class="text-[8.5px] sm:text-[9px] font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
+<span class="dossier-xs font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
 Kerala, India
 </span>
 <span class="material-symbols-outlined text-[16px] text-slate-400 group-open:rotate-180 transition-transform duration-200">expand_more</span>
 </div>
 </div>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
-IZIN Designs Interior Studio <span class="text-slate-300">•</span> Kerala, India <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(May 2026 – Sep 2026)</span>
+<p class="dossier-base text-slate-600 font-medium">
+IZIN Designs Interior Studio <span class="text-slate-300">•</span> Kerala, India <span class="text-slate-400 font-mono dossier-sm ml-1">(May 2026 – Sep 2026)</span>
 </p>
 </summary>
-<div class="mt-2 pt-1 space-y-1 text-[10.5px] sm:text-[11px] text-slate-600">
+<div class="mt-2 pt-1 space-y-1 dossier-base text-slate-600">
 <div class="flex items-center gap-1.5">
 <span class="w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
 <span>Paid Meta Campaigns &amp; Performance Advertising</span>
@@ -298,21 +340,21 @@ IZIN Designs Interior Studio <span class="text-slate-300">•</span> Kerala, Ind
 <details class="group w-full min-w-0">
 <summary class="list-none cursor-pointer flex flex-col gap-0.5 w-full select-none">
 <div class="flex items-start justify-between gap-2">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
+<h4 class="dossier-h3 text-slate-900 leading-snug">
 Back Office Executive
 </h4>
 <div class="flex items-center gap-1.5 shrink-0">
-<span class="text-[8.5px] sm:text-[9px] font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
+<span class="dossier-xs font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
 Sharjah, UAE
 </span>
 <span class="material-symbols-outlined text-[16px] text-slate-400 group-open:rotate-180 transition-transform duration-200">expand_more</span>
 </div>
 </div>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
-Tormac | Westzone | Sea Focus <span class="text-slate-300">•</span> Maritime Agency <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(Sep 2025 – Mar 2026)</span>
+<p class="dossier-base text-slate-600 font-medium">
+Tormac | Westzone | Sea Focus <span class="text-slate-300">•</span> Maritime Agency <span class="text-slate-400 font-mono dossier-sm ml-1">(Sep 2025 – Mar 2026)</span>
 </p>
 </summary>
-<div class="mt-2 pt-1 space-y-1 text-[10.5px] sm:text-[11px] text-slate-600">
+<div class="mt-2 pt-1 space-y-1 dossier-base text-slate-600">
 <div class="flex items-center gap-1.5">
 <span class="w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
 <span>International Crew Recruitment &amp; Vessel Mobilisation (GCC Oil &amp; Gas, Visas)</span>
@@ -339,21 +381,21 @@ Tormac | Westzone | Sea Focus <span class="text-slate-300">•</span> Maritime A
 <details class="group w-full min-w-0">
 <summary class="list-none cursor-pointer flex flex-col gap-0.5 w-full select-none">
 <div class="flex items-start justify-between gap-2">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
+<h4 class="dossier-h3 text-slate-900 leading-snug">
 Digital Marketing &amp; Team Lead
 </h4>
 <div class="flex items-center gap-1.5 shrink-0">
-<span class="text-[8.5px] sm:text-[9px] font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
+<span class="dossier-xs font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
 Kerala, India
 </span>
 <span class="material-symbols-outlined text-[16px] text-slate-400 group-open:rotate-180 transition-transform duration-200">expand_more</span>
 </div>
 </div>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
-GnS Leisure Travels <span class="text-slate-300">•</span> Tourism &amp; Travel Agency <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(Jun 2025 – Sep 2025)</span>
+<p class="dossier-base text-slate-600 font-medium">
+GnS Leisure Travels <span class="text-slate-300">•</span> Tourism &amp; Travel Agency <span class="text-slate-400 font-mono dossier-sm ml-1">(Jun 2025 – Sep 2025)</span>
 </p>
 </summary>
-<div class="mt-2 pt-1 space-y-1 text-[10.5px] sm:text-[11px] text-slate-600">
+<div class="mt-2 pt-1 space-y-1 dossier-base text-slate-600">
 <div class="flex items-center gap-1.5">
 <span class="w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
 <span>Meta Lead Generation &amp; Digital Marketing Strategy</span>
@@ -376,21 +418,21 @@ GnS Leisure Travels <span class="text-slate-300">•</span> Tourism &amp; Travel
 <details class="group w-full min-w-0">
 <summary class="list-none cursor-pointer flex flex-col gap-0.5 w-full select-none">
 <div class="flex items-start justify-between gap-2">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
+<h4 class="dossier-h3 text-slate-900 leading-snug">
 Back Office Executive &amp; Creative Executive
 </h4>
 <div class="flex items-center gap-1.5 shrink-0">
-<span class="text-[8.5px] sm:text-[9px] font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
+<span class="dossier-xs font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
 Kerala, India
 </span>
 <span class="material-symbols-outlined text-[16px] text-slate-400 group-open:rotate-180 transition-transform duration-200">expand_more</span>
 </div>
 </div>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
-Greenix Experiences &amp; Cochin Boat Club <span class="text-slate-300">•</span> Tourism &amp; Maritime <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(Feb 2023 – Mar 2025)</span>
+<p class="dossier-base text-slate-600 font-medium">
+Greenix Experiences &amp; Cochin Boat Club <span class="text-slate-300">•</span> Tourism &amp; Maritime <span class="text-slate-400 font-mono dossier-sm ml-1">(Feb 2023 – Mar 2025)</span>
 </p>
 </summary>
-<div class="mt-2 pt-1 space-y-1 text-[10.5px] sm:text-[11px] text-slate-600">
+<div class="mt-2 pt-1 space-y-1 dossier-base text-slate-600">
 <div class="flex items-center gap-1.5">
 <span class="w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
 <span><strong class="font-semibold text-slate-800">Cochin Boat Club:</strong> Crew &amp; passenger operations, daily boating revenue accounts &amp; MIS reports</span>
@@ -470,52 +512,52 @@ Greenix Experiences &amp; Cochin Boat Club <span class="text-slate-300">•</spa
 <!-- SECTION 4: ACADEMIC & EDUCATION -->
 <section class="section-anchor space-y-3 sm:space-y-3.5" id="academics">
 <div class="flex items-center justify-between px-0.5 sm:px-1">
-<h2 class="text-[15px] sm:text-[17px] font-bold tracking-tight text-slate-900 flex items-center gap-2">
-<span class="material-symbols-outlined text-[19px] sm:text-[20px] text-blue-600">school</span>
+<h2 class="dossier-h2 text-slate-900 flex items-center gap-2">
+<span class="material-symbols-outlined text-[17px] sm:text-[18px] text-blue-600">school</span>
 Academic Background
 </h2>
 </div>
 <div class="bg-white border border-slate-200/80 rounded-2xl p-3.5 sm:p-5 shadow-soft space-y-3.5">
 <!-- Tier 1: Higher Secondary & Professional Track -->
 <div class="space-y-2.5">
-<span class="text-[9px] sm:text-[9.5px] font-bold text-slate-400 uppercase tracking-wider block">Higher Secondary &amp; Professional</span>
+<span class="dossier-xs font-bold text-slate-400 uppercase block">Higher Secondary &amp; Professional</span>
 
 <!-- Plus Two Commerce -->
 <div class="flex flex-col gap-0.5">
 <div class="flex items-start justify-between gap-2">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
+<h4 class="dossier-h3 text-slate-900 leading-snug">
 Plus Two (12th) — Commerce
 </h4>
-<span class="text-[8.5px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-1.5 py-0.5 rounded shrink-0 uppercase tracking-wider">
+<span class="dossier-xs text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-1.5 py-0.5 rounded shrink-0 uppercase">
 Currently Pursuing
 </span>
 </div>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
-Board of Open Schooling &amp; Skill Education (BOSSE), Sikkim <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(2026 – Present)</span>
+<p class="dossier-base text-slate-600 font-medium">
+Board of Open Schooling &amp; Skill Education (BOSSE), Sikkim <span class="text-slate-400 font-mono dossier-sm ml-1">(2026 – Present)</span>
 </p>
 </div>
 
 <!-- Diploma in Multimedia -->
 <div class="flex flex-col gap-0.5 pt-2.5 border-t border-slate-50">
 <div class="flex items-start justify-between gap-2">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
+<h4 class="dossier-h3 text-slate-900 leading-snug">
 Diploma in Multimedia &amp; Design
 </h4>
-<span class="text-[8.5px] font-bold text-slate-600 bg-slate-100 border border-slate-200/80 px-1.5 py-0.5 rounded shrink-0 uppercase tracking-wider">
+<span class="dossier-xs text-slate-600 bg-slate-100 border border-slate-200/80 px-1.5 py-0.5 rounded shrink-0 uppercase">
 Certified
 </span>
 </div>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
-Academy of Media and Design LLP, Kerala <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(2023)</span>
+<p class="dossier-base text-slate-600 font-medium">
+Academy of Media and Design LLP, Kerala <span class="text-slate-400 font-mono dossier-sm ml-1">(2023)</span>
 </p>
 </div>
 
 <!-- 11th Standard -->
 <div class="flex flex-col gap-0.5 pt-2.5 border-t border-slate-50">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
+<h4 class="dossier-h3 text-slate-900 leading-snug">
 Higher Secondary (11th Standard)
 </h4>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
+<p class="dossier-base text-slate-600 font-medium">
 Santa Cruz Higher Secondary School, Fort Kochi
 </p>
 </div>
@@ -523,22 +565,22 @@ Santa Cruz Higher Secondary School, Fort Kochi
 
 <!-- Tier 2: Foundational Schooling Track -->
 <div class="pt-3 border-t border-slate-100 space-y-2">
-<span class="text-[9px] sm:text-[9.5px] font-bold text-slate-400 uppercase tracking-wider block">Schooling Foundation (1st – 10th)</span>
+<span class="dossier-xs font-bold text-slate-400 uppercase block">Schooling Foundation (1st – 10th)</span>
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
 <div class="bg-slate-50/80 rounded-xl p-2.5 border border-slate-100/90">
-<span class="text-[10px] sm:text-[10.5px] font-bold text-slate-800 block">8th – 10th Standard</span>
-<span class="text-[10.5px] sm:text-[11px] text-slate-600 block mt-0.5 font-medium">HIHSS, Edavanakkad</span>
-<span class="text-[9px] text-slate-400 font-mono block mt-0.5">Secondary (High School)</span>
+<span class="dossier-sm font-bold text-slate-800 block">8th – 10th Standard</span>
+<span class="dossier-base text-slate-600 block mt-0.5 font-medium">HIHSS, Edavanakkad</span>
+<span class="dossier-xs text-slate-400 font-mono block mt-0.5">Secondary (High School)</span>
 </div>
 <div class="bg-slate-50/80 rounded-xl p-2.5 border border-slate-100/90">
-<span class="text-[10px] sm:text-[10.5px] font-bold text-slate-800 block">5th – 7th Standard</span>
-<span class="text-[10.5px] sm:text-[11px] text-slate-600 block mt-0.5 font-medium">St. Mary's School, Njarakkal</span>
-<span class="text-[9px] text-slate-400 font-mono block mt-0.5">Upper Primary</span>
+<span class="dossier-sm font-bold text-slate-800 block">5th – 7th Standard</span>
+<span class="dossier-base text-slate-600 block mt-0.5 font-medium">St. Mary's School, Njarakkal</span>
+<span class="dossier-xs text-slate-400 font-mono block mt-0.5">Upper Primary</span>
 </div>
 <div class="bg-slate-50/80 rounded-xl p-2.5 border border-slate-100/90">
-<span class="text-[10px] sm:text-[10.5px] font-bold text-slate-800 block">1st – 4th Standard</span>
-<span class="text-[10.5px] sm:text-[11px] text-slate-600 block mt-0.5 font-medium">Talent Public School, Njarakkal</span>
-<span class="text-[9px] text-slate-400 font-mono block mt-0.5">Primary School</span>
+<span class="dossier-sm font-bold text-slate-800 block">1st – 4th Standard</span>
+<span class="dossier-base text-slate-600 block mt-0.5 font-medium">Talent Public School, Njarakkal</span>
+<span class="dossier-xs text-slate-400 font-mono block mt-0.5">Primary School</span>
 </div>
 </div>
 </div>
@@ -547,17 +589,17 @@ Santa Cruz Higher Secondary School, Fort Kochi
 <!-- SECTION 5: LIVE FINANCIAL BALANCE OVERVIEW -->
 <section class="section-anchor space-y-3 sm:space-y-3.5" id="finances">
 <div class="flex items-center justify-between gap-2 px-0.5 sm:px-1">
-<h2 class="text-[15px] sm:text-[17px] font-bold tracking-tight text-slate-900 flex items-center gap-2">
-<span class="material-symbols-outlined text-[19px] sm:text-[20px] text-blue-600">account_balance</span>
+<h2 class="dossier-h2 text-slate-900 flex items-center gap-2">
+<span class="material-symbols-outlined text-[17px] sm:text-[18px] text-blue-600">account_balance</span>
 Financial Position
 </h2>
 <div class="flex items-center gap-1.5 shrink-0">
-<button disabled aria-disabled="true" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-400 text-[9px] sm:text-[10px] font-medium border border-slate-200/80 cursor-not-allowed opacity-80" title="Access Protected • Confidential">
+<button disabled aria-disabled="true" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-400 dossier-xs font-medium border border-slate-200/80 cursor-not-allowed opacity-80" title="Access Protected • Confidential">
 <span class="material-symbols-outlined text-[11px] sm:text-[12px]">visibility_off</span>
 <span>Show Figures</span>
-<span class="text-[8px] sm:text-[8.5px] px-1 py-0.2 rounded bg-slate-200/80 text-slate-500 font-mono ml-0.5">Disabled</span>
+<span class="dossier-xs px-1 py-0.2 rounded bg-slate-200/80 text-slate-500 font-mono ml-0.5">Disabled</span>
 </button>
-<a class="text-[9.5px] font-mono font-semibold text-blue-600 hover:underline hidden sm:inline-flex items-center gap-0.5" href="profile-print.html">
+<a class="dossier-xs font-mono font-semibold text-blue-600 hover:underline hidden sm:inline-flex items-center gap-0.5" href="profile-print.html">
 Formal Dossier <span class="material-symbols-outlined text-[11px]">open_in_new</span>
 </a>
 </div>
@@ -568,23 +610,23 @@ Formal Dossier <span class="material-symbols-outlined text-[11px]">open_in_new</
 <div class="grid grid-cols-3 divide-x divide-slate-100 text-center">
 <!-- Column 1: Assets -->
 <div class="px-1.5 sm:px-3 flex flex-col items-center justify-center">
-<span class="text-[9px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider block">Assets</span>
-<span class="text-[12.5px] sm:text-[16px] font-extrabold font-mono text-emerald-700 block mt-1 tracking-wider whitespace-nowrap">₹ ###,###</span>
-<span class="text-[8.5px] sm:text-[9.5px] text-slate-400 block mt-0.5 truncate w-full">Liquid &amp; Debtors</span>
+<span class="dossier-xs font-bold text-emerald-800 uppercase block">Assets</span>
+<span class="dossier-h3 font-extrabold font-mono text-emerald-700 block mt-1 tracking-wider whitespace-nowrap">₹ ###,###</span>
+<span class="dossier-xs text-slate-400 block mt-0.5 truncate w-full">Liquid &amp; Debtors</span>
 </div>
 
 <!-- Column 2: Liabilities -->
 <div class="px-1.5 sm:px-3 flex flex-col items-center justify-center">
-<span class="text-[9px] sm:text-[10px] font-bold text-rose-800 uppercase tracking-wider block">Liabilities</span>
-<span class="text-[12.5px] sm:text-[16px] font-extrabold font-mono text-rose-700 block mt-1 tracking-wider whitespace-nowrap">₹ ###,###</span>
-<span class="text-[8.5px] sm:text-[9.5px] text-slate-400 block mt-0.5 truncate w-full">Loans &amp; Lines</span>
+<span class="dossier-xs font-bold text-rose-800 uppercase block">Liabilities</span>
+<span class="dossier-h3 font-extrabold font-mono text-rose-700 block mt-1 tracking-wider whitespace-nowrap">₹ ###,###</span>
+<span class="dossier-xs text-slate-400 block mt-0.5 truncate w-full">Loans &amp; Lines</span>
 </div>
 
 <!-- Column 3: Net Position -->
 <div class="px-1.5 sm:px-3 flex flex-col items-center justify-center">
-<span class="text-[9px] sm:text-[10px] font-bold text-slate-700 uppercase tracking-wider block">Net Position</span>
-<span class="text-[12.5px] sm:text-[16px] font-extrabold font-mono text-slate-900 block mt-1 tracking-wider whitespace-nowrap">(₹ ##,###)</span>
-<span class="text-[8.5px] sm:text-[9.5px] text-slate-400 block mt-0.5 truncate w-full">Amortized</span>
+<span class="dossier-xs font-bold text-slate-700 uppercase block">Net Position</span>
+<span class="dossier-h3 font-extrabold font-mono text-slate-900 block mt-1 tracking-wider whitespace-nowrap">(₹ ##,###)</span>
+<span class="dossier-xs text-slate-400 block mt-0.5 truncate w-full">Amortized</span>
 </div>
 </div>
 </div>
@@ -592,8 +634,8 @@ Formal Dossier <span class="material-symbols-outlined text-[11px]">open_in_new</
 <!-- SECTION 6: BIO DATA & IDENTITY -->
 <section class="section-anchor space-y-3 sm:space-y-3.5" id="bio">
 <div class="flex items-center justify-between px-0.5 sm:px-1">
-<h2 class="text-[15px] sm:text-[17px] font-bold tracking-tight text-slate-900 flex items-center gap-2">
-<span class="material-symbols-outlined text-[19px] sm:text-[20px] text-blue-600">badge</span>
+<h2 class="dossier-h2 text-slate-900 flex items-center gap-2">
+<span class="material-symbols-outlined text-[17px] sm:text-[18px] text-blue-600">badge</span>
 Bio Data &amp; Background
 </h2>
 </div>
@@ -601,35 +643,35 @@ Bio Data &amp; Background
 <!-- 4 Key Vitals Grid -->
 <div class="grid grid-cols-4 gap-1.5 sm:gap-3 text-center pb-3 border-b border-slate-100">
 <div class="bg-slate-50/70 rounded-xl p-2 sm:p-2.5 border border-slate-100">
-<span class="text-[8.5px] sm:text-[9.5px] font-medium text-slate-500 uppercase tracking-wider block">Age</span>
-<span class="text-[12px] sm:text-[13px] font-bold text-slate-900 font-mono mt-0.5 block">23 Y</span>
+<span class="dossier-xs font-medium text-slate-500 uppercase block">Age</span>
+<span class="dossier-h3 font-bold text-slate-900 font-mono mt-0.5 block">23 Y</span>
 </div>
 <div class="bg-slate-50/70 rounded-xl p-2 sm:p-2.5 border border-slate-100">
-<span class="text-[8.5px] sm:text-[9.5px] font-medium text-slate-500 uppercase tracking-wider block">Nation</span>
-<span class="text-[12px] sm:text-[13px] font-bold text-slate-900 mt-0.5 block">Indian</span>
+<span class="dossier-xs font-medium text-slate-500 uppercase block">Nation</span>
+<span class="dossier-h3 font-bold text-slate-900 mt-0.5 block">Indian</span>
 </div>
 <div class="bg-slate-50/70 rounded-xl p-2 sm:p-2.5 border border-slate-100">
-<span class="text-[8.5px] sm:text-[9.5px] font-medium text-slate-500 uppercase tracking-wider block">Blood</span>
-<span class="text-[12px] sm:text-[13px] font-bold text-rose-600 mt-0.5 block">B+</span>
+<span class="dossier-xs font-medium text-slate-500 uppercase block">Blood</span>
+<span class="dossier-h3 font-bold text-rose-600 mt-0.5 block">B+</span>
 </div>
 <div class="bg-slate-50/70 rounded-xl p-2 sm:p-2.5 border border-slate-100">
-<span class="text-[8.5px] sm:text-[9.5px] font-medium text-slate-500 uppercase tracking-wider block">Status</span>
-<span class="text-[12px] sm:text-[13px] font-bold text-slate-900 mt-0.5 block">Single</span>
+<span class="dossier-xs font-medium text-slate-500 uppercase block">Status</span>
+<span class="dossier-h3 font-bold text-slate-900 mt-0.5 block">Single</span>
 </div>
 </div>
 
 <!-- Detailed Records -->
-<div class="space-y-2.5 text-[11px] sm:text-[12px]">
+<div class="space-y-2.5 dossier-base">
 <div class="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2">
-<span class="text-[9.5px] sm:text-[10px] font-semibold text-slate-400 uppercase tracking-wider shrink-0 w-28">Parents</span>
+<span class="dossier-xs font-semibold text-slate-400 uppercase shrink-0 w-28">Parents</span>
 <span class="text-slate-800 font-medium">Chandra Jith Anchalasseri <span class="text-slate-300 mx-1">•</span> Bindhu Kaithavalappil</span>
 </div>
 <div class="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2 pt-2 border-t border-slate-50">
-<span class="text-[9.5px] sm:text-[10px] font-semibold text-slate-400 uppercase tracking-wider shrink-0 w-28">Languages</span>
+<span class="dossier-xs font-semibold text-slate-400 uppercase shrink-0 w-28">Languages</span>
 <span class="text-slate-800 font-medium">Malayalam (Native), English (Fluent)</span>
 </div>
 <div class="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2 pt-2 border-t border-slate-50">
-<span class="text-[9.5px] sm:text-[10px] font-semibold text-slate-400 uppercase tracking-wider shrink-0 w-28">Permanent Address</span>
+<span class="dossier-xs font-semibold text-slate-400 uppercase shrink-0 w-28">Permanent Address</span>
 <span class="text-slate-800 font-medium">Anchalasseri House, Njarakkal, Vypin, Kerala, India - <span class="font-mono text-slate-600">682505</span></span>
 </div>
 </div>
