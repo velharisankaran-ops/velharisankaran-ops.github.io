@@ -6,16 +6,14 @@
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>Velhari Sankaran | Founder Portfolio &amp; Strategic Operations</title>
 <meta content="Official portfolio of Velhari Sankaran - Early-stage founder, manager at Velnex Business Management &amp; Operations FZE LLC (UAE &amp; India), and commerce student." name="description"/>
-<!-- Synchronous Zero-FOUC Theme Pre-paint Script -->
+<!-- Pure Light Theme Default Script -->
 <script>
         (function() {
             try {
-                var saved = localStorage.getItem('velnex_theme') || localStorage.getItem('theme');
-                if (saved === 'dark') {
-                    document.documentElement.classList.add('dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                }
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                localStorage.removeItem('velnex_theme');
+                localStorage.removeItem('theme');
             } catch(e) {}
         })();
     </script>
@@ -116,19 +114,13 @@
 </div>
 <!-- Identity & Grounded Positioning -->
 <div class="flex-1 min-w-0 flex flex-col justify-between lg:justify-start space-y-1 sm:space-y-1.5 lg:space-y-2.5">
-<div class="flex items-center justify-between gap-1">
+<div class="flex items-center justify-between gap-1.5">
 <span class="text-[9px] sm:text-[10px] lg:text-[10.5px] font-medium tracking-wider uppercase text-slate-500 dark:text-slate-400 truncate">
 Kerala, IN • Dubai, UAE
 </span>
-<div class="flex items-center gap-1 shrink-0">
-<span class="hidden sm:inline-flex px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 text-[9px] sm:text-[10px] font-medium">
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 text-[9px] sm:text-[10px] font-medium shrink-0">
 Personal Portfolio
 </span>
-<button onclick="toggleTheme()" aria-label="Toggle theme" class="w-6 h-6 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-amber-400 hover:scale-110 active:scale-95 transition-all shadow-xs" title="Toggle Light/Dark Theme">
-<span class="material-symbols-outlined text-[13px] dark:hidden">dark_mode</span>
-<span class="material-symbols-outlined text-[13px] hidden dark:block">light_mode</span>
-</button>
-</div>
 </div>
 <div>
 <h1 class="text-[17px] sm:text-[22px] lg:text-[26px] font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight font-sans">
@@ -137,11 +129,6 @@ Velhari Sankaran
 <p class="text-[11px] sm:text-[12px] lg:text-[12.5px] font-medium text-slate-600 dark:text-slate-300 mt-0.5 lg:mt-1 leading-snug">
 Commerce Student <span class="text-slate-400">|</span> Aspiring Entrepreneur <span class="text-slate-400">|</span> Working Professional
 </p>
-</div>
-<div class="sm:hidden">
-<span class="inline-flex px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400 text-[8.5px] font-medium">
-Personal Portfolio
-</span>
 </div>
 </div>
 </div>
