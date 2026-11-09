@@ -93,6 +93,8 @@
         .timeline-item:last-child .timeline-dot::after {
             display: none;
         }
+        summary::-webkit-details-marker { display: none; }
+        summary { list-style: none; }
         .section-anchor {
             scroll-margin-top: 5rem;
         }
@@ -203,25 +205,30 @@ Professional Experience
 <div class="flex flex-col gap-0">
 
 <!-- Timeline Item 1: IZIN DESIGNS INTERIOR STUDIO -->
-<div class="timeline-item flex gap-3 sm:gap-3.5 relative pb-4 sm:pb-5">
+<div class="timeline-item flex gap-3 sm:gap-3.5 relative pb-3.5 sm:pb-4.5">
 <div class="timeline-dot relative z-10 shrink-0 mt-1">
-<div class="w-3.5 h-3.5 rounded-full border-2 border-emerald-500 bg-emerald-50 dark:bg-slate-900 flex items-center justify-center">
+<div class="w-3.5 h-3.5 rounded-full border-2 border-emerald-500 bg-emerald-50 flex items-center justify-center">
 <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
 </div>
 </div>
-<div class="flex flex-col gap-0.5 w-full min-w-0">
+<details open class="group w-full min-w-0">
+<summary class="list-none cursor-pointer flex flex-col gap-0.5 w-full select-none">
 <div class="flex items-start justify-between gap-2">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 dark:text-white leading-snug">
+<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
 Digital Marketing / Performance Marketing
 </h4>
-<span class="text-[8.5px] font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/80 dark:border-emerald-800/60 px-1.5 py-0.5 rounded shrink-0 uppercase tracking-wider">
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="text-[8.5px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-1.5 py-0.5 rounded uppercase tracking-wider">
 Active
 </span>
+<span class="material-symbols-outlined text-[16px] text-slate-400 group-open:rotate-180 transition-transform duration-200">expand_more</span>
 </div>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 dark:text-slate-300 font-medium">
-IZIN Designs Interior Studio <span class="text-slate-300 dark:text-slate-600">•</span> Kerala, India <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(May 2026 – Present)</span>
+</div>
+<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
+IZIN Designs Interior Studio <span class="text-slate-300">•</span> Kerala, India <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(May 2026 – Present)</span>
 </p>
-<div class="mt-1.5 space-y-0.5 text-[10.5px] sm:text-[11px] text-slate-600 dark:text-slate-300">
+</summary>
+<div class="mt-2 pt-1 space-y-1 text-[10.5px] sm:text-[11px] text-slate-600">
 <div class="flex items-center gap-1.5">
 <span class="w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>
 <span>Paid Meta Campaigns &amp; Performance Advertising</span>
@@ -239,29 +246,34 @@ IZIN Designs Interior Studio <span class="text-slate-300 dark:text-slate-600">�
 <span>Promotional Creative &amp; Marketing Content</span>
 </div>
 </div>
-</div>
+</details>
 </div>
 
 <!-- Timeline Item 2: TORMAC | WESTZONE | SEA FOCUS -->
-<div class="timeline-item flex gap-3 sm:gap-3.5 relative pb-4 sm:pb-5">
+<div class="timeline-item flex gap-3 sm:gap-3.5 relative pb-3.5 sm:pb-4.5">
 <div class="timeline-dot relative z-10 shrink-0 mt-1">
-<div class="w-3.5 h-3.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 flex items-center justify-center">
-<div class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600"></div>
+<div class="w-3.5 h-3.5 rounded-full border border-slate-300 bg-white flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
 </div>
 </div>
-<div class="flex flex-col gap-0.5 w-full min-w-0">
+<details class="group w-full min-w-0">
+<summary class="list-none cursor-pointer flex flex-col gap-0.5 w-full select-none">
 <div class="flex items-start justify-between gap-2">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 dark:text-white leading-snug">
+<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
 Shipping Operations &amp; Crewing Executive
 </h4>
-<span class="text-[8.5px] sm:text-[9px] font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded shrink-0">
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="text-[8.5px] sm:text-[9px] font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
 Sharjah, UAE
 </span>
+<span class="material-symbols-outlined text-[16px] text-slate-400 group-open:rotate-180 transition-transform duration-200">expand_more</span>
 </div>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 dark:text-slate-300 font-medium">
-Tormac | Westzone | Sea Focus <span class="text-slate-300 dark:text-slate-600">•</span> Maritime Agency <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(Sep 2025 – Mar 2026)</span>
+</div>
+<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
+Tormac | Westzone | Sea Focus <span class="text-slate-300">•</span> Maritime Agency <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(Sep 2025 – Mar 2026)</span>
 </p>
-<div class="mt-1.5 space-y-0.5 text-[10.5px] sm:text-[11px] text-slate-600 dark:text-slate-300">
+</summary>
+<div class="mt-2 pt-1 space-y-1 text-[10.5px] sm:text-[11px] text-slate-600">
 <div class="flex items-center gap-1.5">
 <span class="w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
 <span>International Crew Recruitment &amp; Vessel Mobilisation (GCC Oil &amp; Gas, Visas)</span>
@@ -275,29 +287,34 @@ Tormac | Westzone | Sea Focus <span class="text-slate-300 dark:text-slate-600">�
 <span>B2B Commercial Outreach to Regional Shipping Operators</span>
 </div>
 </div>
-</div>
+</details>
 </div>
 
 <!-- Timeline Item 3: GNS LEISURE TRAVELS -->
-<div class="timeline-item flex gap-3 sm:gap-3.5 relative pb-4 sm:pb-5">
+<div class="timeline-item flex gap-3 sm:gap-3.5 relative pb-3.5 sm:pb-4.5">
 <div class="timeline-dot relative z-10 shrink-0 mt-1">
-<div class="w-3.5 h-3.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 flex items-center justify-center">
-<div class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600"></div>
+<div class="w-3.5 h-3.5 rounded-full border border-slate-300 bg-white flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
 </div>
 </div>
-<div class="flex flex-col gap-0.5 w-full min-w-0">
+<details class="group w-full min-w-0">
+<summary class="list-none cursor-pointer flex flex-col gap-0.5 w-full select-none">
 <div class="flex items-start justify-between gap-2">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 dark:text-white leading-snug">
+<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
 Digital Marketing &amp; Team Lead
 </h4>
-<span class="text-[8.5px] sm:text-[9px] font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded shrink-0">
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="text-[8.5px] sm:text-[9px] font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
 Kerala, India
 </span>
+<span class="material-symbols-outlined text-[16px] text-slate-400 group-open:rotate-180 transition-transform duration-200">expand_more</span>
 </div>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 dark:text-slate-300 font-medium">
-GnS Leisure Travels <span class="text-slate-300 dark:text-slate-600">•</span> Tourism &amp; Travel Agency <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(Jun 2025 – Sep 2025)</span>
+</div>
+<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
+GnS Leisure Travels <span class="text-slate-300">•</span> Tourism &amp; Travel Agency <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(Jun 2025 – Sep 2025)</span>
 </p>
-<div class="mt-1.5 space-y-0.5 text-[10.5px] sm:text-[11px] text-slate-600 dark:text-slate-300">
+</summary>
+<div class="mt-2 pt-1 space-y-1 text-[10.5px] sm:text-[11px] text-slate-600">
 <div class="flex items-center gap-1.5">
 <span class="w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
 <span>Meta Lead Generation &amp; Digital Marketing Strategy</span>
@@ -307,43 +324,48 @@ GnS Leisure Travels <span class="text-slate-300 dark:text-slate-600">•</span> 
 <span>Team Leadership (2 Marketers), Campaign Coordination &amp; Package Sales</span>
 </div>
 </div>
-</div>
+</details>
 </div>
 
 <!-- Timeline Item 4: GREENIX & COCHIN BOAT CLUB -->
 <div class="timeline-item flex gap-3 sm:gap-3.5 relative">
 <div class="timeline-dot relative z-10 shrink-0 mt-1">
-<div class="w-3.5 h-3.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 flex items-center justify-center">
-<div class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600"></div>
+<div class="w-3.5 h-3.5 rounded-full border border-slate-300 bg-white flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
 </div>
 </div>
-<div class="flex flex-col gap-0.5 w-full min-w-0">
+<details class="group w-full min-w-0">
+<summary class="list-none cursor-pointer flex flex-col gap-0.5 w-full select-none">
 <div class="flex items-start justify-between gap-2">
-<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 dark:text-white leading-snug">
+<h4 class="text-[12.5px] sm:text-[13.5px] font-bold text-slate-900 leading-snug">
 Business Operations &amp; Creative Executive
 </h4>
-<span class="text-[8.5px] sm:text-[9px] font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded shrink-0">
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="text-[8.5px] sm:text-[9px] font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
 Kerala, India
 </span>
+<span class="material-symbols-outlined text-[16px] text-slate-400 group-open:rotate-180 transition-transform duration-200">expand_more</span>
 </div>
-<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 dark:text-slate-300 font-medium">
-Greenix Experiences &amp; Cochin Boat Club <span class="text-slate-300 dark:text-slate-600">•</span> Tourism &amp; Maritime <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(Feb 2023 – Mar 2025)</span>
+</div>
+<p class="text-[10.5px] sm:text-[11.5px] text-slate-600 font-medium">
+Greenix Experiences &amp; Cochin Boat Club <span class="text-slate-300">•</span> Tourism &amp; Maritime <span class="text-slate-400 font-mono text-[9.5px] sm:text-[10px] ml-1">(Feb 2023 – Mar 2025)</span>
 </p>
-<div class="mt-1.5 space-y-0.5 text-[10.5px] sm:text-[11px] text-slate-600 dark:text-slate-300">
+</summary>
+<div class="mt-2 pt-1 space-y-1 text-[10.5px] sm:text-[11px] text-slate-600">
 <div class="flex items-center gap-1.5">
 <span class="w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
-<span><strong class="font-semibold text-slate-800 dark:text-slate-200">Cochin Boat Club:</strong> Crew &amp; passenger operations, daily boating revenue accounts &amp; MIS reports</span>
+<span><strong class="font-semibold text-slate-800">Cochin Boat Club:</strong> Crew &amp; passenger operations, daily boating revenue accounts &amp; MIS reports</span>
 </div>
 <div class="flex items-center gap-1.5">
 <span class="w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>
-<span><strong class="font-semibold text-slate-800 dark:text-slate-200">Greenix Operations:</strong> Official administration, statutory documentation &amp; client event planning</span>
+<span><strong class="font-semibold text-slate-800">Greenix Operations:</strong> Official administration, statutory documentation &amp; client event planning</span>
 </div>
 <div class="flex items-center gap-1.5">
 <span class="w-1 h-1 rounded-full bg-emerald-500 shrink-0"></span>
-<span><strong class="font-semibold text-slate-800 dark:text-slate-200">Creative &amp; IR:</strong> Investor decks for asset purchases, 3D SketchUp layouts &amp; marketing collateral</span>
+<span><strong class="font-semibold text-slate-800">Creative &amp; IR:</strong> Investor decks for asset purchases, 3D SketchUp layouts &amp; marketing collateral</span>
 </div>
 </div>
-</div>
+</details>
 </div>
 
 </div>
