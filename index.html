@@ -438,10 +438,10 @@ Greenix Experiences &amp; Cochin Boat Club <span class="text-slate-300 dark:text
 <div class="flex items-center justify-between gap-2 px-0.5 sm:px-1">
 <h2 class="text-[15px] sm:text-[17px] font-bold tracking-tight text-slate-900 flex items-center gap-2">
 <span class="material-symbols-outlined text-[19px] sm:text-[20px] text-blue-600">account_balance</span>
-Statement of Financial Position
+Financial Position
 </h2>
-<div class="flex items-center gap-2 shrink-0">
-<button disabled aria-disabled="true" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-100 text-slate-400 text-[9px] sm:text-[10px] font-medium border border-slate-200/80 cursor-not-allowed opacity-80" title="Access Protected • Restricted">
+<div class="flex items-center gap-1.5 shrink-0">
+<button disabled aria-disabled="true" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-400 text-[9px] sm:text-[10px] font-medium border border-slate-200/80 cursor-not-allowed opacity-80" title="Access Protected • Confidential">
 <span class="material-symbols-outlined text-[11px] sm:text-[12px]">visibility_off</span>
 <span>Show Figures</span>
 <span class="text-[8px] sm:text-[8.5px] px-1 py-0.2 rounded bg-slate-200/80 text-slate-500 font-mono ml-0.5">Disabled</span>
@@ -451,22 +451,30 @@ Formal Dossier <span class="material-symbols-outlined text-[11px]">open_in_new</
 </a>
 </div>
 </div>
-<!-- 3 Top Balance Pillars (Figures Protected with ###) -->
-<div class="grid grid-cols-3 gap-2 sm:gap-3">
-<div class="bg-white border border-emerald-200/70 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-soft">
-<span class="text-[8.5px] sm:text-[9.5px] font-bold text-emerald-800 uppercase tracking-wider block">Total Assets</span>
-<span class="text-[13px] sm:text-[16px] font-extrabold font-mono text-emerald-700 mt-1 block tracking-wider">₹ ###,###</span>
-<span class="text-[8.5px] sm:text-[9.5px] text-slate-400 mt-0.5 block truncate">Liquid &amp; Receivables</span>
+
+<!-- Unified Master Financial Ledger Card -->
+<div class="bg-white border border-slate-200/80 rounded-2xl p-3 sm:p-4 shadow-soft">
+<div class="grid grid-cols-3 divide-x divide-slate-100 text-center">
+<!-- Column 1: Assets -->
+<div class="px-1.5 sm:px-3 flex flex-col items-center justify-center">
+<span class="text-[9px] sm:text-[10px] font-bold text-emerald-800 uppercase tracking-wider block">Assets</span>
+<span class="text-[12.5px] sm:text-[16px] font-extrabold font-mono text-emerald-700 block mt-1 tracking-wider whitespace-nowrap">₹ ###,###</span>
+<span class="text-[8.5px] sm:text-[9.5px] text-slate-400 block mt-0.5 truncate w-full">Liquid &amp; Debtors</span>
 </div>
-<div class="bg-white border border-rose-200/70 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-soft">
-<span class="text-[8.5px] sm:text-[9.5px] font-bold text-rose-800 uppercase tracking-wider block">Total Liabilities</span>
-<span class="text-[13px] sm:text-[16px] font-extrabold font-mono text-rose-700 mt-1 block tracking-wider">₹ ###,###</span>
-<span class="text-[8.5px] sm:text-[9.5px] text-slate-400 mt-0.5 block truncate">Loans &amp; Facilities</span>
+
+<!-- Column 2: Liabilities -->
+<div class="px-1.5 sm:px-3 flex flex-col items-center justify-center">
+<span class="text-[9px] sm:text-[10px] font-bold text-rose-800 uppercase tracking-wider block">Liabilities</span>
+<span class="text-[12.5px] sm:text-[16px] font-extrabold font-mono text-rose-700 block mt-1 tracking-wider whitespace-nowrap">₹ ###,###</span>
+<span class="text-[8.5px] sm:text-[9.5px] text-slate-400 block mt-0.5 truncate w-full">Loans &amp; Lines</span>
 </div>
-<div class="bg-slate-900 text-white rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-soft">
-<span class="text-[8.5px] sm:text-[9.5px] font-bold text-slate-300 uppercase tracking-wider block">Net Position</span>
-<span class="text-[13px] sm:text-[16px] font-extrabold font-mono text-slate-200 mt-1 block tracking-wider">(₹ ##,###)</span>
-<span class="text-[8.5px] sm:text-[9.5px] text-slate-400 mt-0.5 block truncate">Amortized Balance</span>
+
+<!-- Column 3: Net Position -->
+<div class="px-1.5 sm:px-3 flex flex-col items-center justify-center">
+<span class="text-[9px] sm:text-[10px] font-bold text-slate-700 uppercase tracking-wider block">Net Position</span>
+<span class="text-[12.5px] sm:text-[16px] font-extrabold font-mono text-slate-900 block mt-1 tracking-wider whitespace-nowrap">(₹ ##,###)</span>
+<span class="text-[8.5px] sm:text-[9.5px] text-slate-400 block mt-0.5 truncate w-full">Amortized</span>
+</div>
 </div>
 </div>
 </section>
