@@ -55,15 +55,27 @@
             border-bottom: none;
         }
 
+        .dynamic-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
         .placeholder-tag {
             background-color: #fef3c7;
             color: #92400e;
             border: 1px dashed #f59e0b;
             padding: 2px 8px;
             border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 600;
-            font-size: 11.5px;
+            display: inline-block;
+        }
+
+        .updated-tag {
+            background-color: #ecfdf5 !important;
+            color: #065f46 !important;
+            border: 1px solid #10b981 !important;
+            padding: 2px 8px;
+            border-radius: 4px;
             display: inline-block;
         }
 
@@ -72,6 +84,7 @@
                 background: #ffffff !important;
                 padding: 0 !important;
                 font-size: 11.5px !important;
+                color: #000000 !important;
             }
             .print-hidden {
                 display: none !important;
@@ -85,7 +98,15 @@
             .card-box {
                 border: 1px solid #cbd5e1 !important;
                 box-shadow: none !important;
+            }
+            section {
                 break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                margin-bottom: 1.5rem !important;
+            }
+            table, tr {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
             }
             @page {
                 size: A4;
@@ -98,16 +119,20 @@
 
 <div class="max-w-4xl mx-auto page-container">
 
-    <!-- Top Action Toolbar (Print / Copy / Portfolio) -->
-    <div class="print-hidden mb-6 flex flex-wrap items-center justify-between gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+    <!-- Top Action Toolbar (Print / Copy / Presets) -->
+    <div class="print-hidden mb-4 flex flex-wrap items-center justify-between gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
         <div class="flex items-center gap-2">
-            <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
             <span class="text-xs font-semibold text-slate-700 uppercase tracking-wider">Confidential Proposal &bull; Live Dossier</span>
         </div>
         <div class="flex flex-wrap items-center gap-2">
-            <button onclick="copyProposalText()" id="copyBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium transition-colors shadow-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                Copy Proposal Text
+            <button onclick="copyEmailFormat()" id="copyEmailBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium transition-colors shadow-sm" title="Copy full proposal formatted for Email">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                Copy for Email
+            </button>
+            <button onclick="copyWhatsAppPitch()" id="copyWhatsAppBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-medium transition-colors shadow-sm" title="Copy quick executive pitch for WhatsApp / DM">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                Copy Quick Pitch
             </button>
             <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-900 text-white text-xs font-medium transition-colors shadow-sm">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
@@ -116,6 +141,54 @@
             <a href="https://velharisankaran.velnex.in/profile-print.html" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-medium transition-colors">
                 Financial Profile &rarr;
             </a>
+        </div>
+    </div>
+
+    <!-- Interactive Proposal Customizer & Presets (Print-Hidden) -->
+    <div class="print-hidden mb-6 bg-slate-900 text-white p-5 rounded-2xl shadow-md border border-slate-800 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+            <div>
+                <span class="text-xs uppercase tracking-widest font-bold text-blue-400 block">Interactive Simulator</span>
+                <h3 class="text-sm font-bold text-white">Customize Assistance Amount &amp; Repayment Terms</h3>
+            </div>
+            <span class="text-[11px] text-slate-400">Values update instantly across the proposal and PDF</span>
+        </div>
+
+        <!-- Presets Selection Bar -->
+        <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs text-slate-400 font-medium">Quick Presets:</span>
+            <button onclick="applyPreset('relief')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs font-semibold border border-amber-500/30 transition-all">
+                ⚡ Option A: High-Cost Relief (₹90,000)
+            </button>
+            <button onclick="applyPreset('consolidation')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-emerald-300 text-xs font-semibold border border-emerald-500/30 transition-all">
+                🛡️ Option B: Full Debt Consolidation (₹4,26,500)
+            </button>
+            <button onclick="applyPreset('grant')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-blue-300 text-xs font-semibold border border-blue-500/30 transition-all">
+                🤝 Option C: Soft Grant / Assistance
+            </button>
+            <button onclick="resetDefaults()" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs transition-all">
+                Reset
+            </button>
+        </div>
+
+        <!-- Custom Inputs Row -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs pt-1">
+            <div>
+                <label class="block text-slate-400 text-[10.5px] uppercase font-semibold mb-1">Assistance Amount (₹)</label>
+                <input type="text" id="inputAmount" value="₹[AMOUNT TO BE SPECIFIED]" oninput="updateProposalValues()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white font-mono font-medium focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+                <label class="block text-slate-400 text-[10.5px] uppercase font-semibold mb-1">Grace Period</label>
+                <input type="text" id="inputGrace" value="[ ] months" oninput="updateProposalValues()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white font-mono font-medium focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+                <label class="block text-slate-400 text-[10.5px] uppercase font-semibold mb-1">Proposed Monthly Repayment</label>
+                <input type="text" id="inputRepay" value="₹[ ]" oninput="updateProposalValues()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white font-mono font-medium focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+                <label class="block text-slate-400 text-[10.5px] uppercase font-semibold mb-1">Repayment Start Date</label>
+                <input type="text" id="inputStartDate" value="[Date / after agreed stabilisation]" oninput="updateProposalValues()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5 text-white font-mono font-medium focus:outline-none focus:border-blue-500">
+            </div>
         </div>
     </div>
 
@@ -170,6 +243,28 @@
             </div>
         </div>
 
+        <!-- Executive Core Request at a Glance (Upfront Summary Box) -->
+        <div class="bg-gradient-to-r from-blue-50/80 to-slate-50 border border-blue-200/70 p-4 rounded-xl text-xs space-y-2">
+            <div class="flex items-center gap-2 text-blue-900 font-bold uppercase tracking-wider text-[11px]">
+                <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                Executive Summary: Core Request at a Glance
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-slate-700 pt-1">
+                <div class="p-2.5 bg-white rounded-lg border border-slate-200/60 shadow-2xs">
+                    <strong class="text-slate-900 block mb-0.5">1. The Root Hardship</strong>
+                    <span>Prolonged salary non-payment at IZIN Designs (May–Sept 2026; only ₹47.8k paid across 5 months) forced emergency bridge borrowings.</span>
+                </div>
+                <div class="p-2.5 bg-white rounded-lg border border-slate-200/60 shadow-2xs">
+                    <strong class="text-slate-900 block mb-0.5">2. Current Reality</strong>
+                    <span>Active at Churritos (₹20,000/mo), but scheduled EMIs of ₹17,118/mo consume 85.59% of income, leaving only ₹2,882 for basic sustenance.</span>
+                </div>
+                <div class="p-2.5 bg-white rounded-lg border border-slate-200/60 shadow-2xs">
+                    <strong class="text-slate-900 block mb-0.5">3. The Proposed Solution</strong>
+                    <span>A temporary interest-free bridge, direct lender settlement, or grant to clear high-stress obligations, repaid under a structured monthly plan.</span>
+                </div>
+            </div>
+        </div>
+
         <!-- 1. Executive Summary -->
         <section class="space-y-3">
             <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
@@ -196,12 +291,12 @@
             <div class="pt-2 flex flex-wrap items-center gap-3 text-xs">
                 <div>
                     <span class="text-slate-500 font-medium">Assistance requested:</span>
-                    <span class="placeholder-tag">₹[AMOUNT TO BE SPECIFIED]</span>
+                    <span class="placeholder-tag dynamic-val" id="dispAmount1">₹[AMOUNT TO BE SPECIFIED]</span>
                 </div>
                 <div class="text-slate-300">&bull;</div>
                 <div>
                     <span class="text-slate-500 font-medium">Preferred arrangement:</span>
-                    <span class="font-semibold text-slate-800">Interest-free repayable support, financial assistance or another mutually agreeable arrangement.</span>
+                    <span class="font-semibold text-slate-800" id="dispArrangement">Interest-free repayable support, financial assistance or another mutually agreeable arrangement.</span>
                 </div>
             </div>
         </section>
@@ -508,43 +603,43 @@
                             <td><strong>Lenovo Laptop &amp; Accessories</strong></td>
                             <td class="text-slate-600">Workstation for marketing, design &amp; studies</td>
                             <td class="text-right font-mono font-semibold">₹84,688.00</td>
-                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/13_Lenovo_Laptop_Invoice.pdf" target="_blank" class="text-blue-600 underline text-xs">View Invoice</a></td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/13_Lenovo_Laptop_Invoice.pdf" target="_blank" class="text-blue-600 hover:text-blue-800 underline text-xs font-medium">View Invoice ↗</a></td>
                         </tr>
                         <tr>
                             <td><strong>Velnex Business Management &amp; Operations FZE LLC</strong></td>
                             <td class="text-slate-600">UAE Free Zone company setup (Ajman, 100% shareholding)</td>
                             <td class="text-right font-mono font-semibold">₹1,47,000.00</td>
-                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/07_Velnex_Trade_License_and_Setup_Receipt.pdf" target="_blank" class="text-blue-600 underline text-xs">View License</a></td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/07_Velnex_Trade_License_and_Setup_Receipt.pdf" target="_blank" class="text-blue-600 hover:text-blue-800 underline text-xs font-medium">View License ↗</a></td>
                         </tr>
                         <tr>
                             <td><strong>Green Summer Ventures LLP</strong></td>
                             <td class="text-slate-600">Wholesale agri-trading LLP in Kerala (50% partner)</td>
                             <td class="text-right font-mono font-semibold">₹21,429.86</td>
-                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/14-green-summer-venture-llp-Incorporation.pdf" target="_blank" class="text-blue-600 underline text-xs">View Incorporation</a></td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/14-green-summer-venture-llp-Incorporation.pdf" target="_blank" class="text-blue-600 hover:text-blue-800 underline text-xs font-medium">View Incorporation ↗</a></td>
                         </tr>
                         <tr>
                             <td><strong>Digital Marketing Professional Course (CDA)</strong></td>
                             <td class="text-slate-600">Professional upskilling certification (loan fully closed)</td>
                             <td class="text-right font-mono font-semibold">₹45,000.00</td>
-                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/16_Digital_Marketing_Course_Loan_Closure_Statement.pdf" target="_blank" class="text-blue-600 underline text-xs">View Closure</a></td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/16_Digital_Marketing_Course_Loan_Closure_Statement.pdf" target="_blank" class="text-blue-600 hover:text-blue-800 underline text-xs font-medium">View Closure ↗</a></td>
                         </tr>
                         <tr>
                             <td><strong>Senior Secondary (+2 Commerce) Education</strong></td>
                             <td class="text-slate-600">Continuing +2 Commerce via BOSSE / Amet Global</td>
                             <td class="text-right font-mono font-semibold">₹35,000.00</td>
-                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/11_BOSSE_12th_Education_Fee_Receipt.pdf" target="_blank" class="text-blue-600 underline text-xs">View Fee Receipt</a></td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/11_BOSSE_12th_Education_Fee_Receipt.pdf" target="_blank" class="text-blue-600 hover:text-blue-800 underline text-xs font-medium">View Receipt ↗</a></td>
                         </tr>
                         <tr>
                             <td><strong>Second-Hand Suzuki Burgman Scooter</strong></td>
                             <td class="text-slate-600">Daily commute vehicle for job mobility (KL07CS6605)</td>
                             <td class="text-right font-mono font-semibold">₹60,000.00</td>
-                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/15_Suzuki_Burgman_Sale_Agreement_KL07CS6605.pdf" target="_blank" class="text-blue-600 underline text-xs">View Agreement</a></td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/15_Suzuki_Burgman_Sale_Agreement_KL07CS6605.pdf" target="_blank" class="text-blue-600 hover:text-blue-800 underline text-xs font-medium">View Agreement ↗</a></td>
                         </tr>
                         <tr>
                             <td><strong>HP Smart Inkjet Printer</strong></td>
                             <td class="text-slate-600">Office equipment for documentation &amp; invoicing</td>
                             <td class="text-right font-mono font-semibold">₹13,999.00</td>
-                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/12_HP_Smart_Printer_Lulu_Invoice.pdf" target="_blank" class="text-blue-600 underline text-xs">View Invoice</a></td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/12_HP_Smart_Printer_Lulu_Invoice.pdf" target="_blank" class="text-blue-600 hover:text-blue-800 underline text-xs font-medium">View Invoice ↗</a></td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -574,38 +669,38 @@
             </p>
             <div class="p-3 bg-amber-50/70 border border-amber-200/80 rounded-xl text-xs sm:text-[13px] text-amber-950 flex items-center justify-between">
                 <span><strong>Total Assistance Requested:</strong></span>
-                <span class="placeholder-tag text-sm">₹[INSERT AMOUNT]</span>
+                <span class="placeholder-tag text-sm dynamic-val" id="dispAmount2">₹[INSERT AMOUNT]</span>
             </div>
             <div class="overflow-x-auto rounded-lg border border-slate-200">
                 <table class="w-full content-table">
                     <thead>
                         <tr>
-                            <th>Proposed Utilisation</th>
+                            <th>Proposed Utilisation Priority</th>
                             <th class="text-right">Amount (₹)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Settlement or reduction of critical overdue obligations</td>
-                            <td class="text-right"><span class="placeholder-tag">₹[ ]</span></td>
+                            <td>Settlement or reduction of critical overdue obligations (KreditBee &amp; Lulu)</td>
+                            <td class="text-right"><span class="dynamic-val" id="utilOverdue">₹[ ]</span></td>
                         </tr>
                         <tr>
-                            <td>Reduction of high-cost outstanding credit obligations</td>
-                            <td class="text-right"><span class="placeholder-tag">₹[ ]</span></td>
+                            <td>Reduction of high-cost revolving credit obligations (Credit Cards)</td>
+                            <td class="text-right"><span class="dynamic-val" id="utilCC">₹[ ]</span></td>
                         </tr>
                         <tr>
-                            <td>Essential living and employment expenses during recovery</td>
-                            <td class="text-right"><span class="placeholder-tag">₹[ ]</span></td>
+                            <td>Essential living and employment expenses during transition buffer</td>
+                            <td class="text-right"><span class="dynamic-val" id="utilLiving">₹[ ]</span></td>
                         </tr>
                         <tr>
-                            <td>Emergency liquidity reserve</td>
-                            <td class="text-right"><span class="placeholder-tag">₹[ ]</span></td>
+                            <td>Emergency liquidity reserve &amp; debt restructuring buffer</td>
+                            <td class="text-right"><span class="dynamic-val" id="utilReserve">₹[ ]</span></td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr class="bg-slate-100 font-bold text-slate-900">
-                            <td>Total Requested:</td>
-                            <td class="text-right"><span class="placeholder-tag">₹[ ]</span></td>
+                            <td>Total Requested Allocation:</td>
+                            <td class="text-right font-mono text-blue-700 dynamic-val" id="utilTotal">₹[ ]</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -682,29 +777,29 @@
                     <thead>
                         <tr>
                             <th>Particulars</th>
-                            <th>Proposal &amp; Terms</th>
+                            <th>Proposal &amp; Agreed Terms</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Assistance Amount</strong></td>
-                            <td><span class="placeholder-tag">₹[ ]</span></td>
+                            <td><span class="dynamic-val" id="dispAmount3">₹[ ]</span></td>
                         </tr>
                         <tr>
                             <td><strong>Nature of Assistance</strong></td>
-                            <td class="text-slate-800 font-medium">Interest-free personal support / mutually agreed loan</td>
+                            <td class="text-slate-800 font-medium" id="dispNature">Interest-free personal support / mutually agreed soft loan</td>
                         </tr>
                         <tr>
-                            <td><strong>Initial Recovery Period</strong></td>
-                            <td><span class="placeholder-tag">[ ] months</span></td>
+                            <td><strong>Initial Stabilisation / Grace Period</strong></td>
+                            <td><span class="dynamic-val" id="dispGrace">[ ] months</span></td>
                         </tr>
                         <tr>
                             <td><strong>Proposed Monthly Repayment</strong></td>
-                            <td><span class="placeholder-tag">₹[ ]</span></td>
+                            <td><span class="dynamic-val" id="dispRepay">₹[ ]</span></td>
                         </tr>
                         <tr>
                             <td><strong>Repayment Commencement</strong></td>
-                            <td><span class="placeholder-tag">[Date / after agreed stabilisation period]</span></td>
+                            <td><span class="dynamic-val" id="dispStartDate">[Date / after agreed stabilisation period]</span></td>
                         </tr>
                         <tr>
                             <td><strong>Payment Method</strong></td>
@@ -731,50 +826,64 @@
                 10. Transparency, Verification &amp; Accountability
             </h2>
             <p class="text-xs sm:text-[13px] text-slate-700">
-                I am prepared to provide supporting documentation for independent verification. The following verified records are maintained and available upon request:
+                I am prepared to provide supporting documentation for independent verification. Every record cited below is verified and directly accessible:
             </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Previous employer's appointment letter (IZIN Designs).
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-700">
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">1.</strong> Previous Appointment Letter (IZIN)</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/01_Appointment_Letter_IZIN_Designs.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Salary-credit bank statements (IDFC First Bank).
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">2.</strong> Salary Bank Statement (IDFC First)</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/02_Bank_Statement_Salary_Credits_IDFC.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Current employment &amp; partial salary evidence (Churritos).
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">3.</strong> Federal Bank Statement (Loan Debits)</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/02b_Bank_Statement_Federal_Bank.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Bajaj Finserv statement of accounts (₹1.16L repaid).
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">4.</strong> Airtel Payments Bank (UPI Statement)</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/02c_Bank_Statement_Airtel_Payments_Bank.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Aditya Birla Finance loan statement (LXS-C11426).
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">5.</strong> Current Role &amp; Salary Credit (Churritos)</span>
+                    <a href="https://velharisankaran.velnex.in/profile-print.html" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View Ledger ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> KreditBee loan transaction records.
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">6.</strong> Bajaj Finserv Loan SOA (₹1.16L Paid)</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/04_Bajaj_Finance_Latest_SOA.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Lulu Finance loan statement (HP Printer 584).
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">7.</strong> Personal Net Worth Audit Statement</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/05_Personal_Net_Worth_Statement.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Credit card outstanding statements (Ashva &amp; Signet).
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">8.</strong> Professional CV &amp; Career History</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/06_Velhari_Sankaran_Professional_CV.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Personal net worth statement &amp; formal audit dossier.
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">9.</strong> Velnex UAE Free Zone Trade License</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/07_Velnex_Trade_License_and_Setup_Receipt.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Itemized records of personal and family borrowings.
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">10.</strong> Green Summer Ventures Incorporation</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/14-green-summer-venture-llp-Incorporation.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Education fee receipts (BOSSE / Amet Global).
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">11.</strong> BOSSE +2 Commerce Education Receipt</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/11_BOSSE_12th_Education_Fee_Receipt.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Professional equipment invoices (Lenovo, Lulu, Scooter).
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">12.</strong> Lenovo Laptop Workstation Invoice</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/13_Lenovo_Laptop_Invoice.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Business registration &amp; investment records (Velnex &amp; GSV).
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">13.</strong> Suzuki Burgman Sale Agreement</span>
+                    <a href="https://velharisankaran.velnex.in/docs/hardship-dossier/15_Suzuki_Burgman_Sale_Agreement_KL07CS6605.pdf" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View PDF ↗</a>
                 </div>
-                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
-                    <span class="text-blue-600 font-bold">&bull;</span> Real-time accounting ledger (2,000+ categorized transactions).
+                <div class="p-2.5 bg-slate-50 border border-slate-200/80 rounded-lg flex items-center justify-between gap-2 hover:bg-slate-100/70 transition-colors">
+                    <span class="flex items-center gap-1.5"><strong class="text-slate-900">14.</strong> Live Real-Time Ledger (2,000+ Records)</span>
+                    <a href="https://velharisankaran.velnex.in/profile-print.html" target="_blank" class="text-blue-600 font-semibold hover:underline shrink-0">View Live ↗</a>
                 </div>
             </div>
             <p class="text-xs text-slate-700 leading-relaxed">
@@ -846,21 +955,188 @@
 </div>
 
 <script>
-function copyProposalText() {
-    const el = document.getElementById('proposalContainer');
-    const plainText = el.innerText;
+// Interactive Simulator Logic
+function updateProposalValues() {
+    const amt = document.getElementById('inputAmount').value.trim();
+    const grace = document.getElementById('inputGrace').value.trim();
+    const repay = document.getElementById('inputRepay').value.trim();
+    const startDate = document.getElementById('inputStartDate').value.trim();
+
+    const isPlaceholder = amt.includes('[') || amt === '';
+
+    // Update Section 1
+    const d1 = document.getElementById('dispAmount1');
+    d1.innerText = amt;
+    d1.className = isPlaceholder ? 'placeholder-tag dynamic-val' : 'updated-tag dynamic-val';
+
+    // Update Section 7
+    const d2 = document.getElementById('dispAmount2');
+    d2.innerText = amt;
+    d2.className = isPlaceholder ? 'placeholder-tag text-sm dynamic-val' : 'updated-tag text-sm dynamic-val';
+
+    // Update Section 9
+    const d3 = document.getElementById('dispAmount3');
+    d3.innerText = amt;
+    d3.className = isPlaceholder ? 'placeholder-tag dynamic-val' : 'updated-tag dynamic-val';
+
+    const dg = document.getElementById('dispGrace');
+    dg.innerText = grace;
+    dg.className = grace.includes('[') ? 'placeholder-tag dynamic-val' : 'updated-tag dynamic-val';
+
+    const dr = document.getElementById('dispRepay');
+    dr.innerText = repay;
+    dr.className = repay.includes('[') ? 'placeholder-tag dynamic-val' : 'updated-tag dynamic-val';
+
+    const ds = document.getElementById('dispStartDate');
+    ds.innerText = startDate;
+    ds.className = startDate.includes('[') ? 'placeholder-tag dynamic-val' : 'updated-tag dynamic-val';
+}
+
+function applyPreset(type) {
+    if (type === 'relief') {
+        document.getElementById('inputAmount').value = '₹90,000.00';
+        document.getElementById('inputGrace').value = '3 months';
+        document.getElementById('inputRepay').value = '₹3,000.00 / month (over 30 months)';
+        document.getElementById('inputStartDate').value = '01-March-2027';
+
+        // Update Utilisation Table
+        document.getElementById('utilOverdue').innerHTML = '<span class="font-mono font-bold text-slate-900">₹24,700.00</span> <span class="text-[11px] text-slate-500">(KreditBee + Lulu pay-off)</span>';
+        document.getElementById('utilCC').innerHTML = '<span class="font-mono font-bold text-slate-900">₹50,300.00</span> <span class="text-[11px] text-slate-500">(Clear revolving cards)</span>';
+        document.getElementById('utilLiving').innerHTML = '<span class="font-mono font-bold text-slate-900">₹10,000.00</span> <span class="text-[11px] text-slate-500">(Commute/food buffer)</span>';
+        document.getElementById('utilReserve').innerHTML = '<span class="font-mono font-bold text-slate-900">₹5,000.00</span> <span class="text-[11px] text-slate-500">(Emergency contingency)</span>';
+        document.getElementById('utilTotal').innerText = '₹90,000.00';
+    } else if (type === 'consolidation') {
+        document.getElementById('inputAmount').value = '₹4,26,500.00';
+        document.getElementById('inputGrace').value = '6 months';
+        document.getElementById('inputRepay').value = '₹7,500.00 / month (over 57 months)';
+        document.getElementById('inputStartDate').value = '01-June-2027';
+
+        // Update Utilisation Table
+        document.getElementById('utilOverdue').innerHTML = '<span class="font-mono font-bold text-slate-900">₹3,16,312.00</span> <span class="text-[11px] text-slate-500">(Consolidate 4 term loans)</span>';
+        document.getElementById('utilCC').innerHTML = '<span class="font-mono font-bold text-slate-900">₹50,346.00</span> <span class="text-[11px] text-slate-500">(Pay off credit cards)</span>';
+        document.getElementById('utilLiving').innerHTML = '<span class="font-mono font-bold text-slate-900">₹59,842.00</span> <span class="text-[11px] text-slate-500">(Clear family borrowings)</span>';
+        document.getElementById('utilReserve').innerHTML = '<span class="font-mono font-bold text-slate-900">₹0.00</span> <span class="text-[11px] text-slate-500">(Direct lender settlements)</span>';
+        document.getElementById('utilTotal').innerText = '₹4,26,500.00';
+    } else if (type === 'grant') {
+        document.getElementById('inputAmount').value = '₹50,000.00 – ₹1,00,000.00';
+        document.getElementById('inputGrace').value = 'N/A (One-Time Grant)';
+        document.getElementById('inputRepay').value = 'Nil (Grant / Charitable Assistance)';
+        document.getElementById('inputStartDate').value = 'Immediate on disbursement';
+
+        document.getElementById('utilOverdue').innerHTML = '<span class="font-mono font-bold text-slate-900">Targeted</span> <span class="text-[11px] text-slate-500">(High-interest EMI clearance)</span>';
+        document.getElementById('utilCC').innerHTML = '<span class="font-mono font-bold text-slate-900">Direct</span> <span class="text-[11px] text-slate-500">(Direct to lender accounts)</span>';
+        document.getElementById('utilLiving').innerHTML = '<span class="font-mono font-bold text-slate-900">Sustenance</span> <span class="text-[11px] text-slate-500">(Basic living transition)</span>';
+        document.getElementById('utilReserve').innerHTML = '<span class="font-mono font-bold text-slate-900">Emergency</span> <span class="text-[11px] text-slate-500">(Buffer reserve)</span>';
+        document.getElementById('utilTotal').innerText = 'Discretionary';
+    }
+    updateProposalValues();
+}
+
+function resetDefaults() {
+    document.getElementById('inputAmount').value = '₹[AMOUNT TO BE SPECIFIED]';
+    document.getElementById('inputGrace').value = '[ ] months';
+    document.getElementById('inputRepay').value = '₹[ ]';
+    document.getElementById('inputStartDate').value = '[Date / after agreed stabilisation]';
+
+    document.getElementById('utilOverdue').innerHTML = '<span class="placeholder-tag">₹[ ]</span>';
+    document.getElementById('utilCC').innerHTML = '<span class="placeholder-tag">₹[ ]</span>';
+    document.getElementById('utilLiving').innerHTML = '<span class="placeholder-tag">₹[ ]</span>';
+    document.getElementById('utilReserve').innerHTML = '<span class="placeholder-tag">₹[ ]</span>';
+    document.getElementById('utilTotal').innerText = '₹[ ]';
+
+    updateProposalValues();
+}
+
+// Dual Copy Options
+function copyEmailFormat() {
+    const amt = document.getElementById('dispAmount1').innerText;
+    const grace = document.getElementById('dispGrace').innerText;
+    const repay = document.getElementById('dispRepay').innerText;
+    const start = document.getElementById('dispStartDate').innerText;
+
+    const emailText = `CONFIDENTIAL FINANCIAL ASSISTANCE REQUEST & RECOVERY PROPOSAL
+Applicant: Velhari Sankaran (23 Y) | Kerala, India
+Current Role: Churritos (₹20,000 / month)
+Reference Date: 07 November 2026
+Live Proposal Link: https://velharisankaran.velnex.in/recovery-proposal.html
+Complete Audit Dossier: https://velharisankaran.velnex.in/profile-print.html
+
+============================================================
+1. EXECUTIVE SUMMARY & CONTEXT
+============================================================
+I am submitting this proposal to seek temporary financial assistance to overcome a structural cash-flow crisis arising from 4 months of delayed and unpaid wages at my previous employer (IZIN Designs). 
+
+Key Metrics:
+• Total Outstanding Liabilities: ₹4,26,492.91
+• Scheduled Monthly EMIs: ₹17,118.00 / month
+• Current Gross Salary (Churritos): ₹20,000.00 / month
+• EMI-to-Income Ratio: 85.59% (Leaving only ₹2,882 for basic sustenance)
+• Net Ledger Deficit: -₹1,43,899.01
+
+============================================================
+2. ASSISTANCE SOUGHT & PROPOSED ARRANGEMENT
+============================================================
+• Assistance Amount: ${amt}
+• Nature: Interest-free personal bridge support, targeted lender settlement, or grant
+• Grace / Stabilisation Period: ${grace}
+• Proposed Monthly Repayment: ${repay}
+• Repayment Commencement: ${start}
+• Transparency Option: Direct-to-lender payments against verified statements welcomed.
+
+============================================================
+3. VERIFICATION & ACCOUNTABILITY
+============================================================
+All claims, including bank statements, salary slips, loan account statements (Bajaj, Aditya Birla, KreditBee, Lulu), educational fee receipts (+2 Commerce BOSSE), and business trade licenses are audited and accessible at:
+https://velharisankaran.velnex.in/profile-print.html
+
+Submitted with respect,
+Velhari Sankaran
+Mobile: +91 9567092833
+Email: kannanac2@gmail.com | velharisankaran@gmail.com
+Kochi, Kerala, India`;
 
     if (navigator.clipboard) {
-        navigator.clipboard.writeText(plainText).then(() => {
-            const btn = document.getElementById('copyBtn');
-            const original = btn.innerHTML;
-            btn.innerHTML = '<span>Copied Proposal Text!</span>';
-            btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
-            btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+        navigator.clipboard.writeText(emailText).then(() => {
+            const btn = document.getElementById('copyEmailBtn');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<span>Copied Formatted Email!</span>';
+            btn.classList.replace('bg-blue-600', 'bg-emerald-600');
             setTimeout(() => {
-                btn.innerHTML = original;
-                btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
-                btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                btn.innerHTML = orig;
+                btn.classList.replace('bg-emerald-600', 'bg-blue-600');
+            }, 2500);
+        });
+    }
+}
+
+function copyWhatsAppPitch() {
+    const amt = document.getElementById('dispAmount1').innerText;
+    const repay = document.getElementById('dispRepay').innerText;
+
+    const waText = `Dear Sir / Ma'am,
+
+I am sharing a confidential Personal Financial Assistance & Recovery Proposal regarding my current financial position:
+
+Following a 4-month salary non-payment disruption at my previous employer (IZIN Designs), I have accumulated ₹4.26L in commitments, with monthly EMIs of ₹17,118 consuming 85.6% of my new salary at Churritos (₹20,000/mo).
+
+To restore cash-flow stability, I am seeking temporary interest-free bridge support (or targeted lender settlement) of ${amt}, with a structured repayment plan (${repay}) after an agreed stabilization period.
+
+Complete verified documentation, bank statements, and audited ledgers:
+🔗 Live Proposal: https://velharisankaran.velnex.in/recovery-proposal.html
+🔗 Financial Records: https://velharisankaran.velnex.in/profile-print.html
+
+Thank you for your consideration.
+Velhari Sankaran | 9567092833 | kannanac2@gmail.com`;
+
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(waText).then(() => {
+            const btn = document.getElementById('copyWhatsAppBtn');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<span>Copied Quick Pitch!</span>';
+            btn.classList.replace('bg-emerald-600', 'bg-slate-800');
+            setTimeout(() => {
+                btn.innerHTML = orig;
+                btn.classList.replace('bg-slate-800', 'bg-emerald-600');
             }, 2500);
         });
     }
