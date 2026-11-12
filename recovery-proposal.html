@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Financial Assistance &amp; Temporary Recovery Proposal | Velhari Sankaran</title>
+    <meta name="description" content="Confidential Financial Assistance Request & Recovery Proposal by Velhari Sankaran. Reference Date: 07 November 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #0f172a;
+            background-color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .content-table th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 8px 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .content-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 12.5px;
+            vertical-align: middle;
+        }
+
+        .content-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .placeholder-tag {
+            background-color: #fef3c7;
+            color: #92400e;
+            border: 1px dashed #f59e0b;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            font-size: 11.5px;
+            display: inline-block;
+        }
+
+        @media print {
+            body {
+                background: #ffffff !important;
+                padding: 0 !important;
+                font-size: 11.5px !important;
+            }
+            .print-hidden {
+                display: none !important;
+            }
+            .page-container {
+                max-width: 100% !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+            .card-box {
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                break-inside: avoid !important;
+            }
+            @page {
+                size: A4;
+                margin: 1.2cm;
+            }
+        }
+    </style>
+</head>
+<body class="py-8 px-4 sm:px-6">
+
+<div class="max-w-4xl mx-auto page-container">
+
+    <!-- Top Action Toolbar (Print / Copy / Portfolio) -->
+    <div class="print-hidden mb-6 flex flex-wrap items-center justify-between gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+        <div class="flex items-center gap-2">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span class="text-xs font-semibold text-slate-700 uppercase tracking-wider">Confidential Proposal &bull; Live Dossier</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+            <button onclick="copyProposalText()" id="copyBtn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium transition-colors shadow-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                Copy Proposal Text
+            </button>
+            <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-900 text-white text-xs font-medium transition-colors shadow-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                Save as A4 PDF
+            </button>
+            <a href="https://velharisankaran.velnex.in/profile-print.html" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-medium transition-colors">
+                Financial Profile &rarr;
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Dossier Card -->
+    <div class="bg-white border border-slate-200/90 rounded-2xl shadow-sm p-6 sm:p-10 space-y-8" id="proposalContainer">
+
+        <!-- Header Block -->
+        <div class="border-b border-slate-200 pb-6">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <span class="text-[10px] font-mono uppercase tracking-widest font-bold text-blue-700 bg-blue-50 border border-blue-200/60 px-2 py-0.5 rounded">
+                    Confidential Financial Assistance Request
+                </span>
+                <span class="text-xs font-mono text-slate-400">
+                    Ref Date: 07 November 2026
+                </span>
+            </div>
+            <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-snug">
+                PERSONAL FINANCIAL ASSISTANCE &amp; TEMPORARY RECOVERY PROPOSAL
+            </h1>
+            <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-600 font-medium">
+                <span><strong class="text-slate-900">Applicant:</strong> Velhari Sankaran</span>
+                <span class="text-slate-300">&bull;</span>
+                <span><strong class="text-slate-900">Age:</strong> 23 Years</span>
+                <span class="text-slate-300">&bull;</span>
+                <span><strong class="text-slate-900">Location:</strong> Kerala, India</span>
+                <span class="text-slate-300">&bull;</span>
+                <span><strong class="text-slate-900">Current Role:</strong> Churritos (₹20,000/mo)</span>
+            </div>
+        </div>
+
+        <!-- Metric KPI Cards Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+            <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-xl">
+                <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Total Liabilities</span>
+                <span class="text-base sm:text-lg font-bold font-mono text-rose-600 block mt-0.5">₹4,26,492.91</span>
+                <span class="text-[10.5px] text-slate-500 block">Loans + CC + Borrowings</span>
+            </div>
+            <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-xl">
+                <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Monthly Loan EMIs</span>
+                <span class="text-base sm:text-lg font-bold font-mono text-amber-600 block mt-0.5">₹17,118.00<span class="text-xs font-normal">/mo</span></span>
+                <span class="text-[10.5px] text-slate-500 block">85.59% of monthly salary</span>
+            </div>
+            <div class="p-3 bg-slate-50 border border-slate-200/80 rounded-xl">
+                <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Gross Monthly Income</span>
+                <span class="text-base sm:text-lg font-bold font-mono text-emerald-600 block mt-0.5">₹20,000.00</span>
+                <span class="text-[10.5px] text-slate-500 block">Churritos (Oct 2026 – Present)</span>
+            </div>
+            <div class="p-3 bg-slate-900 text-white rounded-xl">
+                <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Net Ledger Position</span>
+                <span class="text-base sm:text-lg font-bold font-mono text-rose-400 block mt-0.5">−₹1,43,899.01</span>
+                <span class="text-[10.5px] text-slate-400 block">Negative Net Worth</span>
+            </div>
+        </div>
+
+        <!-- 1. Executive Summary -->
+        <section class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
+                1. Executive Summary
+            </h2>
+            <p class="text-slate-700 text-xs sm:text-[13px] leading-relaxed">
+                I am submitting this proposal to seek temporary financial assistance to overcome a difficult financial situation arising primarily from prolonged salary delays and unpaid wages at my previous employer.
+            </p>
+            <p class="text-slate-700 text-xs sm:text-[13px] leading-relaxed">
+                During my previous employment, salary payments became increasingly irregular. Despite continuing to work and meeting my financial commitments, the delay and non-payment of salary for two months significantly disrupted my ability to service existing loans, manage essential living expenses, and maintain financial stability.
+            </p>
+            <p class="text-slate-700 text-xs sm:text-[13px] leading-relaxed">
+                I have since secured new employment at <strong>Churritos</strong>, with an agreed gross monthly salary of <strong>₹20,000</strong>. This provides me with a renewed source of income and an opportunity to rebuild my financial position.
+            </p>
+            <p class="text-slate-700 text-xs sm:text-[13px] leading-relaxed">
+                However, the accumulated financial obligations from the previous employment disruption remain substantially higher than my current available monthly income.
+            </p>
+            <p class="text-slate-700 text-xs sm:text-[13px] leading-relaxed">
+                I am therefore seeking <strong>one-time financial assistance or temporary interest-free financial support</strong> to address this immediate cash-flow crisis, reduce the pressure of accumulated obligations, and establish a manageable financial recovery plan.
+            </p>
+            <div class="bg-blue-50/70 border-l-4 border-blue-600 p-3.5 rounded-r-lg text-xs text-blue-950 leading-relaxed">
+                <strong>Important Clarification:</strong> This is not a request to finance a new business venture or discretionary expenditure. It is a request for temporary assistance to stabilise my existing financial responsibilities and restore my ability to manage my commitments independently.
+            </div>
+            <div class="pt-2 flex flex-wrap items-center gap-3 text-xs">
+                <div>
+                    <span class="text-slate-500 font-medium">Assistance requested:</span>
+                    <span class="placeholder-tag">₹[AMOUNT TO BE SPECIFIED]</span>
+                </div>
+                <div class="text-slate-300">&bull;</div>
+                <div>
+                    <span class="text-slate-500 font-medium">Preferred arrangement:</span>
+                    <span class="font-semibold text-slate-800">Interest-free repayable support, financial assistance or another mutually agreeable arrangement.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Applicant Background & Personal Profile -->
+        <section class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
+                2. Applicant Background &amp; Personal Profile
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-50/80 p-4 rounded-xl border border-slate-200/70 text-xs">
+                <div><span class="text-slate-400 uppercase text-[10px] font-bold block">Full Name</span> <strong class="text-slate-900">Velhari Sankaran</strong></div>
+                <div><span class="text-slate-400 uppercase text-[10px] font-bold block">Age</span> <strong class="text-slate-900">23 Years</strong></div>
+                <div><span class="text-slate-400 uppercase text-[10px] font-bold block">Location</span> <strong class="text-slate-900">Kerala, India</strong></div>
+                <div><span class="text-slate-400 uppercase text-[10px] font-bold block">Current Employment</span> <strong class="text-slate-900">Churritos (Specialty QSR Brand)</strong></div>
+                <div><span class="text-slate-400 uppercase text-[10px] font-bold block">Monthly Gross Salary</span> <strong class="text-emerald-700 font-mono">₹20,000 / month</strong></div>
+                <div><span class="text-slate-400 uppercase text-[10px] font-bold block">Professional Background</span> <span class="text-slate-800 font-medium">Digital Marketing, Business Operations, Web Development</span></div>
+            </div>
+            <p class="text-slate-700 text-xs sm:text-[13px] leading-relaxed">
+                I am a working professional continuing my education (+2 Commerce via BOSSE) while developing long-term business initiatives. My professional experience includes performance marketing, paid Meta advertising, CMS website development, back-office maritime logistics, client coordination, and business operations.
+            </p>
+            <p class="text-slate-700 text-xs sm:text-[13px] leading-relaxed">
+                Alongside employment, I have undertaken educational and business investments with the objective of improving my long-term earning capacity and establishing sustainable professional opportunities. My current circumstances represent a temporary financial difficulty arising during an employment transition, rather than an absence of willingness to work or fulfil my responsibilities.
+            </p>
+        </section>
+
+        <!-- 3. Circumstances Leading to Financial Hardship -->
+        <section class="space-y-4">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
+                3. Circumstances Leading to Financial Hardship
+            </h2>
+            <div class="space-y-2">
+                <p class="text-xs sm:text-[13px] text-slate-700">
+                    <strong>Previous Employment:</strong> IZIN Designs Interior Studio (May 2026 – September 2026; agreed monthly salary: ₹17,000). During this employment period, salary payments became progressively delayed and reduced:
+                </p>
+                <div class="overflow-x-auto rounded-lg border border-slate-200">
+                    <table class="w-full content-table">
+                        <thead>
+                            <tr>
+                                <th>Salary Credit Category</th>
+                                <th>Credit Date &amp; Details</th>
+                                <th class="text-right">Amount (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>May 2026 Salary</td>
+                                <td class="text-slate-600">09-Jun-2026 &bull; NEFT (KVBLH00263391115) to IDFC First Bank</td>
+                                <td class="text-right font-mono font-semibold">₹17,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>June 2026 Salary</td>
+                                <td class="text-slate-600">11-Jul-2026 &bull; NEFT (KVBLH00265708895) to IDFC First Bank</td>
+                                <td class="text-right font-mono font-semibold">₹15,016.00</td>
+                            </tr>
+                            <tr>
+                                <td>July 2026 Salary (Delayed)</td>
+                                <td class="text-slate-600">23-Aug-2026 &bull; NEFT (KVBLH00268755466) &bull; Reduced/late</td>
+                                <td class="text-right font-mono font-semibold">₹13,883.00</td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Salary Release</td>
+                                <td class="text-slate-600">11-Sep-2026 &bull; Airtel Wallet Salary Advance</td>
+                                <td class="text-right font-mono font-semibold">₹1,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>Further Emergency Release</td>
+                                <td class="text-slate-600">02-Nov-2026 &bull; Emergency Food/Expense Support</td>
+                                <td class="text-right font-mono font-semibold">₹1,000.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="bg-slate-100 font-bold text-slate-900">
+                                <td colspan="2">Total Recorded Receipts from IZIN Designs:</td>
+                                <td class="text-right font-mono text-blue-700">₹47,899.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <p class="text-[11px] text-slate-500 italic">
+                    Note: This summary excludes the subsequent ₹3,000 Churritos salary credit. The complete salary ledger records total receipts of ₹50,899.00, including that payment.
+                </p>
+                <p class="text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+                    The August and September 2026 salary payments remained substantially unpaid, apart from the emergency releases mentioned above. The repeated delays affected my ability to meet loan instalments on their scheduled dates. To prevent existing financial commitments from falling into default, I relied on personal and family borrowings and available credit facilities. Eventually, I had to leave the previous employment and transition to another job.
+                </p>
+            </div>
+
+            <!-- Current Employment Callout -->
+            <div class="bg-emerald-50/70 border border-emerald-200/80 p-4 rounded-xl space-y-1.5 text-xs text-slate-800">
+                <div class="flex items-center gap-1.5 text-emerald-800 font-bold text-xs uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                    Current Employment: Churritos
+                </div>
+                <p class="leading-relaxed">
+                    I joined <strong>Churritos</strong> during the final week of October 2026 with an agreed gross monthly salary of <strong>₹20,000.00</strong>. Initial partial salary of <strong>₹3,000.00</strong> was received on 02 November 2026. This employment provides a foundation for financial recovery; however, the existing accumulated liabilities require temporary intervention before monthly finances can become sustainable.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. Present Financial Position -->
+        <section class="space-y-4">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
+                4. Present Financial Position
+            </h2>
+            <p class="text-xs sm:text-[13px] text-slate-700">
+                The following figures represent my consolidated personal financial ledger as of <strong>07 November 2026</strong>:
+            </p>
+
+            <!-- A. Assets Table -->
+            <div class="space-y-1.5">
+                <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wide">A. Assets</h3>
+                <div class="overflow-x-auto rounded-lg border border-slate-200">
+                    <table class="w-full content-table">
+                        <thead>
+                            <tr>
+                                <th>Asset Category</th>
+                                <th>Key Components</th>
+                                <th class="text-right">Amount (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Cash and Bank Balances</strong></td>
+                                <td class="text-slate-600">Cash INR (₹1,800) + Cash AED (310); Federal, IDFC &amp; Airtel Accounts (₹0.00)</td>
+                                <td class="text-right font-mono font-semibold">₹2,110.00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Investments and Gold Holdings</strong></td>
+                                <td class="text-slate-600">Tata AIA SIP (₹1,00,000.00) + Muthoot Gold Holding (₹2,244.00)</td>
+                                <td class="text-right font-mono font-semibold">₹1,02,244.00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Business Capital Advances &amp; Receivables</strong></td>
+                                <td class="text-slate-600">Velnex Setup Capital (₹1,50,999.00) + Personal Advances Lent (₹27,240.90)</td>
+                                <td class="text-right font-mono font-semibold">₹1,78,239.90</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="bg-blue-50/70 font-bold text-slate-900">
+                                <td colspan="2">Total Gross Assets:</td>
+                                <td class="text-right font-mono text-blue-700">₹2,82,593.90</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <p class="text-[11px] text-slate-500 italic">
+                    The majority of these assets are not immediately available for meeting monthly obligations. They consist of business investments, locked financial assets, and pending external recoveries.
+                </p>
+            </div>
+
+            <!-- B. Outstanding Liabilities Table -->
+            <div class="space-y-1.5">
+                <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wide">B. Outstanding Liabilities</h3>
+                <div class="overflow-x-auto rounded-lg border border-slate-200">
+                    <table class="w-full content-table">
+                        <thead>
+                            <tr>
+                                <th>Liability Category</th>
+                                <th>Accounts Included</th>
+                                <th class="text-right">Outstanding (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Active Term Loans</strong></td>
+                                <td class="text-slate-600">Bajaj Finserv (₹1.55L) + Aditya Birla (₹1.38L) + KreditBee (₹15.8k) + Lulu (₹8.9k)</td>
+                                <td class="text-right font-mono font-semibold text-rose-600">₹3,16,311.52</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Credit Card Balances</strong></td>
+                                <td class="text-slate-600">IDFC First Ashva (₹39,069.64) + Federal Bank Signet Platinum (₹11,276.75)</td>
+                                <td class="text-right font-mono font-semibold text-rose-600">₹50,346.39</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Personal and Family Borrowings</strong></td>
+                                <td class="text-slate-600">Mother (₹27.2k) + Sharath (₹25k) + Chandra Ghosh (₹7k) + Others (₹530)</td>
+                                <td class="text-right font-mono font-semibold text-rose-600">₹59,835.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="bg-rose-50/70 font-bold text-slate-900">
+                                <td colspan="2">Total Liabilities:</td>
+                                <td class="text-right font-mono text-rose-700">₹4,26,492.91</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <!-- C. Net Worth Summary -->
+            <div class="space-y-1.5">
+                <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wide">C. Net Worth Summary</h3>
+                <div class="overflow-x-auto rounded-lg border border-slate-200">
+                    <table class="w-full content-table">
+                        <thead>
+                            <tr>
+                                <th>Particulars</th>
+                                <th class="text-right">Amount (₹)</th>
+                                <th>Financial Implication</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Total Assets</td>
+                                <td class="text-right font-mono font-semibold">₹2,82,593.90</td>
+                                <td class="text-slate-600 text-xs">Gross capital base (illiquid/locked)</td>
+                            </tr>
+                            <tr>
+                                <td>Total Liabilities</td>
+                                <td class="text-right font-mono font-semibold text-rose-600">₹4,26,492.91</td>
+                                <td class="text-slate-600 text-xs">Total debt &amp; credit commitments</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="bg-slate-900 text-white font-bold">
+                                <td>Estimated Net Worth (Assets − Liabilities)</td>
+                                <td class="text-right font-mono text-rose-400">−₹1,43,899.01</td>
+                                <td class="text-slate-300 text-xs font-normal">Negative Net Worth / Acute Liquidity Deficit</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Existing Monthly Financial Commitments -->
+        <section class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
+                5. Existing Monthly Financial Commitments
+            </h2>
+            <div class="overflow-x-auto rounded-lg border border-slate-200">
+                <table class="w-full content-table">
+                    <thead>
+                        <tr>
+                            <th>Lender / Facility</th>
+                            <th>Obligation Type</th>
+                            <th class="text-right">Monthly EMI (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Bajaj Finserv</strong></td>
+                            <td class="text-slate-600">Consolidation Loan</td>
+                            <td class="text-right font-mono font-bold text-slate-900">₹8,267.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Aditya Birla Finance</strong></td>
+                            <td class="text-slate-600">LXS-C11426 Term Loan</td>
+                            <td class="text-right font-mono font-bold text-slate-900">₹4,562.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>KreditBee</strong></td>
+                            <td class="text-slate-600">Temporary Emergency EMI</td>
+                            <td class="text-right font-mono font-bold text-slate-900">₹1,990.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lulu Finance</strong></td>
+                            <td class="text-slate-600">HP Printer 584 Loan</td>
+                            <td class="text-right font-mono font-bold text-slate-900">₹2,299.00</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="bg-amber-50/70 font-bold text-slate-900">
+                            <td colspan="2">Total Scheduled Monthly EMI:</td>
+                            <td class="text-right font-mono text-amber-700 text-sm">₹17,118.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2">
+                    <span><strong>Current Gross Monthly Income (Churritos):</strong> <span class="font-mono font-bold text-emerald-700">₹20,000.00</span></span>
+                    <span><strong>EMI-to-Income Ratio:</strong> <span class="font-mono font-bold text-rose-600">85.59%</span></span>
+                </div>
+                <p>
+                    After scheduled monthly instalments (₹17,118.00), <strong>only ₹2,882.00 remains</strong> for food, accommodation, daily transportation, communication, and other essential living expenses.
+                </p>
+                <p>
+                    Credit card revolving dues and personal borrowings are additional obligations. This makes the present financial structure mathematically unsustainable without temporary relief, restructuring or external financial intervention.
+                </p>
+            </div>
+        </section>
+
+        <!-- 6. Previous Financial Investments & Essential Expenditure -->
+        <section class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
+                6. Previous Financial Investments &amp; Essential Expenditure
+            </h2>
+            <p class="text-xs sm:text-[13px] text-slate-700">
+                The financial resources utilised during the previous period were directed strictly toward education, employment capabilities, professional equipment, transportation, and business establishment:
+            </p>
+            <div class="overflow-x-auto rounded-lg border border-slate-200">
+                <table class="w-full content-table">
+                    <thead>
+                        <tr>
+                            <th>Investment / Expenditure Asset</th>
+                            <th>Purpose &amp; Objective</th>
+                            <th class="text-right">Amount (₹)</th>
+                            <th class="text-center">Verification Record</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Lenovo Laptop &amp; Accessories</strong></td>
+                            <td class="text-slate-600">Workstation for marketing, design &amp; studies</td>
+                            <td class="text-right font-mono font-semibold">₹84,688.00</td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/13_Lenovo_Laptop_Invoice.pdf" target="_blank" class="text-blue-600 underline text-xs">View Invoice</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Velnex Business Management &amp; Operations FZE LLC</strong></td>
+                            <td class="text-slate-600">UAE Free Zone company setup (Ajman, 100% shareholding)</td>
+                            <td class="text-right font-mono font-semibold">₹1,47,000.00</td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/07_Velnex_Trade_License_and_Setup_Receipt.pdf" target="_blank" class="text-blue-600 underline text-xs">View License</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Green Summer Ventures LLP</strong></td>
+                            <td class="text-slate-600">Wholesale agri-trading LLP in Kerala (50% partner)</td>
+                            <td class="text-right font-mono font-semibold">₹21,429.86</td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/14-green-summer-venture-llp-Incorporation.pdf" target="_blank" class="text-blue-600 underline text-xs">View Incorporation</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Digital Marketing Professional Course (CDA)</strong></td>
+                            <td class="text-slate-600">Professional upskilling certification (loan fully closed)</td>
+                            <td class="text-right font-mono font-semibold">₹45,000.00</td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/16_Digital_Marketing_Course_Loan_Closure_Statement.pdf" target="_blank" class="text-blue-600 underline text-xs">View Closure</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Senior Secondary (+2 Commerce) Education</strong></td>
+                            <td class="text-slate-600">Continuing +2 Commerce via BOSSE / Amet Global</td>
+                            <td class="text-right font-mono font-semibold">₹35,000.00</td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/11_BOSSE_12th_Education_Fee_Receipt.pdf" target="_blank" class="text-blue-600 underline text-xs">View Fee Receipt</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Second-Hand Suzuki Burgman Scooter</strong></td>
+                            <td class="text-slate-600">Daily commute vehicle for job mobility (KL07CS6605)</td>
+                            <td class="text-right font-mono font-semibold">₹60,000.00</td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/15_Suzuki_Burgman_Sale_Agreement_KL07CS6605.pdf" target="_blank" class="text-blue-600 underline text-xs">View Agreement</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>HP Smart Inkjet Printer</strong></td>
+                            <td class="text-slate-600">Office equipment for documentation &amp; invoicing</td>
+                            <td class="text-right font-mono font-semibold">₹13,999.00</td>
+                            <td class="text-center"><a href="https://velharisankaran.velnex.in/docs/hardship-dossier/12_HP_Smart_Printer_Lulu_Invoice.pdf" target="_blank" class="text-blue-600 underline text-xs">View Invoice</a></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="bg-slate-100 font-bold text-slate-900">
+                            <td colspan="2">Total Recorded Essential Expenditure:</td>
+                            <td class="text-right font-mono text-blue-700">₹4,07,116.86</td>
+                            <td class="text-center text-xs text-slate-500">Verified</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+                These expenditures were undertaken to establish professional capabilities, improve employment opportunities, continue education, and develop long-term income-generating initiatives. Some of these investments are held in business entities or non-liquid assets and cannot reasonably be treated as immediately available personal cash.
+            </p>
+            <p class="text-xs text-slate-500 italic">
+                I am not requesting reimbursement of these historical expenditures. They are included to explain the financial commitments and investments behind my current position.
+            </p>
+        </section>
+
+        <!-- 7. Immediate Financial Assistance Required -->
+        <section class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
+                7. Immediate Financial Assistance Required
+            </h2>
+            <p class="text-xs sm:text-[13px] text-slate-700">
+                I am seeking temporary assistance to bridge the gap between my present financial obligations and my newly established employment income:
+            </p>
+            <div class="p-3 bg-amber-50/70 border border-amber-200/80 rounded-xl text-xs sm:text-[13px] text-amber-950 flex items-center justify-between">
+                <span><strong>Total Assistance Requested:</strong></span>
+                <span class="placeholder-tag text-sm">₹[INSERT AMOUNT]</span>
+            </div>
+            <div class="overflow-x-auto rounded-lg border border-slate-200">
+                <table class="w-full content-table">
+                    <thead>
+                        <tr>
+                            <th>Proposed Utilisation</th>
+                            <th class="text-right">Amount (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Settlement or reduction of critical overdue obligations</td>
+                            <td class="text-right"><span class="placeholder-tag">₹[ ]</span></td>
+                        </tr>
+                        <tr>
+                            <td>Reduction of high-cost outstanding credit obligations</td>
+                            <td class="text-right"><span class="placeholder-tag">₹[ ]</span></td>
+                        </tr>
+                        <tr>
+                            <td>Essential living and employment expenses during recovery</td>
+                            <td class="text-right"><span class="placeholder-tag">₹[ ]</span></td>
+                        </tr>
+                        <tr>
+                            <td>Emergency liquidity reserve</td>
+                            <td class="text-right"><span class="placeholder-tag">₹[ ]</span></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="bg-slate-100 font-bold text-slate-900">
+                            <td>Total Requested:</td>
+                            <td class="text-right"><span class="placeholder-tag">₹[ ]</span></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+                The final allocation will be based on actual outstanding dues, settlement statements, and the agreed assistance amount.
+            </p>
+            <div class="bg-slate-50 border-l-4 border-slate-600 p-3 rounded-r-lg text-xs text-slate-800 leading-relaxed">
+                <strong>Direct-to-Lender Option for Complete Transparency:</strong> Where possible, I am fully willing to have assistance paid directly to relevant lenders against verified account statements rather than receiving the entire amount personally. This ensures transparency and establishes that funds are used solely for their intended purpose.
+            </div>
+        </section>
+
+        <!-- 8. Financial Recovery & Stabilisation Plan -->
+        <section class="space-y-4">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
+                8. Financial Recovery &amp; Stabilisation Plan
+            </h2>
+            <p class="text-xs sm:text-[13px] text-slate-700">
+                My objective is to move from the current financially distressed position to a stable, sustainable monthly income-and-expense structure across four disciplined stages:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200/80 space-y-1.5">
+                    <span class="font-bold text-blue-700 uppercase tracking-wide block text-[11px]">Stage 1: Immediate Stabilisation</span>
+                    <ul class="list-disc pl-4 space-y-1 text-slate-700">
+                        <li>Address the most urgent overdue financial obligations.</li>
+                        <li>Seek restructuring or reduced instalments where lenders permit.</li>
+                        <li>Avoid accumulating additional high-interest borrowing.</li>
+                        <li>Maintain essential transportation, food, and employment expenses.</li>
+                        <li>Establish a minimum emergency cash reserve.</li>
+                    </ul>
+                </div>
+                <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200/80 space-y-1.5">
+                    <span class="font-bold text-emerald-700 uppercase tracking-wide block text-[11px]">Stage 2: Employment-Based Recovery</span>
+                    <ul class="list-disc pl-4 space-y-1 text-slate-700">
+                        <li>Continue consistent employment at Churritos.</li>
+                        <li>Maintain disciplined attendance and monthly income.</li>
+                        <li>Eliminate all non-essential expenditure.</li>
+                        <li>Maintain meticulous ledger records of income and repayments.</li>
+                        <li>Ensure all ongoing commitments fit within actual capacity.</li>
+                    </ul>
+                </div>
+                <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200/80 space-y-1.5">
+                    <span class="font-bold text-amber-700 uppercase tracking-wide block text-[11px]">Stage 3: Liability Reduction</span>
+                    <ul class="list-disc pl-4 space-y-1 text-slate-700">
+                        <li>Prioritise high-cost and overdue liabilities.</li>
+                        <li>Systematically eliminate credit card balances.</li>
+                        <li>Gradually repay individual and family bridge borrowings.</li>
+                        <li>Maintain transparent communication with all lenders.</li>
+                        <li>Rebuild personal creditworthiness and financial health.</li>
+                    </ul>
+                </div>
+                <div class="p-3.5 bg-slate-900 text-white rounded-xl space-y-1.5">
+                    <span class="font-bold text-blue-400 uppercase tracking-wide block text-[11px]">Stage 4: Long-Term Financial Independence</span>
+                    <ul class="list-disc pl-4 space-y-1 text-slate-300">
+                        <li>Establish stable, growing professional income.</li>
+                        <li>Complete ongoing Senior Secondary (+2 Commerce) education.</li>
+                        <li>Develop business initiatives without emergency debt.</li>
+                        <li>Achieve lasting financial independence through professional merit.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Proposed Repayment Arrangement -->
+        <section class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
+                9. Proposed Repayment Arrangement
+            </h2>
+            <p class="text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+                I understand that financial assistance involves trust and responsibility. If the support is provided as a repayable amount, I am willing to enter into a written agreement specifying the amount, repayment commencement date, instalment schedule, and other mutually agreed conditions:
+            </p>
+            <div class="overflow-x-auto rounded-lg border border-slate-200">
+                <table class="w-full content-table">
+                    <thead>
+                        <tr>
+                            <th>Particulars</th>
+                            <th>Proposal &amp; Terms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Assistance Amount</strong></td>
+                            <td><span class="placeholder-tag">₹[ ]</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nature of Assistance</strong></td>
+                            <td class="text-slate-800 font-medium">Interest-free personal support / mutually agreed loan</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Initial Recovery Period</strong></td>
+                            <td><span class="placeholder-tag">[ ] months</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Proposed Monthly Repayment</strong></td>
+                            <td><span class="placeholder-tag">₹[ ]</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Repayment Commencement</strong></td>
+                            <td><span class="placeholder-tag">[Date / after agreed stabilisation period]</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Payment Method</strong></td>
+                            <td class="text-slate-800 font-medium">Bank transfer (documented with UTR)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Written Acknowledgement</strong></td>
+                            <td class="text-slate-800 font-medium">Fully willing to execute formal promissory or written agreement</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs text-slate-700 leading-relaxed">
+                The repayment amount and commencement date should be determined after accounting for essential living expenses, restructured EMIs, and actual disposable monthly income. I do not wish to make unrealistic repayment commitments that could create another financial difficulty.
+            </p>
+            <p class="text-xs text-slate-500 italic">
+                If the assistance is provided as a grant or charitable contribution, there would be no repayment obligation, subject to the terms agreed with the supporting organisation or individual.
+            </p>
+        </section>
+
+        <!-- 10. Transparency, Verification & Accountability -->
+        <section class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
+                10. Transparency, Verification &amp; Accountability
+            </h2>
+            <p class="text-xs sm:text-[13px] text-slate-700">
+                I am prepared to provide supporting documentation for independent verification. The following verified records are maintained and available upon request:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Previous employer's appointment letter (IZIN Designs).
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Salary-credit bank statements (IDFC First Bank).
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Current employment &amp; partial salary evidence (Churritos).
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Bajaj Finserv statement of accounts (₹1.16L repaid).
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Aditya Birla Finance loan statement (LXS-C11426).
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> KreditBee loan transaction records.
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Lulu Finance loan statement (HP Printer 584).
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Credit card outstanding statements (Ashva &amp; Signet).
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Personal net worth statement &amp; formal audit dossier.
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Itemized records of personal and family borrowings.
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Education fee receipts (BOSSE / Amet Global).
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Professional equipment invoices (Lenovo, Lulu, Scooter).
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Business registration &amp; investment records (Velnex &amp; GSV).
+                </div>
+                <div class="p-2.5 bg-slate-50 border border-slate-200/70 rounded-lg flex items-start gap-2">
+                    <span class="text-blue-600 font-bold">&bull;</span> Real-time accounting ledger (2,000+ categorized transactions).
+                </div>
+            </div>
+            <p class="text-xs text-slate-700 leading-relaxed">
+                I am also willing to provide periodic updates regarding the utilisation of the assistance and repayment progress, where applicable. Any financial assistance received will be recorded properly, and its utilisation will be fully documented.
+            </p>
+        </section>
+
+        <!-- 11. Formal Request for Consideration -->
+        <section class="space-y-4 pt-4 border-t border-slate-200">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-slate-900 border-l-2 border-blue-600 pl-2.5">
+                11. Formal Request for Consideration
+            </h2>
+            <p class="text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+                I respectfully request you to consider my circumstances and evaluate whether any financial assistance can be extended to help me overcome this temporary financial difficulty.
+            </p>
+            <p class="text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+                I am not seeking to avoid my existing responsibilities. I am seeking a reasonable opportunity to stabilise my financial position after an employment-related salary disruption. I have secured new employment and intend to continue working, meeting my responsibilities, and rebuilding my financial position through consistent income and disciplined financial management.
+            </p>
+            <p class="text-xs sm:text-[13px] text-slate-700 leading-relaxed">
+                An appropriate amount of temporary support at this stage could significantly reduce the immediate financial pressure and provide the necessary breathing space to move towards independent financial stability.
+            </p>
+
+            <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl space-y-2 text-xs">
+                <span class="font-bold text-slate-900 uppercase text-[11px] block">Potential Assistance Formats Considered:</span>
+                <ul class="space-y-1.5 text-slate-700">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> A one-time financial grant.</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Interest-free personal financial assistance.</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> A temporary repayable financial bridge.</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Assistance towards settling or reducing selected high-cost liabilities directly.</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> Support through an appropriate charitable or financial assistance programme.</li>
+                </ul>
+            </div>
+
+            <p class="text-xs sm:text-[13px] text-slate-700">
+                I am available to explain my circumstances, submit supporting records, and discuss reasonable terms directly. Thank you for considering this request.
+            </p>
+
+            <!-- Signature & Contacts -->
+            <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 text-xs">
+                <div>
+                    <span class="text-slate-400 uppercase text-[10px] font-bold block mb-1">Submitted With Respect,</span>
+                    <strong class="text-slate-900 text-sm block">Velhari Sankaran</strong>
+                    <span class="text-slate-600 block">Kerala, India</span>
+                    <div class="mt-2 space-y-0.5">
+                        <span class="block"><strong>Mobile:</strong> 9567092833</span>
+                        <span class="block"><strong>Email:</strong> <a href="mailto:kannanac2@gmail.com" class="text-blue-600 underline">kannanac2@gmail.com</a></span>
+                        <span class="block"><strong>Additional Email:</strong> <a href="mailto:velharisankaran@gmail.com" class="text-blue-600 underline">velharisankaran@gmail.com</a></span>
+                    </div>
+                </div>
+                <div class="text-left sm:text-right space-y-1 text-slate-600">
+                    <div><strong>Professional Profile:</strong> <a href="https://velharisankaran.velnex.in/" target="_blank" class="text-blue-600 underline">https://velharisankaran.velnex.in/</a></div>
+                    <div><strong>Financial Records &amp; Supporting Documents:</strong> <a href="https://velharisankaran.velnex.in/profile-print.html" target="_blank" class="text-blue-600 underline">https://velharisankaran.velnex.in/profile-print.html</a></div>
+                </div>
+            </div>
+
+            <!-- Confidentiality Notice -->
+            <div class="text-[10.5px] text-slate-400 bg-slate-50 border border-slate-200/60 p-3 rounded-lg leading-relaxed">
+                <strong>Confidentiality Notice:</strong> This document contains personal financial information and is intended solely for the consideration of the individual or organisation receiving this proposal. Supporting financial and identity records should be shared separately when required for verification.
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Print / Footer Credits -->
+    <div class="mt-6 text-center text-xs text-slate-400">
+        &copy; 2026 Velhari Sankaran &bull; Personal Financial Assistance &amp; Temporary Recovery Proposal &bull; Kochi, Kerala
+    </div>
+
+</div>
+
+<script>
+function copyProposalText() {
+    const el = document.getElementById('proposalContainer');
+    const plainText = el.innerText;
+
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(plainText).then(() => {
+            const btn = document.getElementById('copyBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<span>Copied Proposal Text!</span>';
+            btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+            setTimeout(() => {
+                btn.innerHTML = original;
+                btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
+                btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+            }, 2500);
+        });
+    }
+}
+</script>
+
+</body>
+</html>
