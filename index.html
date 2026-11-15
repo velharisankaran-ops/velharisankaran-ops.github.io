@@ -673,27 +673,24 @@ Financial Position
 </h2>
 </div>
 
-<!-- Unified Master Financial Ledger Card -->
-<div class="bg-white border border-slate-200/80 rounded-lg p-3 sm:p-4">
-<!-- Mobile: 2-top (Assets & Liabilities) + Full-width bottom (Net Position) | Desktop (sm+): 3-column row -->
-<div class="grid grid-cols-2 sm:grid-cols-3 gap-y-3 sm:gap-y-0 sm:divide-x divide-slate-100 text-center">
-<!-- Column 1: Assets -->
-<div class="px-2 sm:px-3 flex flex-col items-center justify-center border-r sm:border-r-0 border-slate-100">
+<!-- 3 Separate Financial Position Cards (Mobile: Assets & Liabilities top, Net Position full-width bottom | Desktop: 3 cards in row) -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 text-center">
+<!-- Card 1: Assets -->
+<div class="bg-white border border-slate-200/80 rounded-lg p-3 sm:p-4 flex flex-col items-center justify-center">
 <span class="dossier-xs font-bold text-emerald-800 uppercase block">Assets</span>
 <span class="dossier-h3 font-extrabold font-mono text-emerald-700 block mt-1 tracking-tight whitespace-nowrap">₹2,82,593.90</span>
 </div>
 
-<!-- Column 2: Liabilities -->
-<div class="px-2 sm:px-3 flex flex-col items-center justify-center">
+<!-- Card 2: Liabilities -->
+<div class="bg-white border border-slate-200/80 rounded-lg p-3 sm:p-4 flex flex-col items-center justify-center">
 <span class="dossier-xs font-bold text-rose-800 uppercase block">Liabilities</span>
 <span class="dossier-h3 font-extrabold font-mono text-rose-700 block mt-1 tracking-tight whitespace-nowrap">₹4,26,492.91</span>
 </div>
 
-<!-- Column 3: Net Position (Spans full width on mobile with a subtle top border) -->
-<div class="col-span-2 sm:col-span-1 pt-2.5 sm:pt-0 border-t sm:border-t-0 border-slate-100 px-2 sm:px-3 flex flex-col items-center justify-center">
+<!-- Card 3: Net Position (Spans full width on mobile) -->
+<div class="col-span-2 sm:col-span-1 bg-white border border-slate-200/80 rounded-lg p-3 sm:p-4 flex flex-col items-center justify-center">
 <span class="dossier-xs font-bold text-slate-700 uppercase block">Net Position</span>
 <span class="dossier-h3 font-extrabold font-mono text-rose-600 block mt-1 tracking-tight whitespace-nowrap">−₹1,43,899.01</span>
-</div>
 </div>
 </div>
 </section>
