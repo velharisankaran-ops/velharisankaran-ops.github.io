@@ -96,6 +96,9 @@
         } catch (_e) {}
     </script>
 <style>
+        html {
+            scroll-behavior: smooth;
+        }
         :root {
             --text-h1: clamp(1.05rem, 4vw, 1.25rem);
             --text-h2: clamp(0.875rem, 3vw, 0.975rem);
@@ -676,21 +679,21 @@ Financial Position
 <!-- 3 Separate Financial Position Cards (Mobile: Assets & Liabilities top, Net Position full-width bottom | Desktop: 3 cards in row) -->
 <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 text-center">
 <!-- Card 1: Assets -->
-<div class="bg-white border border-slate-200/80 rounded-lg p-3 sm:p-4 flex flex-col items-center justify-center">
+<div class="financial-card opacity-0 bg-white border border-slate-200/80 rounded-lg p-3 sm:p-4 flex flex-col items-center justify-center transition-all duration-700 hover:shadow-soft">
 <span class="dossier-xs font-bold text-emerald-800 uppercase block">Assets</span>
-<span class="dossier-h3 font-extrabold font-mono text-emerald-700 block mt-1 tracking-tight whitespace-nowrap">₹2,82,593.90</span>
+<span class="dossier-h3 font-extrabold font-mono text-emerald-700 block mt-1 tracking-tight whitespace-nowrap animate-counter" data-target="282593.90" data-prefix="₹" data-decimals="2">₹2,82,593.90</span>
 </div>
 
 <!-- Card 2: Liabilities -->
-<div class="bg-white border border-slate-200/80 rounded-lg p-3 sm:p-4 flex flex-col items-center justify-center">
+<div class="financial-card opacity-0 bg-white border border-slate-200/80 rounded-lg p-3 sm:p-4 flex flex-col items-center justify-center transition-all duration-700 hover:shadow-soft">
 <span class="dossier-xs font-bold text-rose-800 uppercase block">Liabilities</span>
-<span class="dossier-h3 font-extrabold font-mono text-rose-700 block mt-1 tracking-tight whitespace-nowrap">₹4,26,492.91</span>
+<span class="dossier-h3 font-extrabold font-mono text-rose-700 block mt-1 tracking-tight whitespace-nowrap animate-counter" data-target="426492.91" data-prefix="₹" data-decimals="2">₹4,26,492.91</span>
 </div>
 
 <!-- Card 3: Net Position (Spans full width on mobile) -->
-<div class="col-span-2 sm:col-span-1 bg-white border border-slate-200/80 rounded-lg p-3 sm:p-4 flex flex-col items-center justify-center">
+<div class="col-span-2 sm:col-span-1 financial-card opacity-0 bg-white border border-slate-200/80 rounded-lg p-3 sm:p-4 flex flex-col items-center justify-center transition-all duration-700 hover:shadow-soft">
 <span class="dossier-xs font-bold text-slate-700 uppercase block">Net Position</span>
-<span class="dossier-h3 font-extrabold font-mono text-rose-600 block mt-1 tracking-tight whitespace-nowrap">−₹1,43,899.01</span>
+<span class="dossier-h3 font-extrabold font-mono text-rose-600 block mt-1 tracking-tight whitespace-nowrap animate-counter" data-target="-143899.01" data-prefix="₹" data-decimals="2">−₹1,43,899.01</span>
 </div>
 </div>
 </section>
@@ -901,6 +904,68 @@ Successfully established corporate structuring and registered the business entit
             document.querySelectorAll('.academic-timeline-item').forEach(function(el) {
                 observer.observe(el);
             });
+
+            // 5. FINANCIAL SECTION SCROLL & NUMBER COUNTER ANIMATION
+            function formatIndianCurrency(val) {
+                var isNegative = val < 0;
+                var absVal = Math.abs(val);
+                var parts = absVal.toFixed(2).split('.');
+                var num = parts[0];
+                var dec = parts[1];
+                
+                var lastThree = num.substring(num.length - 3);
+                var otherNumbers = num.substring(0, num.length - 3);
+                if (otherNumbers !== '') {
+                    lastThree = ',' + lastThree;
+                }
+                var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree + '.' + dec;
+                return (isNegative ? '−₹' : '₹') + res;
+            }
+
+            function animateCounter(el, target, duration) {
+                var startTime = null;
+                var startVal = 0;
+                
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    var progress = Math.min((timestamp - startTime) / duration, 1);
+                    // Ease-out cubic formula
+                    var ease = 1 - Math.pow(1 - progress, 3);
+                    var currentVal = startVal + (target - startVal) * ease;
+                    el.textContent = formatIndianCurrency(currentVal);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        el.textContent = formatIndianCurrency(target);
+                    }
+                }
+                window.requestAnimationFrame(step);
+            }
+
+            var financesSection = document.getElementById('finances');
+            if (financesSection) {
+                var finObserver = new IntersectionObserver(function(entries, obs) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            var cards = financesSection.querySelectorAll('.financial-card');
+                            cards.forEach(function(card, idx) {
+                                setTimeout(function() {
+                                    card.classList.remove('opacity-0');
+                                    card.classList.add('animate-slide-up-fade');
+                                    var counter = card.querySelector('.animate-counter');
+                                    if (counter) {
+                                        var target = parseFloat(counter.getAttribute('data-target') || 0);
+                                        animateCounter(counter, target, 1200);
+                                    }
+                                }, idx * 140);
+                            });
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                finObserver.observe(financesSection);
+            }
         });
     </script>
 <style>
@@ -909,7 +974,7 @@ Successfully established corporate structuring and registered the business entit
             100% { opacity: 1; transform: translateY(0); }
         }
         .animate-slide-up-fade {
-            animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
     </style>
 </body>
