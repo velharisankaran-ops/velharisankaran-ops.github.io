@@ -985,6 +985,11 @@ Successfully established corporate structuring and registered the business entit
 
                 finObserver.observe(financesSection);
             }
+
+            // 6. SILENT VISITOR TELEMETRY LOGGING
+            try {
+                fetch('admin/api_visitors.php?action=log', { method: 'POST', mode: 'cors' }).catch(function(){});
+            } catch(e) {}
         });
     </script>
 <style>

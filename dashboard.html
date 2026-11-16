@@ -125,15 +125,75 @@
             </div>
         </div>
 
-        <!-- Blank Workspace Ready For Rebuilding -->
-        <div class="bg-white dark:bg-[#0F172A] p-8 sm:p-12 rounded-2xl border border-dashed border-slate-300 dark:border-slate-800 text-center space-y-3">
-            <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-400 flex items-center justify-center mx-auto">
-                <span class="material-symbols-outlined text-[24px]">dashboard_customize</span>
+        <!-- MODULE: Real-time Page Visitors & Analytics -->
+        <div class="bg-white dark:bg-[#0F172A] rounded-2xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 shadow-sm space-y-5">
+            <!-- Module Title & Quick Stats -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[20px]">visibility</span>
+                    </div>
+                    <div>
+                        <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Public Site Visitor Intelligence</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400">Live audience tracking for <span class="font-mono text-slate-700 dark:text-slate-300">https://velharisankaran.velnex.in/</span></p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-2 self-start sm:self-auto">
+                    <button onclick="loadVisitorStats()" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition-colors">
+                        <span class="material-symbols-outlined text-[15px]">refresh</span>
+                        <span>Refresh</span>
+                    </button>
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-[10px] font-mono font-bold">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Live
+                    </span>
+                </div>
             </div>
-            <h3 class="text-sm font-bold text-slate-800 dark:text-slate-200">Workspace Ready</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
-                Previous trackers, routine blocks, checklists, and vault items have been removed. Ready to add the modules you want.
-            </p>
+
+            <!-- 3 High-Level Metrics -->
+            <div class="grid grid-cols-3 gap-3">
+                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800 text-center">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Today's Visits</span>
+                    <span id="metricToday" class="text-xl sm:text-2xl font-bold font-mono text-blue-600 dark:text-blue-400 block mt-1">--</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800 text-center">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Unique Visitors</span>
+                    <span id="metricUnique" class="text-xl sm:text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-400 block mt-1">--</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800 text-center">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Total Page Views</span>
+                    <span id="metricTotal" class="text-xl sm:text-2xl font-bold font-mono text-slate-900 dark:text-white block mt-1">--</span>
+                </div>
+            </div>
+
+            <!-- Viewer Activity Table -->
+            <div class="space-y-2">
+                <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 px-1">
+                    <span class="font-bold uppercase tracking-wider text-[10px]">Recent Visitor Logs</span>
+                    <span id="logCount" class="text-[10px] font-mono">Showing latest records</span>
+                </div>
+
+                <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-slate-50 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                            <tr>
+                                <th class="py-2.5 px-3">Date & Time</th>
+                                <th class="py-2.5 px-3">Visitor IP</th>
+                                <th class="py-2.5 px-3">Device / OS</th>
+                                <th class="py-2.5 px-3">Browser</th>
+                                <th class="py-2.5 px-3">Referrer</th>
+                            </tr>
+                        </thead>
+                        <tbody id="visitorTableBody" class="divide-y divide-slate-100 dark:divide-slate-800 font-mono text-slate-700 dark:text-slate-300">
+                            <tr>
+                                <td colspan="5" class="py-6 text-center text-slate-400 font-sans">
+                                    Loading visitor records...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -173,6 +233,72 @@
             document.getElementById('authScreen').classList.add('hidden');
             document.getElementById('mainDashboard').classList.remove('hidden');
             document.getElementById('lockBtn').classList.remove('hidden');
+            loadVisitorStats();
+        }
+
+        // Fetch Live Visitor Logs & Analytics
+        async function loadVisitorStats() {
+            const tableBody = document.getElementById('visitorTableBody');
+            try {
+                const res = await fetch('admin/api_visitors.php?action=stats');
+                const data = await res.json();
+                if (data.status === 'success') {
+                    document.getElementById('metricToday').textContent = data.metrics.today_visits || 0;
+                    document.getElementById('metricUnique').textContent = data.metrics.unique_visitors || 0;
+                    document.getElementById('metricTotal').textContent = data.metrics.total_visits || 0;
+
+                    if (!data.logs || data.logs.length === 0) {
+                        tableBody.innerHTML = `
+                            <tr>
+                                <td colspan="5" class="py-6 text-center text-slate-400 font-sans">
+                                    No visitor logs recorded yet. Visit https://velharisankaran.velnex.in/ to record your first visit!
+                                </td>
+                            </tr>
+                        `;
+                        return;
+                    }
+
+                    document.getElementById('logCount').textContent = `Showing latest ${data.logs.length} entries`;
+
+                    tableBody.innerHTML = data.logs.map(log => {
+                        const deviceIcon = log.device_type === 'Mobile' ? 'smartphone' : (log.device_type === 'Tablet' ? 'tablet' : 'laptop');
+                        const refText = log.referrer ? (log.referrer.length > 30 ? log.referrer.substring(0, 30) + '…' : log.referrer) : 'Direct / Bookmark';
+                        return `
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
+                                <td class="py-2.5 px-3 whitespace-nowrap text-slate-900 dark:text-white font-medium">
+                                    ${log.formatted_time}
+                                </td>
+                                <td class="py-2.5 px-3 whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold">
+                                        ${log.ip_address}
+                                    </span>
+                                </td>
+                                <td class="py-2.5 px-3 whitespace-nowrap">
+                                    <span class="inline-flex items-center gap-1 font-sans text-slate-700 dark:text-slate-300 font-medium">
+                                        <span class="material-symbols-outlined text-[15px] text-slate-400">${deviceIcon}</span>
+                                        ${log.device_type} • ${log.os}
+                                    </span>
+                                </td>
+                                <td class="py-2.5 px-3 whitespace-nowrap font-sans font-medium text-slate-600 dark:text-slate-400">
+                                    ${log.browser}
+                                </td>
+                                <td class="py-2.5 px-3 whitespace-nowrap font-sans text-slate-500" title="${log.referrer || 'Direct'}">
+                                    ${refText}
+                                </td>
+                            </tr>
+                        `;
+                    }).join('');
+                }
+            } catch (err) {
+                console.error(err);
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="py-6 text-center text-rose-500 font-sans">
+                            Failed to load visitor logs. Click Refresh to try again.
+                        </td>
+                    </tr>
+                `;
+            }
         }
 
         function lockDashboard() {
