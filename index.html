@@ -986,10 +986,92 @@ Successfully established corporate structuring and registered the business entit
                 finObserver.observe(financesSection);
             }
 
-            // 6. SILENT VISITOR TELEMETRY LOGGING
-            try {
-                fetch('admin/api_visitors.php?action=log', { method: 'POST', mode: 'cors' }).catch(function(){});
-            } catch(e) {}
+            // 6. ENHANCED VISITOR TELEMETRY & ENGAGEMENT TRACKING
+            (function() {
+                try {
+                    var sKey = 'vs_visitor_session';
+                    var sessionId = sessionStorage.getItem(sKey);
+                    if (!sessionId) {
+                        sessionId = 's_' + Math.random().toString(36).substring(2, 12) + Date.now().toString(36);
+                        sessionStorage.setItem(sKey, sessionId);
+                    }
+
+                    var urlParams = new URLSearchParams(window.location.search);
+                    var payload = {
+                        session_id: sessionId,
+                        referrer: document.referrer || '',
+                        screen_res: window.screen.width + 'x' + window.screen.height,
+                        language: navigator.language || navigator.userLanguage || '',
+                        timezone: (Intl && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().timeZone : '',
+                        utm_source: urlParams.get('utm_source') || '',
+                        utm_medium: urlParams.get('utm_medium') || '',
+                        utm_campaign: urlParams.get('utm_campaign') || ''
+                    };
+
+                    fetch('admin/api_visitors.php?action=log', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    }).catch(function(){});
+
+                    // Track maximum scroll depth & time spent
+                    var maxScrollPercent = 0;
+                    var startTime = Date.now();
+
+                    function updateScroll() {
+                        var h = document.documentElement;
+                        var b = document.body;
+                        var st = 'scrollTop';
+                        var sh = 'scrollHeight';
+                        var percent = Math.round(((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100) || 0;
+                        if (percent > maxScrollPercent) {
+                            maxScrollPercent = Math.min(percent, 100);
+                        }
+                    }
+                    window.addEventListener('scroll', updateScroll, { passive: true });
+
+                    // Periodic engagement heartbeat ping
+                    function sendHeartbeat(action) {
+                        var timeSpent = Math.round((Date.now() - startTime) / 1000);
+                        var pingBody = {
+                            session_id: sessionId,
+                            scroll_depth: maxScrollPercent,
+                            time_spent_seconds: timeSpent,
+                            action: action || ''
+                        };
+                        if (navigator.sendBeacon) {
+                            navigator.sendBeacon('admin/api_visitors.php?action=ping', JSON.stringify(pingBody));
+                        } else {
+                            fetch('admin/api_visitors.php?action=ping', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(pingBody),
+                                keepalive: true
+                            }).catch(function(){});
+                        }
+                    }
+
+                    // Send heartbeats at 10s, 30s, 60s, 120s
+                    [10, 30, 60, 120].forEach(function(sec) {
+                        setTimeout(function() { sendHeartbeat(); }, sec * 1000);
+                    });
+
+                    // Send final ping on unload
+                    window.addEventListener('visibilitychange', function() {
+                        if (document.visibilityState === 'hidden') {
+                            sendHeartbeat();
+                        }
+                    });
+
+                    // Track outbound action clicks (WhatsApp, Email, etc.)
+                    document.querySelectorAll('a[href*="wa.me"], a[href^="mailto:"]').forEach(function(link) {
+                        link.addEventListener('click', function() {
+                            var type = link.href.indexOf('wa.me') !== -1 ? 'WhatsApp Click' : 'Email Click';
+                            sendHeartbeat(type);
+                        });
+                    });
+                } catch(e) {}
+            })();
         });
     </script>
 <style>
